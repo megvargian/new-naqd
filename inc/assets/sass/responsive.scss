@@ -1,0 +1,41 @@
+@import 'variables';
+@charset "utf-8";
+
+@media (max-width: 1540px){
+
+}
+
+@media (max-width: 1367px){
+
+}
+
+@media (max-width: 1199px){
+
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media (max-width: 600px){
+
+}
+
+@media (max-width: 470px){
+}
+
+@media (max-width: 400px){
+}
+
+@media (max-width: 440px){
+}
+
+@media (max-width: 350px){
+}
+
+@media (min-width: 1390px) {
+	/* change this, by default 1140px */
+	.container {
+		max-width: 1360px;
+	}
+}
