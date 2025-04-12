@@ -637,19 +637,19 @@ function rename_post_type_labels() {
         $labels = $wp_post_types['post']->labels;
 
         // Change the desired labels
-        $labels->name               = 'Products'; // General name for the post type
-        $labels->singular_name      = 'Product';  // Singular name
-        $labels->add_new            = 'Add New Product';
-        $labels->add_new_item       = 'Add New Product';
-        $labels->edit_item          = 'Edit Product';
-        $labels->new_item           = 'New Product';
-        $labels->view_item          = 'View Product';
-        $labels->search_items       = 'Search Products';
-        $labels->not_found          = 'No Products found';
-        $labels->not_found_in_trash = 'No Products found in Trash';
-        $labels->all_items          = 'All Products';
-        $labels->menu_name          = 'Products';
-        $labels->name_admin_bar     = 'Product';
+        $labels->name               = 'Articles'; // General name for the post type
+        $labels->singular_name      = 'Article';  // Singular name
+        $labels->add_new            = 'Add New Article';
+        $labels->add_new_item       = 'Add New Article';
+        $labels->edit_item          = 'Edit Article';
+        $labels->new_item           = 'New Article';
+        $labels->view_item          = 'View Article';
+        $labels->search_items       = 'Search Articles';
+        $labels->not_found          = 'No Articles found';
+        $labels->not_found_in_trash = 'No Articles found in Trash';
+        $labels->all_items          = 'All Articles';
+        $labels->menu_name          = 'Articles';
+        $labels->name_admin_bar     = 'Article';
     }
 }
 add_action('init', 'rename_post_type_labels');
