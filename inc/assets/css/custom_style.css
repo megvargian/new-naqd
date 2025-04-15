@@ -123,6 +123,15 @@ p {
 .header-container .tag-list li a {
   width: 200px;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #2A2A2E;
+  display: block;
+  text-align: center;
+  margin: 0 0.3rem;
+  font-size: 1.4rem;
+  transition: 0.3s ease-in-out;
+}
+.header-container .tag-list li a:hover {
+  border: 1px solid #B6E60D;
+  transition: 0.3s ease-in-out;
 }

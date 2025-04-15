@@ -29,23 +29,32 @@
 				</div>
 				<div class="col-4">
 					<ul class="social-media-icons">
-						<li class="mx-3">
+						<li class="mx-1">
 							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
 						</li>
-						<li class="mx-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon.svg" alt="fb">
 						</li>
-						<li class="mx-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="insta">
 						</li>
-						<li class="mx-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="insta">
 						</li>
-						<li class="mx-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="insta">
 						</li>
-						<li class="mx-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="insta">
+						</li>
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon.svg" alt="insta">
+						</li>
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="insta">
+						</li>
+						<li class="mx-1">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="insta">
 						</li>
 					</ul>
 				</div>

@@ -107,8 +107,17 @@ p{
 		li a{
 			width: 200px;
 			color: #fff;
-			border-radius: 20px;
-			background-color: $main_color;
+			border-radius: 10px;
+			background-color: #2A2A2E;
+			display: block;
+			text-align: center;
+			margin: 0 .3rem;
+			font-size: 1.4rem;
+			transition: .3s ease-in-out;
+		}
+		li a:hover{
+			border: 1px solid $third_color;
+			transition: .3s ease-in-out;
 		}
 	}
 }
