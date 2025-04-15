@@ -213,3 +213,27 @@ th {
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'ManchetteFine-Black';
+	src:  url('inc/assets/fonts/ManchetteFine-Black.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ManchetteFine-Bold';
+	src:  url('inc/assets/fonts/ManchetteFine-Bold.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ManchetteFine-Light';
+	src:  url('inc/assets/fonts/ManchetteFine-Light.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ManchetteFine-Thin';
+	src:  url('inc/assets/fonts/ManchetteFine-Thin.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}

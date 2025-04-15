@@ -113,11 +113,12 @@ p{
 			text-align: center;
 			margin: 0 .3rem;
 			font-size: 1.4rem;
-			transition: .3s ease-in-out;
+			transition: border-color .3s ease;
+			font-family: $light;
+			outline: 1px solid transparent;
 		}
 		li a:hover{
-			border: 1px solid $third_color;
-			transition: .3s ease-in-out;
+			border-color: $third_color;
 		}
 	}
 }
