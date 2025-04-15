@@ -67,7 +67,6 @@ body{
 	width: 100%;
 	font-family: $opensans-regular;
 	background-color: $main_color;
-	overflow: hidden;
 }
 .no-scroll{
 	overflow: hidden;
@@ -92,7 +91,22 @@ p{
 //header class
 .header-container{
 	background-color: $sec_color;
+	.logo{
+		width: 100px;
+	}
+	.social-media-icons{
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		img{
+			width: 30px;
+			height: 30px;
+		}
+	}
 	.tag-list{
-
+		width: 200px;
+		color: #fff;
+		border-radius: 20px;
+		background-color: $sec_color;
 	}
 }

@@ -78,7 +78,6 @@ body {
   width: 100%;
   font-family: "OpenSans-regular";
   background-color: #2A2A2E;
-  overflow: hidden;
 }
 
 .no-scroll {
@@ -107,5 +106,23 @@ p {
 }
 
 .header-container {
+  background-color: #313136;
+}
+.header-container .logo {
+  width: 100px;
+}
+.header-container .social-media-icons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.header-container .social-media-icons img {
+  width: 30px;
+  height: 30px;
+}
+.header-container .tag-list {
+  width: 200px;
+  color: #fff;
+  border-radius: 20px;
   background-color: #313136;
 }

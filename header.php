@@ -25,7 +25,7 @@
 		<div class="container-fluid px-4">
 			<div class="row">
 				<div class="col-2 d-flex justify-content-start">
-					<img class="w-100" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
+					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 				</div>
 				<div class="col-4">
 					<ul class="social-media-icons">
@@ -54,6 +54,21 @@
 				<div class="col-10">
 					<nav>
 						<ul class="d-flex justify-content-center align-itmes-center tag-list">
+							<li>
+								<a href="#">
+									لبنان
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									لبنان
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									لبنان
+								</a>
+							</li>
 							<li>
 								<a href="#">
 									لبنان
