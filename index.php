@@ -7,6 +7,9 @@ get_header();
 //     the_content();
 // endwhile;
 ?>
+<section class="homepage">
+    <h1></h1>
+</section>
 <script>
     jQuery(document).ready(function($) {
     })

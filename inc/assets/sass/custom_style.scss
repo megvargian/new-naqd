@@ -63,9 +63,11 @@ input:focus, textarea:focus, select:focus, option:focus {
 
 body{
 	overflow-x: hidden !important;
-	direction: ltr;
+	direction: rtl;
 	width: 100%;
 	font-family: $opensans-regular;
+	background-color: $main_color;
+	overflow: hidden;
 }
 .no-scroll{
 	overflow: hidden;
@@ -86,4 +88,11 @@ p{
 	border-radius: 32px;
 	color: #fff !important;
 	padding: .3rem 1rem;
+}
+//header class
+.header-container{
+	background-color: $sec_color;
+	.tag-list{
+
+	}
 }

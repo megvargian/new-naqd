@@ -9,8 +9,6 @@
  * @package WP_Bootstrap_Starter
  */
 
-$general_fields = get_fields('options');
-$header_fields = $general_fields['header'];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -23,8 +21,49 @@ $header_fields = $general_fields['header'];
 </head>
 <body <?php body_class(); ?> style="<?php echo is_front_page() ? 'overflow: hidden;' : ''; ?>">
 <div id="page" class="site main_page_wrapper">
-	<header id="masthead" class="header-container">
-
+	<header id="masthead" class="header-container py-4">
+		<div class="container-fluid px-4">
+			<div class="row">
+				<div class="col-2 d-flex justify-content-start">
+					<img class="w-100" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
+				</div>
+				<div class="col-4">
+					<ul class="social-media-icons">
+						<li class="mx-3">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						</li>
+						<li class="mx-3">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						</li>
+						<li class="mx-3">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						</li>
+						<li class="mx-3">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						</li>
+						<li class="mx-3">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						</li>
+						<li class="mx-3">
+							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-10">
+					<nav>
+						<ul class="d-flex justify-content-center align-itmes-center tag-list">
+							<li>
+								<a href="#">
+									لبنان
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
 	</header>
 </div>
 <script>

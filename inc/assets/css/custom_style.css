@@ -74,9 +74,11 @@ input:focus, textarea:focus, select:focus, option:focus {
 
 body {
   overflow-x: hidden !important;
-  direction: ltr;
+  direction: rtl;
   width: 100%;
   font-family: "OpenSans-regular";
+  background-color: #2A2A2E;
+  overflow: hidden;
 }
 
 .no-scroll {
@@ -98,8 +100,12 @@ p {
 }
 
 .main-btn {
-  background-color: #E95D29;
+  background-color: #313136;
   border-radius: 32px;
   color: #fff !important;
   padding: 0.3rem 1rem;
+}
+
+.header-container {
+  background-color: #313136;
 }
