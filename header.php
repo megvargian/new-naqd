@@ -24,10 +24,10 @@
 	<header id="masthead" class="header-container py-4">
 		<div class="container px-4">
 			<div class="row">
-				<div class="col-2 d-flex justify-content-start">
+				<div class="col-1 d-flex justify-content-start">
 					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 				</div>
-				<div class="col-4 justify-content-center d-flex align-items-center">
+				<div class="col justify-content-center d-flex align-items-center">
 					<ul class="social-media-icons">
 						<li class="mx-1">
 							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
@@ -58,6 +58,7 @@
 						</li>
 					</ul>
 				</div>
+				<div class="col"></div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-10">
