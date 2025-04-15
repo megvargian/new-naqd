@@ -120,9 +120,9 @@ p {
   width: 30px;
   height: 30px;
 }
-.header-container .tag-list {
+.header-container .tag-list li a {
   width: 200px;
   color: #fff;
   border-radius: 20px;
-  background-color: #313136;
+  background-color: #2A2A2E;
 }

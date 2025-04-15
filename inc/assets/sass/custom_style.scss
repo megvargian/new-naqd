@@ -104,9 +104,11 @@ p{
 		}
 	}
 	.tag-list{
-		width: 200px;
-		color: #fff;
-		border-radius: 20px;
-		background-color: $sec_color;
+		li a{
+			width: 200px;
+			color: #fff;
+			border-radius: 20px;
+			background-color: $main_color;
+		}
 	}
 }
