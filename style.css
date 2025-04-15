@@ -207,9 +207,9 @@ th {
   padding: 0;
 }
 
-{{/* @font-face {
-	font-family: 'OpenSans-Bold';
-	src:  url('inc/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+@font-face {
+	font-family: 'ManchetteFine-Regular';
+	src:  url('inc/assets/fonts/ManchetteFine-Regular.otf') format('opentype');
 	font-weight: normal;
 	font-style: normal;
-} */}}
+}
