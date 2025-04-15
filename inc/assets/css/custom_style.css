@@ -129,9 +129,9 @@ p {
   text-align: center;
   margin: 0 0.3rem;
   font-size: 1.4rem;
-  transition: border-color 0.3s ease;
   font-family: "ManchetteFine-Light";
-  outline: 1px solid transparent;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
 }
 .header-container .tag-list li a:hover {
   border-color: #B6E60D;

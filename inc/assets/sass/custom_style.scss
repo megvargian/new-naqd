@@ -113,9 +113,9 @@ p{
 			text-align: center;
 			margin: 0 .3rem;
 			font-size: 1.4rem;
-			transition: border-color .3s ease;
 			font-family: $light;
-			outline: 1px solid transparent;
+			border: 1px solid transparent;
+			transition: border-color .3s ease;
 		}
 		li a:hover{
 			border-color: $third_color;
