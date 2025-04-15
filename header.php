@@ -27,7 +27,7 @@
 				<div class="col-2 d-flex justify-content-start">
 					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 				</div>
-				<div class="col-4">
+				<div class="col-4 justify-content-center d-flex align-items-center">
 					<ul class="social-media-icons">
 						<li class="mx-1">
 							<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
@@ -62,7 +62,7 @@
 			<div class="row justify-content-center">
 				<div class="col-10">
 					<nav>
-						<ul class="d-flex justify-content-center align-itmes-center tag-list">
+						<ul class="d-flex justify-content-center align-items-center tag-list">
 							<li>
 								<a href="#">
 									لبنان
