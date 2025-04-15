@@ -22,7 +22,7 @@
 <body <?php body_class(); ?> style="<?php echo is_front_page() ? 'overflow: hidden;' : ''; ?>">
 <div id="page" class="site main_page_wrapper">
 	<header id="masthead" class="header-container py-4">
-		<div class="container-fluid px-4">
+		<div class="container px-4">
 			<div class="row">
 				<div class="col-2 d-flex justify-content-start">
 					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
@@ -70,17 +70,22 @@
 							</li>
 							<li>
 								<a href="#">
-									لبنان
+								    العالم العربي
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									لبنان
+								   العالم
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									لبنان
+								   مجتمع
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									تقارير
 								</a>
 							</li>
 						</ul>
