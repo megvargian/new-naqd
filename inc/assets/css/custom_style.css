@@ -120,6 +120,18 @@ p {
   width: 30px;
   height: 30px;
 }
+.header-container .social-media-icons .single-social-icon .active {
+  display: none;
+}
+.header-container .social-media-icons .single-social-icon .stroke {
+  display: block;
+}
+.header-container .social-media-icons .single-social-icon:hover .active {
+  display: block;
+}
+.header-container .social-media-icons .single-social-icon:hover .stroke {
+  display: none;
+}
 .header-container .tag-list li a {
   width: 200px;
   color: #fff;
@@ -129,7 +141,7 @@ p {
   text-align: center;
   margin: 0 0.3rem;
   font-size: 1.4rem;
-  font-family: "ManchetteFine-Thin";
+  font-family: "ManchetteFine-Regular";
   border: 1px solid transparent;
   transition: border-color 0.3s ease;
 }
