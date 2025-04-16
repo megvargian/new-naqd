@@ -85,7 +85,17 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col"></div>
+				<div class="col">
+					<button class="hamburger hamburger--collapse" type="button">
+						<div class="menu_mobile_nav">
+							<div class="hamburger_menu_icon">
+								<div class="line"></div>
+								<div class="line middle_line"></div>
+								<div class="line"></div>
+							</div>
+						</div>
+					</button>
+				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-10">
@@ -125,6 +135,10 @@
 </div>
 <script>
 jQuery(document).ready(function($) {
+	$('.menu_mobile_nav').click(function(event) {
+		$(this).toggleClass('active');
+		$('html, body').toggleClass('hide_scroll');
+	});
 });
 </script>
 <div class="site-content">
