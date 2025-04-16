@@ -190,7 +190,7 @@ p {
   width: 100%;
 }
 .header-container .menu_mobile_nav.active .hamburger_menu_icon .middle_line {
-  transform: translateX(-500%);
+  transform: translateX(-1000%);
   background-color: #fff;
   height: 4px;
   width: 100%;
