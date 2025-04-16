@@ -190,13 +190,13 @@ p {
   width: 100%;
 }
 .header-container .menu_mobile_nav.active .hamburger_menu_icon .middle_line {
-  transform: translateX(-200%);
+  transform: translateX(-500%);
   background-color: #fff;
   height: 4px;
   width: 100%;
 }
 .header-container .menu_mobile_nav.active .hamburger_menu_icon .line:last-child {
-  transform: rotate(-45deg) translate(5.5px, -5.5px);
+  transform: rotate(-45deg) translate(8.5px, -7.5px);
   background-color: #fff;
   height: 4px;
   width: 100%;
