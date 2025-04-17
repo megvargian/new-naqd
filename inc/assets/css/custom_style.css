@@ -209,9 +209,14 @@ p {
   background-color: #1A876B;
   border-radius: 15px;
 }
+.homepage .bg-color-green .main-img {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
 .homepage .bg-color-green p {
   font-family: "ManchetteFine-Regular";
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: right;
+  margin-bottom: 1.5rem;
 }

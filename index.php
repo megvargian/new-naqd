@@ -12,7 +12,7 @@ get_header();
         <div class="row bg-color-green mb-2">
             <div class="col-4 px-0">
                 <a href="#">
-                    <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                    <img class="w-100 h-100 d-block main-img" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
                 </a>
             </div>
             <div class="col-8 px-0">

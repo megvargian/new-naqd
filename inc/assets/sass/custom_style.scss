@@ -203,11 +203,16 @@ p{
 	.bg-color-green{
 		background-color: #1A876B;
 		border-radius: 15px;
+		.main-img{
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+		}
 		p{
 			font-family: $regular;
 			color: #fff;
-			font-size: 1rem;
+			font-size: 1.3rem;
 			text-align: right;
+			margin-bottom: 1.5rem;
 		}
 	}
 }
