@@ -38,49 +38,49 @@
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon.svg" alt="fb">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon-stroke.svg" alt="fb">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb.svg" alt="fb">
 							</a>
 						</li>
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="linkedin">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon-stroke.svg" alt="linkedin">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/in.svg" alt="linkedin">
 							</a>
 						</li>
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="RSS">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon-stroke.svg" alt="RSS">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss.svg" alt="RSS">
 							</a>
 						</li>
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="threads">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon-stroke.svg" alt="threads">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads.svg" alt="threads">
 							</a>
 						</li>
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="tiktok">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon-stroke.svg" alt="tiktok">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok.svg" alt="tiktok">
 							</a>
 						</li>
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon.svg" alt="whatsapp">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon-stroke.svg" alt="whatsapp">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp.svg" alt="whatsapp">
 							</a>
 						</li>
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="X">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon-stroke.svg" alt="X">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x.svg" alt="X">
 							</a>
 						</li>
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="youtube">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon-stroke.svg" alt="youtube">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube.svg" alt="youtube">
 							</a>
 						</li>
 					</ul>
