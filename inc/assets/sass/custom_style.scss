@@ -200,4 +200,13 @@ p{
 	.single-article{
 		border-radius: 15px;
 	}
+	.bg-color-green{
+		background-color: #1A876B;
+		p{
+			font-family: $regular;
+			color: #fff;
+			font-size: 1rem;
+			text-align: right;
+		}
+	}
 }
