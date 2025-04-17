@@ -10,7 +10,7 @@ get_header();
 <section class="homepage">
     <div class="container">
         <div class="row py-5">
-            <?php for($i=0; $i<24; $i++;){ ?>
+            <?php for($i=0, $i<24, $i++){ ?>
                 <div class="col-4">
                     <a href="#">
                         <img class="w-100 d-block rounded" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
