@@ -207,6 +207,7 @@ p {
 }
 .homepage .bg-color-green {
   background-color: #1A876B;
+  border-radius: 15px;
 }
 .homepage .bg-color-green p {
   font-family: "ManchetteFine-Regular";
