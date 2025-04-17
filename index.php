@@ -9,7 +9,7 @@ get_header();
 ?>
 <section class="homepage">
     <div class="container">
-        <div class="row">
+        <div class="row py-5">
             <?php for($i=0; $i<24; $i++;){ ?>
                 <div class="col-4">
                     <a href="#">
