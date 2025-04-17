@@ -19,7 +19,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> style="<?php echo is_front_page() ? 'overflow: hidden;' : ''; ?>">
+<body <?php body_class(); ?>>
 <div id="page" class="site main_page_wrapper">
 	<header id="masthead" class="header-container py-4">
 		<div class="container px-4">

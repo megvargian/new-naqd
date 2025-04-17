@@ -201,3 +201,7 @@ p {
   height: 4px;
   width: 100%;
 }
+
+.homepage .single-article {
+  border-radius: 20px;
+}
