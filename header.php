@@ -32,7 +32,7 @@
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
 								<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
-								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon-stroke.svg" alt="insta">
+								<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
 							</a>
 						</li>
 						<li class="mx-1">
