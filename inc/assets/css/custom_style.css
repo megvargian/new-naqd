@@ -91,6 +91,8 @@ body.hide_scroll {
 h2 {
   font-size: 2rem;
   color: #fff;
+  font-family: "ManchetteFine-Regular";
+  text-align: right;
 }
 
 p {

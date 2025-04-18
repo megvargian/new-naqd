@@ -49,10 +49,55 @@ get_header();
                 </div>
             <?php } ?>
         </div>
+        <div class="row pt-3">
+            <div class="col-12 text-right">
+                <h2>
+                    آخر الأخبار
+                </h2>
+            </div>
+            <div class="col-12">
+                <div class="swiper latestNewsSwiper">
+                    <div class="swiper-wrapper">
+                        <?php for($i=0; $i<8; $i++){ ?>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                                </a>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <script>
     jQuery(document).ready(function($) {
+        var swiper = new Swiper(".mainSwiper", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            breakpoints: {
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 1.5,
+					spaceBetween: 20
+				},
+				// when window width is >= 480px
+				480: {
+					slidesPerView: 1.5,
+					spaceBetween: 30
+				},
+				// when window width is >= 640px
+				640: {
+					slidesPerView: 2,
+					spaceBetween: 40
+				},
+				991: {
+					slidesPerView: 4,
+					spaceBetween: 20
+				}
+			}
+        });
     })
 </script>
 <?php
