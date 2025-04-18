@@ -236,6 +236,22 @@ p{
 		height: 100%;
 		border-radius: 15px;
 	}
+	.latestNewsSwiper {
+		position: relative;
+		overflow: visible; /* important if shadow overflows */
+	  }
+
+	.latestNewsSwiper::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px; /* adjust width as needed */
+		height: 100%;
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+		z-index: 10;
+		pointer-events: none;
+	}
 }
 
 // footer
