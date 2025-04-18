@@ -220,3 +220,16 @@ p {
   text-align: right;
   margin-bottom: 1.5rem;
 }
+.homepage .responsive-short {
+  position: relative;
+  padding-bottom: 177.77%; /* 9:16 ratio (shorts) */
+  height: 0;
+  overflow: hidden;
+}
+.homepage .responsive-short iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
