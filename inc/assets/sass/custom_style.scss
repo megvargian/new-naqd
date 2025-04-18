@@ -94,31 +94,6 @@ p{
 	.logo{
 		width: 85px;
 	}
-	.social-media-icons{
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		img{
-			width: 30px;
-			height: 30px;
-		}
-		.single-social-icon{
-			.active{
-				display: none;
-			}
-			.stroke{
-				display: block;
-			}
-		}
-		.single-social-icon:hover{
-			.active{
-				display: block;
-			}
-			.stroke{
-				display: none;
-			}
-		}
-	}
 	.tag-list{
 		li a{
 			width: 200px;
@@ -196,6 +171,33 @@ p{
 		}
 	}
 }
+.social-media-icons{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	img{
+		width: 30px;
+		height: 30px;
+	}
+	.single-social-icon{
+		.active{
+			display: none;
+		}
+		.stroke{
+			display: block;
+		}
+	}
+	.single-social-icon:hover{
+		.active{
+			display: block;
+		}
+		.stroke{
+			display: none;
+		}
+	}
+}
+
+//homepage
 .homepage{
 	.single-article{
 		border-radius: 15px;
@@ -235,31 +237,43 @@ p{
 }
 
 // footer
-.footer-tags{
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	li{
-		margin: 0 10px;
-		border-left: 1px solid #fff;
-		a{
-			font-family: $regular;
-			color: #fff;
-			font-size: 1.2rem;
-			text-align: right;
+footer{
+	.footer-tags{
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		li{
+			margin: 0 10px;
+			border-left: 1px solid #fff;
+			a{
+				font-family: $regular;
+				color: #fff;
+				font-size: 1.2rem;
+				text-align: right;
+			}
+		}
+		li:last-child{
+			border-left: none;
 		}
 	}
-	li:last-child{
-		border-left: none;
+	.button-green{
+		border-radius: 15px;
+		background-color: #B6E60D;
+		color: $sec_color;
+		font-family: $regular;
+		padding: .3rem 1rem;
+		font-size: 1.2rem;
+		border:none;
+		outline: none;
 	}
-}
-.green-button{
-	border-radius: 15px;
-	background-color: #B6E60D;
-	color: $sec_color;
-	font-family: $regular;
-	padding: .3rem 1rem;
-	font-size: 1.2rem;
-	border:none;
-	outline: none;
+	p{
+		font-family: $regular;
+		color: #fff;
+		font-size: 1.2rem;
+		text-align: right;
+	}
+	.border-green{
+		width: 100%;
+		border: 7px solid #B6E60D;
+	}
 }

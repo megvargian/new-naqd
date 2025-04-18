@@ -111,27 +111,6 @@ p {
 .header-container .logo {
   width: 85px;
 }
-.header-container .social-media-icons {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
-.header-container .social-media-icons img {
-  width: 30px;
-  height: 30px;
-}
-.header-container .social-media-icons .single-social-icon .active {
-  display: none;
-}
-.header-container .social-media-icons .single-social-icon .stroke {
-  display: block;
-}
-.header-container .social-media-icons .single-social-icon:hover .active {
-  display: block;
-}
-.header-container .social-media-icons .single-social-icon:hover .stroke {
-  display: none;
-}
 .header-container .tag-list li a {
   width: 200px;
   color: #fff;
@@ -202,6 +181,28 @@ p {
   width: 100%;
 }
 
+.social-media-icons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.social-media-icons img {
+  width: 30px;
+  height: 30px;
+}
+.social-media-icons .single-social-icon .active {
+  display: none;
+}
+.social-media-icons .single-social-icon .stroke {
+  display: block;
+}
+.social-media-icons .single-social-icon:hover .active {
+  display: block;
+}
+.social-media-icons .single-social-icon:hover .stroke {
+  display: none;
+}
+
 .homepage .single-article {
   border-radius: 15px;
 }
@@ -237,26 +238,25 @@ p {
   border-radius: 15px;
 }
 
-.footer-tags {
+footer .footer-tags {
   display: flex;
   justify-content: start;
   align-items: center;
 }
-.footer-tags li {
+footer .footer-tags li {
   margin: 0 10px;
   border-left: 1px solid #fff;
 }
-.footer-tags li a {
+footer .footer-tags li a {
   font-family: "ManchetteFine-Regular";
   color: #fff;
   font-size: 1.2rem;
   text-align: right;
 }
-.footer-tags li:last-child {
+footer .footer-tags li:last-child {
   border-left: none;
 }
-
-.green-button {
+footer .button-green {
   border-radius: 15px;
   background-color: #B6E60D;
   color: #313136;
@@ -265,4 +265,14 @@ p {
   font-size: 1.2rem;
   border: none;
   outline: none;
+}
+footer p {
+  font-family: "ManchetteFine-Regular";
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: right;
+}
+footer .border-green {
+  width: 100%;
+  border: 7px solid #B6E60D;
 }
