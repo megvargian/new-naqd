@@ -238,7 +238,6 @@ p{
 	}
 	.latestNewsSwiper {
 		position: relative;
-		overflow: visible; /* important if shadow overflows */
 	  }
 
 	.latestNewsSwiper::before {
@@ -246,9 +245,9 @@ p{
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 40px; /* adjust width as needed */
+		width: 250px; /* adjust width as needed */
 		height: 100%;
-		background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+		background: linear-gradient(to right, rgba(0, 0, 0, 2), transparent);
 		z-index: 10;
 		pointer-events: none;
 	}

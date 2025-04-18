@@ -67,7 +67,7 @@ get_header();
                         <?php } ?>
                     </div>
                 </div>
-                <div class="swiper-button-prev-latest"></div>
+                <div class="swiper-button-prev swiper-button-prev-latest-article"></div>
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@ get_header();
             spaceBetween: 10,
             grabCursor: true,
             navigation: {
-                nextEl: ".swiper-button-prev-latest",
+                nextEl: ".swiper-button-prev",
             },
             breakpoints: {
 				// when window width is >= 320px
