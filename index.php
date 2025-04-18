@@ -50,7 +50,7 @@ get_header();
             <?php } ?>
         </div>
         <div class="row pt-3">
-            <div class="col-12 text-right">
+            <div class="col-12 mb-3 text-right">
                 <h2>
                     آخر الأخبار
                 </h2>
