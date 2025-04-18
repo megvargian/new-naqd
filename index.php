@@ -10,12 +10,12 @@ get_header();
 <section class="homepage">
     <div class="container py-5">
         <div class="row bg-color-green mb-2">
-            <div class="col-4 px-0">
+            <div class="col-lg-4 col-12 px-0">
                 <a href="#">
                     <img class="w-100 h-100 d-block main-img" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
                 </a>
             </div>
-            <div class="col-8 px-0">
+            <div class="col-8 d-lg-none d-flex px-0">
                 <div class="p-5 text-left">
                     <p>
                     لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
