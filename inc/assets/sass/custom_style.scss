@@ -251,6 +251,12 @@ p{
 		z-index: 10;
 		pointer-events: none;
 	}
+	.swiper-button-prev-latest-article{
+		color: #fff !important;
+	}
+	.swiper-button-prev-latest-article::after{
+		font-size: 30px !important;
+	}
 }
 
 // footer
