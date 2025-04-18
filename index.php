@@ -73,7 +73,7 @@ get_header();
 </section>
 <script>
     jQuery(document).ready(function($) {
-        var swiper = new Swiper(".mainSwiper", {
+        var swiper = new Swiper(".latestNewsSwiper", {
             slidesPerView: 4,
             spaceBetween: 10,
             breakpoints: {
