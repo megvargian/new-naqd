@@ -27,7 +27,7 @@
 				<div class="col-1 d-flex justify-content-start">
 					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 				</div>
-				<div class="col justify-content-center d-flex align-items-center">
+				<div class="col justify-content-center d-lg-flex d-none align-items-center">
 					<ul class="social-media-icons">
 						<li class="mx-1">
 							<a href="#" class="single-social-icon">
@@ -97,7 +97,7 @@
 					</button>
 				</div>
 			</div>
-			<div class="row justify-content-center">
+			<div class="row justify-content-center d-lg-flex d-none">
 				<div class="col-10">
 					<nav>
 						<ul class="d-flex justify-content-center align-items-center tag-list">

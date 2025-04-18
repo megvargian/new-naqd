@@ -244,7 +244,7 @@ footer .footer-tags {
   align-items: center;
 }
 footer .footer-tags li {
-  margin: 0 10px;
+  padding: 0 10px;
   border-left: 1px solid #fff;
 }
 footer .footer-tags li a {
@@ -261,15 +261,16 @@ footer .button-green {
   background-color: #B6E60D;
   color: #313136;
   font-family: "ManchetteFine-Regular";
-  padding: 0.3rem 1rem;
-  font-size: 1.2rem;
+  padding: 0rem 1rem;
+  font-size: 1.4rem;
   border: none;
   outline: none;
+  margin-right: 10px;
 }
 footer p {
   font-family: "ManchetteFine-Regular";
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: right;
 }
 footer .border-green {

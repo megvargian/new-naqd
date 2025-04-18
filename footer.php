@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="row pb-3">
-            <div class="col-12">
+            <div class="col-12 pb-4">
                 <ul class="footer-tags">
                     <li>
                         <a href="#">
