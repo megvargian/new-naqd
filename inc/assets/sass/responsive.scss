@@ -14,7 +14,13 @@
 }
 
 @media screen and (max-width: 991px) {
-
+	.homepage{
+		.bg-color-green{
+			.main-img{
+				border-radius: 15px;
+			}
+		}
+	}
 }
 
 @media (max-width: 600px){
