@@ -236,3 +236,28 @@ p {
   height: 100%;
   border-radius: 15px;
 }
+
+.footer-tags li {
+  margin: 0 10px;
+  border-left: 1px solid #fff;
+}
+.footer-tags li a {
+  font-family: "ManchetteFine-Regular";
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: right;
+}
+.footer-tags li:last-child {
+  border-left: none;
+}
+
+.green-button {
+  border-radius: 15px;
+  background-color: #B6E60D;
+  color: #313136;
+  font-family: "ManchetteFine-Regular";
+  padding: 0.3rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
