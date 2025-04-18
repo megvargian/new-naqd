@@ -32,11 +32,18 @@ get_header();
             </div>
         </div>
         <div class="row">
-            <?php for($i=0; $i<12; $i++){ ?>
+            <?php for($i=0; $i<8; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <a href="#">
                         <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
                     </a>
+                </div>
+            <?php } ?>
+        </div>
+        <div class="row">
+            <?php for($i=0; $i<8; $i++){ ?>
+                <div class="col-lg-3 col-12 mb-2 px-1">
+                    <iframe class="w-100 d-block single-article" height="640" src="https://www.youtube.com/shorts/2Wg7kmqH5gs" frameborder="0" allowfullscreen></iframe>
                 </div>
             <?php } ?>
         </div>
