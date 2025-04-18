@@ -225,6 +225,7 @@ p {
   padding-bottom: 177.77%; /* 9:16 ratio (shorts) */
   height: 0;
   overflow: hidden;
+  width: 100%;
 }
 .homepage .responsive-short iframe {
   position: absolute;

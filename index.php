@@ -42,8 +42,10 @@ get_header();
         </div>
         <div class="row">
             <?php for($i=0; $i<8; $i++){ ?>
-                <div class="responsive-short">
-                    <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allowfullscreen></iframe>
+                <div class="col-lg-3 col-12 mb-2 px-1">
+                    <div class="responsive-short">
+                        <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
             <?php } ?>
         </div>
