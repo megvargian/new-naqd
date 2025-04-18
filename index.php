@@ -55,7 +55,7 @@ get_header();
                     آخر الأخبار
                 </h2>
             </div>
-            <div class="col-12">
+            <div class="col-12 position-relative">
                 <div class="swiper latestNewsSwiper">
                     <div class="swiper-wrapper">
                         <?php for($i=0; $i<8; $i++){ ?>
@@ -67,6 +67,7 @@ get_header();
                         <?php } ?>
                     </div>
                 </div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
@@ -75,29 +76,34 @@ get_header();
     jQuery(document).ready(function($) {
         var swiper = new Swiper(".latestNewsSwiper", {
             slidesPerView: 4,
-            spaceBetween: 10,
+            spaceBetween: 5,
+            grabCursor: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+            },
             breakpoints: {
 				// when window width is >= 320px
 				320: {
 					slidesPerView: 1.5,
-					spaceBetween: 20
+					spaceBetween: 10,
 				},
 				// when window width is >= 480px
 				480: {
 					slidesPerView: 1.5,
-					spaceBetween: 30
+					spaceBetween: 10,
 				},
 				// when window width is >= 640px
 				640: {
 					slidesPerView: 2,
-					spaceBetween: 40
+					spaceBetween: 10,
 				},
 				991: {
 					slidesPerView: 4,
-					spaceBetween: 20
+					spaceBetween: 5,
 				}
 			}
         });
+        swiper.changeLanguageDirection('rtl');
     })
 </script>
 <?php
