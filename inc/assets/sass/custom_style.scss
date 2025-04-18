@@ -236,6 +236,9 @@ p{
 
 // footer
 .footer-tags{
+	display: flex;
+	justify-content: start;
+	align-items: center;
 	li{
 		margin: 0 10px;
 		border-left: 1px solid #fff;
