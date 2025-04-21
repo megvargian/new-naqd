@@ -291,6 +291,14 @@ p {
 .homepage .most-read-articles ul li .author .date {
   margin-right: 10px;
 }
+.homepage .most-read-articles ul li::marker {
+  padding: 0.5rem;
+  border-radius: 100%;
+  background-color: #B6E60D;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-left: 10px;
+}
 .homepage .most-read-articles ul li:last-child {
   border: none !important;
 }

@@ -287,6 +287,14 @@ p{
 					}
 				}
 			}
+			li::marker {
+				padding: .5rem;
+				border-radius: 100%;
+				background-color: $third_color;
+				font-size: 1.5rem;
+				color: #fff;
+				margin-left: 10px;
+			  }
 			li:last-child{
 				border: none !important;
 			}
