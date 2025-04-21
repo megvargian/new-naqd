@@ -24,7 +24,15 @@
 }
 
 @media (max-width: 600px){
-
+	footer{
+		.footer-tags{
+			li{
+				a{
+					font-size: .9rem;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 470px){

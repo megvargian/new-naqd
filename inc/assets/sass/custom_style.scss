@@ -265,9 +265,11 @@ footer{
 		display: flex;
 		justify-content: start;
 		align-items: center;
+		flex-wrap: wrap;
 		li{
 			padding: 0 10px;
 			border-left: 1px solid #fff;
+			flex: 0 1 auto;
 			a{
 				font-family: $regular;
 				color: #fff;

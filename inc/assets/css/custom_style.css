@@ -264,10 +264,12 @@ footer .footer-tags {
   display: flex;
   justify-content: start;
   align-items: center;
+  flex-wrap: wrap;
 }
 footer .footer-tags li {
   padding: 0 10px;
   border-left: 1px solid #fff;
+  flex: 0 1 auto;
 }
 footer .footer-tags li a {
   font-family: "ManchetteFine-Regular";
