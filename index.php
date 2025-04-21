@@ -47,7 +47,7 @@ get_header();
                         الأكثر قراءة
                     </h2>
                     <ul>
-                        <?php for($i=0; $i<3; $i++){ ?>
+                        <?php for($i=0; $i<5; $i++){ ?>
                             <li>
                                 <h3>
                                     عن التروما التي تعشقنا وتحاول قتلنا
@@ -80,11 +80,13 @@ get_header();
                 </div>
                 <div class="row">
                     <div class="col-12 p-3">
-                        <h4>تصلكم نشرة نقد إلى بريدكم الالكتروني</h4>
-                        <form class="subscribe" action="/">
-                            <input class="email" type="email" placeholder="بريدكم الالكتروني" required>
-                            <button class="submit">الاشتراك</button>
-                        </form>
+                        <div class="subscribe">
+                            <h4 class="pb-3">تصلكم نشرة نقد إلى بريدكم الالكتروني</h4>
+                            <form  action="/">
+                                <input class="email" type="email" placeholder="بريدكم الالكتروني" required>
+                                <button class="submit">الاشتراك</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

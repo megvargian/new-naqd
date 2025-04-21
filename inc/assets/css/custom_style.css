@@ -319,16 +319,16 @@ p {
 .homepage .most-read-articles ul li:last-child {
   border: none !important;
 }
-.homepage h4 {
-  color: #fff;
-  font-size: 1.5rem;
-}
 .homepage .subscribe {
   border-radius: 15px;
   background-color: #FF6F00;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.homepage .subscribe h4 {
+  color: #fff;
+  font-size: 1.5rem;
 }
 .homepage .subscribe input {
   background-color: #fff;
@@ -337,6 +337,7 @@ p {
   color: #000;
   font-size: 1rem;
   margin-left: 7px;
+  text-align: right;
 }
 .homepage .subscribe button {
   background-color: #000;
@@ -344,6 +345,9 @@ p {
   font-size: 1rem;
   border-radius: 20px;
   padding: 0.2rem 0.5rem;
+  border: none;
+  outline: none;
+  margin-bottom: 12px;
 }
 
 footer .footer-tags {
