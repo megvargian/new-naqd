@@ -79,8 +79,12 @@ get_header();
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-
+                    <div class="col-12 p-3">
+                        <h4>تصلكم نشرة نقد إلى بريدكم الالكتروني</h4>
+                        <form class="subscribe" action="/">
+                            <input class="email" type="email" placeholder="بريدكم الالكتروني" required>
+                            <button class="submit">الاشتراك</button>
+                        </form>
                     </div>
                 </div>
             </div>
