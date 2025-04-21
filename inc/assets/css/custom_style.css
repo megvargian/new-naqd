@@ -272,11 +272,14 @@ p {
   text-align: center;
 }
 .homepage .most-read-articles ul {
-  list-style: decimal;
+  list-style: none;
+  counter-reset: item;
 }
 .homepage .most-read-articles ul li {
   padding-bottom: 1rem;
   border-bottom: 1px solid #5D0DE6;
+  position: relative;
+  padding: 1rem 3rem 1rem 1rem;
 }
 .homepage .most-read-articles ul li h3 {
   color: #000;
@@ -293,13 +296,22 @@ p {
 .homepage .most-read-articles ul li .author .date {
   margin-right: 10px;
 }
-.homepage .most-read-articles ul li::marker {
-  padding: 0.5rem;
-  border-radius: 100%;
+.homepage .most-read-articles ul li::before {
+  content: counter(item);
+  counter-increment: item;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #5D0DE6;
-  font-size: 1.5rem;
-  color: #fff;
-  margin-left: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 50%;
 }
 .homepage .most-read-articles ul li:last-child {
   border: none !important;

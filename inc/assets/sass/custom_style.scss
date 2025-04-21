@@ -269,10 +269,13 @@ p{
 			text-align: center;
 		}
 		ul{
-			list-style: decimal;
+			list-style: none;
+			counter-reset: item;
 			li{
 				padding-bottom: 1rem;
 				border-bottom: 1px solid #5D0DE6;
+				position: relative;
+				padding: 1rem 3rem 1rem 1rem;
 				h3{
 					color: #000;
 					font-size: 1.5rem;
@@ -289,14 +292,23 @@ p{
 					}
 				}
 			}
-			li::marker {
-				padding: .5rem;
-				border-radius: 100%;
+			li::before {
+				content: counter(item);
+				counter-increment: item;
+				position: absolute;
+				right: 0.5rem;
+				top: 50%;
+				transform: translateY(-50%);
 				background-color: #5D0DE6;
-				font-size: 1.5rem;
-				color: #fff;
-				margin-left: 10px;
-			  }
+				color: white;
+				font-weight: bold;
+				font-size: 1rem;
+				width: 2rem;
+				height: 2rem;
+				line-height: 2rem;
+				text-align: center;
+				border-radius: 50%;
+			}
 			li:last-child{
 				border: none !important;
 			}
