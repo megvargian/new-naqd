@@ -320,9 +320,13 @@ p{
 	.subscribe{
 		border-radius: 15px;
 		background-color: #FF6F00;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		display: block;
+		padding: .7rem;
+		form{
+			justify-content: center;
+			display: flex;
+			align-items: center;
+		}
 		h4{
 			color: #fff;
 			font-size: 1.5rem;
@@ -335,6 +339,7 @@ p{
 			font-size: 1rem;
 			margin-left: 7px;
 			text-align: right;
+			margin-bottom: 0;
 		}
 		button{
 			background-color: #000;
@@ -344,7 +349,6 @@ p{
 			padding: .2rem .5rem;
 			border: none;
 			outline: none;
-			margin-bottom: 12px;
 		}
 	}
 }
