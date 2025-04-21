@@ -79,7 +79,7 @@ get_header();
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 mb-2 px-1">
                         <div class="subscribe">
                             <h4>تصلكم نشرة نقد إلى بريدكم الالكتروني</h4>
                             <form  action="/">
@@ -91,8 +91,6 @@ get_header();
                 </div>
             </div>
         </div>
-
-
         <div class="row">
             <?php for($i=0; $i<4; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
