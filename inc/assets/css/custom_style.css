@@ -263,6 +263,8 @@ p {
   background-color: #B6E60D;
   padding: 0.7rem;
   border-radius: 15px;
+  display: block;
+  height: 100%;
 }
 .homepage .most-read-articles h2 {
   font-size: 2.5rem;
@@ -294,7 +296,7 @@ p {
 .homepage .most-read-articles ul li::marker {
   padding: 0.5rem;
   border-radius: 100%;
-  background-color: #B6E60D;
+  background-color: #5D0DE6;
   font-size: 1.5rem;
   color: #fff;
   margin-left: 10px;

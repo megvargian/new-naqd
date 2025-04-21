@@ -41,7 +41,7 @@ get_header();
             <?php } ?>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 mb-2 px-1">
                 <div class="most-read-articles">
                     <h2 class="mb-3">
                         الأكثر قراءة
