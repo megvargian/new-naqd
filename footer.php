@@ -17,7 +17,7 @@
                     <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
                 </a>
             </div>
-            <div class="col-5 justify-content-center d-flex align-items-center">
+            <div class="col-lg-5 col-12 justify-content-center d-flex align-items-center">
                 <ul class="social-media-icons">
                     <li class="mx-1">
                         <a href="#" class="single-social-icon">
