@@ -323,6 +323,7 @@ p {
   border-radius: 15px;
   background-color: #FF6F00;
   display: block;
+  padding: 0.7rem;
 }
 .homepage .subscribe form {
   justify-content: center;
