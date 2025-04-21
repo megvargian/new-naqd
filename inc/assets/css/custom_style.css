@@ -259,6 +259,41 @@ p {
 .homepage .swiper-button-prev-latest-article::after {
   font-size: 30px !important;
 }
+.homepage .most-read-articles {
+  background-color: #B6E60D;
+  padding: 0.7rem;
+  border-radius: 15px;
+}
+.homepage .most-read-articles h2 {
+  font-size: 2.5rem;
+  color: #000;
+  text-align: center;
+}
+.homepage .most-read-articles ul {
+  list-style: decimal;
+}
+.homepage .most-read-articles ul li {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #5D0DE6;
+}
+.homepage .most-read-articles ul li h3 {
+  color: #000;
+  font-size: 1.5rem;
+  text-align: right;
+}
+.homepage .most-read-articles ul li .author {
+  font-size: 0.9rem;
+  color: #000;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.homepage .most-read-articles ul li .author .date {
+  margin-right: 10px;
+}
+.homepage .most-read-articles ul li:last-child {
+  border: none !important;
+}
 
 footer .footer-tags {
   display: flex;

@@ -41,6 +41,53 @@ get_header();
             <?php } ?>
         </div>
         <div class="row">
+            <div class="col-lg-6 col-12">
+                <div class="most-read-articles">
+                    <h2 class="mb-3">
+                        الأكثر قراءة
+                    </h2>
+                    <ul>
+                        <?php for($i=0; $i<4; $i++){ ?>
+                            <li>
+                                <h3>
+                                    عن التروما التي تعشقنا وتحاول قتلنا
+                                </h3>
+                                <div class="author">
+                                    <a href="#">
+                                        متري طاهر - كاتب لبناني
+                                    </a>
+                                    <div class="date">
+                                        4 jan 2025
+                                    </div>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="row">
+                    <div class="col-lg-6 col-12 mb-2 px-1">
+                        <a href="#">
+                            <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-12 mb-2 px-1">
+                        <a href="#">
+                            <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
             <?php for($i=0; $i<4; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <div class="responsive-short">
