@@ -435,7 +435,12 @@ footer .border-green {
 }
 .single-product-page .author-section img {
   border-radius: 100%;
-  width: 60px;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+.single-product-page .author-section p {
+  font-size: 0.8rem;
 }
 .single-product-page .author-section a {
   color: #B6E60D;
