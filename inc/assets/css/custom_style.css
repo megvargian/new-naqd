@@ -435,12 +435,12 @@ footer .border-green {
 }
 .single-product-page .author-section img {
   border-radius: 100%;
-  width: 50px;
+  width: 70px;
   height: 50px;
   margin-left: 10px;
 }
 .single-product-page .author-section p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .single-product-page .author-section a {
   color: #B6E60D;
@@ -456,7 +456,7 @@ footer .border-green {
 }
 .single-product-page p {
   font-family: "ManchetteFine-Regular";
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
   margin-bottom: 15px;
 }
