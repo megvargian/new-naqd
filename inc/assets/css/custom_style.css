@@ -251,6 +251,10 @@ p {
   color: #fff;
   margin-bottom: 0;
 }
+.homepage .bg-color-green .lower-part .heart, .homepage .bg-color-green .lower-part .heart-filled {
+  width: 15px;
+  margin-right: 5px;
+}
 .homepage .responsive-short {
   position: relative;
   padding-bottom: 177.77%; /* 9:16 ratio (shorts) */

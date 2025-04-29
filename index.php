@@ -39,8 +39,8 @@ get_header();
                         </div>
                         <div>
                             <p dir="ltr">
-                            <img class="heart" style="width: 15px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
-                            <img class="heart-filled d-none" style="width: 15px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
+                            <img class="heart" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
+                            <img class="heart-filled d-none" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
                             Like this post</p>
                         </div>
                     </div>
