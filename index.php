@@ -38,7 +38,10 @@ get_header();
                             <p dir="ltr">6 jan 2025</p>
                         </div>
                         <div>
-                            <p dir="ltr">♡ Like this post</p>
+                            <p dir="ltr">
+                            <img class="heart" style="width: 15px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
+                            <img class="heart-filled d-none" style="width: 15px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
+                            Like this post</p>
                         </div>
                     </div>
                 </div>
@@ -169,6 +172,14 @@ get_header();
 			}
         });
         swiper.changeLanguageDirection('rtl');
+        $('.heart').click(function(){
+            $(this).addClass('d-none');
+            $('.heart-filled').removeClass('d-none');
+        });
+        $('.heart-filled').click(function(){
+            $(this).addClass('d-none');
+            $('.heart').removeClass('d-none');
+        });
     })
 </script>
 <?php
