@@ -110,8 +110,23 @@ p{
 			border: 1px solid transparent;
 			transition: border-color .3s ease;
 		}
-		li a:hover{
+		li:first-child a:hover{
 			border-color: $third_color;
+		}
+		li:nth-child(1) a:hover{
+			border-color: #fff;
+		}
+		li:nth-child(2) a:hover{
+			border-color: #6b2222;
+		}
+		li:nth-child(3) a:hover{
+			border-color: #232e91;
+		}
+		li:nth-child(4) a:hover{
+			border-color: #3cbb16;
+		}
+		li:nth-child(5) a:hover{
+			border-color: #a00540;
 		}
 	}
 	.hamburger{
