@@ -49,7 +49,7 @@ $title = get_the_title($product_id);
                 ?>
                 <div class="py-5 tags">
                     <h3>المواضيع</h3>
-                    <ul>
+                    <ul class="d-flex">
                         <li>
                             <a href="#">
                             لبنان
