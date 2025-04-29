@@ -501,8 +501,8 @@ footer .border-green {
   height: 100%;
 }
 .single-product-page .related-articles .most-read-articles h2 {
-  font-size: 3.5rem;
-  color: #000;
+  font-size: 2.5rem;
+  color: #fff;
   text-align: center;
 }
 .single-product-page .related-articles .most-read-articles ul {
@@ -519,13 +519,13 @@ footer .border-green {
   margin: auto;
 }
 .single-product-page .related-articles .most-read-articles ul li h3 {
-  color: #000;
-  font-size: 2.5rem;
+  color: #fff;
+  font-size: 1.5rem;
   text-align: right;
 }
 .single-product-page .related-articles .most-read-articles ul li .author {
   font-size: 0.9rem;
-  color: #000;
+  color: #fff;
   display: flex;
   justify-content: start;
   align-items: center;
