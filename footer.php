@@ -126,7 +126,7 @@
             </div>
             <div class="col-12 d-flex justify-content-end py-3">
                 <a href="#">
-                    <img class="d-block" style="width: 80px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
+                    <img class="d-block" style="width: 80px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell.svg" alt="subscribe">
                 </a>
             </div>
         </div>
