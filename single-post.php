@@ -47,6 +47,26 @@ $title = get_the_title($product_id);
                         the_content();
                     endwhile;
                 ?>
+                <div class="py-5">
+                    <h3>المواضيع</h3>
+                    <ul class="tags">
+                        <li>
+                            <a href="#">
+                            لبنان
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            سوريا
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            فلسطين
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="col-1">
                 <div class="social-main">
@@ -108,26 +128,6 @@ $title = get_the_title($product_id);
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="row pb-5">
-            <h3>المواضيع</h3>
-            <ul class="tags">
-                <li>
-                    <a href="#">
-                    لبنان
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    سوريا
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    فلسطين
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
 </section>
