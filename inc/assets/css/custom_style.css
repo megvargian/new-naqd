@@ -431,11 +431,13 @@ footer .border-green {
 }
 
 .single-product-page .social-main {
-  margin-top: 100px;
+  margin-top: 50px;
   position: sticky;
+  width: fit-content;
 }
 .single-product-page .social-media-icons {
   display: block;
+  width: fit-content;
 }
 .single-product-page p {
   font-family: "ManchetteFine-Regular";

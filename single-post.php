@@ -31,15 +31,15 @@ $title = get_the_title($product_id);
                 </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-10">
+        <div class="row justify-content-center">
+            <div class="col-7">
                 <?php
                     while ( have_posts() ) : the_post();
                         the_content();
                     endwhile;
                 ?>
             </div>
-            <div class="col-2">
+            <div class="col-1">
                 <div class="social-main">
                     <ul class="social-media-icons">
                         <li class="mx-1">
