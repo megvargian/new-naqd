@@ -130,7 +130,7 @@ $title = get_the_title($product_id);
             </div>
         </div>
     </div>
-    <section class="related-articles py-4">
+    <section class="related-articles py-5">
         <div class="container">
             <div class="row">
                 <div class="col-8">
@@ -147,7 +147,7 @@ $title = get_the_title($product_id);
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4" style="border-right: 1px solid #fff;">
                     <div class="most-read-articles">
                         <h2 class="mb-3">
                             الأكثر قراءة
