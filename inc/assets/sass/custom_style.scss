@@ -465,6 +465,21 @@ footer{
 		color: #fff;
 		margin-bottom: 15px;
 	}
+	.tags{
+		h3{
+			font-size: 2rem;
+			color: $third_color;
+			margin-bottom: 15px;
+			font-family: $regular;
+			display: block;
+		}
+		a{
+			color: #fff;
+			font-size: 1rem;
+			margin-right: 5px;
+			font-family: $regular;
+		}
+	}
 	.lower-part{
 		a{
 			font-family: $regular;

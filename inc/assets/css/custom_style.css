@@ -460,6 +460,19 @@ footer .border-green {
   color: #fff;
   margin-bottom: 15px;
 }
+.single-product-page .tags h3 {
+  font-size: 2rem;
+  color: #B6E60D;
+  margin-bottom: 15px;
+  font-family: "ManchetteFine-Regular";
+  display: block;
+}
+.single-product-page .tags a {
+  color: #fff;
+  font-size: 1rem;
+  margin-right: 5px;
+  font-family: "ManchetteFine-Regular";
+}
 .single-product-page .lower-part a {
   font-family: "ManchetteFine-Regular";
   font-size: 1rem;

@@ -40,7 +40,7 @@ $title = get_the_title($product_id);
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center pt-5">
+        <div class="row justify-content-center py-5">
             <div class="col-8">
                 <?php
                     while ( have_posts() ) : the_post();
@@ -108,6 +108,26 @@ $title = get_the_title($product_id);
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="row pb-5">
+            <h3>المواضيع</h3>
+            <ul class="tags">
+                <li>
+                    <a href="#">
+                    لبنان
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    سوريا
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    فلسطين
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
