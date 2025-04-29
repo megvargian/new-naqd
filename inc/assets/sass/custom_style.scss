@@ -433,6 +433,18 @@ footer{
 }
 //single-post
 .single-product-page{
+	.main-img{
+		border-radius: 15px;
+	}
+	.author-section{
+		img{
+			border-radius: 100%;
+			width: 60px;
+		}
+		a{
+			color: $third_color;
+		}
+	}
 	.social-main{
 		position: sticky;
 		top: 5%;

@@ -430,6 +430,16 @@ footer .border-green {
   border: 7px solid #B6E60D;
 }
 
+.single-product-page .main-img {
+  border-radius: 15px;
+}
+.single-product-page .author-section img {
+  border-radius: 100%;
+  width: 60px;
+}
+.single-product-page .author-section a {
+  color: #B6E60D;
+}
 .single-product-page .social-main {
   position: sticky;
   top: 5%;

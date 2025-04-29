@@ -14,7 +14,7 @@ $title = get_the_title($product_id);
     <div class="container">
         <div class="row justify-content-center pt-5">
             <div class="col-lg-6 col-12">
-                <img class="w-100 d-block" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $title; ?>">
+                <img class="w-100 d-block main-img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $title; ?>">
                 <div class="d-flex justify-content-between align-items-center lower-part py-4 w-100">
                     <div class="d-flex justify-content-center align-items-center">
                         <a href="#">
@@ -29,10 +29,19 @@ $title = get_the_title($product_id);
                         Like this post</p>
                     </div>
                 </div>
+                <div class="pt-4 pb-5 w-100 d-flex author-section">
+                    <img class="" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                    <p>
+                        هي صحفية علمية كبيرة تغطي مواضيع الطاقة والبيئة ولديها أكثر من عقد من الخبرة. كما أنها مقدمة بودكاست "الجحيم أو الطوفان: عندما تضرب الكارثة الوطن"، وهو بودكاست من إنتاج فوكس
+                        <a href="#">
+                            رهادة الصعبي
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-7">
+        <div class="row justify-content-center pt-5">
+            <div class="col-8">
                 <?php
                     while ( have_posts() ) : the_post();
                         the_content();
