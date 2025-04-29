@@ -146,6 +146,7 @@ get_header();
             slidesPerView: 4,
             spaceBetween: 10,
             grabCursor: true,
+            loop: true,
             navigation: {
                 nextEl: ".swiper-button-prev",
             },
