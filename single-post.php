@@ -131,42 +131,46 @@ $title = get_the_title($product_id);
         </div>
     </div>
     <section class="related-articles py-4">
-        <div class="col-8">
-            <div class="more">
-                <h2 class="mb-3">
-                    الأكثر قراءة
-                </h2>
-                <div class="row">
-                    <?php for($i=0; $i<5; $i++){ ?>
-                        <div class="col-3">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="most-read-articles">
-                <h2 class="mb-3">
-                    الأكثر قراءة
-                </h2>
-                <ul>
-                    <?php for($i=0; $i<5; $i++){ ?>
-                        <li>
-                            <h3>
-                                عن التروما التي تعشقنا وتحاول قتلنا
-                            </h3>
-                            <div class="author">
-                                <a href="#">
-                                    متري طاهر - كاتب لبناني
-                                </a>
-                                <div class="date">
-                                    4 jan 2025
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="more">
+                        <h2 class="mb-3">
+                            الأكثر قراءة
+                        </h2>
+                        <div class="row">
+                            <?php for($i=0; $i<5; $i++){ ?>
+                                <div class="col-3">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
                                 </div>
-                            </div>
-                        </li>
-                    <?php } ?>
-                </ul>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="most-read-articles">
+                        <h2 class="mb-3">
+                            الأكثر قراءة
+                        </h2>
+                        <ul>
+                            <?php for($i=0; $i<5; $i++){ ?>
+                                <li>
+                                    <h3>
+                                        عن التروما التي تعشقنا وتحاول قتلنا
+                                    </h3>
+                                    <div class="author">
+                                        <a href="#">
+                                            متري طاهر - كاتب لبناني
+                                        </a>
+                                        <div class="date">
+                                            4 jan 2025
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
