@@ -17,7 +17,7 @@ get_header();
             </div>
             <div class="col-8 d-lg-flex d-none px-0">
                 <div class="d-flex justify-content-between align-items-center flex-column">
-                    <div class="p-5 text-left">
+                    <div class="p-5 pb-0 text-left">
                         <p>
                         لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
                         </p>
@@ -31,7 +31,7 @@ get_header();
                         </p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center lower-part">
-                        <div class="d-flex justify-content-start align-items-center">
+                        <div class="d-flex justify-content-center align-items-center">
                             <a href="#">
                                 مرزي طاهر - كاتب لبناني
                             </a>

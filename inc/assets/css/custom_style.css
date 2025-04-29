@@ -242,10 +242,13 @@ p {
   font-family: "ManchetteFine-Regular";
   font-size: 1rem;
   margin-left: 10px;
+  color: #fff;
+  text-align: right;
 }
 .homepage .bg-color-green .lower-part p {
   font-family: "ManchetteFine-Regular";
   font-size: 1rem;
+  color: #fff;
 }
 .homepage .responsive-short {
   position: relative;
@@ -310,7 +313,7 @@ p {
 }
 .homepage .most-read-articles ul li h3 {
   color: #000;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-align: right;
 }
 .homepage .most-read-articles ul li .author {
