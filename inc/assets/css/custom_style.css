@@ -429,3 +429,34 @@ footer .border-green {
   width: 100%;
   border: 7px solid #B6E60D;
 }
+
+.single-product-page .social-main {
+  margin-top: 100px;
+  position: sticky;
+}
+.single-product-page .social-media-icons {
+  display: block;
+}
+.single-product-page p {
+  font-family: "ManchetteFine-Regular";
+  font-size: 1rem;
+  color: #fff;
+}
+.single-product-page .lower-part a {
+  font-family: "ManchetteFine-Regular";
+  font-size: 1rem;
+  margin-left: 10px;
+  color: #fff;
+  text-align: right;
+}
+.single-product-page .lower-part p {
+  font-family: "ManchetteFine-Regular";
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0;
+}
+.single-product-page .lower-part .heart, .single-product-page .lower-part .heart-filled {
+  width: 15px;
+  margin-right: 5px;
+  cursor: pointer;
+}

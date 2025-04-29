@@ -431,3 +431,38 @@ footer{
 		border: 7px solid #B6E60D;
 	}
 }
+//single-post
+.single-product-page{
+	.social-main{
+		margin-top: 100px;
+		position: sticky;
+	}
+	.social-media-icons{
+		display: block;
+	}
+	p{
+		font-family: $regular;
+		font-size: 1rem;
+		color: #fff;
+	}
+	.lower-part{
+		a{
+			font-family: $regular;
+			font-size: 1rem;
+			margin-left: 10px;
+			color: #fff;
+			text-align: right;
+		}
+		p{
+			font-family: $regular;
+			font-size: 1rem;
+			color: #fff;
+			margin-bottom: 0;
+		}
+		.heart, .heart-filled{
+			width: 15px;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+	}
+}
