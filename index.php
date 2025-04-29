@@ -35,10 +35,10 @@ get_header();
                             <a href="#">
                                 مرزي طاهر - كاتب لبناني
                             </a>
-                            <p>6 jan 2025</p>
+                            <p dir="ltr">6 jan 2025</p>
                         </div>
                         <div>
-                            <p>♡ Like this post</p>
+                            <p dir="ltr">♡ Like this post</p>
                         </div>
                     </div>
                 </div>
