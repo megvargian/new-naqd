@@ -141,7 +141,7 @@ $title = get_the_title($product_id);
                         <div class="row">
                             <?php for($i=0; $i<5; $i++){ ?>
                                 <div class="col-3">
-                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
+                                    <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
                                 </div>
                             <?php } ?>
                         </div>
