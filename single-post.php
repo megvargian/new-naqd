@@ -47,9 +47,9 @@ $title = get_the_title($product_id);
                         the_content();
                     endwhile;
                 ?>
-                <div class="py-5">
+                <div class="py-5 tags">
                     <h3>المواضيع</h3>
-                    <ul class="tags">
+                    <ul>
                         <li>
                             <a href="#">
                             لبنان
