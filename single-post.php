@@ -140,8 +140,8 @@ $title = get_the_title($product_id);
                         </h2>
                         <div class="row">
                             <?php for($i=0; $i<8; $i++){ ?>
-                                <div class="col-3">
-                                    <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100 px-1 mb-2">
+                                <div class="col-3 px-1 mb-2">
+                                    <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
                                 </div>
                             <?php } ?>
                         </div>
