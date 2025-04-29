@@ -254,6 +254,7 @@ p {
 .homepage .bg-color-green .lower-part .heart, .homepage .bg-color-green .lower-part .heart-filled {
   width: 15px;
   margin-right: 5px;
+  cursor: pointer;
 }
 .homepage .responsive-short {
   position: relative;
