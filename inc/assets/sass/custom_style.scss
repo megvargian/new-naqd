@@ -213,7 +213,6 @@ p{
 		}
 	}
 }
-
 //homepage
 .homepage{
 	.single-article{
@@ -232,6 +231,17 @@ p{
 			font-size: 1.3rem;
 			text-align: right;
 			margin-bottom: 1.5rem;
+		}
+		.lower-part{
+			a{
+				font-family: $regular;
+				font-size: 1rem;
+				margin-left: 10px;
+			}
+			p{
+				font-family: $regular;
+				font-size: 1rem;
+			}
 		}
 	}
 	.responsive-short {
@@ -368,7 +378,6 @@ p{
 		}
 	}
 }
-
 // footer
 footer{
 	.footer-tags{

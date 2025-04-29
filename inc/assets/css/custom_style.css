@@ -238,6 +238,15 @@ p {
   text-align: right;
   margin-bottom: 1.5rem;
 }
+.homepage .bg-color-green .lower-part a {
+  font-family: "ManchetteFine-Regular";
+  font-size: 1rem;
+  margin-left: 10px;
+}
+.homepage .bg-color-green .lower-part p {
+  font-family: "ManchetteFine-Regular";
+  font-size: 1rem;
+}
 .homepage .responsive-short {
   position: relative;
   padding-bottom: 177.77%; /* 9:16 ratio (shorts) */
