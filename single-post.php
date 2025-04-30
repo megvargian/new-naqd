@@ -41,7 +41,7 @@ $title = get_the_title($product_id);
             </div>
         </div>
         <div class="row justify-content-center py-5">
-            <div class="col-lg-8 col-11">
+            <div class="col-lg-8 col-10">
                 <?php
                     while ( have_posts() ) : the_post();
                         the_content();
@@ -68,7 +68,7 @@ $title = get_the_title($product_id);
                     </ul>
                 </div>
             </div>
-            <div class="col-1">
+            <div class="col-2">
                 <div class="social-main">
                     <ul class="social-media-icons">
                         <li class="my-1">

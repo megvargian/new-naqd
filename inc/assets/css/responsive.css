@@ -4,6 +4,15 @@
   }
 }
 @media (max-width: 600px) {
+  .single-product-page p {
+    font-size: 1rem;
+  }
+  .single-product-page .lower-part a {
+    font-size: 0.9rem;
+  }
+  .single-product-page .lower-part p {
+    font-size: 0.9rem;
+  }
   footer .footer-tags li a {
     font-size: 0.9rem;
   }
