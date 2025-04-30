@@ -51,7 +51,7 @@ get_header();
         <div class="row">
             <?php for($i=0; $i<8; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <a href="#">
+                    <a href="/test1/">
                         <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
                     </a>
                 </div>
