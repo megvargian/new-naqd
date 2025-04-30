@@ -1,4 +1,22 @@
+@media (max-width: 1540px) {
+  .menu_on_mobile {
+    width: 30%;
+    height: 70dvh;
+  }
+  .menu_on_mobile .menu_on_mobile_wrapper {
+    width: 30%;
+    height: 70dvh;
+  }
+}
 @media screen and (max-width: 991px) {
+  .menu_on_mobile {
+    width: 100%;
+    height: 100dvh;
+  }
+  .menu_on_mobile .menu_on_mobile_wrapper {
+    width: 100%;
+    height: 100dvh;
+  }
   .homepage .bg-color-green .main-img {
     border-radius: 15px;
   }
