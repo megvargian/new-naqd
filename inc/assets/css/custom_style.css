@@ -221,7 +221,7 @@ p {
 }
 .header-container .menu_on_mobile {
   width: 30%;
-  height: 50dvh;
+  height: 70dvh;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -248,7 +248,7 @@ p {
 .header-container .menu_on_mobile .menu_on_mobile_wrapper {
   display: table;
   width: 30%;
-  height: 50dvh;
+  height: 70dvh;
   position: relative;
 }
 .header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper {
