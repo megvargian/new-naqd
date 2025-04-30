@@ -20,6 +20,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div class="transparent-black-overlay d-none"></div>
 <div id="page" class="site main_page_wrapper">
 	<header id="masthead" class="header-container py-4">
 		<div class="container px-4">
@@ -174,6 +175,15 @@ jQuery(document).ready(function($) {
 		$(this).toggleClass('active');
 		$('html, body').toggleClass('hide_scroll');
 		$('.menu_on_mobile').toggleClass('active');
+		$('.transparent-black-overlay').toggleClass('d-none');
+	});
+	$(document).on("click", function(event) {
+		if (!$(event.target).closest(".menu_on_mobile").length) {
+			$('.menu_mobile_nav').removeClass('active');
+			$('html, body').removeClass('hide_scroll');
+			$('.menu_on_mobile').removeClass('active');
+			$('.transparent-black-overlay').addClass('d-none');
+		}
 	});
 });
 </script>
