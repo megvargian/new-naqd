@@ -188,20 +188,22 @@ p{
 		}
 	}
 	.menu_on_mobile{
-		width: 100%;
-		height: 100dvh;
+		width: 40%;
+		height: 40dvh;
 		position: fixed;
 		top: 0px;
-		right: 0px;
+		left: 0px;
 		transform: translateX(-100vw);
 		transition: cubic-bezier(0.32, 0.17, 0, 1) 1s;
-		background-color: $main_color;
+		background-color: #5D0EE6;
 		text-align: right;
 		font-size: 20px;
 		text-align: center;
 		z-index: 10;
 		overflow: auto;
 		padding: 0px 30px;
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
 		.page_font{
 			font-size: 22px;
 			margin-bottom: 10px;
@@ -232,8 +234,8 @@ p{
 	.menu_on_mobile{
 		.menu_on_mobile_wrapper{
 			display: table;
-			width: 100%;
-			height: 100vh;
+			width: 40%;
+			height: 40dvh;
 			position: relative;
 			.menu_on_mobile_inner_wrapper{
 				display: table-cell;
@@ -256,59 +258,8 @@ p{
 					}
 				}
 				.page_font{
-
 					font-size: 18px;
 					color: #fff;
-				}
-				.industries-dropdown{
-					cursor: pointer;
-					margin-bottom: 0px;
-					.menu_item_main{
-						margin-bottom: 1rem;
-					}
-					.dropdown-sub-industries{
-						font-size: 20px;
-						text-align: center;
-						transition: opacity .5s ease-in;
-						opacity: 0;
-						height: 0;
-						overflow: hidden;
-					}
-				}
-				.industries-dropdown.active{
-					.menu_item_main{
-						margin-bottom: 0rem;
-					}
-					.dropdown-sub-industries{
-						padding: 1rem 0rem;
-						opacity: 1;
-						height: auto;
-					}
-				}
-				.followUs-class{
-					position: absolute;
-					bottom: 0;
-					transform: translateX(30px);
-					transition: 0.5s;
-					opacity: 0;
-					right: 50%;
-					.title{
-						font-size: 10px;
-						line-height: 12px;
-
-						color: #000;
-						text-align: center
-					}
-					ul{
-						display: flex;
-						li{
-							display: inline-block;
-							margin-right: 25px;
-						}
-						li:last-child{
-							margin-right: 0px
-						}
-					}
 				}
 			}
 			.menu_on_mobile_inner_wrapper ul li{
@@ -320,12 +271,6 @@ p{
 				}
 			}
 		}
-		.menu_on_mobile_wrapper.submenu-active{
-			height: 130vh;
-		}
-	}
-	.menu_on_mobile.scroll_in_mobile_menu{
-		overflow-y: auto !important;
 	}
 	.menu_on_mobile.active{
 		.menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .animated_menu_el{
