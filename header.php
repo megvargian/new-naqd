@@ -176,7 +176,7 @@
 								</a>
 							</li>
 						</ul>
-						<ul class="social-media-icons">
+						<ul class="social-media-icons pt-3">
 							<li class="mx-1">
 								<a href="#" class="single-social-icon">
 									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
