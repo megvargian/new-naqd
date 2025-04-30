@@ -224,7 +224,7 @@ p{
 		border-top-right-radius: 15px;
 		border-bottom-right-radius: 15px;
 		.page_font{
-			font-size: 22px;
+			font-size: 6rem;
 			margin-top: 10px;
 		}
 	}
@@ -243,23 +243,14 @@ p{
 	.menu_on_mobile{
 		.menu_on_mobile_wrapper{
 			display: table;
-			width: 40%;
-			height: 40dvh;
+			width: 30%;
+			height: 50dvh;
 			position: relative;
 			.menu_on_mobile_inner_wrapper{
 				display: table-cell;
 				vertical-align: middle;
 				height: 100%;
 				width: 100%;
-				ul{
-					padding: 0px 30px;
-				}
-				li{
-					border-bottom: 1px solid $third_color;
-				}
-				li:nth-child(5){
-					border-bottom: none;
-				}
 				.animated_menu_el{
 					transition: 0.5s;
 					transform: translateX(-30px);
@@ -270,13 +261,20 @@ p{
 					color: #fff;
 				}
 			}
+			.menu_on_mobile_inner_wrapper ul{
+				padding: 0px 30px;
+			}
 			.menu_on_mobile_inner_wrapper ul li{
 				justify-content: start;
 				display: flex;
+				border-bottom: 1px solid $third_color;
 				a{
 					width: fit-content;
 					font-size: 1.6rem;
 				}
+			}
+			.menu_on_mobile_inner_wrapper ul li:nth-child(5){
+				border-bottom: 1px solid $third_color;
 			}
 		}
 	}
