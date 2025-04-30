@@ -131,6 +131,41 @@
 				</div>
 			</div>
 		</div>
+		<div id="menu_mobile" class="menu_on_mobile">
+			<div class="menu_on_mobile_wrapper">
+				<div class="menu_on_mobile_inner_wrapper" style="position: relative;">
+					<div>
+						<ul>
+							<li>
+								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+									لبنان
+								</a>
+							</li>
+							<li>
+								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								    العالم العربي
+								</a>
+							</li>
+							<li>
+								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								   العالم
+								</a>
+							</li>
+							<li>
+								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								   مجتمع
+								</a>
+							</li>
+							<li>
+								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+									تقارير
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</header>
 </div>
 <script>
@@ -138,6 +173,7 @@ jQuery(document).ready(function($) {
 	$('.menu_mobile_nav').click(function(event) {
 		$(this).toggleClass('active');
 		$('html, body').toggleClass('hide_scroll');
+		$('.menu_on_mobile').toggleClass('active');
 	});
 });
 </script>
