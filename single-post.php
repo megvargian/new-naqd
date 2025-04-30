@@ -30,7 +30,7 @@ $title = get_the_title($product_id);
                     </div>
                 </div>
                 <div class="pt-4 pb-5 w-100 d-flex author-section">
-                    <img class="" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                    <img class="" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/avatar.png" alt="">
                     <p>
                         <a href="#">
                             رهادة الصعبي
