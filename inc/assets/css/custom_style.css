@@ -553,3 +553,11 @@ footer .border-green {
 .single-product-page .related-articles .most-read-articles ul li:last-child {
   border: none !important;
 }
+
+.border-right-white {
+  border-right: 1px solid #fff;
+}
+
+.custom-padding {
+  padding-left: 2.5rem;
+}

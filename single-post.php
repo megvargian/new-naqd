@@ -138,7 +138,7 @@ $title = get_the_title($product_id);
                         <h2 class="mb-3">
                             المزيد
                         </h2>
-                        <div class="row" style="padding-left: 2.5rem;">
+                        <div class="row custom-padding">
                             <?php for($i=0; $i<8; $i++){ ?>
                                 <div class="col-lg-3 col-6 px-1 mb-2">
                                     <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
@@ -147,7 +147,7 @@ $title = get_the_title($product_id);
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-12" style="border-right: 1px solid #fff;">
+                <div class="col-lg-4 col-12 border-right-white">
                     <div class="most-read-articles">
                         <h2 class="mb-3">
                             الأكثر قراءة

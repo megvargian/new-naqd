@@ -2,6 +2,12 @@
   .homepage .bg-color-green .main-img {
     border-radius: 15px;
   }
+  .border-right-white {
+    border-right: none;
+  }
+  .custom-padding {
+    padding-left: 0;
+  }
 }
 @media (max-width: 600px) {
   .single-product-page p {
