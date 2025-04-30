@@ -157,7 +157,9 @@
 									نشرة نقد
 								</a>
 							</li>
-							<div class="green-border"></div>
+						</ul>
+						<div class="green-border"></div>
+						<ul>
 							<li>
 								<a class="d-block mb-3 page_font animated_menu_el" href="#">
 								    اكتبوا معنا

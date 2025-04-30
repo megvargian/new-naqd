@@ -102,7 +102,8 @@ body {
   }
 }
 .green-border {
-  border-top: 5px solid #B6E60D;
+  border-top: 10px solid #B6E60D;
+  width: 100%;
 }
 
 body.hide_scroll {
@@ -219,8 +220,8 @@ p {
   width: 100%;
 }
 .header-container .menu_on_mobile {
-  width: 40%;
-  height: 40dvh;
+  width: 30%;
+  height: 50dvh;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -232,23 +233,12 @@ p {
   text-align: center;
   z-index: 10;
   overflow: auto;
-  padding: 0px 30px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .header-container .menu_on_mobile .page_font {
   font-size: 22px;
-  margin-bottom: 10px;
-}
-.header-container .menu_on_mobile .search_icon {
-  margin-bottom: 15px;
-  padding-bottom: 20px;
   margin-top: 10px;
-}
-.header-container .menu_on_mobile .social_media {
-  font-size: 18px;
-  margin-bottom: 10px;
-  display: inline-block;
 }
 .header-container .menu_on_mobile.active {
   transform: translateX(0%);
@@ -267,22 +257,22 @@ p {
   height: 100%;
   width: 100%;
 }
+.header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper ul {
+  padding: 0px 30px;
+}
+.header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper li {
+  border-bottom: 1px solid #B6E60D;
+}
+.header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper li:nth-child(5) {
+  border-bottom: none;
+}
 .header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .animated_menu_el {
   transition: 0.5s;
   transform: translateX(-30px);
   opacity: 0;
 }
-.header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .animated_menu_el .menu_item {
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
-}
-.header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .animated_menu_el .menu_item-request-demo {
-  display: inline-block;
-  cursor: pointer;
-}
 .header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .page_font {
-  font-size: 18px;
+  font-size: 1.6rem;
   color: #fff;
 }
 .header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper ul li {
@@ -291,7 +281,7 @@ p {
 }
 .header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper ul li a {
   width: fit-content;
-  font-size: 18px;
+  font-size: 1.6rem;
 }
 .header-container .menu_on_mobile.active .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .animated_menu_el {
   transform: translateX(0px);
