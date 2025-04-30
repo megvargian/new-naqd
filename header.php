@@ -138,22 +138,22 @@
 					<div>
 						<ul>
 							<li>
-								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="#">
 									أهلًا بنا
 								</a>
 							</li>
 							<li>
-								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="#">
 									منشورات
 								</a>
 							</li>
 							<li>
-								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="#">
 									شاهد
 								</a>
 							</li>
 							<li>
-								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="#">
 									نشرة نقد
 								</a>
 							</li>
@@ -161,17 +161,17 @@
 						<div class="green-border"></div>
 						<ul>
 							<li>
-								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="#">
 								    اكتبوا معنا
 								</a>
 							</li>
 							<li>
-								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="#">
 									عن نقد
 								</a>
 							</li>
 							<li>
-								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="#">
 									اتصلوا بنا
 								</a>
 							</li>

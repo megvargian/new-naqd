@@ -278,7 +278,7 @@ p {
   width: fit-content;
   font-size: 1.6rem;
 }
-.header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper ul li:nth-child(5) {
+.header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper ul li:nth-child(4) {
   border-bottom: 1px solid #B6E60D;
 }
 .header-container .menu_on_mobile.active .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .animated_menu_el {
