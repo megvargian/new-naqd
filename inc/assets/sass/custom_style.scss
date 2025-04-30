@@ -274,7 +274,10 @@ p{
 				}
 			}
 			.menu_on_mobile_inner_wrapper ul li:nth-child(4){
-				border-bottom: 1px solid $third_color;
+				border-bottom: none;
+			}
+			.social-media-icons ul li {
+				border-bottom: none !important;
 			}
 		}
 	}
