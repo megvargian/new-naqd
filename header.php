@@ -178,7 +178,7 @@ jQuery(document).ready(function($) {
 		$('.transparent-black-overlay').toggleClass('d-none');
 	});
 	$(document).on("click", function(event) {
-		if (!$(event.target).closest(".menu_on_mobile").length || !$(event.target).closest(".menu_mobile_nav").length ) {
+		if (!$(event.target).closest(".menu_on_mobile").length && !$(event.target).closest(".menu_mobile_nav").length ) {
 			$('.menu_mobile_nav').removeClass('active');
 			$('html, body').removeClass('hide_scroll');
 			$('.menu_on_mobile').removeClass('active');
