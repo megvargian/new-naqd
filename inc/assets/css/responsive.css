@@ -40,6 +40,12 @@
   }
 }
 @media (max-width: 600px) {
+  .homepage .most-read-articles h2 {
+    font-size: 2.5rem;
+  }
+  .homepage .most-read-articles ul li h3 {
+    font-size: 1.5rem;
+  }
   .single-product-page p {
     font-size: 1rem;
   }
