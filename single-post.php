@@ -41,7 +41,7 @@ $title = get_the_title($product_id);
             </div>
         </div>
         <div class="row justify-content-center py-5">
-            <div class="col-8">
+            <div class="col-lg-8 col-11">
                 <?php
                     while ( have_posts() ) : the_post();
                         the_content();
@@ -133,21 +133,21 @@ $title = get_the_title($product_id);
     <section class="related-articles py-5">
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-lg-8 col-12">
                     <div class="more">
                         <h2 class="mb-3">
                             المزيد
                         </h2>
                         <div class="row" style="padding-left: 2.5rem;">
                             <?php for($i=0; $i<8; $i++){ ?>
-                                <div class="col-3 px-1 mb-2">
+                                <div class="col-lg-3 col-6 px-1 mb-2">
                                     <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
                                 </div>
                             <?php } ?>
                         </div>
                     </div>
                 </div>
-                <div class="col-4" style="border-right: 1px solid #fff;">
+                <div class="col-lg-4 col-12" style="border-right: 1px solid #fff;">
                     <div class="most-read-articles">
                         <h2 class="mb-3">
                             الأكثر قراءة
