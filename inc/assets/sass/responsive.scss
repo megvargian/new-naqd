@@ -17,9 +17,19 @@
 }
 
 @media (max-width: 1367px){
+	.header-container{
+		.menu_on_mobile{
+			width: 32%;
+		}
+	}
 }
 
 @media (max-width: 1199px){
+	.header-container{
+		.menu_on_mobile{
+			width: 34%;
+		}
+	}
 }
 
 @media screen and (max-width: 991px) {
