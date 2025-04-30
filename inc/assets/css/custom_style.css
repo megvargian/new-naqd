@@ -101,6 +101,10 @@ body {
     opacity: 1;
   }
 }
+.green-border {
+  border-top: 5px solid #B6E60D;
+}
+
 body.hide_scroll {
   overflow-y: hidden !important;
 }

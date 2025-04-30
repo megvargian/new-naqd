@@ -87,6 +87,9 @@ body{
 		opacity: 1;
 	}
 }
+.green-border{
+	border-top: 5px solid $third_color;
+}
 body.hide_scroll{
 	overflow-y: hidden !important;
 }

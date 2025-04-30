@@ -23,7 +23,7 @@
 <div class="transparent-black-overlay d-none"></div>
 <div id="page" class="site main_page_wrapper">
 	<header id="masthead" class="header-container py-4">
-		<div class="container px-4">
+		<div class="container-fluid px-4">
 			<div class="row">
 				<div class="col-1 d-flex justify-content-start">
 					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
@@ -139,27 +139,94 @@
 						<ul>
 							<li>
 								<a class="d-block mb-3 page_font animated_menu_el" href="#">
-									لبنان
+									أهلًا بنا
 								</a>
 							</li>
 							<li>
 								<a class="d-block mb-3 page_font animated_menu_el" href="#">
-								    العالم العربي
+									منشورات
 								</a>
 							</li>
 							<li>
 								<a class="d-block mb-3 page_font animated_menu_el" href="#">
-								   العالم
+									شاهد
 								</a>
 							</li>
 							<li>
 								<a class="d-block mb-3 page_font animated_menu_el" href="#">
-								   مجتمع
+									نشرة نقد
+								</a>
+							</li>
+							<div class="green-border"></div>
+							<li>
+								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+								    اكتبوا معنا
 								</a>
 							</li>
 							<li>
 								<a class="d-block mb-3 page_font animated_menu_el" href="#">
-									تقارير
+									عن نقد
+								</a>
+							</li>
+							<li>
+								<a class="d-block mb-3 page_font animated_menu_el" href="#">
+									اتصلوا بنا
+								</a>
+							</li>
+						</ul>
+						<ul class="social-media-icons">
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon.svg" alt="fb">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb.svg" alt="fb">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="linkedin">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/in.svg" alt="linkedin">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="RSS">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss.svg" alt="RSS">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="threads">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads.svg" alt="threads">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="tiktok">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok.svg" alt="tiktok">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon.svg" alt="whatsapp">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp.svg" alt="whatsapp">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="X">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x.svg" alt="X">
+								</a>
+							</li>
+							<li class="mx-1">
+								<a href="#" class="single-social-icon">
+									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="youtube">
+									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube.svg" alt="youtube">
 								</a>
 							</li>
 						</ul>
