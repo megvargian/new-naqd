@@ -136,9 +136,9 @@ $title = get_the_title($product_id);
                 <div class="col-8">
                     <div class="more">
                         <h2 class="mb-3">
-                            الأكثر قراءة
+                            المزيد
                         </h2>
-                        <div class="row">
+                        <div class="row" style="padding-left: 2.5rem;">
                             <?php for($i=0; $i<8; $i++){ ?>
                                 <div class="col-3 px-1 mb-2">
                                     <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
