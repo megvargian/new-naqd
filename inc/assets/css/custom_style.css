@@ -241,7 +241,7 @@ p {
   margin-top: 10px;
 }
 .header-container .menu_on_mobile .search-form {
-  padding: 50px 15px 30px 15px;
+  padding: 60px 15px 15px 15px;
 }
 .header-container .menu_on_mobile .search-form input {
   background-color: #7B39ED;
@@ -254,13 +254,18 @@ p {
   direction: rtl;
   text-align: right;
 }
+.header-container .menu_on_mobile .search-form input::placeholder {
+  color: #fff;
+  font-family: "ManchetteFine-Regular";
+}
 .header-container .menu_on_mobile .search-form button {
   position: absolute;
   left: 0;
-  top: 2%;
+  top: 14%;
   background-color: transparent;
   border: none;
   outline: none;
+  padding: 0 10px;
 }
 .header-container .menu_on_mobile .search-form button img {
   width: 15px;

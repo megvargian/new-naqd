@@ -228,7 +228,7 @@ p{
 			margin-top: 10px;
 		}
 		.search-form{
-			padding: 50px 15px 30px 15px;
+			padding: 60px 15px 15px 15px;
 			input{
 				background-color: #7B39ED;
 				color: white;
@@ -240,13 +240,18 @@ p{
 				direction: rtl;
 				text-align: right;
 			}
+			input::placeholder{
+				color: #fff;
+				font-family: $regular;
+			}
 			button{
 				position: absolute;
 				left: 0;
-				top: 2%;
+				top: 14%;
 				background-color: transparent;
 				border: none;
 				outline: none;
+				padding: 0 10px;
 				img{
 					width: 15px;
 					height: 15px;
