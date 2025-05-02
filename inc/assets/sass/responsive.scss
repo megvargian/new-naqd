@@ -44,6 +44,19 @@
 			.menu_on_mobile_wrapper{
 				width: 100%;
 				height: 100dvh;
+				.menu_on_mobile_inner_wrapper ul {
+					padding: 0 10px;
+				}
+			}
+		}
+		.menu_mobile_nav.active{
+			.hamburger_menu_icon{
+				.middle_line{
+					transform: translateX(2000%);
+					background-color: #fff;
+					height: 4px;
+					width: 100%;
+				}
 			}
 		}
 	}
