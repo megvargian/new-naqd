@@ -1,6 +1,6 @@
 @media (max-width: 1540px) {
   .header-container .menu_on_mobile {
-    width: 37%;
+    width: 33%;
     height: 80dvh;
   }
   .header-container .menu_on_mobile .menu_on_mobile_wrapper {
@@ -10,12 +10,12 @@
 }
 @media (max-width: 1367px) {
   .header-container .menu_on_mobile {
-    width: 37%;
+    width: 33%;
   }
 }
 @media (max-width: 1199px) {
   .header-container .menu_on_mobile {
-    width: 37%;
+    width: 33%;
   }
 }
 @media screen and (max-width: 991px) {
