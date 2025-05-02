@@ -135,6 +135,16 @@
 		<div id="menu_mobile" class="menu_on_mobile">
 			<div class="menu_on_mobile_wrapper">
 				<div class="menu_on_mobile_inner_wrapper" style="position: relative;">
+					<div class="search-form">
+						<form action="/">
+							<div class="position-relative">
+								<input placeholder="يبحث" type="text" required>
+								<button>
+									<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
+								</button>
+							</div>
+						</form>
+					</div>
 					<div>
 						<ul>
 							<li>

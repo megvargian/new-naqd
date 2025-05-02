@@ -240,6 +240,24 @@ p {
   font-size: 6rem;
   margin-top: 10px;
 }
+.header-container .menu_on_mobile .search-form input {
+  background-color: #7B39ED;
+  color: white;
+  font-family: "ManchetteFine-Regular";
+  font-size: 1rem;
+  border-radius: 30px;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+}
+.header-container .menu_on_mobile .search-form button {
+  position: absolute;
+  left: 0;
+  top: 2%;
+}
+.header-container .menu_on_mobile .search-form button img {
+  width: 15px;
+  height: 15px;
+}
 .header-container .menu_on_mobile.active {
   transform: translateX(0%);
   transition: cubic-bezier(0.32, 0.17, 0, 1) 0.5s;
