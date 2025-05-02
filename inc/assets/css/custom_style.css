@@ -248,11 +248,15 @@ p {
   border-radius: 30px;
   width: 100%;
   padding: 0.3rem 0.5rem;
+  direction: rtl;
 }
 .header-container .menu_on_mobile .search-form button {
   position: absolute;
   left: 0;
   top: 2%;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 .header-container .menu_on_mobile .search-form button img {
   width: 15px;
