@@ -202,7 +202,7 @@ p {
   width: 40%;
 }
 .header-container .menu_mobile_nav.active .hamburger_menu_icon .line:first-child {
-  transform: rotate(45deg) translate(5.5px, 5.5px);
+  transform: rotate(45deg) translate(1px, 0);
   background-color: #fff;
   height: 4px;
   width: 100%;
@@ -212,9 +212,10 @@ p {
   background-color: #fff;
   height: 4px;
   width: 100%;
+  display: none;
 }
 .header-container .menu_mobile_nav.active .hamburger_menu_icon .line:last-child {
-  transform: rotate(-45deg) translate(8.5px, -7.5px);
+  transform: rotate(-45deg) translate(7.5px, -6.5px);
   background-color: #fff;
   height: 4px;
   width: 100%;
