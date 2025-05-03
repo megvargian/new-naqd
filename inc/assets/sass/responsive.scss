@@ -14,20 +14,23 @@
 	}
 }
 
+@media (max-width: 1390px){
+	.homepage{
+		.most-read-articles{
+			h2{
+				font-size: 2.5rem;
+			}
+			ul li h3{
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
 @media (max-width: 1367px){
-	// .header-container{
-	// 	.menu_on_mobile{
-	// 		width:33%;
-	// 	}
-	// }
 }
 
 @media (max-width: 1199px){
-	// .header-container{
-	// 	.menu_on_mobile{
-	// 		width:33%;
-	// 	}
-	// }
 }
 
 @media screen and (max-width: 991px) {
