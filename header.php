@@ -26,7 +26,9 @@
 		<div class="container-fluid px-4">
 			<div class="row">
 				<div class="col-1 d-flex justify-content-start">
-					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
+					<a href="<?php echo home_url(); ?>">
+						<img class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
+					</a>
 				</div>
 				<div class="col justify-content-center d-lg-flex d-none align-items-center">
 					<ul class="social-media-icons">
