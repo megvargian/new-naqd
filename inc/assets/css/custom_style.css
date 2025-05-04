@@ -817,3 +817,34 @@ footer .border-green {
 .about-and-contact-us .contact-us .wpcf7-spinner {
   display: none !important;
 }
+
+.personal-info input, .personal-info textarea, .personal-info select {
+  background-color: #BEBEBE;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-family: "ManchetteFine-Regular";
+  margin-bottom: 20px;
+  color: #000;
+  width: 100%;
+  text-align: right;
+}
+.personal-info input::placeholder, .personal-info textarea::placeholder {
+  color: #252525;
+}
+.personal-info input[type=submit] {
+  background-color: #B6E60D;
+  font-family: "ManchetteFine-Bold";
+  color: #000;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  text-align: right;
+  margin: auto;
+  width: fit-content;
+  border: none;
+  outline: none;
+  padding: 0.4rem 2rem;
+}
+.personal-info .wpcf7-spinner {
+  display: none !important;
+}
