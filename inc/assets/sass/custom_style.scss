@@ -707,3 +707,24 @@ footer{
 .custom-padding{
 	padding-left: 2.5rem;
 }
+//about and contact us
+.about-and-contact-us{
+	text-align: right;
+	.has-large-font-size{
+		margin-bottom: 2rem !important;
+	}
+	h2{
+		font-size: 2rem;
+		text-align: right;
+		font-family: $bold;
+		color: $third_color;
+		margin-bottom: 1.5rem;
+	}
+	p{
+		color: #fff;
+		font-size: 1.2rem;
+		text-align: right;
+		font-size: $regular;
+		margin-bottom: 1.5rem;
+	}
+}

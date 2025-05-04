@@ -765,3 +765,24 @@ footer .border-green {
 .custom-padding {
   padding-left: 2.5rem;
 }
+
+.about-and-contact-us {
+  text-align: right;
+}
+.about-and-contact-us .has-large-font-size {
+  margin-bottom: 2rem !important;
+}
+.about-and-contact-us h2 {
+  font-size: 2rem;
+  text-align: right;
+  font-family: "ManchetteFine-Bold";
+  color: #B6E60D;
+  margin-bottom: 1.5rem;
+}
+.about-and-contact-us p {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: right;
+  font-size: "ManchetteFine-Regular";
+  margin-bottom: 1.5rem;
+}

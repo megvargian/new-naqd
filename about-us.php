@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<section class="about-us py-5">
+<section class="about-and-contact-us py-5">
     <div class="container">
         <div class="row">
             <div class="col-12">
