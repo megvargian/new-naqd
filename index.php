@@ -111,7 +111,7 @@ get_header();
         <div class="row">
             <?php for($i=0; $i<4; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <img class="w-100 d-block single-article cursor-pointer" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry" data-toggle="modal" data-target="#exampleModalCenter-<?php echo $i; ?>">
+                    <img class="w-100 d-block single-article" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry" data-toggle="modal" data-target="#exampleModalCenter-<?php echo $i; ?>">
                 </div>
                 <div class="modal fade" id="exampleModalCenter-<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter-<?php echo $i; ?>Title" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -123,7 +123,7 @@ get_header();
                             </div>
                             <div class="modal-body">
                                 <div class="responsive-short">
-                                    <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
