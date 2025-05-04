@@ -1,18 +1,12 @@
 <?php
 /**
- * Template Name: About us
+ * Template Name: About and Contact us
  */
 get_header();
 ?>
-<section class="about-us">
-    <div class="position-relative">
-        <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/about-us.jpg" alt="about us">
-        <div class="title">
-            <h1><?php the_title(); ?></h1>
-        </div>
-    </div>
+<section class="about-us py-5">
     <div class="container">
-        <div class="row w-100" style="padding-left: 1rem;">
+        <div class="row">
             <div class="col-12">
                 <?php
                     while ( have_posts() ) : the_post();
