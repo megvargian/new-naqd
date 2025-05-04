@@ -113,6 +113,19 @@
 			}
 		}
 	}
+	.about-and-contact-us{
+		.has-large-font-size{
+			margin-bottom: 1.5rem !important;
+		}
+		h2{
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		p{
+			font-size: 1rem;
+			margin-bottom: 1rem;
+		}
+	}
 }
 
 @media (max-width: 470px){
