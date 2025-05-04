@@ -798,6 +798,16 @@ footer{
 		justify-content: start;
 		display: flex;
 		align-items: center;
+		direction: rtl;
+		input[type="radio"]{
+			margin-left: 10px;
+			accent-color: $third_color;
+			width: 17px;
+			height: 17px;
+		}
+		.wpcf7-list-item-label{
+			padding-top: 5px;
+		}
 	}
 	input::placeholder, textarea::placeholder{
 		color: #252525;

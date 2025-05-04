@@ -855,6 +855,16 @@ footer .border-green {
   justify-content: start;
   display: flex;
   align-items: center;
+  direction: rtl;
+}
+.personal-info .wpcf7-list-item input[type=radio] {
+  margin-left: 10px;
+  accent-color: #B6E60D;
+  width: 17px;
+  height: 17px;
+}
+.personal-info .wpcf7-list-item .wpcf7-list-item-label {
+  padding-top: 5px;
 }
 .personal-info input::placeholder, .personal-info textarea::placeholder {
   color: #252525;
