@@ -786,7 +786,7 @@ footer .border-green {
   font-size: "ManchetteFine-Regular";
   margin-bottom: 1.5rem;
 }
-.about-and-contact-us .contact-us input, .about-and-contact-us .contact-us textarea {
+.about-and-contact-us .contact-us input, .about-and-contact-us .contact-us textarea, .about-and-contact-us .contact-us select {
   background-color: #BEBEBE;
   font-size: 1rem;
   padding: 0.5rem 1.5rem;
@@ -804,8 +804,12 @@ footer .border-green {
   background-color: #B6E60D;
   font-family: "ManchetteFine-Bold";
   color: #000;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 20px;
   text-align: right;
   margin: auto;
+  width: fit-content;
+}
+.about-and-contact-us .contact-us .wpcf7-spinner {
+  display: none !important;
 }
