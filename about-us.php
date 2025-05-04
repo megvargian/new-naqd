@@ -14,6 +14,18 @@ get_header();
                     endwhile;
                 ?>
             </div>
+            <div class="row justify-content-start">
+                <div class="col-9">
+                    <div class="contact-us">
+                        <form action="/">
+                            <input type="text" required>
+                            <input type="email" required>
+                            <input type="tel" required>
+                            <textarea name="" id=""></textarea>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

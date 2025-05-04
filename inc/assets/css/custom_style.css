@@ -786,3 +786,25 @@ footer .border-green {
   font-size: "ManchetteFine-Regular";
   margin-bottom: 1.5rem;
 }
+.about-and-contact-us .contact-us input, .about-and-contact-us .contact-us textarea {
+  background-color: #BEBEBE;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-family: "ManchetteFine-Regular";
+  margin-bottom: 20px;
+  color: #000;
+  width: 100%;
+}
+.about-and-contact-us .contact-us input::placeholder, .about-and-contact-us .contact-us textarea::placeholder {
+  color: #252525;
+}
+.about-and-contact-us .contact-us input[type=submit] {
+  background-color: #B6E60D;
+  font-family: "ManchetteFine-Bold";
+  color: #000;
+  font-size: 2rem;
+  border-radius: 20px;
+  text-align: right;
+  margin: auto;
+}
