@@ -111,8 +111,24 @@ get_header();
         <div class="row">
             <?php for($i=0; $i<4; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="responsive-short">
-                        <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allowfullscreen></iframe>
+                    <button type="button" class="mb-md-0 mb-4" data-toggle="modal" data-target="#exampleModalCenter<?php echo $i; ?>">
+                        <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                    </button>
+                </div>
+                <div class="modal fade" id="exampleModalCenter<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter<?php echo $i; ?>Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-end" style="background: transparent;">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="responsive-short">
+                                    <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             <?php } ?>
