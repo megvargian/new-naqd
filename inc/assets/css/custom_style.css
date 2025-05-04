@@ -805,13 +805,14 @@ footer .border-green {
   background-color: #B6E60D;
   font-family: "ManchetteFine-Bold";
   color: #000;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border-radius: 20px;
   text-align: right;
   margin: auto;
   width: fit-content;
   border: none;
   outline: none;
+  padding: 0.4rem 2rem;
 }
 .about-and-contact-us .contact-us .wpcf7-spinner {
   display: none !important;

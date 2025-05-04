@@ -747,13 +747,14 @@ footer{
 			background-color: $third_color;
 			font-family: $bold;
 			color: #000;
-			font-size: 1.5rem;
+			font-size: 1.3rem;
 			border-radius: 20px;
 			text-align: right;
 			margin: auto;
 			width: fit-content;
 			border: none;
 			outline: none;
+			padding: .4rem 2rem;
 		}
 		.wpcf7-spinner{
 			display: none !important;
