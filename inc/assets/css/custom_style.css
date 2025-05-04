@@ -809,6 +809,8 @@ footer .border-green {
   text-align: right;
   margin: auto;
   width: fit-content;
+  border: none;
+  outline: none;
 }
 .about-and-contact-us .contact-us .wpcf7-spinner {
   display: none !important;
