@@ -818,6 +818,9 @@ footer .border-green {
   display: none !important;
 }
 
+.personal-info {
+  text-align: right;
+}
 .personal-info input, .personal-info textarea, .personal-info select {
   background-color: #BEBEBE;
   font-size: 1rem;
