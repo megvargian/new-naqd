@@ -795,6 +795,7 @@ footer .border-green {
   margin-bottom: 20px;
   color: #000;
   width: 100%;
+  text-align: right;
 }
 .about-and-contact-us .contact-us input::placeholder, .about-and-contact-us .contact-us textarea::placeholder {
   color: #252525;

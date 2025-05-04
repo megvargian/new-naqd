@@ -13,16 +13,16 @@ get_header();
                         the_content();
                     endwhile;
                 ?>
-            </div>
-            <div class="row justify-content-start">
-                <div class="col-9">
-                    <div class="contact-us">
-                        <form action="/">
-                            <input type="text" required>
-                            <input type="email" required>
-                            <input type="tel" required>
-                            <textarea name="" id=""></textarea>
-                        </form>
+                <div class="row justify-content-start">
+                    <div class="col-lg-8 col-12">
+                        <div class="contact-us">
+                            <form action="/">
+                                <input type="text" required placholder="text">
+                                <input type="email" required>
+                                <input type="tel" required>
+                                <textarea name="" id=""></textarea>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
