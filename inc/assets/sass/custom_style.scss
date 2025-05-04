@@ -764,6 +764,20 @@ footer{
 //personal-info
 .personal-info{
 	text-align: right;
+	h2{
+		font-size: 2rem;
+		text-align: right;
+		font-family: $bold;
+		color: $third_color;
+		margin-bottom: 1.5rem;
+	}
+	p{
+		color: #fff;
+		font-size: 1.5rem;
+		text-align: right;
+		font-size: $regular;
+		margin-bottom: 1.5rem;
+	}
 	input, textarea, select{
 		background-color: #BEBEBE;
 		font-size: 1rem;

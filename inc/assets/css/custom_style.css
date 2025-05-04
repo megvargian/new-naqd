@@ -821,6 +821,20 @@ footer .border-green {
 .personal-info {
   text-align: right;
 }
+.personal-info h2 {
+  font-size: 2rem;
+  text-align: right;
+  font-family: "ManchetteFine-Bold";
+  color: #B6E60D;
+  margin-bottom: 1.5rem;
+}
+.personal-info p {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: right;
+  font-size: "ManchetteFine-Regular";
+  margin-bottom: 1.5rem;
+}
 .personal-info input, .personal-info textarea, .personal-info select {
   background-color: #BEBEBE;
   font-size: 1rem;
