@@ -885,3 +885,53 @@ footer .border-green {
 .personal-info .wpcf7-spinner {
   display: none !important;
 }
+
+/* Style the overlay */
+.responsive-short {
+  position: relative;
+  padding-bottom: 177.77%; /* 9:16 ratio (shorts) */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Style the popup box */
+.popup {
+  position: relative;
+  margin: 10% auto;
+  padding: 0;
+  background: #fff;
+  width: 90%;
+  max-width: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.popup iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9/16;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}

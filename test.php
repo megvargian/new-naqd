@@ -4,32 +4,30 @@
  */
 get_header();
 ?>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+<!-- Button to Open Dialog -->
+<button onclick="openPopup()">Watch Short</button>
+<!-- Overlay and Popup -->
+<div id="videoOverlay" class="overlay">
+  <div class="popup">
+    <button class="close-btn" onclick="closePopup()">&times;</button>
+    <div class="responsive-short">
+        <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 </div>
 <script>
+    function openPopup() {
+      document.getElementById('videoOverlay').style.display = 'block';
+    }
+
+    function closePopup() {
+      const overlay = document.getElementById('videoOverlay');
+      overlay.style.display = 'none';
+
+      // Stop the video by resetting the iframe
+      const iframe = overlay.querySelector('iframe');
+      iframe.src = iframe.src;
+    }
 </script>
 <?php
 get_footer();
