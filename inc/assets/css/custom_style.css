@@ -910,10 +910,10 @@ footer .border-green {
 /* Style the popup box */
 .popup {
   position: relative;
-  margin: 10% auto;
+  margin: 3% auto;
   padding: 0;
-  background: #fff;
-  width: 90%;
+  height: 85%;
+  width: 100%;
   max-width: 360px;
   border-radius: 10px;
   overflow: hidden;
