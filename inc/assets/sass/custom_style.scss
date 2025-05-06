@@ -873,8 +873,9 @@ border: none;
 position: absolute;
 top: 5px;
 right: 10px;
-font-size: 24px;
+font-size: 30px;
 cursor: pointer;
 background: none;
 border: none;
+z-index: 99999;
 }

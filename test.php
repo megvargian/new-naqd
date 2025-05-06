@@ -10,9 +10,11 @@ get_header();
 <div id="videoOverlay" class="overlay">
   <div class="popup">
     <button class="close-btn" onclick="closePopup()">&times;</button>
-    <div class="responsive-short">
-        <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+    <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs"
+              frameborder="0"
+              allowfullscreen
+              allow="autoplay; encrypted-media">
+      </iframe>
   </div>
 </div>
 <script>
