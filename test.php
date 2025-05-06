@@ -9,7 +9,9 @@ get_header();
 <!-- Overlay and Popup -->
 <div id="videoOverlay" class="overlay">
   <div class="popup">
-    <button class="close-btn" onclick="closePopup()">&times;</button>
+    <button class="close-btn" onclick="closePopup()">
+        <span aria-hidden="true">&times;</span>
+    </button>
     <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs"
               frameborder="0"
               allowfullscreen
