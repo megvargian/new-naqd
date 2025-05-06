@@ -15,7 +15,7 @@ get_header();
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                 </span>
             </button>
-            <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1&mute=1"
+            <iframe
                     frameborder="0"
                     width="360" height="640"
                     allowfullscreen
@@ -28,9 +28,11 @@ get_header();
     jQuery(document).ready(function($) {
         $('.openPopup').click(function(){
             $('#videoOverlay').css('display', 'block');
+            $('#videoOverlay').find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1&mute=1');
         })
         $('.close-btn').click(function(){
             $('#videoOverlay').css('display', 'none');
+            $('#videoOverlay').find('iframe').attr('src', '');
         })
     });
 </script>
