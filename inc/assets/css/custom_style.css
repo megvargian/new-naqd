@@ -907,7 +907,6 @@ footer .border-green {
   width: 100%;
   max-width: 360px;
   border-radius: 10px;
-  overflow: hidden;
   z-index: 1;
 }
 
@@ -922,13 +921,14 @@ footer .border-green {
 .close-btn {
   position: absolute;
   top: 5px;
-  right: -5%;
+  right: -11%;
   cursor: pointer;
   background: none;
   border: none;
   z-index: 99999;
   width: fit-content;
   height: fit-content;
+  padding: 0;
 }
 .close-btn span {
   color: #fff;

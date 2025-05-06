@@ -844,35 +844,35 @@ background: rgba(0,0,0,0.6);
 
 /* Style the popup box */
 .popup {
-position: relative;
-margin: 4% auto;
-padding: 0;
-height: 85%;
-width: 100%;
-max-width: 360px;
-border-radius: 10px;
-overflow: hidden;
-z-index: 1;
+	position: relative;
+	margin: 4% auto;
+	padding: 0;
+	height: 85%;
+	width: 100%;
+	max-width: 360px;
+	border-radius: 10px;
+	z-index: 1;
 }
 
 .popup iframe {
-width: 100%;
-height: 80%;
-aspect-ratio: 9 / 16;
-border: none;
-border-radius: 15px;
+	width: 100%;
+	height: 80%;
+	aspect-ratio: 9 / 16;
+	border: none;
+	border-radius: 15px;
 }
 
 .close-btn {
-position: absolute;
-top: 5px;
-right: -5%;
-cursor: pointer;
-background: none;
-border: none;
-z-index: 99999;
-width: fit-content;
-height: fit-content;
+	position: absolute;
+	top: 5px;
+	right: -11%;
+	cursor: pointer;
+	background: none;
+	border: none;
+	z-index: 99999;
+	width: fit-content;
+	height: fit-content;
+	padding: 0;
 	span{
 		color: #fff;
 		height: 15px;
