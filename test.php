@@ -15,8 +15,9 @@ get_header();
             </span>
         </button>
         <div class="popup">
-            <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs"
+            <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1&mute=1"
                     frameborder="0"
+                    width="360" height="640"
                     allowfullscreen
                     allow="autoplay; encrypted-media">
             </iframe>
