@@ -24,10 +24,10 @@ get_header();
 <script>
     jQuery(document).ready(function($) {
         $('.openPopup').click(function(){
-            $('#videoOverlay').style('display', 'block');
+            $('#videoOverlay').css('display', 'block');
         })
         $('.close-btn').click(function(){
-            $('#videoOverlay').style('display', 'none');
+            $('#videoOverlay').css('display', 'none');
         })
     });
 </script>
