@@ -887,15 +887,6 @@ footer .border-green {
 }
 
 /* Style the overlay */
-.responsive-short {
-  position: relative;
-  padding-bottom: 177.77%; /* 9:16 ratio (shorts) */
-  height: 0;
-  overflow: hidden;
-  width: 100%;
-  border-radius: 15px;
-}
-
 .overlay {
   display: none;
   position: fixed;
@@ -929,7 +920,7 @@ footer .border-green {
 .close-btn {
   position: absolute;
   top: 5px;
-  right: 10px;
+  right: -5%;
   font-size: 30px;
   cursor: pointer;
   background: none;

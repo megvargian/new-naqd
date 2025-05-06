@@ -8,16 +8,18 @@ get_header();
 <button onclick="openPopup()">Watch Short</button>
 <!-- Overlay and Popup -->
 <div id="videoOverlay" class="overlay">
-  <div class="popup">
-    <button class="close-btn" onclick="closePopup()">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs"
-              frameborder="0"
-              allowfullscreen
-              allow="autoplay; encrypted-media">
-      </iframe>
-  </div>
+    <div class="position-relative w-100 h-100">
+        <button class="close-btn" onclick="closePopup()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="popup">
+            <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs"
+                    frameborder="0"
+                    allowfullscreen
+                    allow="autoplay; encrypted-media">
+            </iframe>
+        </div>
+    </div>
 </div>
 <script>
     function openPopup() {
