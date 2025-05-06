@@ -156,7 +156,7 @@ function wp_bootstrap_starter_scripts()
 
     // load bootstrap js
     wp_enqueue_script('wp-bootstrap-starter-popper', get_template_directory_uri() . '/inc/assets/js/popper.min.js', array(), '', false);
-    wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array(), '', false);
+    // wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array(), '', false);
 
     // ========================================================================
     // Add all custom js libraries here
@@ -170,6 +170,23 @@ function wp_bootstrap_starter_scripts()
     // wp_enqueue_script('wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true);
 }
 add_action('wp_enqueue_scripts', 'wp_bootstrap_starter_scripts');
+
+
+// add boostrap min js
+function enqueue_bootstrap_cdn() {
+    wp_enqueue_script(
+        'bootstrap-cdn', // Handle name
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js',
+        array(), // Dependencies
+        null,    // Version
+        true     // Load in footer
+    );
+
+    // Optional: Add integrity and crossorigin attributes
+    wp_script_add_data('bootstrap-cdn', 'integrity', 'sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO');
+    wp_script_add_data('bootstrap-cdn', 'crossorigin', 'anonymous');
+}
+add_action('wp_enqueue_scripts', 'enqueue_bootstrap_cdn');
 
 
 function wp_bootstrap_starter_password_form()
