@@ -908,6 +908,7 @@ footer .border-green {
   max-width: 360px;
   border-radius: 10px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .popup iframe {
@@ -921,7 +922,7 @@ footer .border-green {
 .close-btn {
   position: absolute;
   top: 5px;
-  right: 30%;
+  right: -5%;
   cursor: pointer;
   background: none;
   border: none;
