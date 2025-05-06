@@ -866,12 +866,16 @@ border-radius: 15px;
 position: absolute;
 top: 5px;
 right: 30%;
-font-size: 30px;
 cursor: pointer;
 background: none;
 border: none;
 z-index: 99999;
+width: fit-content;
+height: fit-content;
 	span{
 		color: #fff;
+		height: 15px;
+		width: 15px;
+		display: block;
 	}
 }
