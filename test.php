@@ -28,7 +28,7 @@ get_header();
     jQuery(document).ready(function($) {
         $('.openPopup').click(function(){
             $('#videoOverlay').css('display', 'block');
-            $('#videoOverlay').find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1&mute=1');
+            $('#videoOverlay').find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1');
         })
         $('.close-btn').click(function(){
             $('#videoOverlay').css('display', 'none');
