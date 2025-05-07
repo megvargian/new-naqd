@@ -200,15 +200,15 @@ get_header();
             $('.heart').removeClass('d-none');
         });
         const youtubeShortslinks = [
-            'https://www.youtube.com/shorts/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/shorts/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/shorts/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/shorts/5LfiXvthTBA?autoplay=1',
+            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
+            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
+            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
+            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
         ]
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
             $('.videoOverlay-' + key).css('display', 'block');
-            $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1');
+            $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
         })
         $('.close-btn').click(function(){
             var key = $(this).attr('data-key');
