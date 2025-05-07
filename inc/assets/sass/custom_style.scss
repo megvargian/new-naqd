@@ -976,3 +976,17 @@ background: rgba(0,0,0,0.6);
 		display: block;
 	}
 }
+
+.categories{
+	.tabs{
+		li a{
+			color: #fff;
+			font-family: $regular;
+			font-size: 1.4rem;
+			margin-left: 1rem;
+		}
+		li a:hover{
+			color: $third_color;
+		}
+	}
+}

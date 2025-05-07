@@ -36,6 +36,35 @@ get_header();
             <div class="swiper-button-prev swiper-button-prev-main-cat"></div>
             <div class="swiper-button-next swiper-button-next-main-cat"></div>
         </div>
+        <div class="row py-4" style="border-top: 1px solid #2B2B2B">
+            <ul class="d-flex justify-content-start align-items-center">
+                <li>
+                    <a href="#">
+                        العالم العربي
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        لبنان
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        من هون نحن
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        ناس
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        برامج
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div class="row">
             <?php for($i=9; $i<17; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">

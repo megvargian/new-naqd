@@ -1043,3 +1043,13 @@ footer .border-green {
   width: 15px;
   display: block;
 }
+
+.categories .tabs li a {
+  color: #fff;
+  font-family: "ManchetteFine-Regular";
+  font-size: 1.4rem;
+  margin-left: 1rem;
+}
+.categories .tabs li a:hover {
+  color: #B6E60D;
+}
