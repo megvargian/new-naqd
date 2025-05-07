@@ -15,14 +15,12 @@
 }
 
 @media (max-width: 1390px){
-	.homepage{
-		.most-read-articles{
-			h2{
-				font-size: 2.5rem;
-			}
-			ul li h3{
-				font-size: 1.5rem;
-			}
+	.most-read-articles{
+		h2{
+			font-size: 2.5rem;
+		}
+		ul li h3{
+			font-size: 1.5rem;
 		}
 	}
 }
@@ -77,16 +75,14 @@
 }
 
 @media (max-width: 600px){
-	.homepage{
-		.most-read-articles{
-			h2{
-				font-size: 2.5rem;
-			}
-			ul{
-				li{
-					h3{
-						font-size: 1.5rem;
-					}
+	.most-read-articles{
+		h2{
+			font-size: 2.5rem;
+		}
+		ul{
+			li{
+				h3{
+					font-size: 1.5rem;
 				}
 			}
 		}

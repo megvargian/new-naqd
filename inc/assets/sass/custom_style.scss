@@ -111,6 +111,10 @@ p{
 	padding: .3rem 1rem;
 }
 // reusable/generale class
+.single-article{
+	border-radius: 15px;
+	aspect-ratio: 3 / 4;
+}
 .latestNewsSwiper {
 	position: relative;
 }
@@ -434,10 +438,6 @@ p{
 }
 //homepage
 .homepage{
-	.single-article{
-		border-radius: 15px;
-		aspect-ratio: 3 / 4;
-	}
 	.bg-color-green{
 		background-color: #1A876B;
 		border-radius: 15px;
