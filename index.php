@@ -205,10 +205,12 @@ get_header();
             console.log(key);
             console.log(secKey);
             $('.videoOverlay-' + key).css('display', 'block');
-            $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1');
+            $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1&mute=1');
         })
         $('.close-btn').click(function(){
             var key = $(this).attr('data-key');
+            console.log(key);
+            console.log(secKey);
             $('.videoOverlay-' + key).css('display', 'none');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
         })
