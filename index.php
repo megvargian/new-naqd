@@ -111,22 +111,8 @@ get_header();
         <div class="row">
             <?php for($i=0; $i<4; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <img class="w-100 d-block single-article" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry" data-toggle="modal" data-target="#exampleModalCenter-<?php echo $i; ?>">
-                    <div class="modal fade" id="exampleModalCenter-<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter-<?php echo $i; ?>Title" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header justify-content-end" style="background: transparent;">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="responsive-short">
-                                        <iframe src="https://www.youtube.com/embed/2Wg7kmqH5gs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="openPopup">
+                        <img class="w-100 d-block single-article" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
                     </div>
                 </div>
             <?php } ?>
@@ -150,6 +136,23 @@ get_header();
                     </div>
                 </div>
                 <div class="swiper-button-prev swiper-button-prev-latest-article"></div>
+            </div>
+        </div>
+    </div>
+    <div id="videoOverlay" class="overlay">
+        <div class="position-relative w-100 h-100">
+            <div class="popup">
+                <button class="close-btn">
+                    <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
+                    </span>
+                </button>
+                <iframe
+                        frameborder="0"
+                        width="360" height="640"
+                        allowfullscreen
+                        allow="autoplay; encrypted-media">
+                </iframe>
             </div>
         </div>
     </div>
@@ -195,6 +198,14 @@ get_header();
             $(this).addClass('d-none');
             $('.heart').removeClass('d-none');
         });
+        $('.openPopup').click(function(){
+            $('#videoOverlay').css('display', 'block');
+            $('#videoOverlay').find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1');
+        })
+        $('.close-btn').click(function(){
+            $('#videoOverlay').css('display', 'none');
+            $('#videoOverlay').find('iframe').attr('src', '');
+        })
     })
 </script>
 <?php
