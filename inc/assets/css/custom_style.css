@@ -892,10 +892,10 @@ footer .border-green {
 .openPopup .arrow-play {
   position: absolute;
   top: 50%;
-  right: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   z-index: 1;
 }
