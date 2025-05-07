@@ -7,7 +7,7 @@ get_header();
             <?php for($i=0; $i<8; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <div class="openPopup" data-key="<?php echo $i; ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
                     <div class="overlay videoOverlay-<?php echo $i; ?>">
@@ -60,7 +60,7 @@ get_header();
                     <?php for($i=0; $i<2; $i++){ ?>
                         <div class="col-lg-6 col-12 mb-2 px-1">
                             <div class="openPopup" data-key="<?php echo $i; ?>">
-                                <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                                <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                                 <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                             </div>
                             <div class="overlay videoOverlay-<?php echo $i; ?>">
@@ -89,7 +89,7 @@ get_header();
             <?php for($i=0; $i<4; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <div class="openPopup" data-key="<?php echo $i; ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
                     <div class="overlay videoOverlay-<?php echo $i; ?>">
