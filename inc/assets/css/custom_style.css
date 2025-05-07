@@ -886,6 +886,20 @@ footer .border-green {
   display: none !important;
 }
 
+.openPopup {
+  position: relative;
+}
+.openPopup .arrow-play {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+
 /* Style the overlay */
 .overlay {
   display: none;
