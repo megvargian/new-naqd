@@ -201,6 +201,8 @@ get_header();
         });
         $('.openPopup').click(function(){
             var key = $(this).attr('data-key');
+            console.log(key);
+            debugger
             $('.videoOverlay-' + key).css('display', 'block');
             $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1');
         })
