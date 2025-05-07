@@ -200,8 +200,10 @@ get_header();
             $('.heart').removeClass('d-none');
         });
         $('.openPopup').click(function(){
-            var key = $(this).attr('data-key');
+            let key = $(this).attr('data-key');
+            let secKey =  $(this).find('.close-btn').attr('data-key');
             console.log(key);
+            console.log(secKey);
             debugger
             $('.videoOverlay-' + key).css('display', 'block');
             $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1');

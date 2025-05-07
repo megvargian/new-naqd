@@ -426,6 +426,7 @@ p {
 
 .homepage .single-article {
   border-radius: 15px;
+  aspect-ratio: 3/4;
 }
 .homepage .bg-color-green {
   background-color: #1A876B;
