@@ -209,6 +209,7 @@ get_header();
         })
         $('.close-btn').click(function(){
             var key = $(this).attr('data-key');
+            let secKey =  $(this).find('.close-btn').attr('data-key');
             console.log(key);
             console.log(secKey);
             $('.videoOverlay-' + key).css('display', 'none');
