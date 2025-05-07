@@ -3,7 +3,7 @@ get_header();
 ?>
 <section class="categories">
     <div class="container pt-4">
-        <div class="row">
+        <div class="row position-relative">
             <div class="swiper MainCatVideo">
                 <div class="swiper-wrapper">
                     <?php for($i=0; $i<8; $i++){ ?>

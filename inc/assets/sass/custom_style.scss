@@ -133,10 +133,10 @@ p{
 	z-index: 10;
 	pointer-events: none;
 }
-.swiper-button-prev-latest-article, .swiper-button-prev-main-cat{
+.swiper-button-prev-latest-article, .swiper-button-prev-main-cat, .swiper-button-next-main-cat{
 	color: #fff !important;
 }
-.swiper-button-prev-latest-article::after, .swiper-button-prev-main-cat::after{
+.swiper-button-prev-latest-article::after, .swiper-button-prev-main-cat::after, .swiper-button-next-main-cat::after{
 	font-size: 30px !important;
 }
 .most-read-articles{
