@@ -208,7 +208,7 @@ get_header();
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
             $('.videoOverlay-' + key).css('display', 'block');
-            $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
+            $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/shorts/UqI3exV3YPM?autoplay=1');
         })
         $('.close-btn').click(function(){
             var key = $(this).attr('data-key');
