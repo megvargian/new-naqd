@@ -119,10 +119,10 @@ p{
 	border-radius: 15px;
 	aspect-ratio: 3 / 5;
 }
-.latestNewsSwiper {
+.latestNewsSwiperو  .MainCatVideo{
 	position: relative;
 }
-.latestNewsSwiper::before {
+.latestNewsSwiper::before ,.MainCatVideo::before{
 	content: "";
 	position: absolute;
 	top: 0;
@@ -133,10 +133,10 @@ p{
 	z-index: 10;
 	pointer-events: none;
 }
-.swiper-button-prev-latest-article{
+.swiper-button-prev-latest-article, .swiper-button-prev-main-cat{
 	color: #fff !important;
 }
-.swiper-button-prev-latest-article::after{
+.swiper-button-prev-latest-article::after, .swiper-button-prev-main-cat::after{
 	font-size: 30px !important;
 }
 .most-read-articles{

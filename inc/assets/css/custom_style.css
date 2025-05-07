@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet,
 object, iframe, h5, h6,
 blockquote, pre, a, abbr, acronym, address,
@@ -139,11 +140,11 @@ p {
   aspect-ratio: 3/5;
 }
 
-.latestNewsSwiper {
+.latestNewsSwiperو .MainCatVideo {
   position: relative;
 }
 
-.latestNewsSwiper::before {
+.latestNewsSwiper::before, .MainCatVideo::before {
   content: "";
   position: absolute;
   top: 0;
@@ -155,11 +156,11 @@ p {
   pointer-events: none;
 }
 
-.swiper-button-prev-latest-article {
+.swiper-button-prev-latest-article, .swiper-button-prev-main-cat {
   color: #fff !important;
 }
 
-.swiper-button-prev-latest-article::after {
+.swiper-button-prev-latest-article::after, .swiper-button-prev-main-cat::after {
   font-size: 30px !important;
 }
 

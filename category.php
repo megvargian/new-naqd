@@ -2,9 +2,42 @@
 get_header();
 ?>
 <section class="categories">
-    <div class="container">
+    <div class="container pt-4">
         <div class="row">
-            <?php for($i=0; $i<8; $i++){ ?>
+            <div class="swiper MainCatVideo">
+                <div class="swiper-wrapper">
+                    <?php for($i=0; $i<8; $i++){ ?>
+                        <div class="swiper-slide">
+                            <div class="openPopup" data-key="<?php echo $i; ?>">
+                                <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                                <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
+                            </div>
+                            <div class="overlay videoOverlay-<?php echo $i; ?>">
+                                <div class="position-relative w-100 h-100">
+                                    <div class="popup">
+                                        <button class="close-btn" data-key="<?php echo $i; ?>">
+                                            <span aria-hidden="true">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
+                                            </span>
+                                        </button>
+                                        <iframe
+                                                frameborder="0"
+                                                width="360" height="640"
+                                                allowfullscreen
+                                                allow="autoplay; encrypted-media">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="swiper-button-prev swiper-button-prev-main-cat"></div>
+            <div class="swiper-button-next swiper-button-next-main-cat"></div>
+        </div>
+        <div class="row">
+            <?php for($i=9; $i<17; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <div class="openPopup" data-key="<?php echo $i; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
@@ -57,7 +90,7 @@ get_header();
             </div>
             <div class="col-lg-6 col-12">
                 <div class="row">
-                    <?php for($i=10; $i<12; $i++){ ?>
+                    <?php for($i=18; $i<20; $i++){ ?>
                         <div class="col-lg-6 col-12 mb-2 px-1">
                             <div class="openPopup" data-key="<?php echo $i; ?>">
                                 <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
@@ -86,7 +119,7 @@ get_header();
             </div>
         </div>
         <div class="row">
-            <?php for($i=20; $i<24; $i++){ ?>
+            <?php for($i=21; $i<25; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <div class="openPopup" data-key="<?php echo $i; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
@@ -222,6 +255,24 @@ get_header();
             'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
             'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
             'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
+            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
+            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
+            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
+            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
+            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
+            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
+            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
+            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
+            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
+            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
+            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
+            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
+            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
+            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
+            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
+            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
+            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
+            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
         ]
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
@@ -233,6 +284,38 @@ get_header();
             $('.videoOverlay-' + key).css('display', 'none');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
         })
+        var swiperMainCat = new Swiper(".MainCatVideo", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            grabCursor: true,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-prev-main-cat",
+                prevEl: ".swiper-button-next-main-cat",
+            },
+            breakpoints: {
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 1.5,
+					spaceBetween: 10,
+				},
+				// when window width is >= 480px
+				480: {
+					slidesPerView: 1.5,
+					spaceBetween: 10,
+				},
+				// when window width is >= 640px
+				640: {
+					slidesPerView: 2,
+					spaceBetween: 10,
+				},
+				991: {
+					slidesPerView: 4,
+					spaceBetween: 10,
+				}
+			}
+        });
+        swiper.changeLanguageDirection('rtl');
     });
 </script>
 <?php
