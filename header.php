@@ -173,17 +173,17 @@
 						<div class="green-border"></div>
 						<ul>
 							<li>
-								<a class="d-block page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="/personal-info">
 								    اكتبوا معنا
 								</a>
 							</li>
 							<li>
-								<a class="d-block page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="/about-and-contact-us">
 									عن نقد
 								</a>
 							</li>
 							<li>
-								<a class="d-block page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="/about-and-contact-us#contact-us">
 									اتصلوا بنا
 								</a>
 							</li>
