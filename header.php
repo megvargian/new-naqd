@@ -105,27 +105,27 @@
 					<nav>
 						<ul class="d-flex justify-content-center align-items-center tag-list">
 							<li>
-								<a href="#">
+								<a href="/category/لبنان/">
 									لبنان
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="/category/لبنان/">
 								    العالم العربي
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="/category/لبنان/">
 								   العالم
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="/category/لبنان/">
 								   مجتمع
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="/category/لبنان/">
 									تقارير
 								</a>
 							</li>
@@ -150,22 +150,22 @@
 					<div>
 						<ul>
 							<li>
-								<a class="d-block page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
 									أهلًا بنا
 								</a>
 							</li>
 							<li>
-								<a class="d-block page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
 									منشورات
 								</a>
 							</li>
 							<li>
-								<a class="d-block page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
 									شاهد
 								</a>
 							</li>
 							<li>
-								<a class="d-block page_font animated_menu_el" href="#">
+								<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
 									نشرة نقد
 								</a>
 							</li>

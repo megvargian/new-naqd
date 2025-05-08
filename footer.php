@@ -80,37 +80,37 @@
             <div class="col-12 pb-4">
                 <ul class="footer-tags">
                     <li>
-                        <a href="#">
+                        <a href="/category/لبنان/">
                             أفلامنا
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/category/لبنان/">
                             ملفات
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/category/لبنان/">
                             مجتمع
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/category/لبنان/">
                             شاهد
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/category/لبنان/">
                             اكتبوا معنا
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/category/لبنان/">
                             عن نقد
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/category/لبنان/">
                             اتصلوا بنا
                         </a>
                     </li>
