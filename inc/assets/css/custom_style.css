@@ -158,6 +158,7 @@ p {
 
 .swiper-button-prev-latest-article, .swiper-button-prev-main-cat, .swiper-button-next-main-cat {
   color: #fff !important;
+  z-index: 1;
 }
 
 .swiper-button-prev-latest-article::after, .swiper-button-prev-main-cat::after, .swiper-button-next-main-cat::after {
