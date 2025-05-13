@@ -40,6 +40,9 @@
   .homepage .bg-color-green .main-img {
     border-radius: 15px;
   }
+  .homepage h2 {
+    font-size: 2rem;
+  }
   .border-right-white {
     border-right: none;
   }

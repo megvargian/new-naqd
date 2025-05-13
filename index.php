@@ -187,7 +187,7 @@ get_header();
                 </div>
             <?php } ?>
         </div>
-        <div class="row pt-3">
+        <div class="row pt-lg-5 pt-3">
             <div class="col-12 mb-3 text-right">
                 <h2>
                     آخر الأخبار
