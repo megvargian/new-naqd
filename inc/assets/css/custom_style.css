@@ -131,7 +131,7 @@ p {
 }
 
 .helvetica-regular {
-  font-family: "Helvetica-Regular";
+  font-family: "Helvetica-Regular" !important;
 }
 
 .single-article {
