@@ -266,6 +266,21 @@ jQuery(document).ready(function($) {
 			$('.transparent-black-overlay').addClass('d-none');
 		}
 	});
+	function isInViewport(element) {
+		const rect = element.getBoundingClientRect();
+		return rect.top < window.innerHeight && rect.bottom > 0;
+	}
+	function checkFadeIn() {
+		$('.fade-in:not(.visible)').each(function () {
+			if (isInViewport(this)) {
+				$(this).addClass('visible');
+			}
+		});
+	}
+	$(document).ready(function () {
+		$(window).on('scroll resize', checkFadeIn);
+		checkFadeIn(); // Run on page load too
+	});
 });
 </script>
 <div class="site-content">
