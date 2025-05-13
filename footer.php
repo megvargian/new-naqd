@@ -11,6 +11,13 @@
 ?>
 <footer class="pt-5">
     <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-start">
+                <div id="scrollToTop" style="cursor: pointer;">
+                    <img style="width: 40px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up.svg" alt="arrow-up">
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-between pb-4">
             <div class="col-lg-1 col-4">
                 <a href="<?php echo home_url(); ?>">
@@ -137,6 +144,9 @@
 </div><!-- #page -->
 <script>
     jQuery(document).ready(function($) {
+        $('#scrollToTop').on('click', function () {
+            $('html, body').animate({ scrollTop: 0 }, 600); // 600ms = smooth scroll
+        });
     });
 </script>
 <?php wp_footer(); ?>
