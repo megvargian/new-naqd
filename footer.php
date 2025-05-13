@@ -116,7 +116,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-12">
+            <div class="col-lg-6 col-12">
                 <div class="d-flex justify-content-start text-right">
                     <p>تابعوا قناة نقد على يوتيوب</p>
                     <a class="button-green" href="#">
@@ -124,9 +124,9 @@
                     </a>
                 </div>
             </div>
-            <div class="col-12 d-flex justify-content-end py-3">
+            <div class="col-lg-6 col-12 d-flex justify-content-end py-3">
                 <a href="#">
-                    <img class="d-block" style="width: 50px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell.svg" alt="subscribe">
+                    <img class="d-block" style="width: 30px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell.svg" alt="subscribe">
                 </a>
             </div>
         </div>
