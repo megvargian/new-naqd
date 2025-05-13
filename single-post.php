@@ -20,10 +20,10 @@ $title = get_the_title($product_id);
                         <a href="#">
                             مرزي طاهر - كاتب لبناني
                         </a>
-                        <p dir="ltr">6 jan 2025</p>
+                        <p class="helvetica-regular" dir="ltr">6 jan 2025</p>
                     </div>
                     <div>
-                        <p dir="ltr">
+                        <p class="helvetica-regular" dir="ltr">
                         <img class="heart" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
                         <img class="heart-filled d-none" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
                         Like this post</p>
@@ -162,7 +162,7 @@ $title = get_the_title($product_id);
                                         <a href="#">
                                             متري طاهر - كاتب لبناني
                                         </a>
-                                        <div class="date">
+                                        <div class="date helvetica-regular">
                                             4 jan 2025
                                         </div>
                                     </div>
