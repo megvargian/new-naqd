@@ -279,8 +279,11 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
-	$(window).on('scroll resize', checkFadeIn);
+	$(window).on('resize', checkFadeIn);
 	checkFadeIn(); // Run on page load too
+	$(window).on('scroll', function () {
+		checkFadeIn();
+	});
 });
 </script>
 <div class="site-content">
