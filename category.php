@@ -52,7 +52,7 @@ get_header();
                 </li>
                 <li>
                     <a href="#">
-                        من هون نحن
+                        من نحن
                     </a>
                 </li>
                 <li>
