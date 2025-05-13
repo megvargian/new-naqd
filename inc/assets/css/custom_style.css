@@ -812,6 +812,11 @@ footer .border-green {
   margin-right: 5px;
   cursor: pointer;
 }
+.single-product-page h2 {
+  font-size: 3.5rem;
+  color: #fff;
+  font-family: "ManchetteFine-Bold";
+}
 .single-product-page .related-articles {
   background-color: transparent;
 }
