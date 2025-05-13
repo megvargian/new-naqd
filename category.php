@@ -203,7 +203,7 @@ get_header();
     jQuery(document).ready(function($) {
         var swiper = new Swiper(".latestNewsSwiper", {
             slidesPerView: 4,
-            spaceBetween: 10,
+            spaceBetween: 16,
             grabCursor: true,
             loop: true,
             navigation: {
@@ -227,7 +227,7 @@ get_header();
 				},
 				991: {
 					slidesPerView: 4,
-					spaceBetween: 10,
+					spaceBetween: 16,
 				}
 			}
         });
