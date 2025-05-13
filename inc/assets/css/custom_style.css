@@ -776,7 +776,7 @@ footer .border-green {
   width: fit-content;
 }
 .single-product-page p {
-  font-family: "ManchetteFine-Regular";
+  font-family: "Bressay-Regular";
   font-size: 1.2rem;
   color: #fff;
   margin-bottom: 15px;
@@ -901,7 +901,7 @@ footer .border-green {
   color: #fff;
   font-size: 1.5rem;
   text-align: right;
-  font-size: "ManchetteFine-Regular";
+  font-family: "Bressay-Regular";
   margin-bottom: 1.5rem;
 }
 .about-and-contact-us .contact-us input, .about-and-contact-us .contact-us textarea, .about-and-contact-us .contact-us select {
