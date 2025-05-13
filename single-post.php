@@ -42,11 +42,13 @@ $title = get_the_title($product_id);
         </div>
         <div class="row justify-content-center py-5">
             <div class="col-lg-8 col-10">
-                <?php
-                    while ( have_posts() ) : the_post();
-                        the_content();
-                    endwhile;
-                ?>
+                <div id="theArticle">
+                    <?php
+                        while ( have_posts() ) : the_post();
+                            the_content();
+                        endwhile;
+                    ?>
+                </div>
                 <div class="py-5 tags">
                     <h3>المواضيع</h3>
                     <ul class="d-flex">
@@ -160,6 +162,16 @@ $title = get_the_title($product_id);
         $('.heart-filled').click(function(){
             $(this).addClass('d-none');
             $('.heart').removeClass('d-none');
+        });
+        $(window).on('scroll resize', function () {
+            const article = $('#theArticle');
+            const articleTop = article.offset().top;
+            const articleHeight = article.outerHeight();
+            const scrollTop = $(window).scrollTop();
+            const windowHeight = $(window).height();
+            // How far through the article the user has scrolled
+            const progress = Math.min(1, Math.max(0, (scrollTop + windowHeight - articleTop) / articleHeight));
+            $('#progressBar').css('width', (progress * 100) + '%');
         });
     })
 </script>

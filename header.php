@@ -22,6 +22,9 @@
 <body <?php body_class(); ?>>
 <div class="transparent-black-overlay d-none"></div>
 <div id="page" class="site main_page_wrapper">
+	<div id="progressBarContainer">
+		<div id="progressBar"></div>
+	</div>
 	<header id="masthead" class="header-container py-4">
 		<nav>
 			<div class="container-fluid px-4">

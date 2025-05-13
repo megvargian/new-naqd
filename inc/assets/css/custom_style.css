@@ -1085,3 +1085,20 @@ footer .border-green {
 .categories .tabs li a:hover {
   color: #B6E60D;
 }
+
+#progressBarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #eee;
+  z-index: 99999;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0;
+  background-color: #B6E60D;
+  transition: width 0.2s ease-out;
+}
