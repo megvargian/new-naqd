@@ -9,6 +9,11 @@
 		.menu_on_mobile{
 			.menu_on_mobile_wrapper{
 				height: 80dvh;
+				.menu_on_mobile_inner_wrapper{
+					.page_font{
+						font-size: 1.8rem;
+					}
+			}
 			}
 		}
 	}
