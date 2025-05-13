@@ -60,7 +60,7 @@ get_header();
         <div class="row">
             <div class="col-lg-6 col-12 mb-2 px-1">
                 <div class="most-read-articles fade-in">
-                    <h2 class="mb-3">
+                    <h2 class="mb-3 mt-3 mb-lg-5 mt-lg-4">
                         الأكثر قراءة
                     </h2>
                     <ul>
