@@ -46,6 +46,9 @@
   .categories .tabs li a {
     font-size: 1.5rem;
   }
+  footer .footer-tags li a {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 600px) {
   .most-read-articles h2 {
