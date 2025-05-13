@@ -268,12 +268,14 @@ jQuery(document).ready(function($) {
 	});
 	function isInViewport(element) {
 		const rect = element.getBoundingClientRect();
-		return rect.top < window.innerHeight && rect.bottom > 0;
+		return rect.top <= window.innerHeight && rect.bottom >= 0;
 	}
 	function checkFadeIn() {
 		$('.fade-in:not(.visible)').each(function () {
 			if (isInViewport(this)) {
 				$(this).addClass('visible');
+			} else {
+				$(this).removeClass('visible');
 			}
 		});
 	}
