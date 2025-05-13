@@ -8,7 +8,7 @@ get_header();
                 <div class="swiper-wrapper">
                     <?php for($i=0; $i<8; $i++){ ?>
                         <div class="swiper-slide">
-                            <div class="openPopup" data-key="<?php echo $i; ?>">
+                            <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                                 <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                                 <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                             </div>
@@ -70,7 +70,7 @@ get_header();
         <div class="row">
             <?php for($i=9; $i<17; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="openPopup" data-key="<?php echo $i; ?>">
+                    <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
@@ -96,7 +96,7 @@ get_header();
         </div>
         <div class="row">
             <div class="col-lg-6 col-12 mb-2 px-1">
-                <div class="most-read-articles">
+                <div class="most-read-articles fade-in">
                     <h2 class="mb-3">
                         الأكثر قراءة
                     </h2>
@@ -123,7 +123,7 @@ get_header();
                 <div class="row">
                     <?php for($i=18; $i<20; $i++){ ?>
                         <div class="col-lg-6 col-12 mb-2 px-1">
-                            <div class="openPopup" data-key="<?php echo $i; ?>">
+                            <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                                 <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                                 <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                             </div>
@@ -152,7 +152,7 @@ get_header();
         <div class="row">
             <?php for($i=21; $i<25; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="openPopup" data-key="<?php echo $i; ?>">
+                    <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
@@ -187,7 +187,7 @@ get_header();
                         <div class="swiper-wrapper">
                             <?php for($i=0; $i<8; $i++){ ?>
                                 <div class="swiper-slide">
-                                    <a href="#">
+                                    <a href="#" class="fade-in">
                                         <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
                                     </a>
                                 </div>
