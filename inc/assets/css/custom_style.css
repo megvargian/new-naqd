@@ -121,6 +121,7 @@ h2 {
 p {
   font-size: 1rem;
   color: #fff;
+  font-family: "Bressay-Regular";
 }
 
 .main-btn {
@@ -543,7 +544,7 @@ p {
   border-bottom-right-radius: 15px;
 }
 .homepage .bg-color-green p {
-  font-family: "ManchetteFine-Regular";
+  font-family: "Bressay-Regular";
   color: #fff;
   font-size: 1.3rem;
   text-align: right;
@@ -739,7 +740,7 @@ footer .button-green {
   margin-right: 10px;
 }
 footer p {
-  font-family: "ManchetteFine-Regular";
+  font-family: "Bressay-Regular";
   color: #fff;
   font-size: 1.4rem;
   text-align: right;
@@ -800,7 +801,7 @@ footer .border-green {
   text-align: right;
 }
 .single-product-page .lower-part p {
-  font-family: "ManchetteFine-Regular";
+  font-family: "Bressay-Regular";
   font-size: 1rem;
   color: #fff;
   margin-bottom: 0;
@@ -947,7 +948,7 @@ footer .border-green {
   color: #fff;
   font-size: 1.5rem;
   text-align: right;
-  font-size: "ManchetteFine-Regular";
+  font-family: "Bressay-Regular";
   margin-bottom: 1.5rem;
 }
 .personal-info input[type=text],

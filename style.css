@@ -243,3 +243,15 @@ th {
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Bressay-Regular';
+	src:  url('inc/assets/fonts/Bressay-Trial-Rg.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Bressay-Bold';
+	src:  url('inc/assets/fonts/Bressay-Trial-Bd.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

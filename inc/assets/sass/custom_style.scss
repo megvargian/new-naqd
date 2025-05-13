@@ -103,6 +103,7 @@ h2{
 p{
 	font-size: 1rem;
 	color: #fff;
+	font-family: $Bressay_Regular;
 }
 .main-btn{
 	background-color: $sec_color;
@@ -461,7 +462,7 @@ p{
 			border-bottom-right-radius: 15px;
 		}
 		p{
-			font-family: $regular;
+			font-family: $Bressay_Regular;
 			color: #fff;
 			font-size: 1.3rem;
 			text-align: right;
@@ -662,7 +663,7 @@ footer{
 		margin-right: 10px;
 	}
 	p{
-		font-family: $regular;
+		font-family: $Bressay_Regular;
 		color: #fff;
 		font-size: 1.4rem;
 		text-align: right;
@@ -730,7 +731,7 @@ footer{
 			text-align: right;
 		}
 		p{
-			font-family: $regular;
+			font-family: $Bressay_Regular;
 			font-size: 1rem;
 			color: #fff;
 			margin-bottom: 0;
@@ -878,7 +879,7 @@ footer{
 		color: #fff;
 		font-size: 1.5rem;
 		text-align: right;
-		font-size: $regular;
+		font-family: $Bressay_Regular;
 		margin-bottom: 1.5rem;
 	}
 	input[type="text"],
