@@ -140,7 +140,7 @@ $title = get_the_title($product_id);
                         </h2>
                         <div class="row custom-padding">
                             <?php for($i=0; $i<8; $i++){ ?>
-                                <div class="col-lg-3 col-6 px-1 mb-2">
+                                <div class="col-lg-3 col-6 px-1 mb-4">
                                     <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
                                 </div>
                             <?php } ?>

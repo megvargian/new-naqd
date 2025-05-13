@@ -822,9 +822,10 @@ footer .border-green {
   height: 100%;
 }
 .single-product-page .related-articles .most-read-articles h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: #fff;
   text-align: center;
+  font-family: "ManchetteFine-Bold";
 }
 .single-product-page .related-articles .most-read-articles ul {
   list-style: none;
