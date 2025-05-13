@@ -271,7 +271,7 @@ jQuery(document).ready(function($) {
 		return rect.top <= window.innerHeight && rect.bottom >= 0;
 	}
 	function checkFadeIn() {
-		$('.fade-in:not(.visible)').each(function () {
+		$('.fade-in').each(function () {
 			if (isInViewport(this)) {
 				$(this).addClass('visible');
 			} else {
