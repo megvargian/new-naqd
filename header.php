@@ -154,7 +154,7 @@
 							<ul>
 								<li>
 									<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
-										أهلًا بنا
+										أقلًا منا
 									</a>
 								</li>
 								<li>
