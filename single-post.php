@@ -85,26 +85,8 @@ $title = get_the_title($product_id);
                         </li>
                         <li class="my-1">
                             <a href="#" class="single-social-icon">
-                                <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="linkedin">
-                                <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/in.svg" alt="linkedin">
-                            </a>
-                        </li>
-                        <li class="my-1">
-                            <a href="#" class="single-social-icon">
-                                <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="RSS">
-                                <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss.svg" alt="RSS">
-                            </a>
-                        </li>
-                        <li class="my-1">
-                            <a href="#" class="single-social-icon">
                                 <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="threads">
                                 <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads.svg" alt="threads">
-                            </a>
-                        </li>
-                        <li class="my-1">
-                            <a href="#" class="single-social-icon">
-                                <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="tiktok">
-                                <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok.svg" alt="tiktok">
                             </a>
                         </li>
                         <li class="my-1">
@@ -117,12 +99,6 @@ $title = get_the_title($product_id);
                             <a href="#" class="single-social-icon">
                                 <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="X">
                                 <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x.svg" alt="X">
-                            </a>
-                        </li>
-                        <li class="my-1">
-                            <a href="#" class="single-social-icon">
-                                <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="youtube">
-                                <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube.svg" alt="youtube">
                             </a>
                         </li>
                     </ul>
@@ -153,7 +129,7 @@ $title = get_the_title($product_id);
                             الأكثر قراءة
                         </h2>
                         <ul>
-                            <?php for($i=0; $i<5; $i++){ ?>
+                            <?php for($i=0; $i<3; $i++){ ?>
                                 <li>
                                     <h3>
                                         عن التروما التي تعشقنا وتحاول قتلنا

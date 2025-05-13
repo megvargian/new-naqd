@@ -98,7 +98,7 @@ get_header();
             <div class="col-lg-6 col-12 mb-3 px-2">
                 <div class="most-read-articles fade-in">
                     <h2 class="mb-3">
-                        الأكثر قراءة
+                        الأكثر مشاهدة
                     </h2>
                     <ul>
                         <?php for($i=0; $i<3; $i++){ ?>
