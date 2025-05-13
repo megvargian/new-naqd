@@ -724,6 +724,9 @@ footer .footer-tags li a {
 footer .footer-tags li:last-child {
   border-left: none;
 }
+footer .footer-tags li:first-child {
+  padding-right: 0 !important;
+}
 footer .button-green {
   border-radius: 15px;
   background-color: #B6E60D;

@@ -646,6 +646,9 @@ footer{
 		li:last-child{
 			border-left: none;
 		}
+		li:first-child{
+			padding-right: 0 !important;
+		}
 	}
 	.button-green{
 		border-radius: 15px;
