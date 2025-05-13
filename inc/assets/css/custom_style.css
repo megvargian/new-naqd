@@ -813,7 +813,7 @@ footer .border-green {
   cursor: pointer;
 }
 .single-product-page .related-articles {
-  background-color: #313136;
+  background-color: transparent;
 }
 .single-product-page .related-articles .most-read-articles {
   padding: 0.7rem;
