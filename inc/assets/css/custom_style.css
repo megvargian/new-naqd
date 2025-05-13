@@ -818,13 +818,14 @@ footer .border-green {
   font-family: "ManchetteFine-Bold";
 }
 .single-product-page .related-articles {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .single-product-page .related-articles .most-read-articles {
   padding: 0.7rem;
   border-radius: 15px;
   display: block;
   height: 100%;
+  background-color: transparent !important;
 }
 .single-product-page .related-articles .most-read-articles h2 {
   font-size: 3.5rem;

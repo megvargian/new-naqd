@@ -749,12 +749,13 @@ footer{
 		font-family: $bold;
 	}
 	.related-articles{
-		background-color: transparent;
+		background-color: transparent !important;
 		.most-read-articles{
 			padding: .7rem;
 			border-radius: 15px;
 			display: block;
 			height: 100%;
+			background-color: transparent !important;
 			h2{
 				font-size: 3.5rem;
 				color: #fff;
