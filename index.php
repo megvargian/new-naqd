@@ -35,9 +35,9 @@ get_header();
                             <a href="#">
                                 مرزي طاهر - كاتب لبناني
                             </a>
-                            <p dir="ltr">6 jan 2025</p>
+                            <p class="helvetica-regular" dir="ltr">6 jan 2025</p>
                         </div>
-                        <div>
+                        <div class="helvetica-regular">
                             <p dir="ltr">
                             <img class="heart" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
                             <img class="heart-filled d-none" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
@@ -73,7 +73,7 @@ get_header();
                                     <a href="#">
                                         متري طاهر - كاتب لبناني
                                     </a>
-                                    <div class="date">
+                                    <div class="date helvetica-regular">
                                         4 jan 2025
                                     </div>
                                 </div>

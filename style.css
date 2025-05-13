@@ -237,3 +237,9 @@ th {
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Helvetica-Regular';
+	src:  url('inc/assets/fonts/Helvetica-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

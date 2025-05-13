@@ -130,6 +130,10 @@ p {
   padding: 0.3rem 1rem;
 }
 
+.helvetica-regular {
+  font-family: "Helvetica-Regular";
+}
+
 .single-article {
   border-radius: 15px;
   aspect-ratio: 3/4;
