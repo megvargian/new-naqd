@@ -69,7 +69,7 @@ get_header();
         </div>
         <div class="row">
             <?php for($i=9; $i<17; $i++){ ?>
-                <div class="col-lg-3 col-12 mb-2 px-2">
+                <div class="col-lg-3 col-12 mb-3 px-2">
                     <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
@@ -95,7 +95,7 @@ get_header();
             <?php } ?>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-12 mb-2 px-2">
+            <div class="col-lg-6 col-12 mb-3 px-2">
                 <div class="most-read-articles fade-in">
                     <h2 class="mb-3">
                         الأكثر قراءة
@@ -122,7 +122,7 @@ get_header();
             <div class="col-lg-6 col-12">
                 <div class="row">
                     <?php for($i=18; $i<20; $i++){ ?>
-                        <div class="col-lg-6 col-12 mb-2 px-2">
+                        <div class="col-lg-6 col-12 mb-3 px-2">
                             <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                                 <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                                 <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
@@ -151,7 +151,7 @@ get_header();
         </div>
         <div class="row">
             <?php for($i=21; $i<25; $i++){ ?>
-                <div class="col-lg-3 col-12 mb-2 px-2">
+                <div class="col-lg-3 col-12 mb-3 px-2">
                     <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
@@ -317,7 +317,7 @@ get_header();
         })
         var swiperMainCat = new Swiper(".MainCatVideo", {
             slidesPerView: 4,
-            spaceBetween: 10,
+            spaceBetween: 16,
             grabCursor: true,
             loop: true,
             navigation: {
@@ -342,7 +342,7 @@ get_header();
 				},
 				991: {
 					slidesPerView: 4,
-					spaceBetween: 10,
+					spaceBetween: 16,
 				}
 			}
         });
