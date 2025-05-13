@@ -45,6 +45,7 @@
   }
   .border-right-white {
     border-right: none;
+    padding: 0;
   }
   .custom-padding {
     padding-left: 0;

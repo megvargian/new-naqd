@@ -884,6 +884,7 @@ footer .border-green {
 
 .border-right-white {
   border-right: 1px solid #fff;
+  padding: 0 2.5rem;
 }
 
 .custom-padding {
