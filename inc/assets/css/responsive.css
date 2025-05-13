@@ -1,9 +1,9 @@
 @media (max-width: 1540px) {
   .header-container .menu_on_mobile {
-    height: 80dvh;
+    height: 90dvh;
   }
   .header-container .menu_on_mobile .menu_on_mobile_wrapper {
-    height: 80dvh;
+    height: 90dvh;
   }
   .header-container .menu_on_mobile .menu_on_mobile_wrapper .menu_on_mobile_inner_wrapper .page_font {
     font-size: 1.8rem;
