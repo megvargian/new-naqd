@@ -630,13 +630,13 @@ footer{
 		align-items: center;
 		flex-wrap: wrap;
 		li{
-			padding: 0 10px;
+			padding: 0 12px;
 			border-left: 1px solid #fff;
 			flex: 0 1 auto;
 			a{
-				font-family: $regular;
+				font-family: $bold;
 				color: #fff;
-				font-size: 1.2rem;
+				font-size: 2rem;
 				text-align: right;
 			}
 		}
@@ -648,7 +648,7 @@ footer{
 		border-radius: 15px;
 		background-color: #B6E60D;
 		color: $sec_color;
-		font-family: $regular;
+		font-family: $bold;
 		padding: 0rem 1rem;
 		font-size: 1.4rem;
 		border:none;

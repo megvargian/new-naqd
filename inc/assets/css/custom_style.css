@@ -707,14 +707,14 @@ footer .footer-tags {
   flex-wrap: wrap;
 }
 footer .footer-tags li {
-  padding: 0 10px;
+  padding: 0 12px;
   border-left: 1px solid #fff;
   flex: 0 1 auto;
 }
 footer .footer-tags li a {
-  font-family: "ManchetteFine-Regular";
+  font-family: "ManchetteFine-Bold";
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: right;
 }
 footer .footer-tags li:last-child {
@@ -724,7 +724,7 @@ footer .button-green {
   border-radius: 15px;
   background-color: #B6E60D;
   color: #313136;
-  font-family: "ManchetteFine-Regular";
+  font-family: "ManchetteFine-Bold";
   padding: 0rem 1rem;
   font-size: 1.4rem;
   border: none;

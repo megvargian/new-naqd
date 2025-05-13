@@ -12,7 +12,7 @@
 <footer class="pt-5">
     <div class="container pt-5">
         <div class="row justify-content-between pb-4">
-            <div class="col-2">
+            <div class="col-lg-1 col-4">
                 <a href="<?php echo home_url(); ?>">
                     <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
                 </a>
