@@ -1049,6 +1049,17 @@ background: rgba(0,0,0,0.6);
   width: 60px;
   height: 20px;
   margin-left: 20px;
+  /* The slider */
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		background-color: transparent;
+		border: 2px solid white;
+		border-radius: 34px;
+		width: 100%;
+		height: 100%;
+		transition: background-color 0.4s;
+	}
 }
 
 /* Hide default checkbox */
@@ -1058,17 +1069,7 @@ background: rgba(0,0,0,0.6);
   height: 0;
 }
 
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 34px;
-  width: 100%;
-  height: 100%;
-  transition: background-color 0.4s;
-}
+
 
 /* The knob */
 .slider .label-text {
