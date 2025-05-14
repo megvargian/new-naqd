@@ -22,9 +22,11 @@
 <body <?php body_class(); ?>>
 <div class="transparent-black-overlay d-none"></div>
 <div id="page" class="site main_page_wrapper">
-	<div id="progressBarContainer">
-		<div id="progressBar"></div>
-	</div>
+	<?php if(is_single('post')){ ?>
+		<div id="progressBarContainer">
+			<div id="progressBar"></div>
+		</div>
+	<?php } ?>
 	<header id="masthead" class="header-container py-4">
 		<nav>
 			<div class="container-fluid px-4">
@@ -34,64 +36,66 @@
 							<img class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 						</a>
 					</div>
-					<div class="col justify-content-center d-lg-flex d-none align-items-center">
-						<ul class="social-media-icons">
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon.svg" alt="fb">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb.svg" alt="fb">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="linkedin">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/in.svg" alt="linkedin">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="RSS">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss.svg" alt="RSS">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="threads">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads.svg" alt="threads">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="tiktok">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok.svg" alt="tiktok">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon.svg" alt="whatsapp">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp.svg" alt="whatsapp">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="X">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x.svg" alt="X">
-								</a>
-							</li>
-							<li class="mx-1">
-								<a href="#" class="single-social-icon">
-									<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="youtube">
-									<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube.svg" alt="youtube">
-								</a>
-							</li>
-						</ul>
-					</div>
+					<?php if(!is_single('post')){ ?>
+						<div class="col justify-content-center d-lg-flex d-none align-items-center">
+							<ul class="social-media-icons">
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon.svg" alt="fb">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb.svg" alt="fb">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="linkedin">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/in.svg" alt="linkedin">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="RSS">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss.svg" alt="RSS">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="threads">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads.svg" alt="threads">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="tiktok">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok.svg" alt="tiktok">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon.svg" alt="whatsapp">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp.svg" alt="whatsapp">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="X">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x.svg" alt="X">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="#" class="single-social-icon">
+										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="youtube">
+										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube.svg" alt="youtube">
+									</a>
+								</li>
+							</ul>
+						</div>
+					<?php } ?>
 					<div class="col">
 						<button class="hamburger hamburger--collapse" type="button">
 							<div class="menu_mobile_nav">
