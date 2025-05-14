@@ -104,6 +104,7 @@ p{
 	font-size: 1rem;
 	color: #fff;
 	font-family: $Bressay_Regular;
+	line-height: 1.7;
 }
 .main-btn{
 	background-color: $sec_color;
@@ -953,7 +954,6 @@ footer{
 		display: none !important;
 	}
 }
-
 .openPopup{
 	position: relative;
 	.arrow-play{
@@ -1014,7 +1014,6 @@ background: rgba(0,0,0,0.6);
 		display: block;
 	}
 }
-
 .categories{
 	.tabs{
 		li a{
@@ -1028,8 +1027,6 @@ background: rgba(0,0,0,0.6);
 		}
 	}
 }
-
-
 #progressBarContainer {
   position: fixed;
   top: 0;
@@ -1039,10 +1036,63 @@ background: rgba(0,0,0,0.6);
   background-color: #eee;
   z-index: 99999;
 }
-
 #progressBar {
   height: 100%;
   width: 0;
   background-color: $third_color;
   transition: width 0.2s ease-out;
+}
+
+// add light theme
+.light-theme{
+	color: #000;
+	background-color: #fff;
+}
+
+/* Toggle container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 34px;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.4s;
+}
+
+/* The knob */
+.slider .label-text {
+  position: absolute;
+  background-color: #c3e722; /* green-yellow knob */
+  color: black;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  transition: left 0.4s;
+}
+
+/* Move knob when checked */
+.switch input:checked + .slider .label-text {
+  left: 30px;
 }

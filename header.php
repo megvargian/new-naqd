@@ -97,6 +97,14 @@
 						</div>
 					<?php } ?>
 					<div class="col">
+						<label class="switch">
+							<input type="checkbox" id="changeTheme">
+							<span class="slider">
+								<span class="label-text">En</span>
+							</span>
+						</label>
+					</div>
+					<div class="col">
 						<button class="hamburger hamburger--collapse" type="button">
 							<div class="menu_mobile_nav">
 								<div class="hamburger_menu_icon">
@@ -269,6 +277,9 @@ jQuery(document).ready(function($) {
 		$('.menu_on_mobile').toggleClass('active');
 		$('.transparent-black-overlay').toggleClass('d-none');
 	});
+	$('#changeTheme').click(function(){
+		$('html, body').toggleClass('light-theme');
+	})
 	$(document).on("click", function(event) {
 		if (!$(event.target).closest(".menu_on_mobile").length && !$(event.target).closest(".menu_mobile_nav").length ) {
 			$('.menu_mobile_nav').removeClass('active');
