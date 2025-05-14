@@ -13,7 +13,7 @@ $title = get_the_title($product_id);
 <section class="single-product-page">
     <div class="container">
         <div class="row justify-content-center pt-5">
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-xl-5 col-lg-5 col-md-6 col-12">
                 <img class="w-100 d-block main-img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $title; ?>">
                 <div class="d-flex justify-content-between align-items-center lower-part py-4 w-100">
                     <div class="d-flex justify-content-center align-items-center">
