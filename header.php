@@ -277,8 +277,8 @@ jQuery(document).ready(function($) {
 		$('.transparent-black-overlay').toggleClass('d-none');
 	});
 	$('#changeTheme').click(function(){
-		$(this).find('.EN').toggleClass('d-none');
-		$(this).find('.AR').toggleClass('d-none');
+		$('.EN').toggleClass('d-none');
+		$('.AR').toggleClass('d-none');
 	})
 	$(document).on("click", function(event) {
 		if (!$(event.target).closest(".menu_on_mobile").length && !$(event.target).closest(".menu_mobile_nav").length ) {
