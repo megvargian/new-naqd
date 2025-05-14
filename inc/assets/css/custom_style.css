@@ -1189,6 +1189,7 @@ body.dark {
   position: relative;
   width: 60px;
   height: 30px;
+  margin-left: 20px;
 }
 
 .toggle input {
