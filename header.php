@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 <div class="transparent-black-overlay d-none"></div>
 <div id="page" class="site main_page_wrapper">
-	<?php if(is_single('post')){ ?>
+	<?php if(is_singular('post')){ ?>
 		<div id="progressBarContainer">
 			<div id="progressBar"></div>
 		</div>
@@ -36,7 +36,7 @@
 							<img class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 						</a>
 					</div>
-					<?php if(!is_single('post')){ ?>
+					<?php if(!is_singular('post')){ ?>
 						<div class="col justify-content-center d-lg-flex d-none align-items-center">
 							<ul class="social-media-icons">
 								<li class="mx-1">
