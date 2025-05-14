@@ -282,11 +282,10 @@ p {
   padding: 0px !important;
   position: relative;
   display: block !important;
-  margin-right: auto !important;
   opacity: 1 !important;
   background-color: transparent;
   border: none;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .header-container .hamburger--collapse {
   display: block;
@@ -1166,7 +1165,7 @@ footer .border-green {
   text-align: center;
   border-radius: 50%;
   left: -6%;
-  top: -20%;
+  top: -40%;
   transition: left 0.4s;
 }
 
