@@ -743,6 +743,14 @@ footer{
 			cursor: pointer;
 		}
 	}
+	#theArticle{
+		h2{
+			font-size: 2rem;
+			color: $third_color;
+			text-align: center;
+			font-family: $bold;
+		}
+	}
 	h2{
 		font-size: 3.5rem;
 		color: #fff;
@@ -775,8 +783,9 @@ footer{
 					margin: auto;
 					h3{
 						color: #fff;
-						font-size: 1.5rem;
+						font-size: 1.7rem;
 						text-align: right;
+						font-family: $bold;
 					}
 					.author{
 						font-size: .9rem;

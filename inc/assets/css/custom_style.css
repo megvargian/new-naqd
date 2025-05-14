@@ -812,6 +812,12 @@ footer .border-green {
   margin-right: 5px;
   cursor: pointer;
 }
+.single-product-page #theArticle h2 {
+  font-size: 2rem;
+  color: #B6E60D;
+  text-align: center;
+  font-family: "ManchetteFine-Bold";
+}
 .single-product-page h2 {
   font-size: 3.5rem;
   color: #fff;
@@ -848,8 +854,9 @@ footer .border-green {
 }
 .single-product-page .related-articles .most-read-articles ul li h3 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-align: right;
+  font-family: "ManchetteFine-Bold";
 }
 .single-product-page .related-articles .most-read-articles ul li .author {
   font-size: 0.9rem;
