@@ -97,14 +97,15 @@
 						</div>
 					<?php } ?>
 					<div class="col">
+
+					</div>
+					<div class="col d-flex justify-content-end">
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">
 							<span class="slider">
 								<span class="label-text">En</span>
 							</span>
 						</label>
-					</div>
-					<div class="col">
 						<button class="hamburger hamburger--collapse" type="button">
 							<div class="menu_mobile_nav">
 								<div class="hamburger_menu_icon">

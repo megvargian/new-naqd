@@ -1119,13 +1119,20 @@ footer .border-green {
   color: #000;
   background-color: #fff;
 }
+.light-theme p {
+  color: #000;
+}
+.light-theme h2 {
+  color: #000;
+}
 
 /* Toggle container */
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 30px;
+  height: 20px;
+  margin-left: 20px;
 }
 
 /* Hide default checkbox */
@@ -1155,11 +1162,11 @@ footer .border-green {
   font-weight: bold;
   width: 30px;
   height: 30px;
-  line-height: 30px;
+  line-height: 33px;
   text-align: center;
   border-radius: 50%;
-  left: 0;
-  top: 0;
+  left: -6%;
+  top: -20%;
   transition: left 0.4s;
 }
 

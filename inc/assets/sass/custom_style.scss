@@ -1047,6 +1047,12 @@ background: rgba(0,0,0,0.6);
 .light-theme{
 	color: #000;
 	background-color: #fff;
+	p{
+		color: #000;
+	}
+	h2{
+		color: #000;
+	}
 }
 
 /* Toggle container */
@@ -1054,7 +1060,8 @@ background: rgba(0,0,0,0.6);
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 30px;
+  height: 20px;
+  margin-left: 20px;
 }
 
 /* Hide default checkbox */
@@ -1084,11 +1091,11 @@ background: rgba(0,0,0,0.6);
   font-weight: bold;
   width: 30px;
   height: 30px;
-  line-height: 30px;
+  line-height: 33px;
   text-align: center;
   border-radius: 50%;
-  left: 0;
-  top: 0;
+  left: -6%;
+  top: -20%;
   transition: left 0.4s;
 }
 
