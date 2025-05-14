@@ -679,6 +679,9 @@ footer{
 		border-radius: 15px;
 	}
 	.author-section{
+		display: flex;
+		justify-content: start;
+		align-items: center;
 		img{
 			border-radius: 100%;
 			width: 50px;

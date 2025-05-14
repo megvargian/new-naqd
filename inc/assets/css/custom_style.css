@@ -753,6 +753,11 @@ footer .border-green {
 .single-product-page .main-img {
   border-radius: 15px;
 }
+.single-product-page .author-section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
 .single-product-page .author-section img {
   border-radius: 100%;
   width: 50px;

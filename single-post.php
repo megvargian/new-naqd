@@ -17,7 +17,7 @@ $title = get_the_title($product_id);
                 <img class="w-100 d-block main-img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $title; ?>">
                 <div class="d-flex justify-content-between align-items-center lower-part py-4 w-100">
                     <div class="d-flex justify-content-center align-items-center">
-                        <div>
+                        <div class="author-section">
                             <img class="" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/avatar.png" alt="">
                             <a href="#">
                                 مرزي طاهر - كاتب لبناني
