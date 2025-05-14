@@ -167,12 +167,29 @@
 }
 
 @media (max-width: 470px){
+	.single-product-page{
+		.related-articles{
+			.most-read-articles{
+				ul{
+					padding-right: 3rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 420px){
+	.single-product-page{
+		.author-section{
+			img{
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
 }
 
 @media (max-width: 400px){
-}
-
-@media (max-width: 440px){
 }
 
 @media (max-width: 350px){
