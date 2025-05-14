@@ -97,24 +97,22 @@
 						</div>
 					<?php } ?>
 					<div class="col d-flex justify-content-end align-items-center">
-						<label class="toggle">
+						<!-- <label class="toggle">
 							<input type="checkbox" id="theme-toggle">
 							<div class="slider">
 								<div class="icon sun">
-								<!-- Sun SVG -->
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange" width="20" height="20">
 									<path d="M12 18a6 6 0 100-12 6 6 0 000 12z"/>
 									<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
 								</svg>
 								</div>
 								<div class="icon moon">
-								<!-- Moon SVG -->
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20">
 									<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
 								</svg>
 								</div>
 							</div>
-						</label>
+						</label> -->
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">
 							<span class="slider">
