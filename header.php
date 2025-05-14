@@ -96,10 +96,7 @@
 							</ul>
 						</div>
 					<?php } ?>
-					<div class="col">
-
-					</div>
-					<div class="col d-flex justify-content-end">
+					<div class="col d-flex justify-content-end align-items-center">
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">
 							<span class="slider">
