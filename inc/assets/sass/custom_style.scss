@@ -1085,7 +1085,7 @@ background: rgba(0,0,0,0.6);
 /* The knob */
 .slider .label-text {
   position: absolute;
-  background-color: #c3e722; /* green-yellow knob */
+  background-color: $third_color; /* green-yellow knob */
   color: black;
   font-weight: bold;
   width: 30px;
