@@ -324,7 +324,7 @@ jQuery(document).ready(function($) {
 	});
 });
 </script>
-<script>
+<!-- <script>
     const toggle = document.getElementById('theme-toggle');
     const body = document.body;
 
@@ -332,5 +332,5 @@ jQuery(document).ready(function($) {
 		// body.classList.toggle('dark');
 		body.classList.toggle('light-theme');
 	});
-</script>
+</script> -->
 <div class="site-content">
