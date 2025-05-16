@@ -116,8 +116,8 @@
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">
 							<span class="slider">
-								<span class="label-text EN">En</span>
-								<span class="label-text AR d-none">Ar</span>
+								<span class="label-text EN helvetica-regular">En</span>
+								<span class="label-text AR d-none helvetica-regular">Ar</span>
 							</span>
 						</label>
 						<button class="hamburger hamburger--collapse" type="button">
