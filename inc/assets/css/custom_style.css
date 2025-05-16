@@ -245,7 +245,7 @@ p {
   background-color: #313136;
 }
 .header-container .logo {
-  width: 85px;
+  width: 55px;
 }
 .header-container .tag-list li a {
   width: 200px;
@@ -1147,6 +1147,7 @@ footer .border-green {
   background-color: #B6E60D; /* green-yellow knob */
   color: black;
   font-weight: bold;
+  line-height: 1.9;
   width: 30px;
   height: 30px;
   line-height: 33px;

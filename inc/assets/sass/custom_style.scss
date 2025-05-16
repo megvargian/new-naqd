@@ -217,7 +217,7 @@ p{
 .header-container{
 	background-color: $sec_color;
 	.logo{
-		width: 85px;
+		width: 55px;
 	}
 	.tag-list{
 		li a{
@@ -1077,6 +1077,7 @@ background: rgba(0,0,0,0.6);
   background-color: $third_color; /* green-yellow knob */
   color: black;
   font-weight: bold;
+  line-height: 1.9;
   width: 30px;
   height: 30px;
   line-height: 33px;
