@@ -60,7 +60,15 @@ input, textarea {
 input:focus, textarea:focus, select:focus, option:focus {
 	outline: none;
 }
-
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px,
+);
 body{
 	overflow-x: hidden !important;
 	direction: rtl;

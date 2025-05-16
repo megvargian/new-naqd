@@ -27,7 +27,7 @@
 			<div id="progressBar"></div>
 		</div>
 	<?php } ?>
-	<header id="masthead" class="header-container py-4">
+	<header id="masthead" class="header-container py-4 pb-3">
 		<nav>
 			<div class="container-fluid px-4">
 				<div class="row">
