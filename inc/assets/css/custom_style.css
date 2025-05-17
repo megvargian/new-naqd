@@ -73,7 +73,7 @@ input:focus, textarea:focus, select:focus, option:focus {
   outline: none;
 }
 
-@media (max-width: 1521px) {
+@media (min-width: 1600px) {
   .col-xxxl-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
@@ -846,7 +846,7 @@ footer .border-green {
 .single-product-page .related-articles .most-read-articles h2 {
   font-size: 3.5rem;
   color: #fff;
-  text-align: center;
+  text-align: right;
   font-family: "ManchetteFine-Bold";
 }
 .single-product-page .related-articles .most-read-articles ul {
