@@ -185,9 +185,10 @@ p {
   height: 100%;
 }
 .most-read-articles h2 {
-  font-size: 3.5rem;
+  font-size: 5rem;
   color: #000;
   text-align: center;
+  font-family: "ManchetteFine-Bold";
 }
 .most-read-articles ul {
   list-style: none;
