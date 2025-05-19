@@ -18,7 +18,7 @@ $first_article = new WP_Query(
 <section class="homepage">
     <div class="container py-5">
         <?php
-            if ( $lfirst_articletest->have_posts() ) {
+            if ( $first_article->have_posts() ) {
                 while ( $first_article->have_posts() ) {
                 $first_article->the_post();
                 $article_id = get_the_ID();
