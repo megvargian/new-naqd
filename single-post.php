@@ -136,7 +136,7 @@ $title = get_the_title($product_id);
                         <ul>
                             <?php for($i=0; $i<5; $i++){ ?>
                                 <li>
-                                    <h3>
+                                    <h3 class="mb-2">
                                         عن التروما التي تعشقنا وتحاول قتلنا
                                     </h3>
                                     <div class="author">
