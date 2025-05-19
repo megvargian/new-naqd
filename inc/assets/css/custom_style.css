@@ -231,7 +231,7 @@ p {
   font-size: 1rem;
   width: 2rem;
   height: 2rem;
-  line-height: 2.3;
+  line-height: 2;
   text-align: center;
   border-radius: 50%;
   font-family: "Helvetica-Regular";
@@ -334,8 +334,6 @@ p {
   text-align: center;
   z-index: 10;
   overflow: hidden;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
 }
 .header-container .menu_on_mobile .page_font {
   font-size: 6rem;
@@ -648,7 +646,7 @@ p {
   font-size: 1rem;
   width: 2rem;
   height: 2rem;
-  line-height: 2.3;
+  line-height: 2;
   text-align: center;
   border-radius: 50%;
   font-family: "Helvetica-Regular";
@@ -876,7 +874,7 @@ footer .border-green {
   font-size: 1rem;
   width: 2rem;
   height: 2rem;
-  line-height: 2.3;
+  line-height: 2;
   text-align: center;
   border-radius: 50%;
   font-family: "Helvetica-Regular";
