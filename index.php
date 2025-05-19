@@ -14,6 +14,15 @@ $first_article = new WP_Query(
         'order'          => 'DESC',
     )
 );
+$second_part = new WP_Query(
+    array(
+        'post_type'      => 'post',
+        'posts_per_page' =>  8,
+        'offset'         =>  1,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    )
+);
 ?>
 <section class="homepage">
     <div class="container py-5">
@@ -72,13 +81,22 @@ $first_article = new WP_Query(
             wp_reset_postdata();
         } ?>
         <div class="row">
-            <?php for($i=0; $i<8; $i++){ ?>
+            <?php
+                if ( $second_part->have_posts() ) {
+                    while ( $second_part->have_posts() ) {
+                    $second_part->the_post();
+                    $article_id = get_the_ID();
+                    $article_title = get_the_title($article_id);
+                    $image_url = get_the_post_thumbnail_url($article_id);
+            ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <a href="/test1/" class="fade-in">
-                        <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                    <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                        <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                     </a>
                 </div>
-            <?php } ?>
+            <?php }
+                wp_reset_postdata();
+            }?>
         </div>
         <div class="row">
             <div class="col-lg-6 col-12 mb-2 px-1">
