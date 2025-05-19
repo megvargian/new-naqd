@@ -223,7 +223,7 @@ p {
   counter-increment: item;
   position: absolute;
   right: -2.5rem;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background-color: #5D0DE6;
   color: white;
@@ -234,6 +234,7 @@ p {
   line-height: 2.3;
   text-align: center;
   border-radius: 50%;
+  font-family: "Helvetica-Regular";
 }
 .most-read-articles ul li:last-child {
   border: none !important;
@@ -639,7 +640,7 @@ p {
   counter-increment: item;
   position: absolute;
   right: -2.5rem;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background-color: #5D0DE6;
   color: white;
@@ -650,6 +651,7 @@ p {
   line-height: 2.3;
   text-align: center;
   border-radius: 50%;
+  font-family: "Helvetica-Regular";
 }
 .homepage .most-read-articles ul li:last-child {
   border: none !important;
@@ -866,7 +868,7 @@ footer .border-green {
   counter-increment: item;
   position: absolute;
   right: -2.5rem;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background-color: #FF6F00;
   color: white;
@@ -877,6 +879,7 @@ footer .border-green {
   line-height: 2.3;
   text-align: center;
   border-radius: 50%;
+  font-family: "Helvetica-Regular";
 }
 .single-product-page .related-articles .most-read-articles ul li:last-child {
   border: none !important;
@@ -1078,7 +1081,7 @@ footer .border-green {
 
 .categories .tabs li a {
   color: #fff;
-  font-family: "ManchetteFine-Regular";
+  font-family: "ManchetteFine-Bold";
   font-size: 2rem;
   margin-left: 1rem;
 }

@@ -140,25 +140,23 @@ $tags = get_tags();
 						</button>
 					</div>
 				</div>
-				<?php if(is_front_page()){?>
-					<div class="row justify-content-center d-lg-flex d-none">
-						<div class="col-10">
-							<nav>
-								<ul class="d-flex justify-content-center align-items-center tag-list">
-									<?php
-										foreach ( $tags as $tag ) {
-									?>
-											<li>
-												<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) )?>">
-													<?php echo esc_html( $tag->name ); ?>
-												</a>
-											</li>
-									<?php } ?>
-								</ul>
-							</nav>
-						</div>
+				<div class="row justify-content-center d-lg-flex d-none">
+					<div class="col-10">
+						<nav>
+							<ul class="d-flex justify-content-center align-items-center tag-list">
+								<?php
+									foreach ( $tags as $tag ) {
+								?>
+										<li>
+											<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) )?>">
+												<?php echo esc_html( $tag->name ); ?>
+											</a>
+										</li>
+								<?php } ?>
+							</ul>
+						</nav>
 					</div>
-				<?php } ?>
+				</div>
 			</div>
 			<div id="menu_mobile" class="menu_on_mobile">
 				<div class="menu_on_mobile_wrapper">
