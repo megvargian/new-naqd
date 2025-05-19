@@ -33,7 +33,12 @@ $second_part = new WP_Query(
                 $article_id = get_the_ID();
                 $article_title = get_the_title($article_id);
                 $image_url = get_the_post_thumbnail_url($article_id);
-                $content = get_the_content();
+                // content
+                $content = apply_filters( 'the_content', get_the_content() );
+                $allowed_tags = '<p><a><strong><em><ul><ol><li><br>'; // Adjust as needed
+                $clean_content = wp_strip_all_tags( strip_tags( $content, $allowed_tags ), true );
+                $words = explode( ' ', $clean_content );
+                $limited = implode( ' ', array_slice( $words, 0, 200 ) );
         ?>
             <div class="row bg-color-green mb-2">
                 <div class="col-lg-4 col-12 px-0">
@@ -55,7 +60,9 @@ $second_part = new WP_Query(
                             <p>
                             لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
                             </p> -->
-                            <p><?php echo wp_trim_words( $content, 200, '...'); ?></p>
+                            <p>
+                                <?php echo $limited; ?>
+                            </p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center lower-part pb-5 px-5 w-100">
                             <div class="d-flex justify-content-center align-items-center">
