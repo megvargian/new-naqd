@@ -6,48 +6,71 @@ get_header();
 // while ( have_posts() ) : the_post();
 //     the_content();
 // endwhile;
+$first_article = new WP_Query(
+    array(
+        'post_type'      => 'post',
+        'posts_per_page' =>  1,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    );
+);
 ?>
 <section class="homepage">
     <div class="container py-5">
-        <div class="row bg-color-green mb-2">
-            <div class="col-lg-4 col-12 px-0">
-                <a href="#">
-                    <img class="w-100 h-100 d-block main-img" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
-                </a>
-            </div>
-            <div class="col-8 d-lg-flex d-none px-0">
-                <div class="d-flex justify-content-between align-items-center flex-column">
-                    <div class="p-5 pb-0 text-left">
-                        <p>
-                        لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
-                        </p>
-                        <p>
-                                لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
-                                وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.
-                                وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر”
-                        </p>
-                        <p>
-                        لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center lower-part pb-5 px-5 w-100">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                مرزي طاهر - كاتب لبناني
-                            </a>
-                            <p class="helvetica-regular" dir="ltr">6 jan 2025</p>
-                        </div>
-                        <div class="helvetica-regular">
-                            <p dir="ltr">
-                            <img class="heart" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
-                            <img class="heart-filled d-none" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
-                            Like this post</p>
-                        </div>
-                    </div>
+        <?php
+            if ( $lfirst_articletest->have_posts() ) {
+                while ( $first_article->have_posts() ) {
+                $first_article->the_post();
+                $article_id = get_the_ID();
+                $article_title = get_the_title($article_id);
+                $image_url = get_the_post_thumbnail_url($article_id);
+                $content = get_the_content();
+        ?>
+            <div class="row bg-color-green mb-2">
+                <div class="col-lg-4 col-12 px-0">
+                    <a href="<?php echo get_permalink($article_id); ?>">
+                        <img class="w-100 h-100 d-block main-img" src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
+                    </a>
                 </div>
+                <div class="col-8 d-lg-flex d-none px-0">
+                    <div class="d-flex justify-content-between align-items-center flex-column">
+                        <div class="p-5 pb-0 text-left">
+                            <!-- <p>
+                            لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
+                            </p>
+                            <p>
+                                    لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
+                                    وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.
+                                    وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر”
+                            </p>
+                            <p>
+                            لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
+                            </p> -->
+                            <?php echo wp_trim_words( $content, 80, '...'); ?>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center lower-part pb-5 px-5 w-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="#">
+                                    مرزي طاهر - كاتب لبناني
+                                </a>
+                                <p class="helvetica-regular" dir="ltr">
+                                    <?php echo get_the_date('j M Y', $article_id); ?>
+                                </p>
+                            </div>
+                            <div class="helvetica-regular">
+                                <p dir="ltr">
+                                <img class="heart" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
+                                <img class="heart-filled d-none" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
+                                Like this post</p>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
+        <?php }
+            wp_reset_postdata();
+        } ?>
         <div class="row">
             <?php for($i=0; $i<8; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
