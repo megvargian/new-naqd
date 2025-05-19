@@ -46,7 +46,7 @@ $first_article = new WP_Query(
                             <p>
                             لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
                             </p> -->
-                            <?php echo wp_trim_words( $content, 80, '...'); ?>
+                            <p><?php echo wp_trim_words( $content, 200, '...'); ?></p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center lower-part pb-5 px-5 w-100">
                             <div class="d-flex justify-content-center align-items-center">
