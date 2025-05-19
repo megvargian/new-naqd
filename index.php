@@ -12,7 +12,7 @@ $first_article = new WP_Query(
         'posts_per_page' =>  1,
         'orderby'        => 'date',
         'order'          => 'DESC',
-    );
+    )
 );
 ?>
 <section class="homepage">
