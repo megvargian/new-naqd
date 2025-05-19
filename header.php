@@ -8,7 +8,7 @@
  *
  * @package WP_Bootstrap_Starter
  */
-
+$tags = get_tags();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -18,6 +18,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php wp_head(); ?>
+	<style>
+		<?php
+			foreach ( $tags as $key => $tag ) {
+		?>
+			.header-container .tag-list li:nth-child(<?php echo $key + 1; ?>) a:hover{
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
+			}
+		<?php } ?>
+	</style>
 </head>
 <body <?php body_class(); ?>>
 <div class="transparent-black-overlay d-none"></div>
@@ -136,31 +145,15 @@
 						<div class="col-10">
 							<nav>
 								<ul class="d-flex justify-content-center align-items-center tag-list">
-									<li>
-										<a href="/category/لبنان/">
-											لبنان
-										</a>
-									</li>
-									<li>
-										<a href="/category/لبنان/">
-											العالم العربي
-										</a>
-									</li>
-									<li>
-										<a href="/category/لبنان/">
-										العالم
-										</a>
-									</li>
-									<li>
-										<a href="/category/لبنان/">
-										مجتمع
-										</a>
-									</li>
-									<li>
-										<a href="/category/لبنان/">
-											تقارير
-										</a>
-									</li>
+									<?php
+										foreach ( $tags as $tag ) {
+									?>
+											<li>
+												<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) )?>">
+													<?php echo esc_html( $tag->name ); ?>
+												</a>
+											</li>
+									<?php } ?>
 								</ul>
 							</nav>
 						</div>
