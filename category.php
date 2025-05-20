@@ -306,11 +306,13 @@ get_header();
             'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
         ]
         $('.openPopup').click(function(){
+            $('html, body').addClass('hide_scroll');
             let key = $(this).attr('data-key');
             $('.videoOverlay-' + key).css('display', 'block');
             $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
         })
         $('.close-btn').click(function(){
+            $('html, body').removeClass('hide_scroll');
             var key = $(this).attr('data-key');
             $('.videoOverlay-' + key).css('display', 'none');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
