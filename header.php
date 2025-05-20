@@ -22,7 +22,10 @@ $tags = get_tags();
 		<?php
 			foreach ( $tags as $key => $tag ) {
 		?>
-			.header-container .tag-list li:nth-child(<?php echo $key + 1; ?>) a:hover{
+			.header-container .tag-list li:nth-child(<?php echo $key + 1; ?>) button:hover{
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
+			}
+			.header-container .tag-list li:nth-child(<?php echo $key + 1; ?>) button.active{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
 		<?php } ?>
@@ -148,9 +151,9 @@ $tags = get_tags();
 									foreach ( $tags as $tag ) {
 								?>
 										<li>
-											<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) )?>">
+											<button class="single-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
 												<?php echo esc_html( $tag->name ); ?>
-											</a>
+											</button>
 										</li>
 								<?php } ?>
 							</ul>
@@ -313,6 +316,9 @@ jQuery(document).ready(function($) {
 	$(window).on('scroll', function () {
 		checkFadeIn();
 	});
+	$('.single-tag').click(function() {
+		$(this).toggleClass('active');
+	})
 });
 </script>
 <!-- <script>
