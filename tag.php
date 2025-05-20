@@ -13,7 +13,7 @@ $query = new WP_Query(
 ?>
 <section class="homepage">
     <div class="container">
-        <div class="row text-center">
+        <div class="row text-center pt-4">
             <h1><?php single_tag_title(); ?></h1>
         </div>
     </div>

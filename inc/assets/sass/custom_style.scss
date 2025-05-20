@@ -459,6 +459,11 @@ p{
 }
 //homepage
 .homepage{
+	h1{
+		font-family: $bold;
+		color: #fff;
+		font-size: 3rem;
+	}
 	.bg-color-green{
 		background-color: #1A876B;
 		border-radius: 15px;

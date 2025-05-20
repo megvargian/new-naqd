@@ -523,6 +523,11 @@ p {
   display: none;
 }
 
+.homepage h1 {
+  font-family: "ManchetteFine-Bold";
+  color: #fff;
+  font-size: 3rem;
+}
 .homepage .bg-color-green {
   background-color: #1A876B;
   border-radius: 15px;
