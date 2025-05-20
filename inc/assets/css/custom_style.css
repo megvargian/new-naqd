@@ -279,13 +279,13 @@ p {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.rassif-section title {
+.rassif-section .title {
   background-color: #FF6F00;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   display: block;
 }
-.rassif-section title h2 {
+.rassif-section .title h2 {
   font-size: 3rem;
   font-family: "ManchetteFine-Bold";
   color: #fff;
