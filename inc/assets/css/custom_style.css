@@ -292,6 +292,10 @@ p {
   text-align: center;
 }
 
+.title-padding {
+  padding: 3rem 0;
+}
+
 .header-container {
   background-color: #313136;
 }

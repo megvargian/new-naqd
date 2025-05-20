@@ -16,6 +16,17 @@
   .most-read-articles ul li h3 {
     font-size: 1.5rem;
   }
+  .title-padding {
+    padding: 2.2rem 0;
+  }
+}
+@media (max-width: 1199px) {
+  .title-padding {
+    padding: 2.1rem 0;
+  }
+  .title-padding h2 {
+    font-size: 2rem;
+  }
 }
 @media screen and (max-width: 991px) {
   .header-container .menu_on_mobile {
