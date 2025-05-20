@@ -328,6 +328,7 @@ jQuery(document).ready(function($) {
 		if(activeTags){
 			filterPostsBasedTags(activeTags);
 		} else {
+			console.log('test');
 			window.location.href = '<?php echo get_home_url(); ?>';
 		}
 	})
