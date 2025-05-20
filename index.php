@@ -233,7 +233,7 @@ $second_part = new WP_Query(
             <div class="col-lg-6 col-12 mb-2 px-1">
                 <div class="w-100 h-100 rassif-section">
                     <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif.jpg" alt="rassif">
-                    <div class="title py-4">
+                    <div class="title py-5">
                         <h2>أبناء الرصيف: التقرير الكامل</h2>
                     </div>
                 </div>
