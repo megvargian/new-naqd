@@ -238,9 +238,28 @@ p{
   opacity: 0;
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
 .fade-in.visible {
   opacity: 1;
+}
+.rassif-section{
+	border-radius: 15px;
+	img{
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+	}
+	title{
+		background-color: $orange_color;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		display: block;
+		h2{
+			font-size: 3rem;
+			font-family: $bold;
+			color: #fff;
+			text-align: center;
+		}
+	}
+
 }
 //header class
 .header-container{

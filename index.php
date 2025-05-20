@@ -231,7 +231,12 @@ $second_part = new WP_Query(
         </div>
         <div class="row">
             <div class="col-lg-6 col-12 mb-2 px-1">
-                <img class="w-100 d-block h-100" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif.jpg" alt="rassif">
+                <div class="w-100 h-100 rassif-section">
+                    <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif.jpg" alt="rassif">
+                    <div class="title py-4">
+                        <h2>أبناء الرصيف: التقرير الكامل</h2>
+                    </div>
+                </div>
             </div>
             <?php for($i=0; $i<2; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
@@ -256,6 +261,15 @@ $second_part = new WP_Query(
                             </div>
                         </div>
                     </div>
+                </div>
+            <?php } ?>
+        </div>
+        <div class="row">
+            <?php for($i=9; $i<18; $i++){ ?>
+                <div class="col-lg-3 col-12 mb-2 px-1">
+                    <a href="/test-1" class="fade-in">
+                        <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                    </a>
                 </div>
             <?php } ?>
         </div>

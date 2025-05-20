@@ -272,6 +272,26 @@ p {
   opacity: 1;
 }
 
+.rassif-section {
+  border-radius: 15px;
+}
+.rassif-section img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.rassif-section title {
+  background-color: #FF6F00;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: block;
+}
+.rassif-section title h2 {
+  font-size: 3rem;
+  font-family: "ManchetteFine-Bold";
+  color: #fff;
+  text-align: center;
+}
+
 .header-container {
   background-color: #313136;
 }
