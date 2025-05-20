@@ -320,10 +320,31 @@ jQuery(document).ready(function($) {
 	$('.single-tag').click(function() {
 		$(this).toggleClass('active');
 		$('.single-tag.active').each(function() {
-			activeTags.push(this.attr('data-tagId'));
+			activeTags.push($(this).attr('data-tagId'));
 		});
 		console.log(activeTags)
 	})
+	function filterPostsBasedTags(activeTags) {
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo admin_url('admin-ajax.php'); ?>',
+			data: {
+				action: 'filter_post_based_tags',
+				tags: activeTags,
+			},
+			success: function(response) {
+				if (response === ''){
+					// $('#load-more-button-cat').hide();
+				}
+				if (response) {
+					// $('#search-container').replaceWith(response);
+				} else {
+					// No more posts to load
+					// $('#load-more-button-cat').hide();
+				}
+			},
+		});
+	}
 });
 </script>
 <!-- <script>

@@ -800,11 +800,16 @@ add_action('wp_ajax_nopriv_load_more_posts_search', 'load_more_posts_search');
 
 
 function filter_post_based_tags() {
-    $category_id = $_POST['category_id'];
-    $search = $_POST['search'];
-    $get_fields = get_fields('category_' . $category_id);
+    $tags_ids = $_POST['tags'];
+     $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' =>  -1,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+        'tag__in'        => $tag_ids,
+    );
+    $query = new WP_Query($args);
     ?>
-
     <?php
     wp_die();
 }
