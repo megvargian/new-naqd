@@ -318,7 +318,7 @@ jQuery(document).ready(function($) {
 	});
 	$('.single-tag').click(function() {
 		<?php if(!is_front_page()){?>
-			window.location.href = '<?php echo get_home_url(); ?>';
+			window.location.href = '<?php echo get_home_url(); ?>/?tagId=' + $(this).attr('data-tagId');
 		<?php }?>
 		$(this).toggleClass('active');
 		var activeTags = [];
@@ -348,6 +348,10 @@ jQuery(document).ready(function($) {
 			},
 		});
 	}
+	// filter page after redirect
+	<?php if(isset($_GET['tagId'])){?>
+		$('.single-tag[data-tagId="<?php echo $_GET['tagId']; ?>"').click();
+	<?php }?>
 });
 </script>
 <!-- <script>
