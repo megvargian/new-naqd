@@ -265,7 +265,7 @@ $second_part = new WP_Query(
             <?php } ?>
         </div>
         <div class="row">
-            <?php for($i=9; $i<18; $i++){ ?>
+            <?php for($i=9; $i<17; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <a href="/test-1" class="fade-in">
                         <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
