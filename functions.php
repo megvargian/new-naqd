@@ -806,22 +806,24 @@ function filter_post_based_tags() {
         'posts_per_page' =>  -1,
         'orderby'        => 'date',
         'order'          => 'DESC',
-        'tag__in'        => $tag_ids,
+        'tag__in'        => $tags_ids,
     );
     $query = new WP_Query($args);
     ?>
     <div id="filter-container" class="container py-5">
         <div class="row">
             <?php
+                $count=0;
                 if ( $query->have_posts() ) {
                     while ( $query->have_posts() ) {
                     $query->the_post();
                     $article_id = get_the_ID();
                     $article_title = get_the_title($article_id);
                     $image_url = get_the_post_thumbnail_url($article_id);
+                    $count++;
             ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                    <a href="<?php echo get_permalink($article_id);?>" class="<?php echo $count > 8 ? 'fade-in' : ''?>">
                         <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                     </a>
                 </div>
