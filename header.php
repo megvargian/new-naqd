@@ -326,7 +326,7 @@ jQuery(document).ready(function($) {
 			activeTags.push($(this).attr('data-tagId'));
 		});
 		console.log(activeTags);
-		if(activeTags){
+		if(activeTags !== []){
 			filterPostsBasedTags(activeTags);
 		} else {
 			console.log('test');
