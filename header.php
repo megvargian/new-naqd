@@ -318,7 +318,15 @@ jQuery(document).ready(function($) {
 	});
 	$('.single-tag').click(function() {
 		$(this).toggleClass('active');
-		console.log($('.single-tag.active').attr('data-tagId'));
+		var activeTags = [];
+		$('.single-tag.active').each(function() {
+			$.each(this.attributes, function() {
+				if (this.name.startsWith('data-tagId')) {
+					activeTags.push(this.value);
+				}
+			});
+		});
+		console.log(activeTags)
 	})
 });
 </script>
