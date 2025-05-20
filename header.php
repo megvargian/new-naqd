@@ -316,9 +316,9 @@ jQuery(document).ready(function($) {
 	$(window).on('scroll', function () {
 		checkFadeIn();
 	});
-	var activeTags = [];
 	$('.single-tag').click(function() {
 		$(this).toggleClass('active');
+		var activeTags = [];
 		$('.single-tag.active').each(function() {
 			activeTags.push($(this).attr('data-tagId'));
 		});
