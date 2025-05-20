@@ -318,7 +318,7 @@ jQuery(document).ready(function($) {
 	});
 	$('.single-tag').click(function() {
 		<?php if(!is_front_page()){?>
-			window.location.href = <?php echo get_home_url(); ?>
+			window.location.href = '<?php echo get_home_url(); ?>';
 		<?php }?>
 		$(this).toggleClass('active');
 		var activeTags = [];
