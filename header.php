@@ -320,11 +320,7 @@ jQuery(document).ready(function($) {
 	$('.single-tag').click(function() {
 		$(this).toggleClass('active');
 		$('.single-tag.active').each(function() {
-			$.each(this.attributes, function() {
-				if (this.name.startsWith('data-tagId')) {
-					activeTags.push(this.value);
-				}
-			});
+			activeTags.push(this.attr('data-tagId'));
 		});
 		console.log(activeTags)
 	})

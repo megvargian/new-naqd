@@ -797,3 +797,16 @@ function load_more_posts_search() {
 }
 add_action('wp_ajax_load_more_posts_search', 'load_more_posts_search');
 add_action('wp_ajax_nopriv_load_more_posts_search', 'load_more_posts_search');
+
+
+function filter_post_based_tags() {
+    $category_id = $_POST['category_id'];
+    $search = $_POST['search'];
+    $get_fields = get_fields('category_' . $category_id);
+    ?>
+
+    <?php
+    wp_die();
+}
+add_action('wp_ajax_filter_post_based_tags', 'filter_post_based_tags');
+add_action('wp_ajax_nopriv_filter_post_based_tags', 'filter_post_based_tags');
