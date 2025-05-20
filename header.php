@@ -322,7 +322,8 @@ jQuery(document).ready(function($) {
 		$('.single-tag.active').each(function() {
 			activeTags.push($(this).attr('data-tagId'));
 		});
-		console.log(activeTags)
+		console.log(activeTags);
+		filterPostsBasedTags(activeTags);
 	})
 	function filterPostsBasedTags(activeTags) {
 		$.ajax({
@@ -337,7 +338,7 @@ jQuery(document).ready(function($) {
 					// $('#load-more-button-cat').hide();
 				}
 				if (response) {
-					// $('#search-container').replaceWith(response);
+					$('#filter-container').replaceWith(response);
 				} else {
 					// No more posts to load
 					// $('#load-more-button-cat').hide();

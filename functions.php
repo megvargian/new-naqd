@@ -801,7 +801,7 @@ add_action('wp_ajax_nopriv_load_more_posts_search', 'load_more_posts_search');
 
 function filter_post_based_tags() {
     $tags_ids = $_POST['tags'];
-     $args = array(
+    $args = array(
         'post_type'      => 'post',
         'posts_per_page' =>  -1,
         'orderby'        => 'date',
@@ -810,6 +810,26 @@ function filter_post_based_tags() {
     );
     $query = new WP_Query($args);
     ?>
+    <div id="filter-container" class="container py-5">
+        <div class="row">
+            <?php
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                    $query->the_post();
+                    $article_id = get_the_ID();
+                    $article_title = get_the_title($article_id);
+                    $image_url = get_the_post_thumbnail_url($article_id);
+            ?>
+                <div class="col-lg-3 col-12 mb-2 px-1">
+                    <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                        <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
+                    </a>
+                </div>
+            <?php }
+                wp_reset_postdata();
+            }?>
+        </div>
+    </div>
     <?php
     wp_die();
 }

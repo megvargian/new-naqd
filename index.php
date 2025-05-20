@@ -25,7 +25,7 @@ $second_part = new WP_Query(
 );
 ?>
 <section class="homepage">
-    <div class="container py-5">
+    <div id="filter-container" class="container py-5">
         <?php
             if ( $first_article->have_posts() ) {
                 while ( $first_article->have_posts() ) {
