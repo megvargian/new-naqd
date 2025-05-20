@@ -106,8 +106,8 @@ $tags = get_tags();
 									</a>
 								</li>
 							</ul>
-							<nav class="d-block">
-								<ul class="d-flex justify-content-center align-items-center tag-list">
+							<nav class="d-block mt-3">
+								<ul class="d-flex justify-content-start align-items-center tag-list">
 									<?php
 										foreach ( $tags as $tag ) {
 									?>
