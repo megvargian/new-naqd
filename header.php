@@ -326,10 +326,9 @@ jQuery(document).ready(function($) {
 			activeTags.push($(this).attr('data-tagId'));
 		});
 		console.log(activeTags);
-		if(activeTags !== []){
+		if(activeTags.length !== 0){
 			filterPostsBasedTags(activeTags);
 		} else {
-			console.log('test');
 			window.location.href = '<?php echo get_home_url(); ?>';
 		}
 	})
