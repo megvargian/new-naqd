@@ -43,13 +43,13 @@ $tags = get_tags();
 		<nav>
 			<div class="container-fluid px-4">
 				<div class="row">
-					<div class="col-1 d-flex justify-content-start">
+					<div class="col-sm-1 col d-flex justify-content-start">
 						<a href="<?php echo home_url(); ?>">
 							<img class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 						</a>
 					</div>
-					<?php if(!is_singular('post')){ ?>
-						<div class="col justify-content-center d-lg-flex d-none align-items-center">
+					<?php //if(!is_singular('post')){ ?>
+						<div class="col-9 justify-content-center d-lg-flex d-none align-items-center">
 							<ul class="social-media-icons">
 								<li class="mx-1">
 									<a href="#" class="single-social-icon">
@@ -106,8 +106,21 @@ $tags = get_tags();
 									</a>
 								</li>
 							</ul>
+							<nav class="d-block">
+								<ul class="d-flex justify-content-center align-items-center tag-list">
+									<?php
+										foreach ( $tags as $tag ) {
+									?>
+											<li>
+												<button class="single-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
+													<?php echo esc_html( $tag->name ); ?>
+												</button>
+											</li>
+									<?php } ?>
+								</ul>
+							</nav>
 						</div>
-					<?php } ?>
+					<?php //} ?>
 					<div class="col d-flex justify-content-end align-items-center">
 						<!-- <label class="toggle">
 							<input type="checkbox" id="theme-toggle">
@@ -143,23 +156,23 @@ $tags = get_tags();
 						</button>
 					</div>
 				</div>
-				<div class="row justify-content-center d-lg-flex d-none">
+				<!-- <div class="row justify-content-center d-lg-flex d-none">
 					<div class="col-10">
 						<nav>
 							<ul class="d-flex justify-content-center align-items-center tag-list">
 								<?php
-									foreach ( $tags as $tag ) {
+									//foreach ( $tags as $tag ) {
 								?>
 										<li>
-											<button class="single-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
-												<?php echo esc_html( $tag->name ); ?>
+											<button class="single-tag tag-<?php //echo $tag->term_id ?>" data-tagId="<?php // echo $tag->term_id ?>">
+												<?php // echo esc_html( $tag->name ); ?>
 											</button>
 										</li>
-								<?php } ?>
+								<?php // } ?>
 							</ul>
 						</nav>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div id="menu_mobile" class="menu_on_mobile">
 				<div class="menu_on_mobile_wrapper">
