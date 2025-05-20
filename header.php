@@ -39,11 +39,11 @@ $tags = get_tags();
 			<div id="progressBar"></div>
 		</div>
 	<?php } ?>
-	<header id="masthead" class="header-container py-4 pb-3">
+	<header id="masthead" class="header-container py-3">
 		<nav>
 			<div class="container-fluid px-4">
 				<div class="row">
-					<div class="col-sm-1 col d-flex justify-content-start">
+					<div class="col d-flex justify-content-start">
 						<a href="<?php echo home_url(); ?>">
 							<img class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
 						</a>
@@ -107,7 +107,7 @@ $tags = get_tags();
 										</a>
 									</li>
 								</ul>
-								<nav class="d-block mt-3">
+								<nav class="d-block mt-2">
 									<ul class="d-flex justify-content-start align-items-center tag-list">
 										<?php
 											foreach ( $tags as $tag ) {
