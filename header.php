@@ -49,7 +49,7 @@ $tags = get_tags();
 						</a>
 					</div>
 					<?php //if(!is_singular('post')){ ?>
-						<div class="col-9 justify-content-center d-lg-flex d-none align-items-center">
+						<div class="col-9 justify-content-center d-lg-block d-none align-items-center">
 							<ul class="social-media-icons">
 								<li class="mx-1">
 									<a href="#" class="single-social-icon">
