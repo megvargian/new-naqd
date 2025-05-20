@@ -317,12 +317,14 @@ jQuery(document).ready(function($) {
 		checkFadeIn();
 	});
 	$('.single-tag').click(function() {
+		<?php if(!is_front_page()){?>
+			window.location.href = <?php echo get_home_url(); ?>
+		<?php }?>
 		$(this).toggleClass('active');
 		var activeTags = [];
 		$('.single-tag.active').each(function() {
 			activeTags.push($(this).attr('data-tagId'));
 		});
-		console.log(activeTags);
 		filterPostsBasedTags(activeTags);
 	})
 	function filterPostsBasedTags(activeTags) {

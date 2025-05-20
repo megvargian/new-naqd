@@ -798,7 +798,7 @@ function load_more_posts_search() {
 add_action('wp_ajax_load_more_posts_search', 'load_more_posts_search');
 add_action('wp_ajax_nopriv_load_more_posts_search', 'load_more_posts_search');
 
-
+//filter on the homepage based on tags
 function filter_post_based_tags() {
     $tags_ids = $_POST['tags'];
     $args = array(
