@@ -132,7 +132,7 @@ p{
 .latestNewsSwiper, .MainCatVideo{
 	position: relative;
 }
-.latestNewsSwiper::before, .MainCatVideo::before{
+.latestNewsSwiper::before{
 	content: "";
 	position: absolute;
 	top: 0;
@@ -140,6 +140,17 @@ p{
 	width: 100px; /* adjust width as needed */
 	height: 100%;
 	background: linear-gradient(to right, rgba(0, 0, 0, 2), transparent);
+	z-index: 10;
+	pointer-events: none;
+}
+.MainCatVideo::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px; /* adjust width as needed */
+	height: 100%;
+	background: linear-gradient(to right, rgb(22 22 22), transparent);
 	z-index: 10;
 	pointer-events: none;
 }
