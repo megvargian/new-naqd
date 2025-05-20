@@ -325,7 +325,7 @@ jQuery(document).ready(function($) {
 		$('.single-tag.active').each(function() {
 			activeTags.push($(this).attr('data-tagId'));
 		});
-		conosle.log(activeTags);
+		console.log(activeTags);
 		if(activeTags){
 			filterPostsBasedTags(activeTags);
 		} else {
