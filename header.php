@@ -318,6 +318,7 @@ jQuery(document).ready(function($) {
 	});
 	$('.single-tag').click(function() {
 		$(this).toggleClass('active');
+		console.log($('.single-tag.active').attr('data-tagId'));
 	})
 });
 </script>
