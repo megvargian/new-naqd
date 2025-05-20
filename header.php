@@ -325,7 +325,11 @@ jQuery(document).ready(function($) {
 		$('.single-tag.active').each(function() {
 			activeTags.push($(this).attr('data-tagId'));
 		});
-		filterPostsBasedTags(activeTags);
+		if(activeTags){
+			filterPostsBasedTags(activeTags);
+		} else {
+			window.location.href = '<?php echo get_home_url(); ?>';
+		}
 	})
 	function filterPostsBasedTags(activeTags) {
 		$.ajax({
