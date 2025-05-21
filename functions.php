@@ -601,7 +601,7 @@ function load_more_products() {
         'posts_per_page'    => 		12,
         'order'             =>      'DESC',
 		'post_status'    	=> 		'publish',
-        'offset'         	=> 		18 + (($paged - 1) * 12), // Increase offset for each page
+        'offset'         	=> 		8 + (($paged - 1) * 12), // Increase offset for each page
     );
     $query = new WP_Query($args);
     if ($query->have_posts()) {
