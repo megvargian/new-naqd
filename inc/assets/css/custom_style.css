@@ -578,7 +578,6 @@ p {
   font-size: 3rem;
 }
 .homepage .bg-color-green {
-  background-color: #1A876B;
   border-radius: 15px;
 }
 .homepage .bg-color-green .main-img {
@@ -587,7 +586,6 @@ p {
 }
 .homepage .bg-color-green p {
   font-family: "Bressay-Regular";
-  color: #fff;
   font-size: 1.3rem;
   text-align: right;
   margin-bottom: 1.5rem;
@@ -602,7 +600,6 @@ p {
 .homepage .bg-color-green .lower-part p {
   font-family: "Helvetica-Regular";
   font-size: 1rem;
-  color: #fff;
   margin-bottom: 0;
 }
 .homepage .bg-color-green .lower-part .heart, .homepage .bg-color-green .lower-part .heart-filled {
@@ -854,7 +851,7 @@ footer .border-green {
   color: #fff;
   text-align: right;
 }
-.single-product-page .lower-part p {
+.single-product-page .lower-part c p {
   font-family: "Bressay-Regular";
   font-size: 1rem;
   color: #fff;

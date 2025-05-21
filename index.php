@@ -3,9 +3,6 @@
  * Template Name: Homepage
  */
 get_header();
-// while ( have_posts() ) : the_post();
-//     the_content();
-// endwhile;
 $first_article = new WP_Query(
     array(
         'post_type'      => 'post',
@@ -23,24 +20,23 @@ $second_part = new WP_Query(
         'order'          => 'DESC',
     )
 );
+$get_homepage_fields = get_fields();
 ?>
 <section class="homepage">
     <div id="filter-container" class="container py-5">
         <?php
-            if ( $first_article->have_posts() ) {
-                while ( $first_article->have_posts() ) {
-                $first_article->the_post();
-                $article_id = get_the_ID();
+            if ( $get_homepage_fields['featured_article'] ) {
+                $article_id = $get_homepage_fields['featured_article'];
                 $article_title = get_the_title($article_id);
                 $image_url = get_the_post_thumbnail_url($article_id);
                 // content
-                $content = apply_filters( 'the_content', get_the_content() );
+                $content = apply_filters( 'the_content', get_the_content($article_id) );
                 $allowed_tags = '<p><a><strong><em><ul><ol><li><br>'; // Adjust as needed
                 $clean_content = wp_strip_all_tags( strip_tags( $content, $allowed_tags ), true );
                 $words = explode( ' ', $clean_content );
                 $limited = implode( ' ', array_slice( $words, 0, 200 ) );
         ?>
-            <div class="row bg-color-green mb-2">
+            <div class="row bg-color-green mb-2" style="background-color: <?php echo $get_homepage_fields['background_color']; ?>">
                 <div class="col-lg-4 col-12 px-0">
                     <a href="<?php echo get_permalink($article_id); ?>">
                         <img class="w-100 h-100 d-block main-img" src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
@@ -49,7 +45,7 @@ $second_part = new WP_Query(
                 <div class="col-8 d-lg-flex d-none px-0">
                     <div class="d-flex justify-content-between align-items-center flex-column">
                         <div class="p-5 pb-0 text-left">
-                            <p>
+                            <p style="color: <?php echo $get_homepage_fields['text_color']; ?>">
                                 <?php echo $limited; ?>
                             </p>
                         </div>
@@ -58,24 +54,23 @@ $second_part = new WP_Query(
                                 <a href="#">
                                     مرزي طاهر - كاتب لبناني
                                 </a>
-                                <p class="helvetica-regular" dir="ltr">
+                                <p class="helvetica-regular" dir="ltr" style="color: <?php echo $get_homepage_fields['text_color']; ?>">
                                     <?php echo get_the_date('j M Y', $article_id); ?>
                                 </p>
                             </div>
-                            <div class="helvetica-regular">
-                                <p dir="ltr">
-                                <img class="heart" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
-                                <img class="heart-filled d-none" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
-                                Like this post</p>
+                            <div class="helvetica-regular" >
+                                <p dir="ltr" style="color: <?php echo $get_homepage_fields['text_color']; ?>">
+                                    <img class="heart" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart.svg" alt="heart">
+                                    <img class="heart-filled d-none" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/heart-filled.svg" alt="heart">
+                                    Like this post
+                                </p>
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        <?php }
-            wp_reset_postdata();
-        } ?>
+        <?php } ?>
         <div class="row">
             <?php
                 if ( $second_part->have_posts() ) {
