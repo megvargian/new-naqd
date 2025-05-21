@@ -16,7 +16,7 @@ $title = get_the_title($product_id);
             <div class="col-xxxl-5 col-xxl-4 col-lg-6 col-md-8 col-12">
                 <img class="w-100 d-block main-img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $title; ?>">
                 <div class="justify-content-between align-items-center lower-part py-2 w-100">
-                    <div class="d-flex justify-content-center align-items-center">
+                    <div class="d-flex justify-content-start align-items-center">
                         <div class="author-section">
                             <img class="" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/avatar.png" alt="">
                             <a href="#">
