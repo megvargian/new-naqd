@@ -38,21 +38,22 @@ $tags = get_tags(array(
                         </form>
                         <form class="filter-products p-3" method="post" action="">
                             <h3 class="mb-3">Categories</h3>
-                            <?php foreach ($categories as $category): ?>
-                                <label class="label-cats">
-                                    <input type="checkbox" name="category[]" value="<?php echo esc_attr($category->term_id); ?>">
-                                    <?php echo esc_html($category->name); ?>
-                                </label>
-                            <?php endforeach; ?>
-                            <!-- Tags -->
+                            <select name="category[]" multiple class="form-control mb-3">
+                                <?php foreach ($categories as $category): ?>
+                                    <option value="<?php echo esc_attr($category->term_id); ?>">
+                                        <?php echo esc_html($category->name); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+
                             <h3 class="my-3">Tags</h3>
-                            <?php foreach ($tags as $tag): ?>
-                                <label class="label-tags">
-                                    <input type="checkbox" name="tag[]" value="<?php echo esc_attr($tag->term_id); ?>">
-                                    <?php echo esc_html($tag->name); ?>
-                                </label>
-                            <?php endforeach; ?>
-                            <br>
+                            <select name="tag[]" multiple class="form-control">
+                                <?php foreach ($tags as $tag): ?>
+                                    <option value="<?php echo esc_attr($tag->term_id); ?>">
+                                        <?php echo esc_html($tag->name); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
                         </form>
                     </div>
                     <div id="filter-container" class="row">
