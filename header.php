@@ -192,22 +192,22 @@ $tags = get_tags();
 						<div>
 							<ul>
 								<li>
-									<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
+									<a class="d-block page_font animated_menu_el" href="/category/أقلًا-منا/">
 										أقلًا منا
 									</a>
 								</li>
 								<li>
-									<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
+									<a class="d-block page_font animated_menu_el" href="/category/منشورات/">
 										منشورات
 									</a>
 								</li>
 								<li>
-									<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
+									<a class="d-block page_font animated_menu_el" href="/videos/">
 										شاهد
 									</a>
 								</li>
 								<li>
-									<a class="d-block page_font animated_menu_el" href="/category/لبنان/">
+									<a class="d-block page_font animated_menu_el" href="/category/نشرة-نقد/">
 										نشرة نقد
 									</a>
 								</li>
