@@ -47,15 +47,7 @@ $tags = get_tags(array(
                     </form>
                 </div>
                 <div class="col-lg-8 col-12 order-lg-2 order-1">
-                    <form class="search-form pb-3">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <input class="search" type="search" name="name" placeholder="Search bar" required>
-                            <button type="submit">
-                                <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/search.png" alt="search">
-                            </button>
-                        </div>
-                    </form>
-                    <div class="search-form">
+                    <div class="search-form pb-3">
                         <form>
                             <div class="position-relative">
                                 <input placeholder="يبحث" type="search" required>
