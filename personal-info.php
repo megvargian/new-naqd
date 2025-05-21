@@ -25,6 +25,13 @@ get_header();
             if ($(this).attr('type') !== 'submit' && $(this).attr('type') !== 'button' && $(this).attr('type') !== 'radio') {
                 e.preventDefault(); // prevent submission
             }
+            $('input[name="url-625"]').attr('hidden', true);
+            $('input[value="لا"]').click(function(event) {
+                $('input[name="url-625"]').attr('hidden', true);
+            });
+            $('input[value="نعم"]').click(function(event) {
+                $('input[name="url-625"]').attr('hidden', false);
+            });
         });
     });
 </script>
