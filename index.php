@@ -352,7 +352,7 @@ $second_part = new WP_Query(
         ];
         $('.openPopup').click(function(){
             <?php if(isMob()){ ?>
-                windows.location.href = youtubeShortslinks[key];
+                window.location.href = youtubeShortslinks[key];
             <?php } else { ?>
                 let key = $(this).attr('data-key');
                 $('.videoOverlay-' + key).css('display', 'block');
