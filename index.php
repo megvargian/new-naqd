@@ -368,7 +368,11 @@ $get_homepage_fields = get_fields();
 		    $('html, body').removeClass('hide_scroll');
         });
         $('.rassif-section').click(function(){
-            $('.rassif-description').toggleClass('active');
+            <?php if(isMob()){ ?>
+                window.location.href= '<?php echo get_home_url(); ?>';
+            <?php } else { ?>
+                $('.rassif-description').toggleClass('active');
+            <?php }?>
         });
     })
 </script>
