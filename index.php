@@ -232,9 +232,9 @@ $get_homepage_fields = get_fields();
                         <h2>أبناء الرصيف: التقرير الكامل</h2>
                     </div>
                     <div class="rassif-description h-100">
-                        <div>
-                            <h2>أبناء الرصيف: التقرير الكامل</h2>
-                            <p>شبكات منظمة، سياسيون متورطون، وأطفال يدفعون الثمن.
+                        <div class="px-3">
+                            <h2 class="mb-3">أبناء الرصيف: التقرير الكامل</h2>
+                            <p class="mb-3">شبكات منظمة، سياسيون متورطون، وأطفال يدفعون الثمن.
                                 لن تصدقوا ما ستسمعونه وتشاهدونه في الفيلم الاستقصائي
                                 المعمق #أبناء_الرصيف من إنتاج منصة نقد بالتعاون مع
                                 مؤسسة سمير قصير. شاهدوه الآن
@@ -368,7 +368,7 @@ $get_homepage_fields = get_fields();
 		    $('html, body').removeClass('hide_scroll');
         });
         $('.rassif-section').click(function(){
-            $('.rassif-description').addClass('active');
+            $('.rassif-description').toggleClass('active');
         });
     })
 </script>

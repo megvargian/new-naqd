@@ -298,6 +298,7 @@ p {
 }
 .rassif-section .rassif-description {
   position: absolute;
+  border-radius: 15px;
   z-index: 1;
   right: 0;
   top: 0;
@@ -309,6 +310,7 @@ p {
   display: flex;
   justify-content: start;
   align-items: center;
+  transform: translateX(0%);
   opacity: 0;
 }
 .rassif-section .rassif-description h2 {
@@ -335,6 +337,8 @@ p {
 .rassif-section .rassif-description.active {
   opacity: 1;
   z-index: 2;
+  right: 90%;
+  transform: translateX(90%);
 }
 
 .title-padding {
