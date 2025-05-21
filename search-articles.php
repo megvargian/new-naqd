@@ -26,27 +26,7 @@ $tags = get_tags(array(
     <section class="products-cats py-sm-5 py-3">
         <div class="container">
             <div class="row  justify-content-center">
-                <div class="col-lg-3 col-12 order-lg-1 order-2 pb-4 d-lg-block d-none">
-                    <form class="filter-products p-3" method="post" action="">
-                        <h3 class="mb-3">Categories</h3>
-                        <?php foreach ($categories as $category): ?>
-                            <label class="label-cats">
-                                <input type="checkbox" name="category[]" value="<?php echo esc_attr($category->term_id); ?>">
-                                <?php echo esc_html($category->name); ?>
-                            </label>
-                        <?php endforeach; ?>
-                        <!-- Tags -->
-                        <h3 class="my-3">Tags</h3>
-                        <?php foreach ($tags as $tag): ?>
-                            <label class="label-tags">
-                                <input type="checkbox" name="tag[]" value="<?php echo esc_attr($tag->term_id); ?>">
-                                <?php echo esc_html($tag->name); ?>
-                            </label>
-                        <?php endforeach; ?>
-                        <br>
-                    </form>
-                </div>
-                <div class="col-lg-8 col-12 order-lg-2 order-1">
+                <div class="col-lg-12 col-12 order-lg-2 order-1">
                     <div class="pb-3">
                         <form class="search-form">
                             <div class="position-relative">
@@ -56,8 +36,6 @@ $tags = get_tags(array(
                                 </button>
                             </div>
                         </form>
-                    </div>
-                    <div class="d-lg-none d-block pb-3">
                         <form class="filter-products p-3" method="post" action="">
                             <h3 class="mb-3">Categories</h3>
                             <?php foreach ($categories as $category): ?>
@@ -87,7 +65,7 @@ $tags = get_tags(array(
                                 $image_url = get_the_post_thumbnail_url($article_id);
                         ?>
                             <div class="col-lg-3 col-12 mb-2 px-1">
-                                <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                                <a href="<?php echo get_permalink($article_id);?>">
                                     <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                                 </a>
                             </div>

@@ -577,7 +577,7 @@ function load_filtered_articles() {
                 $image_url = get_the_post_thumbnail_url($article_id);
         ?>
             <div class="col-lg-3 col-12 mb-2 px-1">
-                <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                <a href="<?php echo get_permalink($article_id);?>">
                     <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                 </a>
             </div>
@@ -611,7 +611,7 @@ function load_more_products() {
             $image_url = get_the_post_thumbnail_url($article_id);
         ?>
         <div class="col-lg-3 col-12 mb-2 px-1">
-            <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+            <a href="<?php echo get_permalink($article_id);?>">
                 <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
             </a>
         </div>
