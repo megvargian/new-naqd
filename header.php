@@ -180,9 +180,9 @@ $tags = get_tags();
 				<div class="menu_on_mobile_wrapper">
 					<div class="menu_on_mobile_inner_wrapper" style="position: relative;">
 						<div class="search-form">
-							<form action="/">
+							<form action="/search-articles">
 								<div class="position-relative">
-									<input placeholder="يبحث" type="text" required>
+									<input placeholder="يبحث" type="search" required>
 									<button>
 										<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
 									</button>
