@@ -216,6 +216,7 @@ p {
 .most-read-articles ul {
   list-style: none;
   counter-reset: item;
+  padding-right: 3rem;
 }
 .most-read-articles ul li {
   padding-bottom: 1rem;
@@ -661,6 +662,7 @@ p {
 .homepage .most-read-articles ul {
   list-style: none;
   counter-reset: item;
+  padding-right: 3rem;
 }
 .homepage .most-read-articles ul li {
   padding-bottom: 1rem;
@@ -889,6 +891,7 @@ footer .border-green {
 .single-product-page .related-articles .most-read-articles ul {
   list-style: none;
   counter-reset: item;
+  padding-right: 3rem;
 }
 .single-product-page .related-articles .most-read-articles ul li {
   padding-bottom: 1rem;

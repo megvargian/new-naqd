@@ -231,7 +231,7 @@ $second_part = new WP_Query(
         </div>
         <div class="row">
             <div class="col-lg-6 col-12 mb-2 px-1">
-                <div class="w-100 h-100 rassif-section">
+                <div class="w-100 h-100 rassif-section fade-in">
                     <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif.jpg" alt="rassif">
                     <div class="title title-padding">
                         <h2>أبناء الرصيف: التقرير الكامل</h2>

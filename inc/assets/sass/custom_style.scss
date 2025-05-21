@@ -187,6 +187,7 @@ p{
 	ul{
 		list-style: none;
 		counter-reset: item;
+		padding-right: 3rem;
 		li{
 			padding-bottom: 1rem;
 			border-bottom: 1px solid #5D0DE6;
@@ -577,6 +578,7 @@ p{
 		ul{
 			list-style: none;
 			counter-reset: item;
+			padding-right: 3rem;
 			li{
 				padding-bottom: 1rem;
 				border-bottom: 1px solid #5D0DE6;
@@ -814,6 +816,7 @@ footer{
 			ul{
 				list-style: none;
 				counter-reset: item;
+				padding-right: 3rem;
 				li{
 					padding-bottom: 1rem;
 					border-bottom: 1px solid $orange_color;
