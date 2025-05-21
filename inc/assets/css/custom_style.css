@@ -148,7 +148,7 @@ p {
 
 .single-article-video {
   border-radius: 15px;
-  aspect-ratio: 3/5;
+  aspect-ratio: 3/5.2;
 }
 
 .latestNewsSwiper, .MainCatVideo {
@@ -294,7 +294,7 @@ p {
 }
 
 .title-padding {
-  padding: 3rem 0;
+  padding: 3.75rem 0;
 }
 
 .header-container {
@@ -712,7 +712,7 @@ p {
   border-radius: 15px;
   background-color: #FF6F00;
   display: block;
-  padding: 0.7rem;
+  padding: 0.7rem 1.5rem;
 }
 .homepage .subscribe form {
   justify-content: center;
@@ -721,12 +721,12 @@ p {
 }
 .homepage .subscribe h4 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 .homepage .subscribe input {
   background-color: #fff;
   border-radius: 10px;
-  padding: 0.35rem 0.6rem;
+  padding: 0.7rem 1.6rem;
   color: #000;
   font-size: 1rem;
   margin-left: 7px;
@@ -737,9 +737,9 @@ p {
 .homepage .subscribe button {
   background-color: #000;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.5rem;
   border-radius: 10px;
-  padding: 0.35rem 1.5rem;
+  padding: 0.35rem 2.5rem;
   border: none;
   outline: none;
 }

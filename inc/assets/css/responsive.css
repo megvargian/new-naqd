@@ -19,6 +19,12 @@
   .title-padding {
     padding: 2.2rem 0;
   }
+  .homepage .subscribe h4 {
+    font-size: 2rem;
+  }
+  .homepage .subscribe button {
+    font-size: 1.25rem;
+  }
 }
 @media (max-width: 1199px) {
   .title-padding {
