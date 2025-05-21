@@ -30,7 +30,7 @@ $tags = get_tags(array(
                     <div class="pb-3">
                         <form class="search-form">
                             <div class="position-relative">
-                                <input placeholder="يبحث" type="search" required>
+                                <input placeholder="يبحث" type="search" required class="search">
                                 <button style="padding-top: 2px;">
                                     <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
                                 </button>
