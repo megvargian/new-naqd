@@ -182,7 +182,7 @@ $tags = get_tags();
 						<div class="search-form">
 							<form action="/search-articles">
 								<div class="position-relative">
-									<input placeholder="يبحث" type="search" required>
+									<input placeholder="يبحث" type="search" required name="searchArticle">
 									<button>
 										<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
 									</button>

@@ -3,8 +3,8 @@
  * Template Name: Search Articles
  */
 get_header();
-if(isset($_GET['productsSearch'])){
-    $porduct_search = $_GET['productsSearch'];
+if(isset($_GET['searchArticle'])){
+    $search_article = $_GET['searchArticle'];
 }
 $args = array(
     'post_type'      => 'post',
@@ -47,11 +47,11 @@ $tags = get_tags(array(
                     </form>
                 </div>
                 <div class="col-lg-8 col-12 order-lg-2 order-1">
-                    <div class="search-form pb-3">
-                        <form>
+                    <div class="pb-3">
+                        <form class="search-form">
                             <div class="position-relative">
                                 <input placeholder="يبحث" type="search" required>
-                                <button>
+                                <button style="padding-top: 2px;">
                                     <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
                                 </button>
                             </div>
@@ -156,8 +156,8 @@ $tags = get_tags(array(
                 },
             });
         }
-        <?php if($porduct_search){ ?>
-            $('.search').val("<?php echo $porduct_search; ?>");
+        <?php if($search_article){ ?>
+            $('.search').val("<?php echo $search_article; ?>");
             $('.search-form').submit();
         <?php } ?>
         var page = 1; // Set the initial page number
