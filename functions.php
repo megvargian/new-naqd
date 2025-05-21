@@ -484,3 +484,142 @@ add_action('wp_ajax_nopriv_filter_post_based_tags', 'filter_post_based_tags');
 function isMob(){
     return is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 }
+//search results base on tag
+function load_filtered_articles() {
+    $selectedCategories = $_POST['selectedCategories'];
+    $selectedTags = $_POST['selectedTags'];
+    $search = $_POST['search'];
+    if(isset($selectedCategories) && isset($selectedTags) && isset($search)){
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            's'              => $search,
+            'tax_query'      => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'category',
+                    'field'    => 'term_id',
+                    'terms'    => $selectedCategories,
+                ),
+                array(
+                    'taxonomy' => 'post_tag',
+                    'field'    => 'term_id',
+                    'terms'    => $selectedTags,
+                ),
+            ),
+        );
+    } else if (isset($selectedCategories) && isset($search)) {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            's'              => $search,
+            'category__in'   => $selectedCategories,
+        );
+    } else if (isset($selectedTags) && isset($search)) {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            's'              => $search,
+            'tag__in' => $selectedTags,
+        );
+    } else if (isset($selectedCategories) && isset($selectedTags)) {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            'tax_query'      => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'category',
+                    'field'    => 'term_id',
+                    'terms'    => $selectedCategories,
+                ),
+                array(
+                    'taxonomy' => 'post_tag',
+                    'field'    => 'term_id',
+                    'terms'    => $selectedTags,
+                ),
+            ),
+        );
+    } else if (isset($selectedCategories)) {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            'category__in' => $selectedCategories,
+        );
+    } else if (isset($selectedTags)) {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            'tag__in' => $selectedTags,
+        );
+    } else if (isset($search)){
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            's'              => $search,
+        );
+    } else {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+        );
+    }
+
+    $query = new WP_Query($args);
+    ?>
+    <div id="filter-container" class="row">
+        <?php
+            if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $article_id = get_the_ID();
+                $article_title = get_the_title($article_id);
+                $image_url = get_the_post_thumbnail_url($article_id);
+        ?>
+            <div class="col-lg-3 col-12 mb-2 px-1">
+                <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                    <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
+                </a>
+            </div>
+        <?php
+            }
+        }
+        wp_reset_postdata();
+        ?>
+    </div>
+    <?php
+    wp_die();
+}
+add_action('wp_ajax_load_filtered_articles', 'load_filtered_articles');
+add_action('wp_ajax_nopriv_load_filtered_articles', 'load_filtered_articles');
+// load more for filterd articles
+function load_more_products() {
+    $paged = isset($_POST['page']) ? intval($_POST['page']) : 1; // Start with page 2 for the next load
+    $args = array(
+        'post_type' 		=> 		'post',
+        'posts_per_page'    => 		12,
+        'order'             =>      'DESC',
+		'post_status'    	=> 		'publish',
+        'offset'         	=> 		18 + (($paged - 1) * 12), // Increase offset for each page
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $article_id = get_the_ID();
+            $article_title = get_the_title($article_id);
+            $image_url = get_the_post_thumbnail_url($article_id);
+        ?>
+        <div class="col-lg-3 col-12 mb-2 px-1">
+            <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
+            </a>
+        </div>
+        <?php
+        }
+    }
+    wp_reset_postdata();
+    wp_die();
+}
+add_action('wp_ajax_load_more_products', 'load_more_products');
+add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');

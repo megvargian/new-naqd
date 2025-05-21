@@ -8,7 +8,7 @@ if(isset($_GET['searchArticle'])){
 }
 $args = array(
     'post_type'      => 'post',
-    'posts_per_page' =>  -1,
+    'posts_per_page' =>  18,
     'orderby'        => 'date',
     'order'          => 'DESC',
 );
@@ -143,7 +143,7 @@ $tags = get_tags(array(
                 type: 'POST',
                 url: '<?php echo admin_url('admin-ajax.php'); ?>',
                 data: {
-                    action: 'load_filtered_products',
+                    action: 'load_filtered_articles',
                     selectedCategories: selectedCategories,
                     selectedTags: selectedTags,
                     search: search,
