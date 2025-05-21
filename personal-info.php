@@ -26,6 +26,7 @@ get_header();
             $(cf7form).each(function(index, el) {
                 if (el) {
                     $(el).find('form').submit(function(event) {
+                        event.preventDefault(); // prevent submission
                         $(el).find('form').find('.wpcf7-submit').addClass('disabled');
                         $(el).parents('.form_validation_parent').find('.contact_success_message').hide();
                         $(el).parents('.form_validation_parent').find('.contact_fail_message').hide();
