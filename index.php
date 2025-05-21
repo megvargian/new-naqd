@@ -198,7 +198,7 @@ $second_part = new WP_Query(
             </div>
         </div>
         <div class="row">
-            <?php for($i=4; $i<8; $i++){ ?>
+            <?php for($i=0; $i<4; $i++){ ?>
                 <!-- <div class="col-lg-3 col-12 mb-2 px-1">
                     <div class="openPopup fade-in" data-key="<?php //echo $i; ?>">
                         <img class="w-100 d-block single-article" style="cursor: pointer;" src="<?php //echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
@@ -238,7 +238,7 @@ $second_part = new WP_Query(
                     </div>
                 </div>
             </div>
-            <?php for($i=0; $i<2; $i++){ ?>
+            <?php for($i=4; $i<6; $i++){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
@@ -341,11 +341,6 @@ $second_part = new WP_Query(
             'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
             'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
             'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
             'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
             'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
             'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
