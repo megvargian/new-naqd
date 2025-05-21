@@ -592,6 +592,9 @@ p {
   text-align: right;
   margin-bottom: 1.5rem;
 }
+.homepage .bg-color-green .lower-part {
+  display: flex;
+}
 .homepage .bg-color-green .lower-part a {
   font-family: "ManchetteFine-Regular";
   font-size: 1rem;

@@ -138,6 +138,9 @@
   .single-product-page .related-articles .most-read-articles ul {
     padding-right: 3rem;
   }
+  .homepage .bg-color-green .lower-part {
+    display: block;
+  }
 }
 @media (max-width: 420px) {
   .single-product-page .author-section img {
