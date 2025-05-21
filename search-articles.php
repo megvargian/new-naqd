@@ -63,9 +63,10 @@ $tags = get_tags(array(
                                 $article_id = get_the_ID();
                                 $article_title = get_the_title($article_id);
                                 $image_url = get_the_post_thumbnail_url($article_id);
+                                $count++;
                         ?>
                             <div class="col-lg-3 col-12 mb-2 px-1">
-                                <a href="<?php echo get_permalink($article_id);?>">
+                                <a href="<?php echo get_permalink($article_id);?>" class="<?php echo $count > 8 ? 'fade-in' : ''?>">
                                     <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                                 </a>
                             </div>
