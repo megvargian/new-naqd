@@ -51,7 +51,7 @@ $get_homepage_fields = get_fields();
                         </div>
                         <div class="d-flex justify-content-between align-items-center lower-part pb-5 px-5 w-100">
                             <div class="d-flex justify-content-center align-items-center">
-                                <a href="#">
+                                <a href="#" style="color: <?php echo $get_homepage_fields['text_color']; ?>">
                                     مرزي طاهر - كاتب لبناني
                                 </a>
                                 <p class="helvetica-regular" dir="ltr" style="color: <?php echo $get_homepage_fields['text_color']; ?>">
