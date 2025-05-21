@@ -278,6 +278,7 @@ p {
   border-radius: 15px;
   cursor: pointer;
   position: relative;
+  z-index: 1;
 }
 .rassif-section img {
   border-top-left-radius: 15px;
@@ -333,6 +334,7 @@ p {
 }
 .rassif-section .rassif-description.active {
   opacity: 1;
+  z-index: 2;
 }
 
 .title-padding {
