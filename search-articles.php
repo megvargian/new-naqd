@@ -80,7 +80,9 @@ $tags = get_tags(array(
                          if ($query->have_posts()) {
                             while ($query->have_posts()) {
                                 $query->the_post();
-                                $product_id = get_the_ID();
+                                $article_id = get_the_ID();
+                                $article_title = get_the_title($article_id);
+                                $image_url = get_the_post_thumbnail_url($article_id);
                         ?>
                             <div class="col-lg-3 col-12 mb-2 px-1">
                                 <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
