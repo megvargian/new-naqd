@@ -36,47 +36,23 @@ $tags = get_tags(array(
                                 </button>
                             </div>
                         </form>
-                        <!-- <form class="filter-products p-3" method="post" action="">
+                        <form class="filter-products p-3" method="post" action="" style="color: #fff;">
                             <h3 class="mb-3">Categories</h3>
-                            <?php //foreach ($categories as $category): ?>
+                            <?php foreach ($categories as $category): ?>
                                 <label class="label-cats">
-                                    <input type="checkbox" name="category[]" value="<?php //echo esc_attr($category->term_id); ?>">
-                                    <?php //echo esc_html($category->name); ?>
+                                    <input type="checkbox" name="category[]" value="<?php echo esc_attr($category->term_id); ?>">
+                                    <?php echo esc_html($category->name); ?>
                                 </label>
-                            <?php //endforeach; ?>
+                            <?php endforeach; ?>
+                            <!-- Tags -->
                             <h3 class="my-3">Tags</h3>
-                            <?php //foreach ($tags as $tag): ?>
+                            <?php foreach ($tags as $tag): ?>
                                 <label class="label-tags">
-                                    <input type="checkbox" name="tag[]" value="<?php //echo esc_attr($tag->term_id); ?>">
-                                    <?php //echo esc_html($tag->name); ?>
+                                    <input type="checkbox" name="tag[]" value="<?php echo esc_attr($tag->term_id); ?>">
+                                    <?php echo esc_html($tag->name); ?>
                                 </label>
-                            <?php //endforeach; ?>
+                            <?php endforeach; ?>
                             <br>
-                        </form> -->
-                        <form class="filter-products p-3" method="post" action="">
-                            <h3 class="mb-3">Categories</h3>
-                            <div class="custom-dropdown category-dropdown">
-                                <div class="dropdown-toggle">Select Categories</div>
-                                <ul class="dropdown-menu">
-                                    <?php foreach ($categories as $category): ?>
-                                        <li data-id="<?php echo esc_attr($category->term_id); ?>">
-                                            <?php echo esc_html($category->name); ?>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-
-                            <h3 class="my-3">Tags</h3>
-                            <div class="custom-dropdown tag-dropdown">
-                                <div class="dropdown-toggle">Select Tags</div>
-                                <ul class="dropdown-menu">
-                                    <?php foreach ($tags as $tag): ?>
-                                        <li data-id="<?php echo esc_attr($tag->term_id); ?>">
-                                            <?php echo esc_html($tag->name); ?>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
                         </form>
                     </div>
                     <div id="filter-container" class="row">
@@ -112,65 +88,19 @@ $tags = get_tags(array(
 </section>
 <script>
     jQuery(document).ready(function($) {
-        // $('input[type="checkbox"]').on('change', function() {
-        //     // Get selected category IDs
-        //     var selectedCategories = [];
-        //     $('input[name="category[]"]:checked').each(function() {
-        //         selectedCategories.push($(this).val());
-        //     });
-        //     // Get selected tag IDs
-        //     var selectedTags = [];
-        //     $('input[name="tag[]"]:checked').each(function() {
-        //         selectedTags.push($(this).val());
-        //     });
-        //     var search = $('.search').val();
-        //     searchResults(selectedCategories, selectedTags, search);
-        // });
-        $('.dropdown-toggle').on('click', function() {
-            $(this).next('.dropdown-menu').toggle();
-        });
-
-        // Store selected items
-        let selectedCategories = [];
-        let selectedTags = [];
-
-        // Handle category selection
-        $('.category-dropdown .dropdown-menu li').on('click', function() {
-            const id = $(this).data('id').toString();
-
-            if ($(this).hasClass('selected')) {
-                $(this).removeClass('selected');
-                selectedCategories = selectedCategories.filter(val => val !== id);
-            } else {
-                $(this).addClass('selected');
-                selectedCategories.push(id);
-            }
-
-            var search = $('.search').val() || '';
+        $('input[type="checkbox"]').on('change', function() {
+            // Get selected category IDs
+            var selectedCategories = [];
+            $('input[name="category[]"]:checked').each(function() {
+                selectedCategories.push($(this).val());
+            });
+            // Get selected tag IDs
+            var selectedTags = [];
+            $('input[name="tag[]"]:checked').each(function() {
+                selectedTags.push($(this).val());
+            });
+            var search = $('.search').val();
             searchResults(selectedCategories, selectedTags, search);
-        });
-
-        // Handle tag selection
-        $('.tag-dropdown .dropdown-menu li').on('click', function() {
-            const id = $(this).data('id').toString();
-
-            if ($(this).hasClass('selected')) {
-                $(this).removeClass('selected');
-                selectedTags = selectedTags.filter(val => val !== id);
-            } else {
-                $(this).addClass('selected');
-                selectedTags.push(id);
-            }
-
-            var search = $('.search').val() || '';
-            searchResults(selectedCategories, selectedTags, search);
-        });
-
-        // Close dropdowns when clicking outside
-        $(document).on('click', function(e) {
-            if (!$(e.target).closest('.custom-dropdown').length) {
-                $('.dropdown-menu').hide();
-            }
         });
         $('.search-form').submit(function(e) {
             e.preventDefault();
