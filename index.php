@@ -351,10 +351,10 @@ $second_part = new WP_Query(
             'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
         ];
         $('.openPopup').click(function(){
+            let key = $(this).attr('data-key');
             <?php if(isMob()){ ?>
                 window.location.href = youtubeShortslinks[key];
             <?php } else { ?>
-                let key = $(this).attr('data-key');
                 $('.videoOverlay-' + key).css('display', 'block');
                 $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
                 $('html, body').addClass('hide_scroll');
