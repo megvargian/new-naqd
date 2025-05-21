@@ -22,7 +22,7 @@ get_header();
 <script>
     jQuery(document).ready(function($) {
         $('input').on('click', function(e) {
-            if ($(this).attr('type') !== 'submit' && $(this).attr('type') !== 'button') {
+            if ($(this).attr('type') !== 'submit' && $(this).attr('type') !== 'button' && $(this).attr('type') !== 'radio') {
                 e.preventDefault(); // prevent submission
             }
         });
