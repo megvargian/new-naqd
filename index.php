@@ -37,7 +37,7 @@ $get_homepage_fields = get_fields();
                 $limited = implode( ' ', array_slice( $words, 0, 200 ) );
         ?>
             <div class="row bg-color-green mb-2" style="background-color: <?php echo $get_homepage_fields['background_color']; ?>">
-                <div class="col-lg-4 col-12 px-0">
+                <div class="col-lg-4 col-12 mb-2 mb-sm-0 px-1 px-sm-0">
                     <a href="<?php echo get_permalink($article_id); ?>">
                         <img class="w-100 h-100 d-block main-img" src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                     </a>
