@@ -29,8 +29,8 @@ $get_homepage_fields = get_fields();
                 $article_id = $get_homepage_fields['featured_article'];
                 $article_title = get_the_title($article_id);
                 $image_url = get_the_post_thumbnail_url($article_id);
-                // content
-                $content = apply_filters( 'the_content', get_the_content($article_id) );
+                // get the content
+                $content = apply_filters('the_content', get_post_field('post_content', $article_id));
                 $allowed_tags = '<p><a><strong><em><ul><ol><li><br>'; // Adjust as needed
                 $clean_content = wp_strip_all_tags( strip_tags( $content, $allowed_tags ), true );
                 $words = explode( ' ', $clean_content );
