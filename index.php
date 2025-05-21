@@ -357,14 +357,14 @@ $second_part = new WP_Query(
             <?php } else { ?>
                 $('.videoOverlay-' + key).css('display', 'block');
                 $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
-                $('html, body').addClass('hide_scroll');
+		        $('html, body').addClass('hide_scroll');
             <?php } ?>
         });
         $('.close-btn').click(function(){
             var key = $(this).attr('data-key');
             $('.videoOverlay-' + key).css('display', 'none');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
-            $('html, body').removeClass('hide_scroll');
+		    $('html, body').removeClass('hide_scroll');
         });
     })
 </script>

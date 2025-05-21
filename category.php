@@ -312,14 +312,14 @@ get_header();
             <?php } else { ?>
                 $('.videoOverlay-' + key).css('display', 'block');
                 $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
-                $('html, body').addClass('hide_scroll');
+		        $('html, body').addClass('hide_scroll');
             <?php } ?>
         })
         $('.close-btn').click(function(){
-            $('html, body').removeClass('hide_scroll');
             var key = $(this).attr('data-key');
             $('.videoOverlay-' + key).css('display', 'none');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
+            $('html, body').removeClass('hide_scroll');
         })
         var swiperMainCat = new Swiper(".MainCatVideo", {
             slidesPerView: 4,
