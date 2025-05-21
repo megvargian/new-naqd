@@ -93,10 +93,10 @@
   .most-read-articles ul li::before {
     line-height: 1.55;
   }
-  .single-product-page .related-articles ul li h3 {
+  .single-product-page .related-articles .most-read-articles ul li h3 {
     font-size: 1.5rem;
   }
-  .single-product-page .related-articles ul li::before {
+  .single-product-page .related-articles .most-read-articles ul li::before {
     line-height: 1.55;
   }
   .single-product-page p {

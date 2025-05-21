@@ -154,14 +154,16 @@
 	}
 	.single-product-page{
 		.related-articles{
-			ul{
-				li{
-					h3{
-						font-size: 1.5rem;
+			.most-read-articles{
+				ul{
+					li{
+						h3{
+							font-size: 1.5rem;
+						}
 					}
-				}
-				li::before{
-					line-height: 1.55;
+					li::before{
+						line-height: 1.55;
+					}
 				}
 			}
 		}
