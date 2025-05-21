@@ -837,3 +837,7 @@ function filter_post_based_tags() {
 }
 add_action('wp_ajax_filter_post_based_tags', 'filter_post_based_tags');
 add_action('wp_ajax_nopriv_filter_post_based_tags', 'filter_post_based_tags');
+
+function isMob(){
+    return is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+}
