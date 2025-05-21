@@ -1279,3 +1279,7 @@ body.dark {
 .toggle input:checked ~ .slider .moon {
   transform: translateX(0);
 }
+
+.wpcf7 form .wpcf7-response-output {
+  color: #fff;
+}
