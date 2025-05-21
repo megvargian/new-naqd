@@ -232,7 +232,7 @@ $get_homepage_fields = get_fields();
                         <h2>أبناء الرصيف: التقرير الكامل</h2>
                     </div>
                     <div class="rassif-description h-100">
-                        <div class="px-3">
+                        <div class="px-4">
                             <h2 class="mb-3">أبناء الرصيف: التقرير الكامل</h2>
                             <p class="mb-3">شبكات منظمة، سياسيون متورطون، وأطفال يدفعون الثمن.
                                 لن تصدقوا ما ستسمعونه وتشاهدونه في الفيلم الاستقصائي
