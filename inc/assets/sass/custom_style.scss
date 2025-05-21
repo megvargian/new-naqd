@@ -313,6 +313,37 @@ p{
 .title-padding{
 	padding: 3.75rem 0;;
 }
+.search-form{
+	padding: 60px 15px 15px 15px;
+	input{
+		background-color: #7B39ED;
+		color: white;
+		font-family: $regular;
+		font-size: 1rem;
+		border-radius: 30px;
+		width: 100%;
+		padding: .3rem .5rem;
+		direction: rtl;
+		text-align: right;
+	}
+	input::placeholder{
+		color: #fff;
+		font-family: $regular;
+	}
+	button{
+		position: absolute;
+		left: 0;
+		top: 14%;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		padding: 0 10px;
+		img{
+			width: 15px;
+			height: 15px;
+		}
+	}
+}
 //header class
 .header-container{
 	background-color: $sec_color;
@@ -408,37 +439,6 @@ p{
 		.page_font{
 			font-size: 6rem;
 			margin-top: 10px;
-		}
-		.search-form{
-			padding: 60px 15px 15px 15px;
-			input{
-				background-color: #7B39ED;
-				color: white;
-				font-family: $regular;
-				font-size: 1rem;
-				border-radius: 30px;
-				width: 100%;
-				padding: .3rem .5rem;
-				direction: rtl;
-				text-align: right;
-			}
-			input::placeholder{
-				color: #fff;
-				font-family: $regular;
-			}
-			button{
-				position: absolute;
-				left: 0;
-				top: 14%;
-				background-color: transparent;
-				border: none;
-				outline: none;
-				padding: 0 10px;
-				img{
-					width: 15px;
-					height: 15px;
-				}
-			}
 		}
 	}
 	.menu_on_mobile.active{

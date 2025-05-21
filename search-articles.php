@@ -55,6 +55,16 @@ $tags = get_tags(array(
                             </button>
                         </div>
                     </form>
+                    <div class="search-form">
+                        <form>
+                            <div class="position-relative">
+                                <input placeholder="يبحث" type="search" required>
+                                <button>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="d-lg-none d-block pb-3">
                         <form class="filter-products p-3" method="post" action="">
                             <h3 class="mb-3">Categories</h3>
