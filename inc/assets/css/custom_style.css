@@ -276,6 +276,8 @@ p {
 
 .rassif-section {
   border-radius: 15px;
+  cursor: pointer;
+  position: relative;
 }
 .rassif-section img {
   border-top-left-radius: 15px;
@@ -292,6 +294,45 @@ p {
   font-family: "ManchetteFine-Bold";
   color: #fff;
   text-align: center;
+}
+.rassif-section .rassif-description {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FF6F00;
+  text-align: right;
+  color: #fff;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  opacity: 0;
+}
+.rassif-section .rassif-description h2 {
+  font-size: 3rem;
+  font-family: "ManchetteFine-Bold";
+  text-align: right;
+}
+.rassif-section .rassif-description p {
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "ManchetteFine-Regular";
+  text-align: right;
+}
+.rassif-section .rassif-description a {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 0.35rem 2.5rem;
+  border: none;
+  outline: none;
+  text-align: right;
+}
+.rassif-section .rassif-description.active {
+  opacity: 1;
 }
 
 .title-padding {
