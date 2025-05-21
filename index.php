@@ -182,7 +182,7 @@ $get_homepage_fields = get_fields();
                 <div class="row">
                     <div class="col-12 mb-2 px-1">
                         <div class="subscribe" class="fade-in">
-                            <h4>لتصلكم نشرة نقد إلــــى بريدكــــــم الالكترونــــــي</h4>
+                            <h4>لتصلكم نشرة نقد إلـى بريدكـم الالكترونـي</h4>
                             <form  action="/">
                                 <input class="email" type="email" placeholder="بريدكم الالكتروني" required>
                                 <button class="submit">الاشتراك</button>
