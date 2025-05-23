@@ -3,14 +3,6 @@
  * Template Name: Homepage
  */
 get_header();
-$first_article = new WP_Query(
-    array(
-        'post_type'      => 'post',
-        'posts_per_page' =>  1,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-    )
-);
 $second_part = new WP_Query(
     array(
         'post_type'      => 'post',
@@ -20,6 +12,20 @@ $second_part = new WP_Query(
         'order'          => 'DESC',
     )
 );
+$video_parts = new WP_Query(
+    array(
+        'post_type'      => 'videos',
+        'posts_per_page' =>  6,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    )
+);
+if ( $video_parts->have_posts() ) {
+    while ( $video_parts->have_posts() ) {
+        $video_parts->the_post();
+
+    }
+}
 $get_homepage_fields = get_fields();
 ?>
 <section class="homepage">
