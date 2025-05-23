@@ -335,18 +335,10 @@ $next4  = array_slice($video_parts_ids, 10, 4);
 			},
 			success: function(response) {
 				if (response === ''){
-					console.log({
-                        action: 'filter_videos_based_tags',
-                        videoTags: activeTags,
-                    })
 				}
 				if (response) {
 					$('#main-filterd-section').replaceWith(response);
                     $('.hide-on-filter').hide();
-                    console.log({
-                        action: 'filter_videos_based_tags',
-                        videoTags: activeTags,
-                    })
 				} else {
 					// No more posts to load
 					// $('#load-more-button-cat').hide();

@@ -638,8 +638,8 @@ function filter_videos_based_tags() {
     );
     $query = new WP_Query($args);
     ?>
+    <pre><?php print_r($tags_video_ids); ?></pre>
     <div if="main-filterd-section" class="row">
-        <pre><?php print_r($tags_video_ids); ?></pre>
         <?php if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
                     $query->the_post();
