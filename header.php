@@ -369,7 +369,7 @@ jQuery(document).ready(function($) {
 	}
 	// filter page after redirect
 	<?php if(isset($_GET['tagId'])){?>
-		$('.single-tag[data-tagId="<?php echo $_GET['tagId']; ?>"').click();
+		$('.single-tag[data-tagId="<?php echo $_GET['tagId']; ?>"]').click();
 	<?php }?>
 });
 </script>

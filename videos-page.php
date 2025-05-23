@@ -76,7 +76,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 <?php foreach ($get_video_fields['tags'] as $key => $tag) {
                 ?>
                     <li>
-                        <button class="tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
+                        <button class="single-video-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
                             <?php echo esc_html( $tag->name ); ?>
                         </button>
                     </li>
@@ -312,6 +312,41 @@ $next4  = array_slice($video_parts_ids, 10, 4);
 			}
         });
         swiper.changeLanguageDirection('rtl');
+        $('.single-video-tag').click(function() {
+            $(this).toggleClass('active');
+            var activeTags = [];
+            $('.single-video-tag.active').each(function() {
+                activeTags.push($(this).attr('data-tagId'));
+            });
+            if(activeTags.length !== 0){
+                filterPostsBasedTags(activeTags);
+            } else {
+                window.location.href = '<?php echo get_permalink(86); ?>';
+            }
+        });
+        function filterVideosBasedTags(activeTags) {
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo admin_url('admin-ajax.php'); ?>',
+			data: {
+				action: 'filter_videos_based_tags',
+				tags: activeTags,
+			},
+			success: function(response) {
+				if (response === ''){
+					// $('#load-more-button-cat').hide();
+				}
+				if (response) {
+					$('#main-filterd-section').replaceWith(response);
+                    $('.hide-on-filter').hide();
+				} else {
+					// No more posts to load
+					// $('#load-more-button-cat').hide();
+				}
+			},
+		});
+	}
+
     });
 </script>
 <?php

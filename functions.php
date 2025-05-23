@@ -625,3 +625,59 @@ function load_more_products() {
 }
 add_action('wp_ajax_load_more_products', 'load_more_products');
 add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
+
+//filter on the videos page based on tags
+function filter_videos_based_tags() {
+    $tags_ids = $_POST['tags'];
+    $args = array(
+        'post_type'      => 'video',
+        'posts_per_page' =>  -1,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+        'tag__in'        => $tags_ids,
+    );
+    $query = new WP_Query($args);
+    ?>
+    <div if="main-filterd-section" class="row">
+        <?php if ( $query->have_posts() ) {
+                while ( $query->have_posts() ) {
+                    $query->the_post();
+                    $video_id = get_the_ID();
+                    $url = get_field('youtube_url', $video_id);
+                    $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                    $parts = explode('/', $path);
+                    $video_embed_id = end($parts);
+                    $count++;
+        ?>
+            <div class="col-lg-3 col-12 mb-3 px-2">
+                <div class="openPopup <?php echo $count > 8 ? 'fade-in' : ''?>" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
+                    <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
+                    <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
+                </div>
+                <div class="overlay videoOverlay-<?php echo $video_id; ?>">
+                    <div class="position-relative w-100 h-100">
+                        <div class="popup">
+                            <button class="close-btn" data-key="<?php echo $video_id; ?>">
+                                <span aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
+                                </span>
+                            </button>
+                            <iframe
+                                    frameborder="0"
+                                    width="360" height="640"
+                                    allowfullscreen
+                                    allow="autoplay; encrypted-media">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php }
+            wp_reset_postdata();
+        }?>
+    </div>
+    <?php
+    wp_die();
+}
+add_action('wp_ajax_filter_videos_based_tags', 'filter_videos_based_tags');
+add_action('wp_ajax_nopriv_filter_videos_based_tags', 'filter_videos_based_tags');

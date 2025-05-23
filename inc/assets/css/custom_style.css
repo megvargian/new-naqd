@@ -1197,6 +1197,9 @@ footer .border-green {
 .categories .tabs li button:hover {
   color: #B6E60D;
 }
+.categories .tabs li button.active {
+  color: #B6E60D;
+}
 
 #progressBarContainer {
   position: fixed;
