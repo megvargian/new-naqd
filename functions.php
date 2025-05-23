@@ -549,7 +549,7 @@ function load_filtered_articles() {
     $search = $_POST['search'];
     $date = $_POST['date'];
 
-    if (isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
+    if (isset($selectedCategories) && isset($selectedTags) && isset($search) && !empty($date)){
         $args = array(
             'post_type'      => 'post',
             'posts_per_page' =>  -1,
@@ -625,13 +625,7 @@ function load_filtered_articles() {
             'posts_per_page' =>  -1,
             's'              => $search,
         );
-    } else {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-        );
-    }
-    if(!empty($date)){
+    } else if(!empty($date)){
         $timestamp = strtotime($date);
         $formatted_date = date('F jS, Y', $timestamp);
         $args = array(
@@ -644,7 +638,13 @@ function load_filtered_articles() {
                 ),
             ),
         );
+    } else {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+        );
     }
+
     $query = new WP_Query($args);
     ?>
     <div id="filter-container" class="row">
