@@ -454,8 +454,7 @@ function filter_videos_based_tags() {
         )
     );
     ?>
-    <pre><?php print_r($tags_video_ids);?></pre>
-    <!-- <div id="video-filter-container" class="row">
+    <div id="video-filter-container" class="row">
         <?php if ( $video_parts->have_posts() ) {
                 while ( $video_parts->have_posts() ) {
                     $video_parts->the_post();
@@ -492,7 +491,7 @@ function filter_videos_based_tags() {
         <?php }
             wp_reset_postdata();
         }?>
-    </div> -->
+    </div>
     <?php
     wp_die();
 }
