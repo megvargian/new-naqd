@@ -330,7 +330,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 type: 'POST',
                 url: '<?php echo admin_url('admin-ajax.php'); ?>',
                 data: {
-                    action: 'filter_videos_based_tags',
+                    action: 'filter_post_based_tags',
                     tags: activeTags,
                 },
                 success: function(response) {
