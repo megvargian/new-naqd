@@ -544,10 +544,10 @@ function isMob(){
 }
 //search results base on tag
 function load_filtered_articles() {
-    $selectedCategories = sanitize_text_field($_POST['selectedCategories']);
-    $selectedTags = sanitize_text_field($_POST['selectedTags']);
-    $search = sanitize_text_field($_POST['search']);
-    $date = sanitize_text_field($_POST['date']);
+    $selectedCategories = $_POST['selectedCategories'];
+    $selectedTags = $_POST['selectedTags'];
+    $search = $_POST['search'];
+    $date = $_POST['date'];
     if(isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
         $args = array(
             'post_type'      => 'post',
