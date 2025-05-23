@@ -548,20 +548,7 @@ function load_filtered_articles() {
     $selectedTags = $_POST['selectedTags'];
     $search = $_POST['search'];
     $date = $_POST['date'];
-    if($date){
-        $timestamp = strtotime($date);
-        $formatted_date = date('F jS, Y', $timestamp);
-        $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => -1,
-            'date_query' => array(
-                array(
-                    'after'     => $formatted_date,
-                    'inclusive' => true, // Set to true to include posts published on 2025-05-18
-                ),
-            ),
-        );
-    }
+
     if (isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
         $args = array(
             'post_type'      => 'post',
@@ -642,6 +629,20 @@ function load_filtered_articles() {
         $args = array(
             'post_type'      => 'post',
             'posts_per_page' =>  -1,
+        );
+    }
+    if(!empty($date)){
+        $timestamp = strtotime($date);
+        $formatted_date = date('F jS, Y', $timestamp);
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+            'date_query' => array(
+                array(
+                    'after'     => $formatted_date,
+                    'inclusive' => true, // Set to true to include posts published on 2025-05-18
+                ),
+            ),
         );
     }
     $query = new WP_Query($args);
