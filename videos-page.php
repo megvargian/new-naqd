@@ -73,34 +73,17 @@ $next4  = array_slice($video_parts_ids, 10, 4);
         <?php } ?>
         <div class="row py-4 " style="border-top: 1px solid #5b5b5b">
             <ul class="d-flex justify-content-start align-items-center tabs">
-                <li>
-                    <a href="#">
-                        العالم العربي
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        لبنان
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        من نحن
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        ناس
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        برامج
-                    </a>
-                </li>
+                <?php foreach ($get_video_fields['tags'] as $key => $tag) {
+                ?>
+                    <li>
+                        <button class="tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
+                            <?php echo esc_html( $tag->name ); ?>
+                        </button>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
-        <div class="row">
+        <div if="main-filterd-section" class="row">
             <?php foreach ($first8 as $key => $video_id) {
                 $url = get_field('youtube_url', $video_id);
                 $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
@@ -132,7 +115,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 </div>
             <?php } ?>
         </div>
-        <div class="row">
+        <div class="row hide-on-filter">
             <div class="col-lg-6 col-12 mb-3 px-2">
                 <div class="most-read-articles fade-in">
                     <h2 class="mb-3 mt-3 mb-lg-5 mt-lg-4">
@@ -192,7 +175,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row hide-on-filter">
             <?php foreach ($next4 as $key => $video_id) {
                     $url = get_field('youtube_url', $video_id);
                     $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"

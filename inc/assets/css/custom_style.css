@@ -1185,13 +1185,13 @@ footer .border-green {
   display: block;
 }
 
-.categories .tabs li a {
+.categories .tabs li button {
   color: #fff;
   font-family: "ManchetteFine-Bold";
   font-size: 2rem;
   margin-left: 2rem;
 }
-.categories .tabs li a:hover {
+.categories .tabs li button:hover {
   color: #B6E60D;
 }
 
