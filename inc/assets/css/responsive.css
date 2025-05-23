@@ -26,12 +26,20 @@
     font-size: 1.25rem;
   }
 }
+@media (max-width: 1367px) {
+  .header-container .tag-list li button {
+    width: 170px;
+  }
+}
 @media (max-width: 1199px) {
   .title-padding {
     padding: 2.1rem 0;
   }
   .title-padding h2 {
     font-size: 2rem;
+  }
+  .header-container .tag-list li button {
+    width: 150px;
   }
 }
 @media screen and (max-width: 991px) {
