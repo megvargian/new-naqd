@@ -318,6 +318,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
             $('.single-video-tag.active').each(function() {
                 activeTags.push($(this).attr('data-tagId'));
             });
+            console.log(activeTags)
             if(activeTags.length !== 0){
                 filterVideosBasedTags(activeTags);
             } else {
