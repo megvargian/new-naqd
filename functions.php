@@ -450,7 +450,6 @@ function filter_videos_based_tags() {
             'posts_per_page' =>  -1,
             'orderby'        => 'date',
             'order'          => 'DESC',
-            'fields'         => 'ids',
             'tag__in'        => $tags_video_ids,
         )
     );
