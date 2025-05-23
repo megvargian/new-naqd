@@ -552,6 +552,9 @@ function load_filtered_articles() {
     echo '<pre>'; print_r($selectedCategories); echo '</pre>';
     echo '<pre>'; print_r($selectedTags); echo '</pre>';
     echo '<pre>'; print_r($search); echo '</pre>';
+    $timestamp = strtotime($date);
+    $formatted_date = date('F jS, Y', $timestamp);
+    echo '<pre>'; print_r($formatted_date); echo '</pre>';
     if (isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
         $args = array(
             'post_type'      => 'post',
