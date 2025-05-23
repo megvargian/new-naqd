@@ -83,7 +83,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 <?php } ?>
             </ul>
         </div>
-        <div if="main-filterd-section" class="row">
+        <div id="main-filterd-section" class="row">
             <?php foreach ($first8 as $key => $video_id) {
                 $url = get_field('youtube_url', $video_id);
                 $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
@@ -330,7 +330,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 type: 'POST',
                 url: '<?php echo admin_url('admin-ajax.php'); ?>',
                 data: {
-                    action: 'filter_post_based_tags',
+                    action: 'filter_videos_based_tags',
                     tags: activeTags,
                 },
                 success: function(response) {
