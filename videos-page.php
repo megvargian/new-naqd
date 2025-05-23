@@ -229,6 +229,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 </div>
             </div>
         </div>
+        <div id="example"></div>
 </section>
 <script>
     jQuery(document).ready(function($) {
@@ -339,6 +340,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                     }
                     if (response) {
                         $('#video-filter-container').replaceWith('');
+                        $('#example').replaceWith(response);
                         $('.hide-on-filter').hide();
                     } else {
                         // No more posts to load
