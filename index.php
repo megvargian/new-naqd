@@ -32,7 +32,6 @@ $video_parts_chunks_ids = array_chunk($video_parts_ids, 2);
 $get_homepage_fields = get_fields();
 $count=0;
 ?>
-<pre><?php print_r($video_parts_chunks_ids);?></pre>
 <section class="homepage">
     <div id="filter-container" class="container py-5">
         <?php
@@ -267,7 +266,7 @@ $count=0;
                     <?php } ?>
                 </div>
             </div>
-            <?php foreach($video_parts_chunks_ids[1] as $video_id){
+            <?php foreach($video_parts_chunks_ids[2] as $video_id){
                     $url = get_field('youtube_url', $video_id);
                     $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
                     $parts = explode('/', $path);
