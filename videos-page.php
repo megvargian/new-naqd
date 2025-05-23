@@ -326,26 +326,28 @@ $next4  = array_slice($video_parts_ids, 10, 4);
             }
         });
         function filterVideosBasedTags(activeTags) {
-		$.ajax({
-			type: 'POST',
-			url: '<?php echo admin_url('admin-ajax.php'); ?>',
-			data: {
-				action: 'filter_videos_based_tags',
-				videoTags: activeTags,
-			},
-			success: function(response) {
-				if (response === ''){
-				}
-				if (response) {
-					$('#main-filterd-section').replaceWith(response);
-                    $('.hide-on-filter').hide();
-				} else {
-					// No more posts to load
-					// $('#load-more-button-cat').hide();
-				}
-			},
-		});
-	}
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                data: {
+                    action: 'filter_videos_based_tags',
+                    tags: activeTags,
+                },
+                success: function(response) {
+                    if (response === ''){
+                        // $('#load-more-button-cat').hide();
+                    }
+                    if (response) {
+                        $('#main-filterd-section').replaceWith(response);
+                        $('.hide-on-filter').hide();
+                    } else {
+                        // No more posts to load
+                        // $('#load-more-button-cat').hide();
+                    }
+                },
+            });
+	    }
+
 
     });
 </script>
