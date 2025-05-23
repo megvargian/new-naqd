@@ -32,6 +32,7 @@ $video_parts_chunks_ids = array_chunk($video_parts_ids, 2);
 $get_homepage_fields = get_fields();
 $count=0;
 ?>
+<pre><?php print_r($video_parts_chunks_ids);?></pre>
 <section class="homepage">
     <div id="filter-container" class="container py-5">
         <?php
