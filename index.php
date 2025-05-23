@@ -12,21 +12,25 @@ $second_part = new WP_Query(
         'order'          => 'DESC',
     )
 );
+$video_parts_ids = array();
 $video_parts = new WP_Query(
     array(
         'post_type'      => 'videos',
         'posts_per_page' =>  6,
         'orderby'        => 'date',
         'order'          => 'DESC',
+        'fields'         => 'ids',
     )
 );
 if ( $video_parts->have_posts() ) {
     while ( $video_parts->have_posts() ) {
         $video_parts->the_post();
-
+        array_push($video_parts_ids, get_the_ID());
     }
 }
+$video_parts_chunks_ids = array_chunk($video_parts_ids, 2);
 $get_homepage_fields = get_fields();
+$count=0;
 ?>
 <section class="homepage">
     <div id="filter-container" class="container py-5">
@@ -120,16 +124,16 @@ $get_homepage_fields = get_fields();
                     </ul>
                 </div>
             </div>
-            <?php for($i=0; $i<2; $i++){ ?>
+            <?php foreach($video_parts_chunks_ids[0] as $video_id){ ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                    <div class="openPopup fade-in" data-key="<?php echo $count; ?>">
+                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
-                    <div class="overlay videoOverlay-<?php echo $i; ?>">
+                    <div class="overlay videoOverlay-<?php echo $count; ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo $i; ?>">
+                                <button class="close-btn" data-key="<?php echo $count; ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
@@ -144,7 +148,8 @@ $get_homepage_fields = get_fields();
                         </div>
                     </div>
                 </div>
-            <?php } ?>
+            <?php $count++;
+                } ?>
         </div>
         <div class="row">
             <?php for($i=2; $i<4; $i++){ ?>
