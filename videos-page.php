@@ -165,7 +165,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                             $parts = explode('/', $path);
                             $video_embed_id = end($parts);
                         ?>
-                        <div class="col-lg-3 col-12 mb-3 px-2">
+                        <div class="col-lg-6 col-12 mb-3 px-2">
                             <div class="openPopup fade-in" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
                                 <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                                 <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
