@@ -4,6 +4,25 @@
  */
 get_header();
 $get_video_fields = get_fields();
+$video_parts_ids = array();
+$video_parts = new WP_Query(
+    array(
+        'post_type'      => 'video',
+        'posts_per_page' =>  14,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+        'fields'         => 'ids',
+    )
+);
+if ( $video_parts->have_posts() ) {
+    while ( $video_parts->have_posts() ) {
+        $video_parts->the_post();
+        array_push($video_parts_ids, get_the_ID());
+    }
+}
+$first8 = array_slice($video_parts_ids, 0, 8);
+$next2  = array_slice($video_parts_ids, 8, 2);
+$next4  = array_slice($video_parts_ids, 10, 4);
 ?>
 <section class="categories">
     <div class="container">
@@ -82,16 +101,21 @@ $get_video_fields = get_fields();
             </ul>
         </div>
         <div class="row">
-            <?php for($i=9; $i<17; $i++){ ?>
+            <?php foreach ($first8 as $key => $video_id) {
+                $url = get_field('youtube_url', $video_id);
+                $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                $parts = explode('/', $path);
+                $video_embed_id = end($parts);
+            ?>
                 <div class="col-lg-3 col-12 mb-3 px-2">
-                    <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                    <div class="openPopup fade-in" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
+                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
-                    <div class="overlay videoOverlay-<?php echo $i; ?>">
+                    <div class="overlay videoOverlay-<?php echo $video_id; ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo $i; ?>">
+                                <button class="close-btn" data-key="<?php echo $video_id; ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
@@ -135,16 +159,21 @@ $get_video_fields = get_fields();
             </div>
             <div class="col-lg-6 col-12">
                 <div class="row">
-                    <?php for($i=18; $i<20; $i++){ ?>
-                        <div class="col-lg-6 col-12 mb-3 px-2">
-                            <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
-                                <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                    <?php foreach ($next2 as $key => $video_id) {
+                            $url = get_field('youtube_url', $video_id);
+                            $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                            $parts = explode('/', $path);
+                            $video_embed_id = end($parts);
+                        ?>
+                        <div class="col-lg-3 col-12 mb-3 px-2">
+                            <div class="openPopup fade-in" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
+                                <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                                 <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                             </div>
-                            <div class="overlay videoOverlay-<?php echo $i; ?>">
+                            <div class="overlay videoOverlay-<?php echo $video_id; ?>">
                                 <div class="position-relative w-100 h-100">
                                     <div class="popup">
-                                        <button class="close-btn" data-key="<?php echo $i; ?>">
+                                        <button class="close-btn" data-key="<?php echo $video_id; ?>">
                                             <span aria-hidden="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                             </span>
@@ -164,16 +193,21 @@ $get_video_fields = get_fields();
             </div>
         </div>
         <div class="row">
-            <?php for($i=21; $i<25; $i++){ ?>
+            <?php foreach ($next4 as $key => $video_id) {
+                    $url = get_field('youtube_url', $video_id);
+                    $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                    $parts = explode('/', $path);
+                    $video_embed_id = end($parts);
+                ?>
                 <div class="col-lg-3 col-12 mb-3 px-2">
-                    <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                    <div class="openPopup fade-in" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
+                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
-                    <div class="overlay videoOverlay-<?php echo $i; ?>">
+                    <div class="overlay videoOverlay-<?php echo $video_id; ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo $i; ?>">
+                                <button class="close-btn" data-key="<?php echo $video_id; ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
@@ -246,80 +280,7 @@ $get_video_fields = get_fields();
 			}
         });
         swiper.changeLanguageDirection('rtl');
-        const youtubeShortslinks = [
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-        ]
-         $('.openPopup').click(function(){
+        $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
             let embedKey = $(this).attr('data-key-url');
             <?php if(isMob()){ ?>
