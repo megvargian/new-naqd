@@ -639,7 +639,8 @@ function filter_videos_based_tags() {
     $query = new WP_Query($args);
     ?>
     <pre><?php print_r($tags_video_ids); ?></pre>
-    <div if="main-filterd-section" class="row">
+    Test
+    <!-- <div if="main-filterd-section" class="row">
         <?php if ( $query->have_posts() ) {
                 while ( $query->have_posts() ) {
                     $query->the_post();
@@ -676,7 +677,7 @@ function filter_videos_based_tags() {
         <?php }
             wp_reset_postdata();
         }?>
-    </div>
+    </div> -->
     <?php
     wp_die();
 }
