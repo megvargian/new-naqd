@@ -319,7 +319,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 activeTags.push($(this).attr('data-tagId'));
             });
             if(activeTags.length !== 0){
-                filterPostsBasedTags(activeTags);
+                filterVideosBasedTags(activeTags);
             } else {
                 window.location.href = '<?php echo get_permalink(86); ?>';
             }
