@@ -636,6 +636,7 @@ function load_filtered_articles() {
                 ]
             ],
         );
+        echo '<pre>'; print_r($args); echo '</pre>';
     } else {
         $args = array(
             'post_type'      => 'post',
