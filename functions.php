@@ -632,13 +632,12 @@ function load_filtered_articles() {
         $args = array(
             'post_type' => 'post',
             'posts_per_page' => -1,
-            'date_query' => [
-                [
+            'date_query' => array(
+                array(
                     'after'     => $date,
-                    'before'    => $date,
-                    'inclusive' => true,
-                ],
-            ],
+                    'inclusive' => true, // Set to true to include posts published on 2025-05-18
+                ),
+            ),
         );
     } else {
         $args = array(
