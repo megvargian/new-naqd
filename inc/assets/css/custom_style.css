@@ -1190,6 +1190,9 @@ footer .border-green {
   font-family: "ManchetteFine-Bold";
   font-size: 2rem;
   margin-left: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 .categories .tabs li button:hover {
   color: #B6E60D;

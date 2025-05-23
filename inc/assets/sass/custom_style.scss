@@ -1110,6 +1110,9 @@ background: rgba(0,0,0,0.6);
 			font-family: $bold;
 			font-size: 2rem;
 			margin-left: 2rem;
+			background-color: transparent;
+			border: none;
+			outline: none;
 		}
 		li button:hover{
 			color: $third_color;
