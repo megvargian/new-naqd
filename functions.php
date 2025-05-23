@@ -630,15 +630,15 @@ function load_filtered_articles() {
         );
     } else if (isset($date)){
         $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            'date_query' => array(
-                array(
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+            'date_query' => [
+                [
                     'after'     => $date,
                     'before'    => $date,
                     'inclusive' => true,
-                ),
-            ),
+                ],
+            ],
         );
     } else {
         $args = array(
