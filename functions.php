@@ -629,12 +629,14 @@ function load_filtered_articles() {
             's'              => $search,
         );
     } else if (isset($date)){
+        $timestamp = strtotime($date);
+        $formatted_date = date('F jS, Y', $timestamp);
         $args = array(
             'post_type' => 'post',
             'posts_per_page' => -1,
             'date_query' => array(
                 array(
-                    'after'     => '2025-05-22',
+                    'after'     => $formatted_date,
                     'inclusive' => true, // Set to true to include posts published on 2025-05-18
                 ),
             ),
