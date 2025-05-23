@@ -625,7 +625,13 @@ function load_filtered_articles() {
             'posts_per_page' =>  -1,
             's'              => $search,
         );
-    } else if(!empty($date)){
+    } else {
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+        );
+    }
+    if(!empty($date)){
         $timestamp = strtotime($date);
         $formatted_date = date('F jS, Y', $timestamp);
         $args = array(
@@ -638,13 +644,7 @@ function load_filtered_articles() {
                 ),
             ),
         );
-    } else {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-        );
     }
-
     $query = new WP_Query($args);
     ?>
     <div id="filter-container" class="row">
