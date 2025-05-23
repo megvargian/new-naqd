@@ -27,6 +27,7 @@ if ( $video_parts->have_posts() ) {
         $video_parts->the_post();
         array_push($video_parts_ids, get_the_ID());
     }
+    wp_reset_postdata();
 }
 $video_parts_chunks_ids = array_chunk($video_parts_ids, 2);
 $get_homepage_fields = get_fields();
