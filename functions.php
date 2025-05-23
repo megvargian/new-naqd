@@ -455,7 +455,7 @@ function filter_videos_based_tags() {
         )
     );
     ?>
-    <div if="main-filterd-section" class="row">
+    <div id="main-filterd-section" class="row">
         <?php if ( $video_parts->have_posts() ) {
                 while ( $video_parts->have_posts() ) {
                     $video_parts->the_post();
