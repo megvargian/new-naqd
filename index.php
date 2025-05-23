@@ -15,7 +15,7 @@ $second_part = new WP_Query(
 $video_parts_ids = array();
 $video_parts = new WP_Query(
     array(
-        'post_type'      => 'videos',
+        'post_type'      => 'video',
         'posts_per_page' =>  6,
         'orderby'        => 'date',
         'order'          => 'DESC',
