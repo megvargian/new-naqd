@@ -628,13 +628,14 @@ add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
 
 //filter on the videos page based on tags
 function filter_videos_based_tags() {
-    $tags_ids = $_POST['tags'];
+    $tags_video_ids = $_POST['tags'];
+    print_r($tags_video_ids);
     $args = array(
         'post_type'      => 'video',
         'posts_per_page' =>  -1,
         'orderby'        => 'date',
         'order'          => 'DESC',
-        'tag__in'        => $tags_ids,
+        'tag__in'        => $tags_video_ids,
     );
     $query = new WP_Query($args);
     ?>
