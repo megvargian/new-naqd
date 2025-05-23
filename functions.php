@@ -634,7 +634,7 @@ function load_filtered_articles() {
             'posts_per_page' => -1,
             'date_query' => array(
                 array(
-                    'after'     => $date,
+                    'before'     => '2025-05-22',
                     'inclusive' => true, // Set to true to include posts published on 2025-05-18
                 ),
             ),
