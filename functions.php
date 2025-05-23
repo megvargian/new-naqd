@@ -444,21 +444,23 @@ add_action('wp_ajax_nopriv_load_more_posts_search', 'load_more_posts_search');
 //filter on the videos page based on tags
 function filter_videos_based_tags() {
     $tags_video_ids = $_POST['videoTags'];
-    $args = array(
-        'post_type'      => 'video',
-        'posts_per_page' =>  -1,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-        'tag__in'        => $tags_video_ids,
+    $video_parts = new WP_Query(
+        array(
+            'post_type'      => 'video',
+            'posts_per_page' =>  -1,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'fields'         => 'ids',
+            'tag__in'        => $tags_video_ids,
+        )
     );
-    $query = new WP_Query($args);
     ?>
     <pre><?php print_r($tags_video_ids); ?></pre>
     Test
     <!-- <div if="main-filterd-section" class="row">
-        <?php if ( $query->have_posts() ) {
-                while ( $query->have_posts() ) {
-                    $query->the_post();
+        <?php if ( $video_parts->have_posts() ) {
+                while ( $video_parts->have_posts() ) {
+                    $video_parts->the_post();
                     $video_id = get_the_ID();
                     $url = get_field('youtube_url', $video_id);
                     $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
