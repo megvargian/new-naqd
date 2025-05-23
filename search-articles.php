@@ -37,6 +37,8 @@ $tags = get_tags(array(
                             </div>
                         </form>
                         <form class="filter-products p-3" method="post" action="" style="color: #fff;">
+                            <h3>Date</h3>
+                            <input type="date" id="filter_date" name="filter_date">
                             <h3 class="mb-3">Categories</h3>
                             <?php foreach ($categories as $category): ?>
                                 <label class="label-cats">
@@ -88,6 +90,21 @@ $tags = get_tags(array(
 </section>
 <script>
     jQuery(document).ready(function($) {
+        $('input[type="date"]').on('change', function() {
+            // Get selected category IDs
+            var selectedCategories = [];
+            $('input[name="category[]"]:checked').each(function() {
+                selectedCategories.push($(this).val());
+            });
+            // Get selected tag IDs
+            var selectedTags = [];
+            $('input[name="tag[]"]:checked').each(function() {
+                selectedTags.push($(this).val());
+            });
+            var search = $('.search').val();
+            var filterDate = $('#filter_date').val();
+            searchResults(selectedCategories, selectedTags, search, filterDate);
+        });
         $('input[type="checkbox"]').on('change', function() {
             // Get selected category IDs
             var selectedCategories = [];
@@ -117,7 +134,7 @@ $tags = get_tags(array(
             var search = $('.search').val();
             searchResults(selectedCategories, selectedTags, search);
         });
-        function searchResults(selectedCategories, selectedTags, search) {
+        function searchResults(selectedCategories, selectedTags, search, filterDate) {
             $.ajax({
                 type: 'POST',
                 url: '<?php echo admin_url('admin-ajax.php'); ?>',
@@ -126,6 +143,7 @@ $tags = get_tags(array(
                     selectedCategories: selectedCategories,
                     selectedTags: selectedTags,
                     search: search,
+                    date: filterDate,
                 },
                 success: function(response) {
                     if (response) {

@@ -544,10 +544,11 @@ function isMob(){
 }
 //search results base on tag
 function load_filtered_articles() {
-    $selectedCategories = $_POST['selectedCategories'];
-    $selectedTags = $_POST['selectedTags'];
-    $search = $_POST['search'];
-    if(isset($selectedCategories) && isset($selectedTags) && isset($search)){
+    $selectedCategories = sanitize_text_field($_POST['selectedCategories']);
+    $selectedTags = sanitize_text_field($_POST['selectedTags']);
+    $search = sanitize_text_field($_POST['search']);
+    $date = sanitize_text_field($_POST['date']);
+    if(isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
         $args = array(
             'post_type'      => 'post',
             'posts_per_page' =>  -1,
@@ -565,6 +566,13 @@ function load_filtered_articles() {
                     'terms'    => $selectedTags,
                 ),
             ),
+            'date_query' => [
+                [
+                    'year'  => date('Y', strtotime($date)),
+                    'month' => date('m', strtotime($date)),
+                    'day'   => date('d', strtotime($date)),
+                ]
+            ],
         );
     } else if (isset($selectedCategories) && isset($search)) {
         $args = array(
@@ -615,6 +623,18 @@ function load_filtered_articles() {
             'post_type'      => 'post',
             'posts_per_page' =>  -1,
             's'              => $search,
+        );
+    } else if (isset($date)){
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' =>  -1,
+            'date_query' => [
+                [
+                    'year'  => date('Y', strtotime($date)),
+                    'month' => date('m', strtotime($date)),
+                    'day'   => date('d', strtotime($date)),
+                ]
+            ],
         );
     } else {
         $args = array(
