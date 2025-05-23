@@ -335,8 +335,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
 			},
 			success: function(response) {
 				if (response === ''){
-					console.log(
-                    data: {
+					console.log({
                         action: 'filter_videos_based_tags',
                         videoTags: activeTags,
                     })
@@ -344,8 +343,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
 				if (response) {
 					$('#main-filterd-section').replaceWith(response);
                     $('.hide-on-filter').hide();
-                    console.log(
-                    data: {
+                    console.log({
                         action: 'filter_videos_based_tags',
                         videoTags: activeTags,
                     })
