@@ -3,16 +3,25 @@
  * Template Name: Videos Page
  */
 get_header();
+$get_video_fields = get_fields();
 ?>
 <section class="categories">
     <div class="container">
         <div class="row py-4 position-relative">
             <div class="swiper MainCatVideo">
                 <div class="swiper-wrapper">
-                    <?php for($i=0; $i<8; $i++){ ?>
+                    <?php foreach ($get_video_fields['featured_videos'] as $key => $video) {
+                        $video_id = $video['video'];
+                        $image_url = get_the_post_thumbnail_url($video_id);
+                        $title = get_the_title($video_id);
+                        $url = get_field('youtube_url', $video_id);
+                        $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                        $parts = explode('/', $path);
+                        $video_embed_id = end($parts);
+                    ?>
                         <div class="swiper-slide">
-                            <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
-                                <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                            <div class="openPopup fade-in" data-key="<?php echo $video_id; ?>"  data-key-url="<?php echo $video_embed_id; ?>">
+                                <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo $image_url; ?>" alt="<?php echo $title; ?>">
                                 <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                             </div>
                         </div>
@@ -22,11 +31,13 @@ get_header();
             <div class="swiper-button-prev swiper-button-prev-main-cat"></div>
             <div class="swiper-button-next swiper-button-next-main-cat"></div>
         </div>
-        <?php for($i=0; $i<8; $i++){ ?>
-            <div class="overlay videoOverlay-<?php echo $i; ?>">
+        <?php foreach ($get_video_fields['featured_videos'] as $key => $video) {
+                $video_id = $video['video'];
+        ?>
+            <div class="overlay videoOverlay-<?php echo $video_id; ?>">
                 <div class="position-relative w-100 h-100">
                     <div class="popup">
-                        <button class="close-btn" data-key="<?php echo $i; ?>">
+                        <button class="close-btn" data-key="<?php echo $video_id; ?>">
                             <span aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                             </span>
@@ -308,22 +319,23 @@ get_header();
             'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
             'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
         ]
-        $('.openPopup').click(function(){
+         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
+            let embedKey = $(this).attr('data-key-url');
             <?php if(isMob()){ ?>
-                window.location.href = youtubeShortslinks[key];
+                window.location.href = 'https://www.youtube.com/embed/'+embedKey+'?autoplay=1';
             <?php } else { ?>
                 $('.videoOverlay-' + key).css('display', 'block');
-                $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
+                $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/'+embedKey+'?autoplay=1');
 		        $('html, body').addClass('hide_scroll');
             <?php } ?>
-        })
+        });
         $('.close-btn').click(function(){
             var key = $(this).attr('data-key');
             $('.videoOverlay-' + key).css('display', 'none');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
-            $('html, body').removeClass('hide_scroll');
-        })
+		    $('html, body').removeClass('hide_scroll');
+        });
         var swiperMainCat = new Swiper(".MainCatVideo", {
             slidesPerView: 4,
             spaceBetween: 16,
