@@ -125,16 +125,21 @@ $count=0;
                     </ul>
                 </div>
             </div>
-            <?php foreach($video_parts_chunks_ids[0] as $video_id){ ?>
+            <?php foreach($video_parts_chunks_ids[0] as $video_id){
+                    $url = get_field('youtube_url', $video_id);
+                    $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                    $parts = explode('/', $path);
+                    $video_embed_id = end($parts);
+            ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="openPopup fade-in" data-key="<?php echo $count; ?>">
+                    <div class="openPopup fade-in" data-key="<?php echo $video_embed_id; ?>">
                         <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
-                    <div class="overlay videoOverlay-<?php echo $count; ?>">
+                    <div class="overlay videoOverlay-<?php echo $video_embed_id; ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo $count; ?>">
+                                <button class="close-btn" data-key="<?php echo $video_embed_id; ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
@@ -149,20 +154,24 @@ $count=0;
                         </div>
                     </div>
                 </div>
-            <?php $count++;
-                } ?>
+            <?php } ?>
         </div>
         <div class="row">
-            <?php for($i=2; $i<4; $i++){ ?>
+            <?php foreach($video_parts_chunks_ids[1] as $video_id){
+                    $url = get_field('youtube_url', $video_id);
+                    $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                    $parts = explode('/', $path);
+                    $video_embed_id = end($parts);
+            ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                    <div class="openPopup fade-in" data-key="<?php echo $video_embed_id; ?>">
+                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
-                    <div class="overlay videoOverlay-<?php echo $i; ?>">
+                    <div class="overlay videoOverlay-<?php echo $video_embed_id; ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo $i; ?>">
+                                <button class="close-btn" data-key="<?php echo $video_embed_id; ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
@@ -258,16 +267,21 @@ $count=0;
                     <?php } ?>
                 </div>
             </div>
-            <?php for($i=4; $i<6; $i++){ ?>
+            <?php foreach($video_parts_chunks_ids[1] as $video_id){
+                    $url = get_field('youtube_url', $video_id);
+                    $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                    $parts = explode('/', $path);
+                    $video_embed_id = end($parts);
+            ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="openPopup fade-in" data-key="<?php echo $i; ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/cat-img.jpg" alt="berry">
+                    <div class="openPopup fade-in" data-key="<?php echo $video_embed_id; ?>">
+                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo get_the_post_thumbnail_url($video_id);?>" alt="<?php echo get_the_title($video_id);?>">
                         <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                     </div>
-                    <div class="overlay videoOverlay-<?php echo $i; ?>">
+                    <div class="overlay videoOverlay-<?php echo $video_embed_id; ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo $i; ?>">
+                                <button class="close-btn" data-key="<?php echo $video_embed_id; ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
@@ -357,21 +371,13 @@ $count=0;
             $(this).addClass('d-none');
             $('.heart').removeClass('d-none');
         });
-        const youtubeShortslinks = [
-            'https://www.youtube.com/embed/UqI3exV3YPM?autoplay=1',
-            'https://www.youtube.com/embed/kx2_lOSBQ-Y?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-            'https://www.youtube.com/embed/bCpk5aFgVtg?autoplay=1',
-            'https://www.youtube.com/embed/5LfiXvthTBA?autoplay=1',
-        ];
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
             <?php if(isMob()){ ?>
-                window.location.href = youtubeShortslinks[key];
+                window.location.href = 'https://www.youtube.com/embed/'+key+'?autoplay=1';
             <?php } else { ?>
                 $('.videoOverlay-' + key).css('display', 'block');
-                $('.videoOverlay-' + key).find('iframe').attr('src', youtubeShortslinks[key]);
+                $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/'+key+'?autoplay=1');
 		        $('html, body').addClass('hide_scroll');
             <?php } ?>
         });
