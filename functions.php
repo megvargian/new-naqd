@@ -630,10 +630,10 @@ function load_filtered_articles() {
             'posts_per_page' =>  -1,
             'date_query' => [
                 [
-                    'year'  => date('Y', strtotime($date)),
-                    'month' => date('m', strtotime($date)),
-                    'day'   => date('d', strtotime($date)),
-                ]
+                    'after'     => $date,
+                    'before'    => $date,
+                    'inclusive' => true,
+                ],
             ],
         );
         echo '<pre>'; print_r($args); echo '</pre>';
