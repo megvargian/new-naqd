@@ -548,7 +548,7 @@ function load_filtered_articles() {
     $selectedTags = $_POST['selectedTags'];
     $search = $_POST['search'];
     $date = $_POST['date'];
-    if(isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
+    if (isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
         $args = array(
             'post_type'      => 'post',
             'posts_per_page' =>  -1,
@@ -628,13 +628,13 @@ function load_filtered_articles() {
         $args = array(
             'post_type'      => 'post',
             'posts_per_page' =>  -1,
-            'date_query' => [
-                [
-                    'after'     => $date,
-                    'before'    => $date,
-                    'inclusive' => true,
-                ],
-            ],
+            'date_query' => array(
+                array(
+                    'year'  => date('Y', strtotime($date)),
+                    'month' => date('m', strtotime($date)),
+                    'day'   => date('d', strtotime($date)),
+                ),
+            ),
         );
         echo '<pre>'; print_r($args); echo '</pre>';
     } else {
