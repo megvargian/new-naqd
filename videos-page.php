@@ -331,7 +331,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
 			url: '<?php echo admin_url('admin-ajax.php'); ?>',
 			data: {
 				action: 'filter_videos_based_tags',
-				tags: activeTags,
+				videoTags: activeTags,
 			},
 			success: function(response) {
 				if (response === ''){
