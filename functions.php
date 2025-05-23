@@ -555,101 +555,113 @@ function load_filtered_articles() {
     $timestamp = strtotime($date);
     $formatted_date = date('F jS, Y', $timestamp);
     echo '<pre>'; print_r($formatted_date); echo '</pre>';
-    if (isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            's'              => $search,
-            'tax_query'      => array(
-                'relation' => 'AND',
-                array(
-                    'taxonomy' => 'category',
-                    'field'    => 'term_id',
-                    'terms'    => $selectedCategories,
-                ),
-                array(
-                    'taxonomy' => 'post_tag',
-                    'field'    => 'term_id',
-                    'terms'    => $selectedTags,
-                ),
+    // if (isset($selectedCategories) && isset($selectedTags) && isset($search) && isset($date)){
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //         's'              => $search,
+    //         'tax_query'      => array(
+    //             'relation' => 'AND',
+    //             array(
+    //                 'taxonomy' => 'category',
+    //                 'field'    => 'term_id',
+    //                 'terms'    => $selectedCategories,
+    //             ),
+    //             array(
+    //                 'taxonomy' => 'post_tag',
+    //                 'field'    => 'term_id',
+    //                 'terms'    => $selectedTags,
+    //             ),
+    //         ),
+    //         'date_query' => [
+    //             [
+    //                 'year'  => date('Y', strtotime($date)),
+    //                 'month' => date('m', strtotime($date)),
+    //                 'day'   => date('d', strtotime($date)),
+    //             ]
+    //         ],
+    //     );
+    // } else if (isset($selectedCategories) && isset($search)) {
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //         's'              => $search,
+    //         'category__in'   => $selectedCategories,
+    //     );
+    // } else if (isset($selectedTags) && isset($search)) {
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //         's'              => $search,
+    //         'tag__in' => $selectedTags,
+    //     );
+    // } else if (isset($selectedCategories) && isset($selectedTags)) {
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //         'tax_query'      => array(
+    //             'relation' => 'AND',
+    //             array(
+    //                 'taxonomy' => 'category',
+    //                 'field'    => 'term_id',
+    //                 'terms'    => $selectedCategories,
+    //             ),
+    //             array(
+    //                 'taxonomy' => 'post_tag',
+    //                 'field'    => 'term_id',
+    //                 'terms'    => $selectedTags,
+    //             ),
+    //         ),
+    //     );
+    // } else if (isset($selectedCategories)) {
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //         'category__in' => $selectedCategories,
+    //     );
+    // } else if (isset($selectedTags)) {
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //         'tag__in' => $selectedTags,
+    //     );
+    // } else if (isset($search)){
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //         's'              => $search,
+    //     );
+    // } else if (isset($date)){
+    //     $timestamp = strtotime($date);
+    //     $formatted_date = date('F jS, Y', $timestamp);
+    //     $args = array(
+    //         'post_type' => 'post',
+    //         'posts_per_page' => -1,
+    //         'date_query' => array(
+    //             array(
+    //                 'after'     => $formatted_date,
+    //                 'inclusive' => true, // Set to true to include posts published on 2025-05-18
+    //             ),
+    //         ),
+    //     );
+    // } else {
+    //     $args = array(
+    //         'post_type'      => 'post',
+    //         'posts_per_page' =>  -1,
+    //     );
+    // }
+    $timestamp = strtotime($date);
+    $formatted_date = date('F jS, Y', $timestamp);
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+        'date_query' => array(
+            array(
+                'after'     => $formatted_date,
+                'inclusive' => true, // Set to true to include posts published on 2025-05-18
             ),
-            'date_query' => [
-                [
-                    'year'  => date('Y', strtotime($date)),
-                    'month' => date('m', strtotime($date)),
-                    'day'   => date('d', strtotime($date)),
-                ]
-            ],
-        );
-    } else if (isset($selectedCategories) && isset($search)) {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            's'              => $search,
-            'category__in'   => $selectedCategories,
-        );
-    } else if (isset($selectedTags) && isset($search)) {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            's'              => $search,
-            'tag__in' => $selectedTags,
-        );
-    } else if (isset($selectedCategories) && isset($selectedTags)) {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            'tax_query'      => array(
-                'relation' => 'AND',
-                array(
-                    'taxonomy' => 'category',
-                    'field'    => 'term_id',
-                    'terms'    => $selectedCategories,
-                ),
-                array(
-                    'taxonomy' => 'post_tag',
-                    'field'    => 'term_id',
-                    'terms'    => $selectedTags,
-                ),
-            ),
-        );
-    } else if (isset($selectedCategories)) {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            'category__in' => $selectedCategories,
-        );
-    } else if (isset($selectedTags)) {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            'tag__in' => $selectedTags,
-        );
-    } else if (isset($search)){
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-            's'              => $search,
-        );
-    } else if (isset($date)){
-        $timestamp = strtotime($date);
-        $formatted_date = date('F jS, Y', $timestamp);
-        $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => -1,
-            'date_query' => array(
-                array(
-                    'after'     => $formatted_date,
-                    'inclusive' => true, // Set to true to include posts published on 2025-05-18
-                ),
-            ),
-        );
-    } else {
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' =>  -1,
-        );
-    }
+        ),
+    );
 
     $query = new WP_Query($args);
     ?>
