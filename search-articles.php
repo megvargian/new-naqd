@@ -72,8 +72,8 @@ $tags = get_tags(array(
                             </div>
                         <?php
                             }
+                            wp_reset_postdata();
                         }
-                        wp_reset_postdata();
                         ?>
                     </div>
                     <div class="row text-center">
