@@ -83,7 +83,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                 <?php } ?>
             </ul>
         </div>
-        <div id="main-filterd-section" class="row">
+        <div id="video-filter-container" class="row">
             <?php foreach ($first8 as $key => $video_id) {
                 $url = get_field('youtube_url', $video_id);
                 $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
@@ -338,7 +338,7 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                         // $('#load-more-button-cat').hide();
                     }
                     if (response) {
-                        $('#main-filterd-section').replaceWith(response);
+                        $('#video-filter-container').replaceWith('');
                         $('.hide-on-filter').hide();
                     } else {
                         // No more posts to load
