@@ -314,8 +314,9 @@ $social_media_links = $get_general_fields['social_links'];
 <script>
 jQuery(document).ready(function($) {
 	// toggle theme
+	localStorage.setItem('theme', 'dark');
 	$('#toggle-change').click(function(event) {
-		if(localStorage.getItem('theme') === 'dark' || localStorage.getItem('theme') === '' ){
+		if(localStorage.getItem('theme') === 'dark'){
 			localStorage.setItem('theme', 'light');
 			$('body').addClass('light-theme');
 		} else if (localStorage.getItem('theme') === 'light'){
