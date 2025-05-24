@@ -322,6 +322,7 @@ jQuery(document).ready(function($) {
 		$('html, body').toggleClass('hide_scroll');
 		$('.menu_on_mobile').toggleClass('active');
 		$('.transparent-black-overlay').toggleClass('d-none');
+		$('#page').toggleClass('light-theme');
 	});
 	$('#changeTheme').click(function(){
 		$('.EN').toggleClass('d-none');
