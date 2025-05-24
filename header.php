@@ -316,7 +316,7 @@ jQuery(document).ready(function($) {
 	// toggle theme
 	if (localStorage.getItem('theme') === 'light') {
 		$('body').addClass('light-theme');
-		$('#toggle-change input[type="checkbox"]').attr('checked', true);
+		$('#toggle-change input[type="checkbox"]').attr('checked', false);
 	}
 	// Toggle theme on button click
 	$('#toggle-change svg').click(function(event) {
