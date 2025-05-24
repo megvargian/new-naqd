@@ -8,6 +8,8 @@
  *
  * @package WP_Bootstrap_Starter
  */
+$get_general_fields = get_fields('options');
+$social_media_links = $get_general_fields['social_links'];
 ?>
 <footer class="pt-5">
     <div class="container">
@@ -27,55 +29,55 @@
             <div class="col-lg-5 col-12 justify-content-end d-flex align-items-center">
                 <ul class="social-media-icons">
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['insta']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['facebook']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon.svg" alt="fb">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb.svg" alt="fb">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['linkedin']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="linkedin">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/in.svg" alt="linkedin">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['rss_feed']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="RSS">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss.svg" alt="RSS">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['treads']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="threads">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads.svg" alt="threads">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['tiktok']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="tiktok">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok.svg" alt="tiktok">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['whatsapp']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon.svg" alt="whatsapp">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp.svg" alt="whatsapp">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['x']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="X">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x.svg" alt="X">
                         </a>
                     </li>
                     <li class="mx-1">
-                        <a href="#" class="single-social-icon">
+                        <a href="<?php echo $social_media_links['youtube']; ?>" class="single-social-icon">
                             <img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="youtube">
                             <img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube.svg" alt="youtube">
                         </a>
@@ -87,8 +89,8 @@
             <div class="col-12 pb-4">
                 <ul class="footer-tags">
                     <li>
-                        <a href="/category/لبنان/">
-                            أفلامنا
+                        <a href="/category/أقلًا-منا/">
+                            أقلامنا
                         </a>
                     </li>
                     <li>
@@ -102,22 +104,22 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/category/لبنان/">
+                        <a href="/videos/">
                             شاهد
                         </a>
                     </li>
                     <li>
-                        <a href="/category/لبنان/">
+                        <a href="/personal-info">
                             اكتبوا معنا
                         </a>
                     </li>
                     <li>
-                        <a href="/category/لبنان/">
+                        <a href="/about-and-contact-us">
                             عن نقد
                         </a>
                     </li>
                     <li>
-                        <a href="/category/لبنان/">
+                        <a href="/about-and-contact-us#contact-us">
                             اتصلوا بنا
                         </a>
                     </li>
