@@ -127,7 +127,7 @@ $social_media_links = $get_general_fields['social_links'];
 						</div>
 					<?php //} ?>
 					<div class="col d-flex justify-content-end align-items-center">
-						<label class="theme-toggle" title="Toggle theme">
+						<label id="toggle-change" class="theme-toggle" title="Toggle theme">
 							<input type="checkbox" checked />
 							<span class="theme-toggle-sr">Toggle theme</span>
 							<svg
@@ -314,6 +314,10 @@ $social_media_links = $get_general_fields['social_links'];
 </div>
 <script>
 jQuery(document).ready(function($) {
+	// toggle theme
+	$('#toggle-change').click(function(event) {
+		$('body').toggleClass('light-theme');
+	});
 	$('.menu_mobile_nav').click(function(event) {
 		$(this).toggleClass('active');
 		$('html, body').toggleClass('hide_scroll');
@@ -390,10 +394,7 @@ jQuery(document).ready(function($) {
 	<?php if(isset($_GET['tagId'])){?>
 		$('.single-tag[data-tagId="<?php echo $_GET['tagId']; ?>"]').click();
 	<?php }?>
-	// toggle theme
-	$('.theme-toggle').click(function(event) {
-		$('body').toggleClass('light-theme');
-	});
+
 });
 </script>
 <div class="site-content">
