@@ -318,6 +318,10 @@ jQuery(document).ready(function($) {
 		$('html, body').toggleClass('hide_scroll');
 		$('.menu_on_mobile').toggleClass('active');
 		$('.transparent-black-overlay').toggleClass('d-none');
+		// toggle theme
+		$('.theme-toggle').click(function(event) {
+			$('body').toggleClass('light-theme');
+		});
 	});
 	$('#changeTheme').click(function(){
 		$('.EN').toggleClass('d-none');
@@ -389,10 +393,7 @@ jQuery(document).ready(function($) {
 	<?php if(isset($_GET['tagId'])){?>
 		$('.single-tag[data-tagId="<?php echo $_GET['tagId']; ?>"]').click();
 	<?php }?>
-	// toggle theme
-	$('.theme-toggle').click(function(event) {
-		$('.home').toggleClass('light-theme');
-	});
+
 });
 </script>
 <div class="site-content">
