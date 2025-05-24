@@ -315,14 +315,14 @@ $social_media_links = $get_general_fields['social_links'];
 jQuery(document).ready(function($) {
 	// toggle theme
 	$('#toggle-change').click(function(event) {
-		$('#page').toggleClass('light-theme');
+		$('body').toggleClass('light-theme');
 	});
 	$('.menu_mobile_nav').click(function(event) {
 		$(this).toggleClass('active');
 		$('html, body').toggleClass('hide_scroll');
 		$('.menu_on_mobile').toggleClass('active');
 		$('.transparent-black-overlay').toggleClass('d-none');
-		$('#page').toggleClass('light-theme');
+		$('body').toggleClass('light-theme');
 	});
 	$('#changeTheme').click(function(){
 		$('.EN').toggleClass('d-none');
