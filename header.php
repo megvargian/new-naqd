@@ -391,7 +391,7 @@ jQuery(document).ready(function($) {
 	<?php }?>
 	// toggle theme
 	$('.theme-toggle').click(function(event) {
-		$('html, body').toggleClass('light-theme');
+		$('body').toggleClass('light-theme');
 	});
 });
 </script>
