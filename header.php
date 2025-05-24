@@ -318,7 +318,7 @@ jQuery(document).ready(function($) {
 		$('body').addClass('light-theme');
 	}
 	// Toggle theme on button click
-	$('#toggle-change').click(function(event) {
+	$('#toggle-change svg').click(function(event) {
 	if (localStorage.getItem('theme') === 'dark') {
 		localStorage.setItem('theme', 'light');
 		$('body').addClass('light-theme');
