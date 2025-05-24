@@ -9,6 +9,8 @@
 get_header();
 $product_id = get_the_ID();
 $title = get_the_title($product_id);
+$get_article_fields = get_fields();
+$author_id = $get_article_fields['author'];
 ?>
 <section class="single-product-page">
     <div class="container">
@@ -19,8 +21,8 @@ $title = get_the_title($product_id);
                     <div class="d-flex justify-content-start align-items-center">
                         <div class="author-section">
                             <img class="" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/avatar.png" alt="">
-                            <a href="#">
-                                مرزي طاهر - كاتب لبناني
+                            <a href="<?php echo get_permalink($author_id); ?>">
+                                <?php echo get_the_title($author_id); ?>
                             </a>
                         </div>
                         <p class="helvetica-regular" dir="ltr">6 jan 2025</p>
