@@ -322,7 +322,9 @@ jQuery(document).ready(function($) {
 	if (localStorage.getItem('theme') === 'dark') {
 		localStorage.setItem('theme', 'light');
 		$('body').addClass('light-theme');
+		console.log('change light');
 	} else {
+		console.log('change dark')
 		localStorage.setItem('theme', 'dark');
 		$('body').removeClass('light-theme');
 	}
