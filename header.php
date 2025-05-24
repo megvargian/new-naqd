@@ -315,11 +315,11 @@ $social_media_links = $get_general_fields['social_links'];
 jQuery(document).ready(function($) {
 	// toggle theme
 	$('#toggle-change').click(function(event) {
-		if($('body').hasClass('light-theme')){
-			$('body').removeClass('light-theme');
-		} else {
+		// if($('body').hasClass('light-theme')){
+		// 	$('body').removeClass('light-theme');
+		// } else {
 			$('body').addClass('light-theme');
-		}
+		//}
 	});
 	$('.menu_mobile_nav').click(function(event) {
 		$(this).toggleClass('active');
