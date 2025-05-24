@@ -314,15 +314,18 @@ $social_media_links = $get_general_fields['social_links'];
 <script>
 jQuery(document).ready(function($) {
 	// toggle theme
-	localStorage.setItem('theme', 'dark');
+	if (localStorage.getItem('theme') === 'light') {
+		$('body').addClass('light-theme');
+	}
+	// Toggle theme on button click
 	$('#toggle-change').click(function(event) {
-		if(localStorage.getItem('theme') === 'dark'){
-			localStorage.setItem('theme', 'light');
-			$('body').addClass('light-theme');
-		} else if (localStorage.getItem('theme') === 'light'){
-			localStorage.setItem('theme', 'dark');
-			$('body').removeClass('light-theme');
-		}
+	if (localStorage.getItem('theme') === 'dark') {
+		localStorage.setItem('theme', 'light');
+		$('body').addClass('light-theme');
+	} else {
+		localStorage.setItem('theme', 'dark');
+		$('body').removeClass('light-theme');
+	}
 	});
 	$('.menu_mobile_nav').click(function(event) {
 		$(this).toggleClass('active');
