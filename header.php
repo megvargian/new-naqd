@@ -318,7 +318,7 @@ jQuery(document).ready(function($) {
 		if(localStorage.getItem('theme') === 'dark' || localStorage.getItem('theme') === '' ){
 			localStorage.setItem('theme', 'light');
 			$('body').addClass('light-theme');
-		} else {
+		} else if (localStorage.getItem('theme') === 'light'){
 			localStorage.setItem('theme', 'dark');
 			$('body').removeClass('light-theme');
 		}
