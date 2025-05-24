@@ -312,15 +312,20 @@ $social_media_links = $get_general_fields['social_links'];
 	</header>
 </div>
 <script>
+document.querySelector('.theme-toggle').addEventListener('click', event => {
+  document.body.classList.toggle('light-theme');
+});
+</script>
+<script>
 jQuery(document).ready(function($) {
 	// toggle theme
-	$('#toggle-change').click(function(event) {
-		// if($('body').hasClass('light-theme')){
-		// 	$('body').removeClass('light-theme');
-		// } else {
-			$('body').toggleClass('light-theme');
-		//}
-	});
+	// $('#toggle-change').click(function(event) {
+	// 	// if($('body').hasClass('light-theme')){
+	// 	// 	$('body').removeClass('light-theme');
+	// 	// } else {
+	// 		$('body').addClass('light-theme');
+	// 	//}
+	// });
 	$('.menu_mobile_nav').click(function(event) {
 		$(this).toggleClass('active');
 		$('html, body').toggleClass('hide_scroll');
