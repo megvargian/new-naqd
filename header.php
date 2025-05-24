@@ -389,6 +389,10 @@ jQuery(document).ready(function($) {
 	<?php if(isset($_GET['tagId'])){?>
 		$('.single-tag[data-tagId="<?php echo $_GET['tagId']; ?>"]').click();
 	<?php }?>
+	// toggle theme
+	$('.theme-toggle').click(function(event) {
+		$('body').toggleClass('light-theme');
+	});
 });
 </script>
 <div class="site-content">
