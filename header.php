@@ -316,17 +316,14 @@ jQuery(document).ready(function($) {
 	// toggle theme
 	if (localStorage.getItem('theme') === 'light') {
 		$('body').addClass('light-theme');
+		$('#toggle-change input[type="checkbox"]').attr('checked', true);
 	}
 	// Toggle theme on button click
 	$('#toggle-change svg').click(function(event) {
 	if (localStorage.getItem('theme') === 'dark') {
 		localStorage.setItem('theme', 'light');
 		$('body').addClass('light-theme');
-		console.log('change light');
-		console.log(localStorage.getItem('theme'));
 	} else {
-		console.log('change dark');
-		console.log(localStorage.getItem('theme'));
 		localStorage.setItem('theme', 'dark');
 		$('body').removeClass('light-theme');
 	}
