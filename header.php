@@ -312,7 +312,7 @@ $social_media_links = $get_general_fields['social_links'];
 	</header>
 </div>
 <script>
-document.querySelector('.theme-toggle').addEventListener('click', event => {
+document.querySelector('#toggle-change').addEventListener('click', event => {
   document.body.classList.toggle('light-theme');
 });
 </script>
