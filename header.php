@@ -323,8 +323,10 @@ jQuery(document).ready(function($) {
 		localStorage.setItem('theme', 'light');
 		$('body').addClass('light-theme');
 		console.log('change light');
+		console.log(localStorage.getItem('theme'));
 	} else {
-		console.log('change dark')
+		console.log('change dark');
+		console.log(localStorage.getItem('theme'));
 		localStorage.setItem('theme', 'dark');
 		$('body').removeClass('light-theme');
 	}
