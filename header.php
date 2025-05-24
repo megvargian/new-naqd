@@ -127,53 +127,6 @@ $social_media_links = $get_general_fields['social_links'];
 						</div>
 					<?php //} ?>
 					<div class="col d-flex justify-content-end align-items-center">
-						<!-- <label class="toggle">
-							<input type="checkbox" id="theme-toggle">
-							<div class="slider">
-								<div class="icon sun">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange" width="20" height="20">
-									<path d="M12 18a6 6 0 100-12 6 6 0 000 12z"/>
-									<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-								</svg>
-								</div>
-								<div class="icon moon">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20">
-									<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-								</svg>
-								</div>
-							</div>
-						</label> -->
-						<label class="theme-toggle" title="Toggle theme">
-							<input type="checkbox" />
-							<span class="theme-toggle-sr">Toggle theme</span>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								aria-hidden="true"
-								width="1em"
-								height="1em"
-								fill="currentColor"
-								stroke-linecap="round"
-								class="theme-toggle__classic"
-								viewBox="0 0 32 32"
-							>
-								<clipPath id="theme-toggle__classic__cutout">
-								<path d="M0-5h30a1 1 0 0 0 9 13v24H0Z" />
-								</clipPath>
-								<g clip-path="url(#theme-toggle__classic__cutout)">
-								<circle cx="16" cy="16" r="9.34" />
-								<g stroke="currentColor" stroke-width="1.5">
-									<path d="M16 5.5v-4" />
-									<path d="M16 30.5v-4" />
-									<path d="M1.5 16h4" />
-									<path d="M26.5 16h4" />
-									<path d="m23.4 8.6 2.8-2.8" />
-									<path d="m5.7 26.3 2.9-2.9" />
-									<path d="m5.8 5.8 2.8 2.8" />
-									<path d="m23.4 23.4 2.9 2.9" />
-								</g>
-								</g>
-							</svg>
-						</label>
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">
 							<span class="slider">
@@ -213,6 +166,37 @@ $social_media_links = $get_general_fields['social_links'];
 			<div id="menu_mobile" class="menu_on_mobile">
 				<div class="menu_on_mobile_wrapper">
 					<div class="menu_on_mobile_inner_wrapper" style="position: relative;">
+						<label class="theme-toggle" title="Toggle theme">
+							<input type="checkbox" />
+							<span class="theme-toggle-sr">Toggle theme</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								aria-hidden="true"
+								width="1em"
+								height="1em"
+								fill="currentColor"
+								stroke-linecap="round"
+								class="theme-toggle__classic"
+								viewBox="0 0 32 32"
+							>
+								<clipPath id="theme-toggle__classic__cutout">
+								<path d="M0-5h30a1 1 0 0 0 9 13v24H0Z" />
+								</clipPath>
+								<g clip-path="url(#theme-toggle__classic__cutout)">
+								<circle cx="16" cy="16" r="9.34" />
+								<g stroke="currentColor" stroke-width="1.5">
+									<path d="M16 5.5v-4" />
+									<path d="M16 30.5v-4" />
+									<path d="M1.5 16h4" />
+									<path d="M26.5 16h4" />
+									<path d="m23.4 8.6 2.8-2.8" />
+									<path d="m5.7 26.3 2.9-2.9" />
+									<path d="m5.8 5.8 2.8 2.8" />
+									<path d="m23.4 23.4 2.9 2.9" />
+								</g>
+								</g>
+							</svg>
+						</label>
 						<div class="search-form">
 							<form action="/search-articles">
 								<div class="position-relative">
@@ -266,55 +250,55 @@ $social_media_links = $get_general_fields['social_links'];
 							</ul>
 							<ul class="social-media-icons pt-3">
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['insta']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['facebook']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-icon.svg" alt="fb">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb.svg" alt="fb">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['linkedin']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-icon.svg" alt="linkedin">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/in.svg" alt="linkedin">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['rss_feed']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/RSS-icon.svg" alt="RSS">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss.svg" alt="RSS">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['treads']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-icon.svg" alt="threads">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads.svg" alt="threads">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['tiktok']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-icon.svg" alt="tiktok">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok.svg" alt="tiktok">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['whatsapp']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-icon.svg" alt="whatsapp">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp.svg" alt="whatsapp">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['x']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/X-icon.svg" alt="X">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x.svg" alt="X">
 									</a>
 								</li>
 								<li class="mx-1">
-									<a href="#" class="single-social-icon">
+									<a href="<?php echo $social_media_links['youtube']; ?>" class="single-social-icon">
 										<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-icon.svg" alt="youtube">
 										<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube.svg" alt="youtube">
 									</a>
@@ -407,13 +391,4 @@ jQuery(document).ready(function($) {
 	<?php }?>
 });
 </script>
-<!-- <script>
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
-	toggle.addEventListener('change', () => {
-		// body.classList.toggle('dark');
-		body.classList.toggle('light-theme');
-	});
-</script> -->
 <div class="site-content">
