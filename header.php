@@ -318,7 +318,7 @@ jQuery(document).ready(function($) {
 		// if($('body').hasClass('light-theme')){
 		// 	$('body').removeClass('light-theme');
 		// } else {
-			$('body').addClass('light-theme');
+			$('body').toggleClass('light-theme');
 		//}
 	});
 	$('.menu_mobile_nav').click(function(event) {
