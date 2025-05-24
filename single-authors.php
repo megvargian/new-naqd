@@ -8,7 +8,7 @@ $query = new WP_Query(
         'order'          => 'DESC',
         'meta_query' => array(
             array(
-            'key' => 'related_author',
+            'key' => 'author',
             'value' => get_the_ID(),
             'compare' => '='
             )
