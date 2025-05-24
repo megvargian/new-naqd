@@ -166,8 +166,8 @@ $social_media_links = $get_general_fields['social_links'];
 			<div id="menu_mobile" class="menu_on_mobile">
 				<div class="menu_on_mobile_wrapper">
 					<div class="menu_on_mobile_inner_wrapper" style="position: relative;">
-						<label class="theme-toggle toggle--daynight" title="Toggle theme">
-							<input type="checkbox" />
+						<label class="theme-toggle" title="Toggle theme">
+							<input type="checkbox" checked />
 							<span class="theme-toggle-sr">Toggle theme</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
