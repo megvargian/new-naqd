@@ -510,7 +510,6 @@ function filter_post_based_tags() {
     );
     $query = new WP_Query($args);
     ?>
-    <pre><?php print_r($tags_ids); ?></pre>
     <div id="filter-container" class="container py-5">
         <div class="row">
             <?php
