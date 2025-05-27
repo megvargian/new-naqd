@@ -1301,6 +1301,15 @@ footer .border-green {
 .light-theme .border-right-white {
   border-right: 1px solid #000;
 }
+.light-theme .homepage h1 {
+  color: #000;
+}
+.light-theme footer .footer-tags li a {
+  color: #000;
+}
+.light-theme .categories .tabs li button {
+  color: #000;
+}
 
 body.light {
   background-color: #f5f5f5;

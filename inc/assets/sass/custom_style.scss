@@ -1234,6 +1234,17 @@ background: rgba(0,0,0,0.6);
 	.border-right-white{
 		border-right: 1px solid #000;
 	}
+	.homepage{
+		h1{
+			color: #000;
+		}
+	}
+	footer .footer-tags li a{
+		color: #000;
+	}
+	.categories .tabs li button {
+		color: #000;
+	}
 }
 
 body.light {
