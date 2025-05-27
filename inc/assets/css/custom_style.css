@@ -1310,6 +1310,9 @@ footer .border-green {
 .light-theme .categories .tabs li button {
   color: #000;
 }
+.light-theme .single-product-page .lower-part a {
+  color: #000;
+}
 
 body.light {
   background-color: #f5f5f5;
