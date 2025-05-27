@@ -1212,6 +1212,28 @@ background: rgba(0,0,0,0.6);
 	.slider .label-text {
 		background-color: #5D0EE6;
 	}
+	.single-product-page{
+		.related-articles{
+			.most-read-articles{
+				h2{
+					color: #000;
+				}
+				ul {
+					li {
+						h3{
+							color: #000;
+						}
+						.author{
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+	.border-right-white{
+		border-right: 1px solid #000;
+	}
 }
 
 body.light {
