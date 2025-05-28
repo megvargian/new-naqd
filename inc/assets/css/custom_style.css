@@ -911,6 +911,7 @@ footer .border-green {
   width: 15px;
   margin-right: 5px;
   cursor: pointer;
+  fill: #fff;
 }
 .single-product-page #theArticle h2 {
   font-size: 2rem;
@@ -1315,6 +1316,9 @@ footer .border-green {
 }
 .light-theme .single-product-page .lower-part p {
   color: #000;
+}
+.light-theme .single-product-page .lower-part .heart, .light-theme .heart-filled {
+  fill: #000;
 }
 
 body.light {
