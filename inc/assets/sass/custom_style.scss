@@ -1252,8 +1252,10 @@ background: rgba(0,0,0,0.6);
 	.single-product-page .lower-part p{
 		color: #000;
 	}
-	.single-product-page .lower-part .heart, .heart-filled {
-		fill: #000;
+	.single-product-page .lower-part {
+		.heart, .heart-filled {
+			fill: #000;
+		}
 	}
 }
 
