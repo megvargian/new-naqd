@@ -1318,7 +1318,7 @@ footer .border-green {
   color: #000;
 }
 .light-theme .single-product-page .lower-part .heart, .light-theme .single-product-page .lower-part .heart-filled {
-  fill: #000;
+  fill: #000 !important;
 }
 
 body.light {
