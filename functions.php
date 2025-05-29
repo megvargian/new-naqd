@@ -706,24 +706,6 @@ add_action('wp_ajax_load_more_products', 'load_more_products');
 add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
 
 
-//create a table for count post and video
-function create_views_count_table() {
-    global $wpdb;
-    $table_name = 'views_count';
-
-    $charset_collate = $wpdb->get_charset_collate();
-
-    $sql = "CREATE TABLE $table_name (
-        post_id BIGINT(20) UNSIGNED NOT NULL,
-        count BIGINT(20) UNSIGNED NOT NULL DEFAULT 0,
-        PRIMARY KEY (post_id)
-    ) $charset_collate;";
-
-    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-    dbDelta($sql);
-}
-register_activation_hook(__FILE__, 'create_views_count_table');
-
 // increment count when post/ video is viewed
 function track_post_views($post_id) {
     if (!is_single() || !in_the_loop() || !is_main_query()) return;
