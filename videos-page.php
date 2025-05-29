@@ -23,6 +23,7 @@ if ( $video_parts->have_posts() ) {
 $first8 = array_slice($video_parts_ids, 0, 8);
 $next2  = array_slice($video_parts_ids, 8, 2);
 $next4  = array_slice($video_parts_ids, 10, 4);
+$top_videos = get_top_3_most_visited('video');
 ?>
 <section class="categories">
     <div class="container">
@@ -122,17 +123,16 @@ $next4  = array_slice($video_parts_ids, 10, 4);
                         الأكثر مشاهدة
                     </h2>
                     <ul>
-                        <?php for($i=0; $i<3; $i++){ ?>
+                        <?php foreach($top_videos as $post){
+                                $post_id = $post->ID;
+                        ?>
                             <li>
                                 <h3>
-                                    عن التروما التي تعشقنا وتحاول قتلنا
+                                    <?php echo $post->post_title; ?>
                                 </h3>
                                 <div class="author">
-                                    <a href="#">
-                                        متري طاهر - كاتب لبناني
-                                    </a>
                                     <div class="date helvetica-regular">
-                                        4 jan 2025
+                                        <?php echo get_the_date('j M Y', $post_id);?>
                                     </div>
                                 </div>
                             </li>

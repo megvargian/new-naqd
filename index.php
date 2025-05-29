@@ -391,7 +391,7 @@ $top_posts = get_top_3_most_visited('post');
 				id: videoId,
 			},
 			success: function(response) {
-				console.log('view', $videoId)
+				console.log('view', videoId)
 			},
 			error: function(error) {
 				console.error(error)
