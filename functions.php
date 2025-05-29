@@ -722,7 +722,7 @@ function track_post_views($post_id) {
     ", $post_id));
 }
 add_action('wp', function () {
-    if (is_single('post')) {
+    if (is_singular('post')) {
         global $post;
         echo $post->ID;
         if ($post instanceof WP_Post) {
