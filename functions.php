@@ -714,7 +714,7 @@ function track_post_views($post_id) {
     if (!in_array($post_type, ['post', 'video'])) return;
 
     global $wpdb;
-    $table_name = $wpdb->prefix . 'view_counter';
+    $table_name = 'dnaq_view_counter';
 
     $wpdb->query($wpdb->prepare("
         INSERT INTO $table_name (post_id, count)
@@ -749,7 +749,7 @@ add_filter('cron_schedules', function ($schedules) {
 });
 function reset_monthly_views() {
     global $wpdb;
-    $table_name = $wpdb->prefix . 'view_counter';
+    $table_name = 'dnaq_view_counter';
     $wpdb->query("UPDATE $table_name SET count = 0");
 }
 add_action('monthly_views_reset', 'reset_monthly_views');
@@ -758,7 +758,7 @@ add_action('monthly_views_reset', 'reset_monthly_views');
 function get_top_3_most_visited($type = 'post') {
     global $wpdb;
 
-    $table_name = $wpdb->prefix . 'view_counter';
+    $table_name = 'dnaq_view_counter';
 
     $results = $wpdb->get_results($wpdb->prepare("
         SELECT p.ID, p.post_title, vc.count
