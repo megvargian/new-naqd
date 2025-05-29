@@ -720,6 +720,7 @@ function track_post_views($post_id) {
         VALUES (%d, 1)
         ON DUPLICATE KEY UPDATE count = count + 1
     ", $post_id));
+    echo $post_id;
 }
 add_action('wp', function () {
     if (is_singular('post')) {
