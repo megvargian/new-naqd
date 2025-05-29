@@ -709,7 +709,7 @@ add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
 //create a table for count post and video
 function create_views_count_table() {
     global $wpdb;
-    $table_name = $wpdb->prefix . 'views_count';
+    $table_name = 'views_count';
 
     $charset_collate = $wpdb->get_charset_collate();
 
