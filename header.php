@@ -48,7 +48,7 @@ $social_media_links = $get_general_fields['social_links'];
 				<div class="row">
 					<div class="col d-flex justify-content-start">
 						<a href="<?php echo home_url(); ?>">
-							<img id="logo" class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png" alt="naqd">
+							<img id="logo" class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg" alt="naqd">
 						</a>
 					</div>
 					<?php //if(!is_singular('post')){ ?>
@@ -317,18 +317,18 @@ jQuery(document).ready(function($) {
 	if (localStorage.getItem('theme') === 'light') {
 		$('body').addClass('light-theme');
 		$('#toggle-change input[type="checkbox"]').attr('checked', false);
-		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.png');
+		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.svg');
 	}
 	// Toggle theme on button click
 	$('#toggle-change svg').click(function(event) {
 	if (localStorage.getItem('theme') === 'dark') {
 		localStorage.setItem('theme', 'light');
 		$('body').addClass('light-theme');
-		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.png');
+		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.svg');
 	} else {
 		localStorage.setItem('theme', 'dark');
 		$('body').removeClass('light-theme');
-		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.png');
+		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg');
 	}
 	});
 	$('.menu_mobile_nav').click(function(event) {
