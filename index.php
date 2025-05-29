@@ -34,6 +34,7 @@ $get_homepage_fields = get_fields();
 $count=0;
 $top_posts = get_top_3_most_visited('post');
 ?>
+<pre><?php print_r($top_posts);?></pre>
 <section class="homepage">
     <div id="filter-container" class="container py-5">
         <?php
