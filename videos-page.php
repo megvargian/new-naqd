@@ -273,6 +273,8 @@ $top_videos = get_top_3_most_visited('video');
                 $('.videoOverlay-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/'+embedKey+'?autoplay=1');
 		        $('html, body').addClass('hide_scroll');
             <?php } ?>
+            //add counter in db
+            addCounterViewForVideo(key);
         });
         $('.close-btn').click(function(){
             var key = $(this).attr('data-key');
@@ -347,9 +349,22 @@ $top_videos = get_top_3_most_visited('video');
                 },
             });
 	    }
-
-
-    });
+        function addCounterViewForVideo(videoId) {
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                data: {
+                    action: 'add_counter_view_video',
+                    id: videoId,
+                },
+                success: function(response) {
+                    console.log('view', videoId)
+                },
+                error: function(error) {
+                    console.error(error)
+                },
+            });
+        });
 </script>
 <?php
 get_footer();
