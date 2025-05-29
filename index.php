@@ -34,7 +34,6 @@ $get_homepage_fields = get_fields();
 $count=0;
 $top_posts = get_top_3_most_visited('post');
 ?>
-<pre><?php print_r($top_posts);?></pre>
 <section class="homepage">
     <div id="filter-container" class="container py-5">
         <?php
@@ -109,17 +108,23 @@ $top_posts = get_top_3_most_visited('post');
                         الأكثر قراءة
                     </h2>
                     <ul>
-                        <?php for($i=0; $i<3; $i++){ ?>
+                        <?php foreach($top_posts as $post){
+                                $post_id = $post['ID'];
+                                $get_fields = get_fields($post['ID']);
+                                $author_id = $get_fields['author'];
+                        ?>
                             <li>
-                                <h3>
-                                    عن التروما التي تعشقنا وتحاول قتلنا
-                                </h3>
+                                <a href="<?php echo get_permalink($post_id);?>">
+                                    <h3>
+                                        <?php echo $post['post_title']; ?>
+                                    </h3>
+                                </a>
                                 <div class="author">
-                                    <a href="#">
-                                        متري طاهر - كاتب لبناني
+                                    <a href="<?php echo get_permalink($author_id); ?>">
+                                        <?php echo get_the_title($author_id);?>
                                     </a>
                                     <div class="date helvetica-regular">
-                                        4 jan 2025
+                                        <?php echo get_the_date('j M Y', $post_id);?>
                                     </div>
                                 </div>
                             </li>
@@ -217,29 +222,6 @@ $top_posts = get_top_3_most_visited('post');
         </div>
         <div class="row">
             <?php for($i=0; $i<4; $i++){ ?>
-                <!-- <div class="col-lg-3 col-12 mb-2 px-1">
-                    <div class="openPopup fade-in" data-key="<?php //echo $i; ?>">
-                        <img class="w-100 d-block single-article" style="cursor: pointer;" src="<?php //echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
-                        <img class="arrow-play" src="<?php //echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
-                    </div>
-                    <div class="overlay videoOverlay-<?php //echo $i; ?>">
-                        <div class="position-relative w-100 h-100">
-                            <div class="popup">
-                                <button class="close-btn" data-key="<?php //echo $i; ?>">
-                                    <span aria-hidden="true">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
-                                    </span>
-                                </button>
-                                <iframe
-                                        frameborder="0"
-                                        width="360" height="640"
-                                        allowfullscreen
-                                        allow="autoplay; encrypted-media">
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="col-lg-3 col-12 mb-2 px-1">
                     <a href="/test-1" class="fade-in">
                         <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
