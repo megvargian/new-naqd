@@ -1320,6 +1320,12 @@ footer .border-green {
 .light-theme .single-product-page .lower-part .heart, .light-theme .single-product-page .lower-part .heart-filled {
   fill: #000 !important;
 }
+.light-theme .switch .slider {
+  border: 2px solid #000;
+}
+.light-theme .slider .label-text {
+  color: #fff;
+}
 
 body.light {
   background-color: #f5f5f5;

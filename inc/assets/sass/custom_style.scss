@@ -1257,6 +1257,12 @@ background: rgba(0,0,0,0.6);
 			fill: #000 !important;
 		}
 	}
+	.switch .slider{
+		border: 2px solid #000
+	}
+	.slider .label-text {
+		color: #fff;
+	}
 }
 
 body.light {
