@@ -707,7 +707,7 @@ add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
 
 // increment count when post/ video is viewed
 function track_post_views($post_id) {
-    if (!is_single() || !in_the_loop() || !is_main_query()) return;
+    // if (!is_single() || !in_the_loop() || !is_main_query()) return;
 
     $post_type = get_post_type($post_id);
     if (!in_array($post_type, ['post', 'video'])) return;
