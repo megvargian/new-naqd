@@ -704,3 +704,89 @@ function load_more_products() {
 }
 add_action('wp_ajax_load_more_products', 'load_more_products');
 add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
+
+
+//create a table for count post and video
+function create_views_count_table() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'views_count';
+
+    $charset_collate = $wpdb->get_charset_collate();
+
+    $sql = "CREATE TABLE $table_name (
+        post_id BIGINT(20) UNSIGNED NOT NULL,
+        count BIGINT(20) UNSIGNED NOT NULL DEFAULT 0,
+        PRIMARY KEY (post_id)
+    ) $charset_collate;";
+
+    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+    dbDelta($sql);
+}
+register_activation_hook(__FILE__, 'create_views_count_table');
+
+// increment count when post/ video is viewed
+function track_post_views($post_id) {
+    if (!is_single() || !in_the_loop() || !is_main_query()) return;
+
+    $post_type = get_post_type($post_id);
+    if (!in_array($post_type, ['post', 'video'])) return;
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'views_count';
+
+    $wpdb->query($wpdb->prepare("
+        INSERT INTO $table_name (post_id, count)
+        VALUES (%d, 1)
+        ON DUPLICATE KEY UPDATE count = count + 1
+    ", $post_id));
+}
+add_action('wp', function () {
+    if (is_single('post')) {
+        global $post;
+        if ($post instanceof WP_Post) {
+            track_post_views($post->ID);
+        }
+    }
+});
+
+//reset every month
+function schedule_monthly_reset() {
+    if (!wp_next_scheduled('monthly_views_reset')) {
+        wp_schedule_event(strtotime('first day of next month midnight'), 'monthly', 'monthly_views_reset');
+    }
+}
+register_activation_hook(__FILE__, 'schedule_monthly_reset');
+
+// Add custom interval if not already available
+add_filter('cron_schedules', function ($schedules) {
+    $schedules['monthly'] = [
+        'interval' => 30 * DAY_IN_SECONDS,
+        'display'  => __('Once Monthly')
+    ];
+    return $schedules;
+});
+function reset_monthly_views() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'views_count';
+    $wpdb->query("UPDATE $table_name SET count = 0");
+}
+add_action('monthly_views_reset', 'reset_monthly_views');
+
+// get top 3 views
+function get_top_3_most_visited($type = 'post') {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'views_count';
+
+    $results = $wpdb->get_results($wpdb->prepare("
+        SELECT p.ID, p.post_title, vc.count
+        FROM $wpdb->posts p
+        INNER JOIN $table_name vc ON p.ID = vc.post_id
+        WHERE p.post_type = %s AND p.post_status = 'publish'
+        ORDER BY vc.count DESC
+        LIMIT 3
+    ", $type));
+
+    return $results;
+}
+
