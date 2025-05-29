@@ -110,14 +110,14 @@ $top_posts = get_top_3_most_visited('post');
                     </h2>
                     <ul>
                         <?php foreach($top_posts as $post){
-                                $post_id = $post['ID'];
-                                $get_fields = get_fields($post['ID']);
+                                $post_id = $post->ID;
+                                $get_fields = get_fields($post->ID);
                                 $author_id = $get_fields['author'];
                         ?>
                             <li>
                                 <a href="<?php echo get_permalink($post_id);?>">
                                     <h3>
-                                        <?php echo $post['post_title']; ?>
+                                        <?php echo $post->post_title; ?>
                                     </h3>
                                 </a>
                                 <div class="author">
