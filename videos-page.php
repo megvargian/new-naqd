@@ -123,11 +123,15 @@ $top_videos = get_top_3_most_visited('video');
                         الأكثر مشاهدة
                     </h2>
                     <ul>
-                        <?php foreach($top_videos as $post){
-                                $post_id = $post->ID;
+                        <?php foreach($top_videos as $video){
+                                $video_id = $video->ID;
+                                $url = get_field('youtube_url', $video_id);
+                                $path = parse_url($url, PHP_URL_PATH); // "/embed/UqI3exV3YPM"
+                                $parts = explode('/', $path);
+                                $video_embed_id = end($parts);
                         ?>
                             <li>
-                                <h3>
+                                <h3 style="cursor: pointer;" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
                                     <?php echo $post->post_title; ?>
                                 </h3>
                                 <div class="author">
@@ -136,6 +140,23 @@ $top_videos = get_top_3_most_visited('video');
                                     </div>
                                 </div>
                             </li>
+                            <div class="overlay videoOverlay-<?php echo $video_id; ?>">
+                                <div class="position-relative w-100 h-100">
+                                    <div class="popup">
+                                        <button class="close-btn" data-key="<?php echo $video_id; ?>">
+                                            <span aria-hidden="true">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
+                                            </span>
+                                        </button>
+                                        <iframe
+                                                frameborder="0"
+                                                width="360" height="640"
+                                                allowfullscreen
+                                                allow="autoplay; encrypted-media">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
                         <?php } ?>
                     </ul>
                 </div>
@@ -364,7 +385,8 @@ $top_videos = get_top_3_most_visited('video');
                     console.error(error)
                 },
             });
-        });
+        }
+    });
 </script>
 <?php
 get_footer();
