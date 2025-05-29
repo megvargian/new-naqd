@@ -725,9 +725,7 @@ add_action('wp', function () {
     if (is_singular('post')) {
         global $post;
         echo $post->ID;
-        if ($post instanceof WP_Post) {
-            track_post_views($post->ID);
-        }
+        track_post_views($post->ID);
     }
 });
 
