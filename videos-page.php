@@ -131,7 +131,7 @@ $top_videos = get_top_3_most_visited('video');
                                 $video_embed_id = end($parts);
                         ?>
                             <li>
-                                <h3 style="cursor: pointer;" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
+                                <h3 class="openPopupMostView" style="cursor: pointer;" data-key="<?php echo $video_id; ?>" data-key-url="<?php echo $video_embed_id; ?>">
                                     <?php echo $post->post_title; ?>
                                 </h3>
                                 <div class="author">
@@ -140,7 +140,7 @@ $top_videos = get_top_3_most_visited('video');
                                     </div>
                                 </div>
                             </li>
-                            <div class="overlay videoOverlay-<?php echo $video_id; ?>">
+                            <div class="overlay videoOverlayMostView-<?php echo $video_id; ?>">
                                 <div class="position-relative w-100 h-100">
                                     <div class="popup">
                                         <button class="close-btn" data-key="<?php echo $video_id; ?>">
@@ -285,6 +285,19 @@ $top_videos = get_top_3_most_visited('video');
         });
         swiper.changeLanguageDirection('rtl');
         $('.openPopup').click(function(){
+            let key = $(this).attr('data-key');
+            let embedKey = $(this).attr('data-key-url');
+            <?php if(isMob()){ ?>
+                window.location.href = 'https://www.youtube.com/embed/'+embedKey+'?autoplay=1';
+            <?php } else { ?>
+                $('.videoOverlayMostView-' + key).css('display', 'block');
+                $('.videoOverlayMostView-' + key).find('iframe').attr('src', 'https://www.youtube.com/embed/'+embedKey+'?autoplay=1');
+		        $('html, body').addClass('hide_scroll');
+            <?php } ?>
+            //add counter in db
+            addCounterViewForVideo(key);
+        });
+        $('.openPopupMostView').click(function(){
             let key = $(this).attr('data-key');
             let embedKey = $(this).attr('data-key-url');
             <?php if(isMob()){ ?>
