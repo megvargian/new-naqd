@@ -1167,7 +1167,7 @@ footer .border-green {
   border-radius: 15px;
 }
 
-.close-btn {
+.close-btn, .close-btnMostView {
   position: absolute;
   top: 5px;
   right: -11%;
@@ -1179,7 +1179,7 @@ footer .border-green {
   height: fit-content;
   padding: 0;
 }
-.close-btn span {
+.close-btn span, .close-btnMostView span {
   color: #fff;
   height: 15px;
   width: 15px;
