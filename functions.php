@@ -770,3 +770,11 @@ function get_top_3_most_visited($type = 'post') {
     return $results;
 }
 
+// handle ajax for video view counter
+function add_counter_view_video() {
+    $video_id = $_POST['id'];
+    track_post_views($video_id);
+    wp_die();
+}
+add_action('wp_ajax_add_counter_view_video', 'add_counter_view_video');
+add_action('wp_ajax_nopriv_add_counter_view_video', 'add_counter_view_video');
