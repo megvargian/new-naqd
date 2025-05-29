@@ -705,7 +705,6 @@ function load_more_products() {
 add_action('wp_ajax_load_more_products', 'load_more_products');
 add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
 
-
 // increment count when post/ video is viewed
 function track_post_views($post_id) {
     if (!is_single() || !in_the_loop() || !is_main_query()) return;
@@ -725,6 +724,7 @@ function track_post_views($post_id) {
 add_action('wp', function () {
     if (is_single('post')) {
         global $post;
+        echo $post->ID;
         if ($post instanceof WP_Post) {
             track_post_views($post->ID);
         }
