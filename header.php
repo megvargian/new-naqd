@@ -57,8 +57,8 @@ $social_media_links = $get_general_fields['social_links'];
 								<ul class="social-media-icons">
 									<li class="mx-1">
 										<a href="<?php echo $social_media_links['insta']; ?>" class="single-social-icon">
-											<img class="active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
-											<img class="stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
+											<img class="active insta-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
+											<img class="stroke insta-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
 										</a>
 									</li>
 									<li class="mx-1">
@@ -318,6 +318,7 @@ jQuery(document).ready(function($) {
 		$('body').addClass('light-theme');
 		$('#toggle-change input[type="checkbox"]').attr('checked', false);
 		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.svg');
+		changeIconColor('light');
 	}
 	// Toggle theme on button click
 	$('#toggle-change svg').click(function(event) {
@@ -325,10 +326,12 @@ jQuery(document).ready(function($) {
 		localStorage.setItem('theme', 'light');
 		$('body').addClass('light-theme');
 		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.svg');
+		changeIconColor('light');
 	} else {
 		localStorage.setItem('theme', 'dark');
 		$('body').removeClass('light-theme');
 		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg');
+		changeIconColor('dark');
 	}
 	});
 	$('.menu_mobile_nav').click(function(event) {
@@ -407,7 +410,12 @@ jQuery(document).ready(function($) {
 	<?php if(isset($_GET['tagId'])){?>
 		$('.single-tag[data-tagId="<?php echo $_GET['tagId']; ?>"]').click();
 	<?php }?>
-
+	function changeIconColor(theme){
+		if(theme === 'light'){
+			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/insta-light-active.svg');
+			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/insta-light-stroke.svg');
+		}
+	}
 });
 </script>
 <div class="site-content">
