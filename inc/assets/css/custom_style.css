@@ -1368,3 +1368,11 @@ body.dark {
 .wpcf7 form .wpcf7-response-output {
   color: #fff;
 }
+
+.feature {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 3%;
+  top: 3%;
+}

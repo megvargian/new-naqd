@@ -52,8 +52,9 @@ $top_posts = get_top_3_most_visited('post');
         ?>
             <div class="row bg-color-green mb-2"  <?php if(!isMob()) {?>style="background-color: <?php echo $get_homepage_fields['background_color']; ?>" <?php } ?>>
                 <div class="col-lg-4 col-12 mb-2 mb-sm-0 px-1 px-sm-0">
-                    <a href="<?php echo get_permalink($article_id); ?>">
+                    <a href="<?php echo get_permalink($article_id); ?>" class="position-relative">
                         <img class="w-100 h-100 d-block main-img" src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
+                        <img class="feature" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/feature-dark.png" alt="feature">
                     </a>
                 </div>
                 <div class="col-8 d-lg-flex d-none px-0">
