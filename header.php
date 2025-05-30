@@ -430,6 +430,8 @@ jQuery(document).ready(function($) {
 			$('.youtube-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-light-stroke.svg');
 			$('.threads-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-light-active.svg');
 			$('.threads-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-light-stroke.svg');
+			$('.bell').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-light.svg');
+			$('.arrow-up').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-light.svg');
 		} else {
 			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg');
 			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg');
@@ -449,6 +451,8 @@ jQuery(document).ready(function($) {
 			$('.youtube-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-dark-stroke.svg');
 			$('.threads-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-active.svg');
 			$('.threads-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-stroke.svg');
+			$('.bell').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-dark.svg');
+			$('.arrow-up').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-dark.svg');
 		}
 	}
 });

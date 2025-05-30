@@ -16,7 +16,7 @@ $social_media_links = $get_general_fields['social_links'];
         <div class="row pb-3">
             <div class="col-12 d-flex justify-content-start">
                 <div id="scrollToTop" style="cursor: pointer;">
-                    <img style="width: 35px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up.svg" alt="arrow-up">
+                    <img class="arrow-up" style="width: 35px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-dark.svg" alt="arrow-up">
                 </div>
             </div>
         </div>
@@ -135,7 +135,7 @@ $social_media_links = $get_general_fields['social_links'];
             </div>
             <div class="col-lg-6 col-12 d-flex justify-content-end py-3">
                 <a href="#">
-                    <img class="d-block" style="width: 30px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell.svg" alt="subscribe">
+                    <img class="d-block bell" style="width: 30px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-dark.svg" alt="subscribe">
                 </a>
             </div>
         </div>
