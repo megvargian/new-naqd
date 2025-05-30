@@ -412,8 +412,8 @@ jQuery(document).ready(function($) {
 	<?php }?>
 	function changeIconColor(theme){
 		if(theme === 'light'){
-			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/insta-light-active.svg');
-			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/insta-light-stroke.svg');
+			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-light-active.svg');
+			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-light-stroke.svg');
 		}
 	}
 });
