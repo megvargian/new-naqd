@@ -39,6 +39,8 @@ $top_posts = get_top_3_most_visited('post');
         <?php
             if ( $get_homepage_fields['featured_article'] ) {
                 $article_id = $get_homepage_fields['featured_article'];
+                $get_all_feilds = get_fields($article_id);
+                $author_id = $get_all_feilds['author'];
                 $article_title = get_the_title($article_id);
                 $image_url = get_the_post_thumbnail_url($article_id);
                 // get the content
@@ -63,8 +65,8 @@ $top_posts = get_top_3_most_visited('post');
                         </div>
                         <div class="d-flex justify-content-between align-items-center lower-part pb-5 px-5 w-100">
                             <div class="d-flex justify-content-center align-items-center">
-                                <a href="#" style="color: <?php echo $get_homepage_fields['text_color']; ?>">
-                                    مرزي طاهر - كاتب لبناني
+                                <a href="<?php echo get_permalink($author_id); ?>" style="color: <?php echo $get_homepage_fields['text_color']; ?>">
+                                    <?php echo get_the_title($author_id);?>
                                 </a>
                                 <p class="helvetica-regular" dir="ltr" style="color: <?php echo $get_homepage_fields['text_color']; ?>">
                                     <?php echo get_the_date('j M Y', $article_id); ?>
