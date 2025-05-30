@@ -57,8 +57,8 @@ $social_media_links = $get_general_fields['social_links'];
 								<ul class="social-media-icons">
 									<li class="mx-1">
 										<a href="<?php echo $social_media_links['insta']; ?>" class="single-social-icon">
-											<img class="active insta-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-icon.svg" alt="insta">
-											<img class="stroke insta-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta.svg" alt="insta">
+											<img class="active insta-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg" alt="insta">
+											<img class="stroke insta-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg" alt="insta">
 										</a>
 									</li>
 									<li class="mx-1">
@@ -414,6 +414,9 @@ jQuery(document).ready(function($) {
 		if(theme === 'light'){
 			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-light-active.svg');
 			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-light-stroke.svg');
+		} else {
+			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg');
+			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg');
 		}
 	}
 });
