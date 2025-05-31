@@ -151,7 +151,7 @@ $tags = get_tags(array(
             $('.single-filter-cat.active').each(function() {
                 activeCats.push($(this).attr('data-catId'));
             });
-            $('.single-filter-cat.active').each(function() {
+            $('.single-filter-tag.active').each(function() {
                 activeTags.push($(this).attr('data-tagId'));
             });
             var search = $('.search').val();
@@ -164,7 +164,7 @@ $tags = get_tags(array(
             $('.single-filter-cat.active').each(function() {
                 activeCats.push($(this).attr('data-catId'));
             });
-            $('.single-filter-cat.active').each(function() {
+            $('.single-filter-tag.active').each(function() {
                 activeTags.push($(this).attr('data-tagId'));
             });
             var search = $('.search').val();
