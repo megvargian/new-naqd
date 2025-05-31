@@ -144,7 +144,7 @@ $tags = get_tags(array(
         //     var search = $('.search').val();
         //     searchResults(selectedCategories, selectedTags, search);
         // });
-        $('.single-filter-cat, .single-filter-tag').click(function() {
+        $('.single-filter-cat').click(function() {
             $(this).toggleClass('active');
             var activeCats = [];
             var activeTags = [];
@@ -156,7 +156,20 @@ $tags = get_tags(array(
             });
             var search = $('.search').val();
             searchResults(activeCats, activeTags, search);
-        })
+        });
+        $('.single-filter-tag').click(function() {
+            $(this).toggleClass('active');
+            var activeCats = [];
+            var activeTags = [];
+            $('.single-filter-cat.active').each(function() {
+                activeCats.push($(this).attr('data-catId'));
+            });
+            $('.single-filter-cat.active').each(function() {
+                activeCats.push($(this).attr('data-tagId'));
+            });
+            var search = $('.search').val();
+            searchResults(activeCats, activeTags, search);
+        });
         $('.search-form').submit(function(e) {
             e.preventDefault();
            // Get selected category IDs
