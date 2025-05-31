@@ -69,7 +69,7 @@ $tags = get_tags(array(
                                             <?php //echo esc_html($tag->name); ?>
                                         </label> -->
                                         <li>
-                                            <button class="single-fitler-tag tag-<?php echo esc_attr($tag->term_id); ?>" data-tagId="<?php echo esc_attr($tag->term_id); ?>">
+                                            <button class="single-filter-tag tag-<?php echo esc_attr($tag->term_id); ?>" data-tagId="<?php echo esc_attr($tag->term_id); ?>">
 												<?php echo esc_html($tag->name); ?>
 											</button>
                                         </li>
