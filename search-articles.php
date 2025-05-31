@@ -23,9 +23,9 @@ $tags = get_tags(array(
 ));
 ?>
 <section class="position-relative search-articles" style="z-index: 1;">
-    <section class="products-cats py-sm-5 py-3">
-        <div class="container">
-            <div class="row justify-content-start">
+    <section class="products-cats pb-sm-5 pb-3">
+        <div class="container pt-3">
+            <div class="row justify-content-start bg-gray pt-5 pb-2">
                 <div class="col-lg-6 col-12">
                     <form class="search-form-filter">
                         <div class="d-flex justify-content-center align-items-center">
@@ -37,21 +37,27 @@ $tags = get_tags(array(
                     </form>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-12 col-12 order-lg-2 order-1">
+            <div class="row justify-content-center bg-gray pb-5">
+                <div class="col-lg-12 col-12">
                     <div class="pb-3">
                         <form class="filter-products p-3" method="post" action="" style="color: #fff;">
-                            <h3>Date</h3>
-                            <input type="date" id="filter_date" name="filter_date">
-                            <h3 class="mb-3">Categories</h3>
+                            <div class="date-container">
+                                <!-- Calendar icon as SVG -->
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
+                                    2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM5
+                                    20V9h14v11H5z"/>
+                                </svg>
+                                <span class="label">التاريخ</span>
+                                <!-- Invisible date input over the label -->
+                                <input type="date" id="filter_date" name="filter_date">
+                            </div>
                             <?php foreach ($categories as $category): ?>
                                 <label class="label-cats">
                                     <input type="checkbox" name="category[]" value="<?php echo esc_attr($category->term_id); ?>">
                                     <?php echo esc_html($category->name); ?>
                                 </label>
                             <?php endforeach; ?>
-                            <!-- Tags -->
-                            <h3 class="my-3">Tags</h3>
                             <?php foreach ($tags as $tag): ?>
                                 <label class="label-tags">
                                     <input type="checkbox" name="tag[]" value="<?php echo esc_attr($tag->term_id); ?>">
@@ -61,32 +67,34 @@ $tags = get_tags(array(
                             <br>
                         </form>
                     </div>
-                    <div id="filter-container" class="row">
-                        <?php
-                         if ($query->have_posts()) {
-                            while ($query->have_posts()) {
-                                $query->the_post();
-                                $article_id = get_the_ID();
-                                $article_title = get_the_title($article_id);
-                                $image_url = get_the_post_thumbnail_url($article_id);
-                                $count++;
-                        ?>
-                            <div class="col-lg-3 col-12 mb-2 px-1">
-                                <a href="<?php echo get_permalink($article_id);?>" class="<?php echo $count > 8 ? 'fade-in' : ''?>">
-                                    <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
-                                </a>
-                            </div>
-                        <?php
-                            }
-                            wp_reset_postdata();
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="filter-container" class="row">
+                    <?php
+                        if ($query->have_posts()) {
+                        while ($query->have_posts()) {
+                            $query->the_post();
+                            $article_id = get_the_ID();
+                            $article_title = get_the_title($article_id);
+                            $image_url = get_the_post_thumbnail_url($article_id);
+                            $count++;
+                    ?>
+                        <div class="col-lg-3 col-12 mb-2 px-1">
+                            <a href="<?php echo get_permalink($article_id);?>" class="<?php echo $count > 8 ? 'fade-in' : ''?>">
+                                <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
+                            </a>
+                        </div>
+                    <?php
                         }
-                        ?>
-                    </div>
-                    <div class="row text-center">
-                        <button id="load-more-button" class="main-btn" style="width: fit-content; margin: auto;">
-                            View more
-                        </button>
-                    </div>
+                        wp_reset_postdata();
+                    }
+                    ?>
+                </div>
+                <div class="row text-center">
+                    <button id="load-more-button" class="main-btn" style="width: fit-content; margin: auto;">
+                        View more
+                    </button>
                 </div>
             </div>
         </div>

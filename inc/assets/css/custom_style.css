@@ -1395,3 +1395,50 @@ body.dark {
   background-color: transparent;
   border: none;
 }
+.search-articles .bg-gray {
+  background-color: #313136;
+}
+.search-articles button {
+  width: 200px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #2A2A2E;
+  display: block;
+  text-align: center;
+  margin: 0 0.3rem;
+  font-size: 1.4rem;
+  font-family: "ManchetteFine-Regular";
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.search-articles .date-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #b4f000;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: fit-content;
+  color: white;
+}
+.search-articles .date-container svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  fill: white;
+}
+.search-articles .date-container input[type=date] {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  direction: rtl;
+  outline: none;
+  cursor: pointer;
+}
+.search-articles .date-container input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+.search-articles .date-container .label {
+  margin-right: 10px;
+  font-size: 16px;
+}
