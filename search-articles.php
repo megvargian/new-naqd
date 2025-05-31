@@ -24,52 +24,54 @@ $tags = get_tags(array(
 ?>
 <section class="position-relative search-articles" style="z-index: 1;">
     <section class="products-cats pb-sm-5 pb-3">
-        <div class="container pt-3 bg-gray">
-            <div class="row justify-content-start pt-5 pb-2">
-                <div class="col-lg-6 col-12">
-                    <form class="search-form-filter">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <input placeholder="بحث" name="search" type="search" required class="search">
-                            <button type="submit">
-                                <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-dark.svg" alt="search">
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row justify-content-center pb-5">
-                <div class="col-lg-12 col-12">
-                    <div class="pb-3">
-                        <form class="filter-products p-3" method="post" action="" style="color: #fff;">
-                            <div class="date-container">
-                                <!-- Calendar icon as SVG -->
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
-                                    2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM5
-                                    20V9h14v11H5z"/>
-                                </svg>
-                                <span class="label">التاريخ</span>
-                                <!-- Invisible date input over the label -->
-                                <input type="date" id="filter_date" name="filter_date">
+        <section class="bg-gray mt-4">
+            <div class="container bg-gray">
+                <div class="row justify-content-start pt-5 pb-2">
+                    <div class="col-lg-6 col-12">
+                        <form class="search-form-filter">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <input placeholder="بحث" name="search" type="search" required class="search">
+                                <button type="submit">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-dark.svg" alt="search">
+                                </button>
                             </div>
-                            <?php foreach ($categories as $category): ?>
-                                <label class="label-cats">
-                                    <input type="checkbox" name="category[]" value="<?php echo esc_attr($category->term_id); ?>">
-                                    <?php echo esc_html($category->name); ?>
-                                </label>
-                            <?php endforeach; ?>
-                            <?php foreach ($tags as $tag): ?>
-                                <label class="label-tags">
-                                    <input type="checkbox" name="tag[]" value="<?php echo esc_attr($tag->term_id); ?>">
-                                    <?php echo esc_html($tag->name); ?>
-                                </label>
-                            <?php endforeach; ?>
-                            <br>
                         </form>
                     </div>
                 </div>
+                <div class="row justify-content-center pb-5">
+                    <div class="col-lg-12 col-12">
+                        <div class="pb-3">
+                            <form class="filter-products p-3" method="post" action="" style="color: #fff;">
+                                <div class="date-container">
+                                    <!-- Calendar icon as SVG -->
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
+                                        2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM5
+                                        20V9h14v11H5z"/>
+                                    </svg>
+                                    <span class="label">التاريخ</span>
+                                    <!-- Invisible date input over the label -->
+                                    <input type="date" id="filter_date" name="filter_date">
+                                </div>
+                                <?php foreach ($categories as $category): ?>
+                                    <label class="label-cats">
+                                        <input type="checkbox" name="category[]" value="<?php echo esc_attr($category->term_id); ?>">
+                                        <?php echo esc_html($category->name); ?>
+                                    </label>
+                                <?php endforeach; ?>
+                                <?php foreach ($tags as $tag): ?>
+                                    <label class="label-tags">
+                                        <input type="checkbox" name="tag[]" value="<?php echo esc_attr($tag->term_id); ?>">
+                                        <?php echo esc_html($tag->name); ?>
+                                    </label>
+                                <?php endforeach; ?>
+                                <br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
         <div class="container mt-3">
             <div class="row justify-content-center">
                 <div id="filter-container" class="row">
