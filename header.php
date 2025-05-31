@@ -19,6 +19,7 @@ $all_tags = get_tags( array(
     'hide_empty' => false, // Set to true to exclude tags with no posts
 ) );
 $length_cats_array = count($all_categories);
+echo $length_cats_array;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
