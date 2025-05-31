@@ -108,19 +108,17 @@ $tags = get_tags(array(
 <script>
     jQuery(document).ready(function($) {
         $('input[type="date"]').on('change', function() {
-            // Get selected category IDs
-            var selectedCategories = [];
-            $('input[name="category[]"]:checked').each(function() {
-                selectedCategories.push($(this).val());
+            var activeCats = [];
+            var activeTags = [];
+            $('.single-filter-cat.active').each(function() {
+                activeCats.push($(this).attr('data-catId'));
             });
-            // Get selected tag IDs
-            var selectedTags = [];
-            $('input[name="tag[]"]:checked').each(function() {
-                selectedTags.push($(this).val());
+            $('.single-filter-tag.active').each(function() {
+                activeTags.push($(this).attr('data-tagId'));
             });
             var search = $('.search').val();
             var filterDate = $('#filter_date').val();
-            searchResults(selectedCategories, selectedTags, search, filterDate);
+            searchResults(activeCats, activeTags, search, filterDate);
         });
         $('.single-filter-cat').click(function() {
             $(this).toggleClass('active');
