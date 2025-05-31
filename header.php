@@ -44,10 +44,10 @@ $length_cats_array = count($all_categories);
 			foreach ( $all_categories as $key => $cat ) {
 		?>
 			.search-articles .filter-list li:nth-child(<?php echo $key + 1; ?>) button:hover{
-				border-color: <?php echo get_field('border_color', 'post_tag_' . $cat->term_id);?>;
+				border-color: <?php echo get_field('border_color', 'category_' . $cat->term_id);?>;
 			}
 			.search-articles .filter-list li:nth-child(<?php echo $key + 1; ?>) button.active{
-				border-color: <?php echo get_field('border_color', 'post_tag_' . $cat->term_id);?>;
+				border-color: <?php echo get_field('border_color', 'category_' . $cat->term_id);?>;
 			}
 		<?php } ?>
 		<?php
@@ -55,10 +55,10 @@ $length_cats_array = count($all_categories);
 				$key = $length_cats_array + 1;
 		?>
 			.search-articles .filter-list li:nth-child(<?php echo $key; ?>) button:hover{
-				border-color: <?php echo get_field('border_color', 'category_' . $tag->term_id);?>;
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
 			.search-articles .filter-list li:nth-child(<?php echo $key; ?>) button.active{
-				border-color: <?php echo get_field('border_color', 'category_' . $tag->term_id);?>;
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
 		<?php } ?>
 	</style>
