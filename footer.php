@@ -42,7 +42,7 @@ $social_media_links = $get_general_fields['social_links'];
                     </li>
                     <li class="mx-1">
                         <a href="<?php echo $social_media_links['linkedin']; ?>" class="single-social-icon">
-                            <img class="active linkedin-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedlinkedin-dark-active.svg" alt="linkedin">
+                            <img class="active linkedin-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-dark-active.svg" alt="linkedin">
                             <img class="stroke linkedin-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-dark-stroke.svg" alt="linkedin">
                         </a>
                     </li>
