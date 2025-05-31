@@ -11,6 +11,14 @@
 $get_general_fields = get_fields('options');
 $tags = $get_general_fields['tags'];
 $social_media_links = $get_general_fields['social_links'];
+// get all cats and tags
+$all_categories = get_categories( array(
+    'hide_empty' => false, // Set to true to exclude empty categories
+));
+$all_tags = get_tags( array(
+    'hide_empty' => false, // Set to true to exclude tags with no posts
+) );
+$length_cats_array = count($all_categories);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -29,6 +37,27 @@ $social_media_links = $get_general_fields['social_links'];
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
 			.header-container .tag-list li:nth-child(<?php echo $key + 1; ?>) button.active{
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
+			}
+		<?php } ?>
+		<?php
+			foreach ( $all_categories as $key => $cat ) {
+				$key = $length_cats_array + 1;
+		?>
+			.search-articles .filter-list li:nth-child(<?php echo $key; ?>) button:hover{
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $cat->term_id);?>;
+			}
+			.search-articles .filter-list li:nth-child(<?php echo $key; ?>) button.active{
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $cat->term_id);?>;
+			}
+		<?php } ?>
+		<?php
+			foreach ( $all_tags as $key => $tag ) {
+		?>
+			.search-articles .filter-list li:nth-child(<?php echo $key + 1; ?>) button:hover{
+				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
+			}
+			.search-articles .filter-list li:nth-child(<?php echo $key + 1; ?>) button.active{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
 		<?php } ?>
