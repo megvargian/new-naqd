@@ -1377,7 +1377,7 @@ body.dark {
   top: 3%;
 }
 
-.search-articles .search-form input {
+.search-articles .search-form-filter input {
   background-color: #fff;
   border-radius: 15px;
   padding: 0.5rem 1rem;
@@ -1385,7 +1385,7 @@ body.dark {
   color: #000;
   font-size: 1.2rem;
 }
-.search-articles .search-form button {
+.search-articles .search-form-filter button {
   margin-right: 10px;
   width: 30px;
   height: 30px;

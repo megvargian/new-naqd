@@ -27,27 +27,19 @@ $tags = get_tags(array(
         <div class="container">
             <div class="row justify-content-start">
                 <div class="col-lg-6 col-12">
-                    <form class="search-form">
+                    <form class="search-form-filter">
                         <div class="d-flex justify-content-center align-items-center">
-                            <input placeholder="بحث" type="search" required class="search">
+                            <input placeholder="بحث" name="search" type="search" required class="search">
                             <button type="submit">
-                                <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-dark.svg" alt="search">
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="row  justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-lg-12 col-12 order-lg-2 order-1">
                     <div class="pb-3">
-                        <form class="search-form">
-                            <div class="position-relative">
-                                <input placeholder="بحث" type="search" required class="search">
-                                <button style="padding-top: 2px;">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
-                                </button>
-                            </div>
-                        </form>
                         <form class="filter-products p-3" method="post" action="" style="color: #fff;">
                             <h3>Date</h3>
                             <input type="date" id="filter_date" name="filter_date">
