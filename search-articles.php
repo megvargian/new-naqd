@@ -42,7 +42,7 @@ $tags = get_tags(array(
                     <div class="col-lg-12 col-12">
                         <div class="pb-3">
                             <div class="filter-products py-3" style="color: #fff;">
-                                <!-- <div class="date-container">
+                                <div class="date-container">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
                                         2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM5
@@ -50,13 +50,9 @@ $tags = get_tags(array(
                                     </svg>
                                     <span class="label">التاريخ</span>
                                     <input type="date" id="filter_date" name="filter_date">
-                                </div> -->
+                                </div>
                                 <ul class="filter-list">
                                     <?php foreach ($categories as $category): ?>
-                                        <!-- <label class="label-cats">
-                                            <input type="checkbox" name="category[]" value="<?php // echo esc_attr($category->term_id); ?>">
-                                            <?php // echo esc_html($category->name); ?>
-                                        </label> -->
                                         <li>
                                             <button class="single-filter-cat cat-<?php echo esc_attr($category->term_id); ?>" data-catId="<?php echo esc_attr($category->term_id); ?>">
 												<?php echo esc_html($category->name); ?>
@@ -64,10 +60,6 @@ $tags = get_tags(array(
                                         </li>
                                     <?php endforeach; ?>
                                     <?php foreach ($tags as $tag): ?>
-                                        <!-- <label class="label-tags">
-                                            <input type="checkbox" name="tag[]" value="<?php //echo esc_attr($tag->term_id); ?>">
-                                            <?php //echo esc_html($tag->name); ?>
-                                        </label> -->
                                         <li>
                                             <button class="single-filter-tag tag-<?php echo esc_attr($tag->term_id); ?>" data-tagId="<?php echo esc_attr($tag->term_id); ?>">
 												<?php echo esc_html($tag->name); ?>
@@ -130,20 +122,6 @@ $tags = get_tags(array(
             var filterDate = $('#filter_date').val();
             searchResults(selectedCategories, selectedTags, search, filterDate);
         });
-        // $('input[type="checkbox"]').on('change', function() {
-        //     // Get selected category IDs
-        //     var selectedCategories = [];
-        //     $('input[name="category[]"]:checked').each(function() {
-        //         selectedCategories.push($(this).val());
-        //     });
-        //     // Get selected tag IDs
-        //     var selectedTags = [];
-        //     $('input[name="tag[]"]:checked').each(function() {
-        //         selectedTags.push($(this).val());
-        //     });
-        //     var search = $('.search').val();
-        //     searchResults(selectedCategories, selectedTags, search);
-        // });
         $('.single-filter-cat').click(function() {
             $(this).toggleClass('active');
             var activeCats = [];
