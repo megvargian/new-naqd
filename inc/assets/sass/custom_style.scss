@@ -1381,6 +1381,9 @@ body.dark {
       direction: rtl;
       outline: none;
       cursor: pointer;
+	  padding: 0;
+	  margin: 0;
+	  line-height: 1;
     }
 
     .date-container input[type="date"]::-webkit-calendar-picker-indicator {
