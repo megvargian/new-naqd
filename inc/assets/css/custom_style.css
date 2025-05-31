@@ -1427,6 +1427,7 @@ body.dark {
   padding: 5px 10px;
   width: fit-content;
   color: white;
+  cursor: pointer;
 }
 .search-articles .date-container svg {
   width: 20px;
@@ -1441,7 +1442,6 @@ body.dark {
   font-size: 16px;
   direction: rtl;
   outline: none;
-  cursor: pointer;
   padding: 0;
   margin: 0;
   line-height: 1;
