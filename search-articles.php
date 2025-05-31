@@ -22,15 +22,27 @@ $tags = get_tags(array(
     'hide_empty' => true
 ));
 ?>
-<section class="position-relative" style="z-index: 1;">
+<section class="position-relative search-articles" style="z-index: 1;">
     <section class="products-cats py-sm-5 py-3">
         <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-lg-6 col-12">
+                    <form class="search-form">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <input placeholder="بحث" type="search" required class="search">
+                            <button type="submit">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="row  justify-content-center">
                 <div class="col-lg-12 col-12 order-lg-2 order-1">
                     <div class="pb-3">
                         <form class="search-form">
                             <div class="position-relative">
-                                <input placeholder="يبحث" type="search" required class="search">
+                                <input placeholder="بحث" type="search" required class="search">
                                 <button style="padding-top: 2px;">
                                     <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
                                 </button>

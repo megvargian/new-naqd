@@ -1309,3 +1309,22 @@ body.dark {
 	left: 3%;
 	top: 3%;
 }
+// search page classes
+
+.search-articles{
+	.search-form{
+		input{
+			background-color: #fff;
+			border-radius: 15px;
+			padding: .5rem 1rem;
+			font-family: $regular;
+			color: #000;
+			font-size: 1.2rem;
+		}
+		button{
+			margin-right: 10px;
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
