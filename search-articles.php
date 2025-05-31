@@ -152,7 +152,7 @@ $tags = get_tags(array(
                 activeCats.push($(this).attr('data-catId'));
             });
             $('.single-filter-cat.active').each(function() {
-                activeCats.push($(this).attr('data-tagId'));
+                activeTags.push($(this).attr('data-tagId'));
             });
             var search = $('.search').val();
             searchResults(activeCats, activeTags, search);
@@ -165,7 +165,7 @@ $tags = get_tags(array(
                 activeCats.push($(this).attr('data-catId'));
             });
             $('.single-filter-cat.active').each(function() {
-                activeCats.push($(this).attr('data-tagId'));
+                activeTags.push($(this).attr('data-tagId'));
             });
             var search = $('.search').val();
             searchResults(activeCats, activeTags, search);
