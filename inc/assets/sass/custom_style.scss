@@ -1323,13 +1323,16 @@ body.dark {
 			direction: rtl;
 			text-align: right;
 			margin-bottom: 0;
+			width: 100%;
 		}
 		button{
 			margin-right: 10px;
-			width: 40px;
-			height: 40px;
 			background-color: transparent;
 			border: none;
+			img{
+				width: 40px;
+				height: 40px;
+			}
 		}
 	}
 	.bg-gray{

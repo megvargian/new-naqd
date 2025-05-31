@@ -24,8 +24,8 @@ $tags = get_tags(array(
 ?>
 <section class="position-relative search-articles" style="z-index: 1;">
     <section class="products-cats pb-sm-5 pb-3">
-        <div class="container pt-3">
-            <div class="row justify-content-start bg-gray pt-5 pb-2">
+        <div class="container pt-3 bg-gray">
+            <div class="row justify-content-start pt-5 pb-2">
                 <div class="col-lg-6 col-12">
                     <form class="search-form-filter">
                         <div class="d-flex justify-content-center align-items-center">
@@ -37,7 +37,7 @@ $tags = get_tags(array(
                     </form>
                 </div>
             </div>
-            <div class="row justify-content-center bg-gray pb-5">
+            <div class="row justify-content-center pb-5">
                 <div class="col-lg-12 col-12">
                     <div class="pb-3">
                         <form class="filter-products p-3" method="post" action="" style="color: #fff;">
@@ -69,6 +69,8 @@ $tags = get_tags(array(
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container mt-3">
             <div class="row justify-content-center">
                 <div id="filter-container" class="row">
                     <?php

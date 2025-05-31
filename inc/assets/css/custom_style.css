@@ -1387,13 +1387,16 @@ body.dark {
   direction: rtl;
   text-align: right;
   margin-bottom: 0;
+  width: 100%;
 }
 .search-articles .search-form-filter button {
   margin-right: 10px;
-  width: 40px;
-  height: 40px;
   background-color: transparent;
   border: none;
+}
+.search-articles .search-form-filter button img {
+  width: 40px;
+  height: 40px;
 }
 .search-articles .bg-gray {
   background-color: #313136;
