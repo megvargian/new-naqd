@@ -1340,6 +1340,7 @@ body.dark {
 		background-color: $sec_color;
 	}
 	.filter-list{
+		display: ruby;
 		li button{
 			width: 200px;
 			color: #fff;
@@ -1352,6 +1353,7 @@ body.dark {
 			font-family: $regular;
 			border: 1px solid transparent;
 			transition: border-color .3s ease;
+			margin-bottom: 10px;
 		}
 	}
 	.date-container {

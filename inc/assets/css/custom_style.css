@@ -1402,6 +1402,9 @@ body.dark {
 .search-articles .bg-gray {
   background-color: #313136;
 }
+.search-articles .filter-list {
+  display: ruby;
+}
 .search-articles .filter-list li button {
   width: 200px;
   color: #fff;
@@ -1414,6 +1417,7 @@ body.dark {
   font-family: "ManchetteFine-Regular";
   border: 1px solid transparent;
   transition: border-color 0.3s ease;
+  margin-bottom: 10px;
 }
 .search-articles .date-container {
   display: flex;

@@ -42,17 +42,15 @@ $tags = get_tags(array(
                     <div class="col-lg-12 col-12">
                         <div class="pb-3">
                             <form class="filter-products p-3" method="post" action="" style="color: #fff;">
-                                <div class="date-container">
-                                    <!-- Calendar icon as SVG -->
+                                <!-- <div class="date-container">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
                                         2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM5
                                         20V9h14v11H5z"/>
                                     </svg>
                                     <span class="label">التاريخ</span>
-                                    <!-- Invisible date input over the label -->
                                     <input type="date" id="filter_date" name="filter_date">
-                                </div>
+                                </div> -->
                                 <ul class="filter-list">
                                     <?php foreach ($categories as $category): ?>
                                         <!-- <label class="label-cats">
