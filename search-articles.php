@@ -41,7 +41,7 @@ $tags = get_tags(array(
                 <div class="row justify-content-center pb-5">
                     <div class="col-lg-12 col-12">
                         <div class="pb-3">
-                            <form class="filter-products p-3" method="post" action="" style="color: #fff;">
+                            <form class="filter-products py-3" method="post" action="" style="color: #fff;">
                                 <!-- <div class="date-container">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
@@ -58,7 +58,7 @@ $tags = get_tags(array(
                                             <?php // echo esc_html($category->name); ?>
                                         </label> -->
                                         <li>
-                                            <button class="single-tag tag-<?php echo esc_attr($category->term_id); ?>" data-tagId="<?php echo esc_attr($category->term_id); ?>">
+                                            <button class="single-filter-cat cat-<?php echo esc_attr($category->term_id); ?>" data-catId="<?php echo esc_attr($category->term_id); ?>">
 												<?php echo esc_html($category->name); ?>
 											</button>
                                         </li>
@@ -69,14 +69,12 @@ $tags = get_tags(array(
                                             <?php //echo esc_html($tag->name); ?>
                                         </label> -->
                                         <li>
-                                            <button class="single-tag tag-<?php echo esc_attr($tag->term_id); ?>" data-tagId="<?php echo esc_attr($tag->term_id); ?>">
+                                            <button class="single-fitler-tag tag-<?php echo esc_attr($tag->term_id); ?>" data-tagId="<?php echo esc_attr($tag->term_id); ?>">
 												<?php echo esc_html($tag->name); ?>
 											</button>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
-
-                                <br>
                             </form>
                         </div>
                     </div>
@@ -132,20 +130,33 @@ $tags = get_tags(array(
             var filterDate = $('#filter_date').val();
             searchResults(selectedCategories, selectedTags, search, filterDate);
         });
-        $('input[type="checkbox"]').on('change', function() {
-            // Get selected category IDs
-            var selectedCategories = [];
-            $('input[name="category[]"]:checked').each(function() {
-                selectedCategories.push($(this).val());
+        // $('input[type="checkbox"]').on('change', function() {
+        //     // Get selected category IDs
+        //     var selectedCategories = [];
+        //     $('input[name="category[]"]:checked').each(function() {
+        //         selectedCategories.push($(this).val());
+        //     });
+        //     // Get selected tag IDs
+        //     var selectedTags = [];
+        //     $('input[name="tag[]"]:checked').each(function() {
+        //         selectedTags.push($(this).val());
+        //     });
+        //     var search = $('.search').val();
+        //     searchResults(selectedCategories, selectedTags, search);
+        // });
+        $('.single-filter-cat, .single-filter-tag').click(function() {
+            $(this).toggleClass('active');
+            var activeCats = [];
+            var activeTags = [];
+            $('.single-filter-cat.active').each(function() {
+                activeCats.push($(this).attr('data-catId'));
             });
-            // Get selected tag IDs
-            var selectedTags = [];
-            $('input[name="tag[]"]:checked').each(function() {
-                selectedTags.push($(this).val());
+            $('.single-filter-cat.active').each(function() {
+                activeCats.push($(this).attr('data-tagId'));
             });
             var search = $('.search').val();
-            searchResults(selectedCategories, selectedTags, search);
-        });
+            searchResults(activeCats, activeTags, search);
+        })
         $('.search-form').submit(function(e) {
             e.preventDefault();
            // Get selected category IDs

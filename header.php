@@ -322,17 +322,17 @@ jQuery(document).ready(function($) {
 	}
 	// Toggle theme on button click
 	$('#toggle-change svg').click(function(event) {
-	if (localStorage.getItem('theme') === 'dark') {
-		localStorage.setItem('theme', 'light');
-		$('body').addClass('light-theme');
-		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.svg');
-		changeIconColor('light');
-	} else {
-		localStorage.setItem('theme', 'dark');
-		$('body').removeClass('light-theme');
-		$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg');
-		changeIconColor('dark');
-	}
+		if (localStorage.getItem('theme') === 'dark') {
+			localStorage.setItem('theme', 'light');
+			$('body').addClass('light-theme');
+			$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/naqd-logo-black.svg');
+			changeIconColor('light');
+		} else {
+			localStorage.setItem('theme', 'dark');
+			$('body').removeClass('light-theme');
+			$('#logo').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg');
+			changeIconColor('dark');
+		}
 	});
 	$('.menu_mobile_nav').click(function(event) {
 		$(this).toggleClass('active');
