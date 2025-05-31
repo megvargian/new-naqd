@@ -54,10 +54,10 @@ $length_cats_array = count($all_categories);
 			foreach ( $all_tags as $key => $tag ) {
 				$tag_count = $length_cats_array + 1;
 		?>
-			.search-articles .filter-list  .tag-<?php echo $tag_count; ?>:hover{
+			.search-articles .filter-list  .tag-<?php echo $tag->term_id; ?>:hover{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
-			.search-articles .filter-list li:nth-child(<?php echo $tag_count; ?>) button.active{
+			.search-articles .filter-list .tag-<?php echo $tag->term_id; ?>.active{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
 		<?php $tag_count++;
