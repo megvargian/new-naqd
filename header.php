@@ -52,12 +52,12 @@ $length_cats_array = count($all_categories);
 		<?php } ?>
 		<?php
 			foreach ( $all_tags as $key => $tag ) {
-				$key = $length_cats_array + 1;
+				$tag_count = $length_cats_array + 1;
 		?>
-			.search-articles .filter-list li:nth-child(<?php echo $key; ?>) button:hover{
+			.search-articles .filter-list li:nth-child(<?php echo $tag_count; ?>) button:hover{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
-			.search-articles .filter-list li:nth-child(<?php echo $key; ?>) button.active{
+			.search-articles .filter-list li:nth-child(<?php echo $tag_count; ?>) button.active{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
 		<?php } ?>
