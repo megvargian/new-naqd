@@ -1384,9 +1384,14 @@ body.dark {
   font-family: "ManchetteFine-Regular";
   color: #000;
   font-size: 1.2rem;
+  direction: rtl;
+  text-align: right;
+  margin-bottom: 0;
 }
 .search-articles .search-form-filter button {
   margin-right: 10px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
 }

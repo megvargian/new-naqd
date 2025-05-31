@@ -31,7 +31,7 @@ $tags = get_tags(array(
                         <div class="d-flex justify-content-center align-items-center">
                             <input placeholder="بحث" name="search" type="search" required class="search">
                             <button type="submit">
-                                <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-dark.svg" alt="search">
+                                <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-dark.svg" alt="search">
                             </button>
                         </div>
                     </form>
