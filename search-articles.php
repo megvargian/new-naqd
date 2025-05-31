@@ -42,7 +42,7 @@ $tags = get_tags(array(
                     <div class="col-lg-12 col-12">
                         <div class="pb-3">
                             <div class="filter-products py-3" style="color: #fff;">
-                                <div class="date-container">
+                                <div class="date-container" onclick="document.getElementById('filter_date').showPicker()">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
                                         2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM5
