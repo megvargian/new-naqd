@@ -148,20 +148,18 @@ $tags = get_tags(array(
             var search = $('.search').val();
             searchResults(activeCats, activeTags, search);
         });
-        $('.search-form').submit(function(e) {
+        $('.search-form-filter').submit(function(e) {
             e.preventDefault();
-           // Get selected category IDs
-           var selectedCategories = [];
-            $('input[name="category[]"]:checked').each(function() {
-                selectedCategories.push($(this).val());
+            var activeCats = [];
+            var activeTags = [];
+            $('.single-filter-cat.active').each(function() {
+                activeCats.push($(this).attr('data-catId'));
             });
-            // Get selected tag IDs
-            var selectedTags = [];
-            $('input[name="tag[]"]:checked').each(function() {
-                selectedTags.push($(this).val());
+            $('.single-filter-tag.active').each(function() {
+                activeTags.push($(this).attr('data-tagId'));
             });
             var search = $('.search').val();
-            searchResults(selectedCategories, selectedTags, search);
+            searchResults(activeCats, activeTags, search);
         });
         function searchResults(selectedCategories, selectedTags, search, filterDate) {
             $.ajax({
