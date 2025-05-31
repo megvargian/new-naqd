@@ -1402,7 +1402,7 @@ body.dark {
 .search-articles .bg-gray {
   background-color: #313136;
 }
-.search-articles button {
+.search-articles .filter-list li button {
   width: 200px;
   color: #fff;
   border-radius: 10px;

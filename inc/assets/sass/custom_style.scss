@@ -1339,18 +1339,20 @@ body.dark {
 	.bg-gray{
 		background-color: $sec_color;
 	}
-	button{
-		width: 200px;
-		color: #fff;
-		border-radius: 10px;
-		background-color: #2A2A2E;
-		display: block;
-		text-align: center;
-		margin: 0 .3rem;
-		font-size: 1.4rem;
-		font-family: $regular;
-		border: 1px solid transparent;
-		transition: border-color .3s ease;
+	.filter-list{
+		li button{
+			width: 200px;
+			color: #fff;
+			border-radius: 10px;
+			background-color: #2A2A2E;
+			display: block;
+			text-align: center;
+			margin: 0 .3rem;
+			font-size: 1.4rem;
+			font-family: $regular;
+			border: 1px solid transparent;
+			transition: border-color .3s ease;
+		}
 	}
 	.date-container {
       display: flex;

@@ -53,18 +53,31 @@ $tags = get_tags(array(
                                     <!-- Invisible date input over the label -->
                                     <input type="date" id="filter_date" name="filter_date">
                                 </div>
-                                <?php foreach ($categories as $category): ?>
-                                    <label class="label-cats">
-                                        <input type="checkbox" name="category[]" value="<?php echo esc_attr($category->term_id); ?>">
-                                        <?php echo esc_html($category->name); ?>
-                                    </label>
-                                <?php endforeach; ?>
-                                <?php foreach ($tags as $tag): ?>
-                                    <label class="label-tags">
-                                        <input type="checkbox" name="tag[]" value="<?php echo esc_attr($tag->term_id); ?>">
-                                        <?php echo esc_html($tag->name); ?>
-                                    </label>
-                                <?php endforeach; ?>
+                                <ul class="filter-list">
+                                    <?php foreach ($categories as $category): ?>
+                                        <!-- <label class="label-cats">
+                                            <input type="checkbox" name="category[]" value="<?php // echo esc_attr($category->term_id); ?>">
+                                            <?php // echo esc_html($category->name); ?>
+                                        </label> -->
+                                        <li>
+                                            <button class="single-tag tag-<?php echo esc_attr($category->term_id); ?>" data-tagId="<?php echo esc_attr($category->term_id); ?>">
+												<?php echo esc_html($category->name); ?>
+											</button>
+                                        </li>
+                                    <?php endforeach; ?>
+                                    <?php foreach ($tags as $tag): ?>
+                                        <!-- <label class="label-tags">
+                                            <input type="checkbox" name="tag[]" value="<?php //echo esc_attr($tag->term_id); ?>">
+                                            <?php //echo esc_html($tag->name); ?>
+                                        </label> -->
+                                        <li>
+                                            <button class="single-tag tag-<?php echo echo esc_attr($tag->term_id); ?>" data-tagId="<?php echo echo esc_attr($tag->term_id); ?>">
+												<?php echo esc_html($tag->name); ?>
+											</button>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+
                                 <br>
                             </form>
                         </div>
