@@ -1428,6 +1428,7 @@ body.dark {
   width: fit-content;
   color: white;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 .search-articles .date-container svg {
   width: 20px;
