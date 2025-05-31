@@ -19,7 +19,6 @@ $all_tags = get_tags( array(
     'hide_empty' => false, // Set to true to exclude tags with no posts
 ) );
 $length_cats_array = count($all_categories);
-echo $length_cats_array;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -53,7 +52,7 @@ echo $length_cats_array;
 		<?php } ?>
 		<?php
 			foreach ( $all_tags as $key => $tag ) {
-				$tag_count = $length_cats_array + 1;
+				$tag_count = $length_cats_array + 2;
 		?>
 			.search-articles .filter-list li:nth-child(<?php echo $tag_count; ?>) button:hover{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
