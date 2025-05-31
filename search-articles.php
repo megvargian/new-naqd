@@ -41,7 +41,7 @@ $tags = get_tags(array(
                 <div class="row justify-content-center pb-5">
                     <div class="col-lg-12 col-12">
                         <div class="pb-3">
-                            <form class="filter-products py-3" method="post" action="" style="color: #fff;">
+                            <div class="filter-products py-3" style="color: #fff;">
                                 <!-- <div class="date-container">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2
@@ -75,7 +75,7 @@ $tags = get_tags(array(
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
