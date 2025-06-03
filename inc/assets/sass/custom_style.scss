@@ -1288,9 +1288,14 @@ background: rgba(0,0,0,0.6);
 		}
 		.date-container svg {
 			color: #000;
+			fill: #000;
 		}
 		.date-container input[type="date"] {
 			color: #000;
+		}
+		.button-green-view-more{
+			background-color: #5D0DE6;
+			color: #fff;
 		}
 	}
 }
@@ -1425,4 +1430,14 @@ body.dark {
       margin-right: 10px;
       font-size: 16px;
     }
+}
+.button-green-view-more{
+	border-radius: 15px;
+	background-color: #B6E60D;
+	color: $sec_color;
+	font-family: $Helveticaregular;
+	padding: 0rem 1rem;
+	font-size: 1.4rem;
+	border:none;
+	outline: none;
 }

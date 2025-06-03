@@ -81,7 +81,6 @@ $all_tags = get_tags( array(
 							<img id="logo" class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg" alt="naqd">
 						</a>
 					</div>
-					<?php if(!is_page('search-articles')){ ?>
 						<div class="col-9 justify-content-center d-lg-flex d-none align-items-center">
 							<div class="d-block">
 								<ul class="social-media-icons">
@@ -140,22 +139,23 @@ $all_tags = get_tags( array(
 										</a>
 									</li>
 								</ul>
-								<nav class="d-block mt-2">
-									<ul class="d-flex justify-content-start align-items-center tag-list">
-										<?php
-											foreach ( $tags as $tag ) {
-										?>
-												<li>
-													<button class="single-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
-														<?php echo esc_html( $tag->name ); ?>
-													</button>
-												</li>
-										<?php } ?>
-									</ul>
-								</nav>
+								<?php if(!is_page('search-articles')){ ?>
+									<nav class="d-block mt-2">
+										<ul class="d-flex justify-content-start align-items-center tag-list">
+											<?php
+												foreach ( $tags as $tag ) {
+											?>
+													<li>
+														<button class="single-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
+															<?php echo esc_html( $tag->name ); ?>
+														</button>
+													</li>
+											<?php } ?>
+										</ul>
+									</nav>
+								<?php } ?>
 							</div>
 						</div>
-					<?php } ?>
 					<div class="col d-flex justify-content-end align-items-center">
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">

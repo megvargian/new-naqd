@@ -1346,9 +1346,14 @@ footer .border-green {
 }
 .light-theme .search-articles .date-container svg {
   color: #000;
+  fill: #000;
 }
 .light-theme .search-articles .date-container input[type=date] {
   color: #000;
+}
+.light-theme .search-articles .button-green-view-more {
+  background-color: #5D0DE6;
+  color: #fff;
 }
 
 body.light {
@@ -1478,4 +1483,15 @@ body.dark {
 .search-articles .date-container .label {
   margin-right: 10px;
   font-size: 16px;
+}
+
+.button-green-view-more {
+  border-radius: 15px;
+  background-color: #B6E60D;
+  color: #313136;
+  font-family: "Helvetica-Regular";
+  padding: 0rem 1rem;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
 }

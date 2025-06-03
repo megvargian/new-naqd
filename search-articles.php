@@ -97,7 +97,7 @@ $tags = get_tags(array(
                     ?>
                 </div>
                 <div class="row text-center">
-                    <button id="load-more-button" class="main-btn" style="width: fit-content; margin: auto;">
+                    <button id="load-more-button" class="main-btn button-green-view-more helvetica-regular" style="width: fit-content; margin: auto;">
                         View more
                     </button>
                 </div>
