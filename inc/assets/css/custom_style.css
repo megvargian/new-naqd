@@ -716,7 +716,6 @@ p {
   padding: 1rem 0rem 1rem 1rem;
   margin-right: 3rem;
   width: fit-content;
-  margin: auto;
 }
 .homepage .most-read-articles ul li h3 {
   color: #000;
@@ -950,7 +949,6 @@ footer .border-green {
   padding: 1rem 0rem 1rem 1rem;
   margin-right: 3rem;
   width: fit-content;
-  margin: auto;
 }
 .single-product-page .related-articles .most-read-articles ul li h3 {
   color: #fff;
@@ -1327,6 +1325,7 @@ footer .border-green {
 }
 .light-theme .button-green {
   background-color: #5D0DE6;
+  color: #fff;
 }
 .light-theme .border-green {
   border: 7px solid #5D0DE6;
