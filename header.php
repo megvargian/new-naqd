@@ -230,7 +230,7 @@ $length_cats_array = count($all_categories);
 						<div class="search-form">
 							<form action="/search-articles">
 								<div class="position-relative">
-									<input placeholder="يبحث" type="search" required name="searchArticle">
+									<input placeholder="بحث" type="search" required name="searchArticle">
 									<button>
 										<img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/search.svg" alt="search">
 									</button>
