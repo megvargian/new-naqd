@@ -1267,6 +1267,32 @@ background: rgba(0,0,0,0.6);
 	.border-green{
 		border: 7px solid #5D0DE6;
 	}
+	.search-articles{
+		.search-form-filter{
+			input{
+				background-color: #f2eeee;
+			}
+		}
+		.bg-gray{
+			background-color: #fff;
+		}
+		.filter-list{
+			li button{
+				color: #000;
+				background-color: #f2eeee;
+			}
+		}
+		.date-container {
+			border: 2px solid #5D0DE6;
+			color: #000;
+		}
+		.date-container svg {
+			color: #000;
+		}
+		.date-container input[type="date"] {
+			color: #000;
+		}
+	}
 }
 
 body.light {
@@ -1389,6 +1415,7 @@ body.dark {
 	  padding: 0;
 	  margin: 0;
 	  line-height: 1;
+	  font-family: $Helveticaregular;
     }
 
     .date-container input[type="date"]::-webkit-calendar-picker-indicator {

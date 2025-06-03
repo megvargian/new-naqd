@@ -12,13 +12,13 @@ $get_general_fields = get_fields('options');
 $tags = $get_general_fields['tags'];
 $social_media_links = $get_general_fields['social_links'];
 // get all cats and tags
-$all_categories = get_categories( array(
-    'hide_empty' => false, // Set to true to exclude empty categories
-));
+// $all_categories = get_categories( array(
+//     'hide_empty' => false, // Set to true to exclude empty categories
+// ));
 $all_tags = get_tags( array(
     'hide_empty' => false, // Set to true to exclude tags with no posts
 ) );
-$length_cats_array = count($all_categories);
+// $length_cats_array = count($all_categories);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -41,18 +41,18 @@ $length_cats_array = count($all_categories);
 			}
 		<?php } ?>
 		<?php
-			foreach ( $all_categories as $key => $cat ) {
+			//foreach ( $all_categories as $key => $cat ) {
 		?>
-			.search-articles .filter-list li:nth-child(<?php echo $key + 1; ?>) button:hover{
-				border-color: <?php echo get_field('border_color', 'category_' . $cat->term_id);?>;
+			/* .search-articles .filter-list li:nth-child(<?php //echo $key + 1; ?>) button:hover{
+				border-color: <?php //echo get_field('border_color', 'category_' . $cat->term_id);?>;
 			}
-			.search-articles .filter-list li:nth-child(<?php echo $key + 1; ?>) button.active{
-				border-color: <?php echo get_field('border_color', 'category_' . $cat->term_id);?>;
-			}
-		<?php } ?>
+			.search-articles .filter-list li:nth-child(<?php //echo $key + 1; ?>) button.active{
+				border-color: <?php //echo get_field('border_color', 'category_' . $cat->term_id);?>;
+			} */
+		<?php // } ?>
 		<?php
 			foreach ( $all_tags as $key => $tag ) {
-				$tag_count = $length_cats_array + 1;
+				//$tag_count = $length_cats_array + 1;
 		?>
 			.search-articles .filter-list  .tag-<?php echo $tag->term_id; ?>:hover{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
@@ -60,7 +60,7 @@ $length_cats_array = count($all_categories);
 			.search-articles .filter-list .tag-<?php echo $tag->term_id; ?>.active{
 				border-color: <?php echo get_field('border_color', 'post_tag_' . $tag->term_id);?>;
 			}
-		<?php $tag_count++;
+		<?php //$tag_count++;
 		} ?>
 	</style>
 </head>
@@ -81,7 +81,7 @@ $length_cats_array = count($all_categories);
 							<img id="logo" class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg" alt="naqd">
 						</a>
 					</div>
-					<?php //if(!is_singular('post')){ ?>
+					<?php if(!is_page('search-articles')){ ?>
 						<div class="col-9 justify-content-center d-lg-flex d-none align-items-center">
 							<div class="d-block">
 								<ul class="social-media-icons">
@@ -155,7 +155,7 @@ $length_cats_array = count($all_categories);
 								</nav>
 							</div>
 						</div>
-					<?php //} ?>
+					<?php } ?>
 					<div class="col d-flex justify-content-end align-items-center">
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">

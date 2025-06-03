@@ -52,13 +52,13 @@ $tags = get_tags(array(
                                     <input type="date" id="filter_date" name="filter_date">
                                 </div>
                                 <ul class="filter-list">
-                                    <?php foreach ($categories as $category): ?>
-                                        <li>
-                                            <button class="single-filter-cat cat-<?php echo esc_attr($category->term_id); ?>" data-catId="<?php echo esc_attr($category->term_id); ?>">
-												<?php echo esc_html($category->name); ?>
+                                    <?php //foreach ($categories as $category): ?>
+                                        <!-- <li>
+                                            <button class="single-filter-cat cat-<?php // echo esc_attr($category->term_id); ?>" data-catId="<?php // echo esc_attr($category->term_id); ?>">
+												<?php // echo esc_html($category->name); ?>
 											</button>
-                                        </li>
-                                    <?php endforeach; ?>
+                                        </li> -->
+                                    <?php //endforeach; ?>
                                     <?php foreach ($tags as $tag): ?>
                                         <li>
                                             <button class="single-filter-tag tag-<?php echo esc_attr($tag->term_id); ?>" data-tagId="<?php echo esc_attr($tag->term_id); ?>">
