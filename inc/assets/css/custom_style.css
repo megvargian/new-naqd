@@ -1287,6 +1287,12 @@ footer .border-green {
 .light-theme .slider .label-text {
   background-color: #5D0EE6;
 }
+.light-theme .single-product-page .tags h3 {
+  color: #5D0DE6;
+}
+.light-theme .single-product-page .tags a {
+  color: #000;
+}
 .light-theme .single-product-page .related-articles .most-read-articles h2 {
   color: #000;
 }

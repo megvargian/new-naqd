@@ -1211,6 +1211,14 @@ background: rgba(0,0,0,0.6);
 		background-color: #5D0EE6;
 	}
 	.single-product-page{
+		.tags{
+			h3 {
+				color: #5D0DE6;
+			}
+			a{
+				color: #000;
+			}
+		}
 		.related-articles{
 			.most-read-articles{
 				h2{
