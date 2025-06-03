@@ -1236,6 +1236,9 @@ background: rgba(0,0,0,0.6);
 				}
 			}
 		}
+		#theArticle h2{
+			color: #5D0DE6;
+		}
 	}
 	.border-right-white{
 		border-right: 1px solid #000;
@@ -1284,12 +1287,12 @@ background: rgba(0,0,0,0.6);
 		.bg-gray{
 			background-color: #ededed;
 		}
-		.filter-list{
-			li button{
-				color: #000;
-				background-color: #f2eeee;
-			}
-		}
+		// .filter-list{
+		// 	li button{
+		// 		color: #000;
+		// 		background-color: #f2eeee;
+		// 	}
+		// }
 		.date-container {
 			border: 2px solid #5D0DE6;
 			color: #000;

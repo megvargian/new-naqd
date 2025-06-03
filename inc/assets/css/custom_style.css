@@ -1302,6 +1302,9 @@ footer .border-green {
 .light-theme .single-product-page .related-articles .most-read-articles ul li .author {
   color: #000;
 }
+.light-theme .single-product-page #theArticle h2 {
+  color: #5D0DE6;
+}
 .light-theme .border-right-white {
   border-right: 1px solid #000;
 }
@@ -1341,10 +1344,6 @@ footer .border-green {
 }
 .light-theme .search-articles .bg-gray {
   background-color: #ededed;
-}
-.light-theme .search-articles .filter-list li button {
-  color: #000;
-  background-color: #f2eeee;
 }
 .light-theme .search-articles .date-container {
   border: 2px solid #5D0DE6;
