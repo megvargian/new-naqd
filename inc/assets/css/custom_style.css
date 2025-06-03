@@ -1269,11 +1269,11 @@ footer .border-green {
   background-color: #fff;
 }
 .light-theme .header-container {
-  background-color: #fff;
+  background-color: #ededed;
 }
 .light-theme .header-container .tag-list li button {
   color: #000;
-  background-color: #f2eeee;
+  background-color: #fff;
 }
 .light-theme .header-container .hamburger_menu_icon .line {
   background-color: #000;
@@ -1331,10 +1331,10 @@ footer .border-green {
   border: 7px solid #5D0DE6;
 }
 .light-theme .search-articles .search-form-filter input {
-  background-color: #f2eeee;
+  background-color: #fff;
 }
 .light-theme .search-articles .bg-gray {
-  background-color: #fff;
+  background-color: #ededed;
 }
 .light-theme .search-articles .filter-list li button {
   color: #000;
@@ -1449,15 +1449,13 @@ body.dark {
   margin-bottom: 10px;
 }
 .search-articles .date-container {
-  display: flex;
-  align-items: center;
   border: 2px solid #b4f000;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 4px 10px;
   width: fit-content;
   color: white;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .search-articles .date-container svg {
   width: 20px;
