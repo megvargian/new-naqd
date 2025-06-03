@@ -463,6 +463,7 @@ jQuery(document).ready(function($) {
 			$('.bell').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-light.svg');
 			$('.arrow-up').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-light.svg');
 			$('.feature').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/feature-light.png');
+			$('.submit-img').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow_purple.svg');
 		} else {
 			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg');
 			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg');
@@ -485,6 +486,7 @@ jQuery(document).ready(function($) {
 			$('.bell').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-dark.svg');
 			$('.arrow-up').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-dark.svg');
 			$('.feature').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/feature-dark.png');
+			$('.submit-img').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow_green.svg');
 		}
 	}
 });
