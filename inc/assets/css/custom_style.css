@@ -225,7 +225,6 @@ p {
   padding: 1rem 0rem 1rem 1rem;
   margin-right: 3rem;
   width: fit-content;
-  margin: auto;
 }
 .most-read-articles ul li h3 {
   color: #000;
@@ -1325,6 +1324,12 @@ footer .border-green {
 }
 .light-theme .slider .label-text {
   color: #fff;
+}
+.light-theme .button-green {
+  background-color: #5D0DE6;
+}
+.light-theme .border-green {
+  border: 7px solid #5D0DE6;
 }
 
 body.light {

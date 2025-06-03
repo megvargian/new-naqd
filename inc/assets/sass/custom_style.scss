@@ -195,7 +195,6 @@ p{
 			padding: 1rem 0rem 1rem 1rem;
 			margin-right: 3rem;
 			width: fit-content;
-			margin: auto;
 			h3{
 				color: #000;
 				font-size: 2.5rem;
@@ -1262,6 +1261,12 @@ background: rgba(0,0,0,0.6);
 	}
 	.slider .label-text {
 		color: #fff;
+	}
+	.button-green{
+		background-color: #5D0DE6;
+	}
+	.border-green{
+		border: 7px solid #5D0DE6;
 	}
 }
 
