@@ -81,7 +81,7 @@ $all_tags = get_tags( array(
 							<img id="logo" class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg" alt="naqd">
 						</a>
 					</div>
-						<div class="col-9 justify-content-center d-lg-flex d-none align-items-center">
+						<div class="col-9 justify-content-<?php echo !is_page('search-articles') ? 'start' : 'center';  ?> d-lg-flex d-none align-items-center">
 							<div class="d-block">
 								<ul class="social-media-icons">
 									<li class="mx-1">
