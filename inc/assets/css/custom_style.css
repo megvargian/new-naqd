@@ -940,7 +940,7 @@ footer .border-green {
 .single-product-page .related-articles .most-read-articles ul {
   list-style: none;
   counter-reset: item;
-  padding-right: 3rem;
+  padding-right: 0rem;
 }
 .single-product-page .related-articles .most-read-articles ul li {
   padding-bottom: 1rem;
