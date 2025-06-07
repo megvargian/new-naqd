@@ -139,7 +139,7 @@ $all_tags = get_tags( array(
 									</a>
 								</li>
 							</ul>
-							<?php if(!is_page('search-articles') || !is_page('videos')){ ?>
+							<?php if(!is_page('search-articles') && !is_page('videos')){ ?>
 								<nav class="d-block mt-2">
 									<ul class="d-flex justify-content-start align-items-center tag-list">
 										<?php
