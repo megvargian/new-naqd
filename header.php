@@ -81,81 +81,81 @@ $all_tags = get_tags( array(
 							<img id="logo" class="logo d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/Naqd-logo-white.svg" alt="naqd">
 						</a>
 					</div>
-						<div class="col-9 justify-content-<?php echo is_page('search-articles') ? 'start' : 'center';  ?> d-lg-flex d-none align-items-center">
-							<div class="d-block">
-								<ul class="social-media-icons">
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['insta']; ?>" class="single-social-icon">
-											<img class="active insta-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg" alt="insta">
-											<img class="stroke insta-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg" alt="insta">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['facebook']; ?>" class="single-social-icon">
-											<img class="active fb-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-dark-active.svg" alt="fb">
-											<img class="stroke fb-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-dark-stroke.svg" alt="fb">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['linkedin']; ?>" class="single-social-icon">
-											<img class="active linkedin-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-dark-active.svg" alt="linkedin">
-											<img class="stroke linkedin-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-dark-stroke.svg" alt="linkedin">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['rss_feed']; ?>" class="single-social-icon">
-											<img class="active rss-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss-dark-active.svg" alt="RSS">
-											<img class="stroke rss-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss-dark-stroke.svg" alt="RSS">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['treads']; ?>" class="single-social-icon">
-											<img class="active threads-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-active.svg" alt="threads">
-											<img class="stroke threads-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-stroke.svg" alt="threads">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['tiktok']; ?>" class="single-social-icon">
-											<img class="active tiktok-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-dark-active.svg" alt="tiktok">
-											<img class="stroke tiktok-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-dark-stroke.svg" alt="tiktok">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['whatsapp']; ?>" class="single-social-icon">
-											<img class="active whatsapp-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-active.svg" alt="whatsapp">
-											<img class="stroke whatsapp-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-stroke.svg" alt="whatsapp">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['x']; ?>" class="single-social-icon">
-											<img class="active x-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x-dark-active.svg" alt="X">
-											<img class="stroke x-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x-dark-stroke.svg" alt="X">
-										</a>
-									</li>
-									<li class="mx-1">
-										<a href="<?php echo $social_media_links['youtube']; ?>" class="single-social-icon">
-											<img class="active youtube-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-dark-active.svg" alt="youtube">
-											<img class="stroke youtube-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-dark-stroke.svg" alt="youtube">
-										</a>
-									</li>
-								</ul>
-								<?php if(!is_page('search-articles')){ ?>
-									<nav class="d-block mt-2">
-										<ul class="d-flex justify-content-start align-items-center tag-list">
-											<?php
-												foreach ( $tags as $tag ) {
-											?>
-													<li>
-														<button class="single-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
-															<?php echo esc_html( $tag->name ); ?>
-														</button>
-													</li>
-											<?php } ?>
-										</ul>
-									</nav>
-								<?php } ?>
-							</div>
+					<div class="col-9 justify-content-<?php echo is_page('search-articles') ? 'start' : 'center';  ?> d-lg-flex d-none align-items-center">
+						<div class="d-block">
+							<ul class="social-media-icons">
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['insta']; ?>" class="single-social-icon">
+										<img class="active insta-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg" alt="insta">
+										<img class="stroke insta-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg" alt="insta">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['facebook']; ?>" class="single-social-icon">
+										<img class="active fb-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-dark-active.svg" alt="fb">
+										<img class="stroke fb-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-dark-stroke.svg" alt="fb">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['linkedin']; ?>" class="single-social-icon">
+										<img class="active linkedin-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-dark-active.svg" alt="linkedin">
+										<img class="stroke linkedin-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/linkedin-dark-stroke.svg" alt="linkedin">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['rss_feed']; ?>" class="single-social-icon">
+										<img class="active rss-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss-dark-active.svg" alt="RSS">
+										<img class="stroke rss-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/rss-dark-stroke.svg" alt="RSS">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['treads']; ?>" class="single-social-icon">
+										<img class="active threads-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-active.svg" alt="threads">
+										<img class="stroke threads-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-stroke.svg" alt="threads">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['tiktok']; ?>" class="single-social-icon">
+										<img class="active tiktok-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-dark-active.svg" alt="tiktok">
+										<img class="stroke tiktok-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/tiktok-dark-stroke.svg" alt="tiktok">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['whatsapp']; ?>" class="single-social-icon">
+										<img class="active whatsapp-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-active.svg" alt="whatsapp">
+										<img class="stroke whatsapp-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-stroke.svg" alt="whatsapp">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['x']; ?>" class="single-social-icon">
+										<img class="active x-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x-dark-active.svg" alt="X">
+										<img class="stroke x-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x-dark-stroke.svg" alt="X">
+									</a>
+								</li>
+								<li class="mx-1">
+									<a href="<?php echo $social_media_links['youtube']; ?>" class="single-social-icon">
+										<img class="active youtube-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-dark-active.svg" alt="youtube">
+										<img class="stroke youtube-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/youtube-dark-stroke.svg" alt="youtube">
+									</a>
+								</li>
+							</ul>
+							<?php if(!is_page('search-articles') || !is_page('videos')){ ?>
+								<nav class="d-block mt-2">
+									<ul class="d-flex justify-content-start align-items-center tag-list">
+										<?php
+											foreach ( $tags as $tag ) {
+										?>
+												<li>
+													<button class="single-tag tag-<?php echo $tag->term_id ?>" data-tagId="<?php echo $tag->term_id ?>">
+														<?php echo esc_html( $tag->name ); ?>
+													</button>
+												</li>
+										<?php } ?>
+									</ul>
+								</nav>
+							<?php } ?>
 						</div>
+					</div>
 					<div class="col d-flex justify-content-end align-items-center">
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">
@@ -467,6 +467,7 @@ jQuery(document).ready(function($) {
 			$('.arrow-up').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-light.svg');
 			$('.feature').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/feature-light.png');
 			$('.submit-img').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow_purple.svg');
+			$('#progressBar').css('background-color', '#5D0EE6');
 		} else {
 			$('.insta-active').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg');
 			$('.insta-stroke').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg');
@@ -490,6 +491,7 @@ jQuery(document).ready(function($) {
 			$('.arrow-up').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow-up-dark.svg');
 			$('.feature').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/feature-dark.png');
 			$('.submit-img').attr('src', '<?php echo get_template_directory_uri(); ?>/inc/assets/icons/arrow_green.svg');
+			$('#progressBar').css('background-color', '#B6E60D');
 		}
 	}
 });
