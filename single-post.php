@@ -20,7 +20,15 @@ $author_id = $get_article_fields['author'];
                 <div class="justify-content-between align-items-center lower-part py-2 w-100">
                     <div class="d-flex justify-content-start align-items-center">
                         <div class="author-section">
-                            <img class="" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/avatar.png" alt="">
+                            <?php if (!empty(get_the_post_thumbnail_url($author_id))){ ?>
+                                <a href="<?php echo get_permalink($author_id); ?>">
+                                    <img class="" src="<?php echo get_the_post_thumbnail_url($author_id); ?>" alt="<?php echo get_the_title($author_id); ?>">
+                                </a>
+                            <?php } else {?>
+                                <a href="<?php echo get_permalink($author_id); ?>">
+                                    <img class="" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/default-single-author-img.png" alt="<?php echo get_the_title($author_id); ?>">
+                                </a>
+                            <?php } ?>
                             <a href="<?php echo get_permalink($author_id); ?>">
                                 <?php echo get_the_title($author_id); ?>
                             </a>
