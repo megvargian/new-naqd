@@ -7,15 +7,15 @@
  * @package WP_Bootstrap_Starter
  */
 get_header();
-$product_id = get_the_ID();
-$title = get_the_title($product_id);
+$article_id = get_the_ID();
+$title = get_the_title($article_id);
 $get_article_fields = get_fields();
 $author_id = $get_article_fields['author'];
 $most_view_articles_top_five = get_top_5_most_visited('post');
 // Get current post tags and categories
-$tags = wp_get_post_tags( $product_id, array( 'fields' => 'ids' ) );
+$tags = wp_get_post_tags( $article_id, array( 'fields' => 'ids' ) );
 $get_assigned_tags = get_the_tags();
-$categories = wp_get_post_categories( $product_id );
+$categories = wp_get_post_categories($article_id);
 // Build tax query
 $tax_query = array( 'relation' => 'OR' );
 if ( ! empty( $tags ) ) {
@@ -40,7 +40,10 @@ $related_query = new WP_Query( array(
     'ignore_sticky_posts' => true,
     'tax_query'           => $tax_query,
 ) );
-
+//socail media share
+$post_url   = urlencode(get_permalink($article_id));
+$post_title = urlencode(get_the_title($article_id));
+$post_image = wp_get_attachment_url(get_post_thumbnail_id($article_id));
 ?>
 <section class="single-product-page">
     <div class="container">
@@ -64,7 +67,7 @@ $related_query = new WP_Query( array(
                             </a>
                         </div>
                         <p class="helvetica-regular" dir="ltr">
-                            <?php echo get_the_date('j M Y', $product_id);?>
+                            <?php echo get_the_date('j M Y', $article_id);?>
                         </p>
                     </div>
                     <div>
@@ -116,31 +119,31 @@ $related_query = new WP_Query( array(
                 <div class="social-main">
                     <ul class="social-media-icons">
                         <li class="my-1">
-                            <a href="#" class="single-social-icon">
+                            <a href="https://www.instagram.com/naqdmedia/" target="_blank" rel="nofollow" class="single-social-icon">
                                 <img class="active insta-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-active.svg" alt="insta">
 								<img class="stroke insta-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/insta-dark-stroke.svg" alt="insta">
                             </a>
                         </li>
                         <li class="my-1">
-                            <a href="#" class="single-social-icon">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $post_url; ?>" target="_blank" rel="nofollow" class="single-social-icon">
                                 <img class="active fb-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-dark-active.svg" alt="fb">
 								<img class="stroke fb-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/fb-dark-stroke.svg" alt="fb">
                             </a>
                         </li>
                         <li class="my-1">
-                            <a href="#" class="single-social-icon">
+                            <a href="https://www.threads.net/share?text=<?php echo $post_url; ?>" class="single-social-icon">
 								<img class="active threads-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-active.svg" alt="threads">
 								<img class="stroke threads-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/threads-dark-stroke.svg" alt="threads">
                             </a>
                         </li>
                         <li class="my-1">
-                            <a href="#" class="single-social-icon">
+                            <a href="https://api.whatsapp.com/send?text=<?php echo $post_title . ' ' . $post_url; ?>" target="_blank" rel="nofollow" class="single-social-icon">
                                 <img class="active whatsapp-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-active.svg" alt="whatsapp">
 								<img class="stroke whatsapp-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-stroke.svg" alt="whatsapp">
                             </a>
                         </li>
                         <li class="my-1">
-                            <a href="#" class="single-social-icon">
+                            <a href="https://twitter.com/intent/tweet?url=<?php echo $post_url; ?>&text=<?php echo $post_title; ?>" target="_blank" rel="nofollow" class="single-social-icon">
                                 <img class="active x-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x-dark-active.svg" alt="X">
 								<img class="stroke x-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/x-dark-stroke.svg" alt="X">
                             </a>
