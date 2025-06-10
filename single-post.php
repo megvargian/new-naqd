@@ -11,7 +11,7 @@ $product_id = get_the_ID();
 $title = get_the_title($product_id);
 $get_article_fields = get_fields();
 $author_id = $get_article_fields['author'];
-$most_view_articles_top_fixe = get_top_5_most_visited('post');
+$most_view_articles_top_five = get_top_5_most_visited('post');
 ?>
 <section class="single-product-page">
     <div class="container">
@@ -148,7 +148,7 @@ $most_view_articles_top_fixe = get_top_5_most_visited('post');
                             الأكثر قراءة
                         </h2>
                         <ul>
-                            <?php foreach($top_posts as $post){
+                            <?php foreach($most_view_articles_top_five as $post){
                                     $post_id = $post->ID;
                                     $get_fields = get_fields($post->ID);
                                     $author_id = $get_fields['author'];
