@@ -12,6 +12,34 @@ $title = get_the_title($product_id);
 $get_article_fields = get_fields();
 $author_id = $get_article_fields['author'];
 $most_view_articles_top_five = get_top_5_most_visited('post');
+// Get current post tags and categories
+$tags = wp_get_post_tags( $product_id, array( 'fields' => 'ids' ) );
+$categories = wp_get_post_categories( $product_id );
+// Build tax query
+$tax_query = array( 'relation' => 'OR' );
+if ( ! empty( $tags ) ) {
+    $tax_query[] = array(
+        'taxonomy' => 'post_tag',
+        'field'    => 'term_id',
+        'terms'    => $tags,
+    );
+}
+if ( ! empty( $categories ) ) {
+    $tax_query[] = array(
+        'taxonomy' => 'category',
+        'field'    => 'term_id',
+        'terms'    => $categories,
+    );
+}
+// Query related posts
+$related_query = new WP_Query( array(
+    'post_type'           => 'post',
+    'posts_per_page'      => 6,
+    'post__not_in'        => array( $post->ID ), // Exclude current post
+    'ignore_sticky_posts' => true,
+    'tax_query'           => $tax_query,
+) );
+
 ?>
 <section class="single-product-page">
     <div class="container">
@@ -134,11 +162,20 @@ $most_view_articles_top_five = get_top_5_most_visited('post');
                             المزيد
                         </h2>
                         <div class="row custom-padding">
-                            <?php for($i=0; $i<8; $i++){ ?>
-                                <div class="col-lg-3 col-6 px-1 mb-4">
-                                    <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="d-block w-100">
-                                </div>
-                            <?php } ?>
+                            <?php if ( $related_query->have_posts() ) : ?>
+                                <?php while ( $related_query->have_posts() ) : $related_query->the_post();
+                                    $related_post_id = get_the_ID();
+                                ?>
+                                    <div class="col-lg-3 col-6 px-1 mb-4">
+                                        <a href="<?php get_permalink($related_post_id); ?>">
+                                            <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url($related_post_id); ?>" alt="<?php get_the_title($related_post_id);?>" class="d-block w-100">
+                                        </a>
+                                    </div>
+                                <?php
+                                    endwhile;
+                                    wp_reset_postdata();
+                                endif;
+                                ?>
                         </div>
                     </div>
                 </div>
