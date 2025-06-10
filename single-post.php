@@ -14,6 +14,7 @@ $author_id = $get_article_fields['author'];
 $most_view_articles_top_five = get_top_5_most_visited('post');
 // Get current post tags and categories
 $tags = wp_get_post_tags( $product_id, array( 'fields' => 'ids' ) );
+$get_assigned_tags =  wp_get_post_tags($product_id);
 $categories = wp_get_post_categories( $product_id );
 // Build tax query
 $tax_query = array( 'relation' => 'OR' );
@@ -62,7 +63,9 @@ $related_query = new WP_Query( array(
                                 <?php echo get_the_title($author_id); ?>
                             </a>
                         </div>
-                        <p class="helvetica-regular" dir="ltr">6 jan 2025</p>
+                        <p class="helvetica-regular" dir="ltr">
+                            <?php echo get_the_date('j M Y', $product_id);?>
+                        </p>
                     </div>
                     <div>
                         <p class="helvetica-regular" dir="ltr">
@@ -97,21 +100,13 @@ $related_query = new WP_Query( array(
                 <div class="py-5 tags">
                     <h3>المواضيع</h3>
                     <ul class="d-flex">
-                        <li>
-                            <a href="#">
-                            لبنان
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            سوريا
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            فلسطين
-                            </a>
-                        </li>
+                        <?php foreach ( $get_assigned_tags as $tag ) {?>
+                            <li>
+                                <a href="<?php echo get_permalink($tag->term_id); ?>">
+                                    <?php echo esc_html( $tag->name ); ?>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -166,7 +161,7 @@ $related_query = new WP_Query( array(
                                 <?php while ( $related_query->have_posts() ) : $related_query->the_post();
                                     $related_post_id = get_the_ID();
                                 ?>
-                                    <div class="col-lg-3 col-6 px-1 mb-4">
+                                    <div class="col-lg-4 col-6 px-1 mb-4">
                                         <a href="<?php get_permalink($related_post_id); ?>">
                                             <img style="border-radius: 15px;" src="<?php echo get_the_post_thumbnail_url($related_post_id); ?>" alt="<?php get_the_title($related_post_id);?>" class="d-block w-100">
                                         </a>
