@@ -14,7 +14,7 @@ $author_id = $get_article_fields['author'];
 $most_view_articles_top_five = get_top_5_most_visited('post');
 // Get current post tags and categories
 $tags = wp_get_post_tags( $product_id, array( 'fields' => 'ids' ) );
-$get_assigned_tags =  wp_get_post_tags($product_id);
+$get_assigned_tags = get_the_tags();
 $categories = wp_get_post_categories( $product_id );
 // Build tax query
 $tax_query = array( 'relation' => 'OR' );
@@ -100,9 +100,11 @@ $related_query = new WP_Query( array(
                 <div class="py-5 tags">
                     <h3>المواضيع</h3>
                     <ul class="d-flex">
-                        <?php foreach ( $get_assigned_tags as $tag ) {?>
+                        <?php foreach ( $get_assigned_tags as $tag ) {
+                                $tag_link = get_tag_link( $tag->term_id );
+                        ?>
                             <li>
-                                <a href="<?php echo get_permalink($tag->term_id); ?>">
+                                <a href="<?php echo $tag_link; ?>">
                                     <?php echo esc_html( $tag->name ); ?>
                                 </a>
                             </li>
