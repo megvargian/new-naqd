@@ -11,6 +11,7 @@ $product_id = get_the_ID();
 $title = get_the_title($product_id);
 $get_article_fields = get_fields();
 $author_id = $get_article_fields['author'];
+$most_view_articles_top_fixe = get_top_5_most_visited('post');
 ?>
 <section class="single-product-page">
     <div class="container">
@@ -147,17 +148,23 @@ $author_id = $get_article_fields['author'];
                             الأكثر قراءة
                         </h2>
                         <ul>
-                            <?php for($i=0; $i<5; $i++){ ?>
+                            <?php foreach($top_posts as $post){
+                                    $post_id = $post->ID;
+                                    $get_fields = get_fields($post->ID);
+                                    $author_id = $get_fields['author'];
+                            ?>
                                 <li>
-                                    <h3 class="mb-2">
-                                        عن التروما التي تعشقنا وتحاول قتلنا
-                                    </h3>
+                                    <a href="<?php echo get_permalink($post_id);?>">
+                                        <h3 class="mb-2">
+                                            <?php echo $post->post_title; ?>
+                                        </h3>
+                                    </a>
                                     <div class="author">
-                                        <a href="#">
-                                            متري طاهر - كاتب لبناني
+                                        <a href="<?php echo get_permalink($author_id); ?>">
+                                            <?php echo get_the_title($author_id);?>
                                         </a>
                                         <div class="date helvetica-regular">
-                                            4 jan 2025
+                                            <?php echo get_the_date('j M Y', $post_id);?>
                                         </div>
                                     </div>
                                 </li>
