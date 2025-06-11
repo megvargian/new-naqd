@@ -4,6 +4,15 @@
  */
 get_header();
 ?>
+<section class="about-and-contact-us py-lg-5 py-3 title">
+    <div class="container py-lg-5 py-3">
+        <div class="row text-center">
+            <div class="col-12">
+                <h1>عن نقد</h1>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="about-and-contact-us py-5">
     <div class="container">
         <div class="row justify-content-center">

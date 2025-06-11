@@ -998,9 +998,19 @@ footer .border-green {
   padding-left: 2.5rem;
 }
 
+.about-and-contact-us.title {
+  background-color: #313136;
+}
+
 .about-and-contact-us {
   text-align: right;
   color: #fff;
+}
+.about-and-contact-us h1 {
+  font-family: "ManchetteFine-Bold";
+  color: #B6E60D;
+  text-align: center;
+  font-size: 3rem;
 }
 .about-and-contact-us .has-large-font-size {
   margin-bottom: 2rem !important;

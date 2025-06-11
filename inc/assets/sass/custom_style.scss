@@ -920,9 +920,18 @@ footer{
 	padding-left: 2.5rem;
 }
 //about and contact us
+.about-and-contact-us.title{
+	background-color: $sec_color;
+}
 .about-and-contact-us{
 	text-align: right;
 	color: #fff;
+	h1{
+		font-family: $bold;
+		color: $third_color;
+		text-align: center;
+		font-size: 3rem;
+	}
 	.has-large-font-size{
 		margin-bottom: 2rem !important;
 	}
