@@ -1022,6 +1022,9 @@ footer .border-green {
   color: #B6E60D;
   margin-bottom: 1.5rem;
 }
+.about-and-contact-us .bold {
+  font-family: "ManchetteFine-Bold";
+}
 .about-and-contact-us p {
   color: #fff;
   font-size: 1.5rem;

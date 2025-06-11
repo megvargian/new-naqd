@@ -15,13 +15,20 @@ get_header();
 </section>
 <section class="about-and-contact-us py-5">
     <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <p class="bold">نقد منصة إعلامية مستقلة تأسست لتقديم محتوى متعدد الوسائط بزاوية مبتكرة تواكب العصر الرقمي. تسعى المنصة إلى تغطية الأخبار الراهنة وتحليل القضايا الاجتماعية والثقافية بطريقة تبتعد عن الأساليب التقليدية للإعلام، مع التركيز على نقل أصوات الفئات المهمشة التي غالباً ما يتم تجاهلها</p>
+            </div>
+            <div class="col">
+                <p>نقد منصة إعلامية مستقلة تأسست لتقديم محتوى متعدد الوسائط بزاوية مبتكرة تواكب العصر الرقمي. تسعى المنصة إلى تغطية الأخبار الراهنة وتحليل القضايا الاجتماعية والثقافية بطريقة تبتعد عن الأساليب التقليدية للإعلام، مع التركيز على نقل أصوات الفئات المهمشة التي غالباً ما يتم تجاهلها</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-and-contact-us py-5">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-12">
-                <?php
-                    while ( have_posts() ) : the_post();
-                        the_content();
-                    endwhile;
-                ?>
                 <div class="row justify-content-start">
                     <div class="col-lg-8 col-12">
                         <div id="contact-us" class="contact-us">
