@@ -285,6 +285,39 @@ function my_acf_init_block_types()
         //         'keywords'          => array('testimonial', 'quote'),
         //     )
         // );
+        acf_register_block_type(
+            array(
+                'name'              => 'Block1',
+                'title'             => __('Block1'),
+                'description'       => __('This is the first Block of About us'),
+                'render_template'   => 'blocks/about-us/block_one.php',
+                'category'          => 'formatting',
+                'icon'              => 'admin-comments',
+                'keywords'          => array('testimonial', 'quote'),
+            )
+        );
+        acf_register_block_type(
+            array(
+                'name'              => 'Block2',
+                'title'             => __('Block2'),
+                'description'       => __('This is the second Block of About us'),
+                'render_template'   => 'blocks/about-us/block_two.php',
+                'category'          => 'formatting',
+                'icon'              => 'admin-comments',
+                'keywords'          => array('testimonial', 'quote'),
+            )
+        );
+        acf_register_block_type(
+            array(
+                'name'              => 'Block3',
+                'title'             => __('Block3'),
+                'description'       => __('This is the three Block of About us'),
+                'render_template'   => 'blocks/about-us/block_three.php',
+                'category'          => 'formatting',
+                'icon'              => 'admin-comments',
+                'keywords'          => array('testimonial', 'quote'),
+            )
+        );
     }
 }
 

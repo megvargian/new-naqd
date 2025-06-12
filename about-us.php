@@ -8,7 +8,7 @@ get_header();
     <div class="container py-lg-5 py-3">
         <div class="row text-center">
             <div class="col-12">
-                <h1>عن نقد</h1>
+                <h1><?php the_title(); ?></h1>
             </div>
         </div>
     </div>
