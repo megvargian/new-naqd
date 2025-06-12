@@ -1032,6 +1032,22 @@ footer .border-green {
   font-family: "Bressay-Regular";
   margin-bottom: 1.5rem;
 }
+.about-and-contact-us .members img {
+  border-radius: 100%;
+  border: 4px solid #B6E60D;
+}
+.about-and-contact-us .members h3 {
+  text-align: center;
+  color: #fff;
+  font-family: "ManchetteFine-Bold";
+  font-size: 2rem;
+}
+.about-and-contact-us .members p {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: "ManchetteFine-Regular";
+}
 .about-and-contact-us .contact-us input, .about-and-contact-us .contact-us textarea, .about-and-contact-us .contact-us select {
   background-color: #BEBEBE;
   font-size: 1rem;
