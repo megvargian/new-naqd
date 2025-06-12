@@ -119,6 +119,9 @@
   footer .footer-tags li a {
     font-size: 0.9rem;
   }
+  .about-and-contact-us h1 {
+    font-size: 2.5rem;
+  }
   .about-and-contact-us .has-large-font-size {
     margin-bottom: 1.5rem !important;
   }
