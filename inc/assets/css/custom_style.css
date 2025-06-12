@@ -1415,6 +1415,7 @@ footer .border-green {
 }
 .light-theme .about-and-contact-us .contact-us input[type=submit] {
   background-color: #5D0DE6;
+  color: #fff;
 }
 
 body.light {
