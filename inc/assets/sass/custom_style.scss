@@ -1339,6 +1339,38 @@ background: rgba(0,0,0,0.6);
 			color: #fff;
 		}
 	}
+	.about-and-contact-us.title{
+		background-color: #ededed;
+	}
+	.about-and-contact-us{
+		color: #000;
+		h1{
+			color: #5D0DE6;
+		}
+		h2{
+			color: #5D0DE6;
+		}
+		p{
+			color: #000;
+		}
+		.members{
+			img{
+				border: 8px solid #5D0DE6;
+			}
+			h3{
+				color: #000;
+			}
+			p{
+				color: #000;
+			}
+		}
+		.contact-us{
+			input[type="submit"]{
+				background-color: #5D0DE6;
+			}
+
+		}
+	}
 }
 
 body.light {

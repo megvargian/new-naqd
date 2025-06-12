@@ -1389,6 +1389,33 @@ footer .border-green {
   background-color: #5D0DE6;
   color: #fff;
 }
+.light-theme .about-and-contact-us.title {
+  background-color: #ededed;
+}
+.light-theme .about-and-contact-us {
+  color: #000;
+}
+.light-theme .about-and-contact-us h1 {
+  color: #5D0DE6;
+}
+.light-theme .about-and-contact-us h2 {
+  color: #5D0DE6;
+}
+.light-theme .about-and-contact-us p {
+  color: #000;
+}
+.light-theme .about-and-contact-us .members img {
+  border: 8px solid #5D0DE6;
+}
+.light-theme .about-and-contact-us .members h3 {
+  color: #000;
+}
+.light-theme .about-and-contact-us .members p {
+  color: #000;
+}
+.light-theme .about-and-contact-us .contact-us input[type=submit] {
+  background-color: #5D0DE6;
+}
 
 body.light {
   background-color: #f5f5f5;
