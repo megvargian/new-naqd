@@ -43,9 +43,9 @@ get_header();
                 <p>تقف منصة نقد بجزم إلى جانب حقوق الأفراد والمجتمعات من جميع الأعراق والأعمار والطبقات والجنس، مع مراعاة حقوقهم وعدم تمييزهم. نعمل جاهدين على مكافحة جميع أشكال التمييز والقمع التي قد تؤثر على هؤلاء الأفراد والمجتمعات، ونسعى لتوفير بيئة تواصلية عادلة ومتساوية للجميع. رؤيتنا في أن نكون صوتاً دائماً وقوة إلهام للمجتمع اللبناني. نلتزم بمبدأ "الإنسان أولاً"، حيث نضع شؤون الفرد في صدر أولوياتنا</p>
             </div>
         </div>
-        <div class="row gap-5">
+        <div class="row justify-content-between">
             <?php for($i=0; $i<3; $i++){?>
-                <div class="col-lg-4 col-12">
+                <div class="col-lg-3 col-12">
                     <div class="members">
                         <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/default-single-author-img.png" alt="default-single-author-img">
                         <h3>رؤيتنا ومهمتنا</h3>
