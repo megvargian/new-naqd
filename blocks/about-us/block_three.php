@@ -1,5 +1,5 @@
 <?php
 /**
- * Block2 Block Template
+ * Block3 Block Template
  */
-$block2_fields = get_fields();
+$block3_fields = get_fields();
