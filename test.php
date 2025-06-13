@@ -2,39 +2,30 @@
 /**
  * Template Name: Test Page
  */
-get_header();
 ?>
-<!-- Button to Open Dialog -->
-<button class="openPopup">Watch Short</button>
-<!-- Overlay and Popup -->
-<div id="videoOverlay" class="overlay">
-    <div class="position-relative w-100 h-100">
-        <div class="popup">
-            <button class="close-btn">
-                <span aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
-                </span>
-            </button>
-            <iframe
-                    frameborder="0"
-                    width="360" height="640"
-                    allowfullscreen
-                    allow="autoplay; encrypted-media">
-            </iframe>
-        </div>
-    </div>
-</div>
-<script>
-    jQuery(document).ready(function($) {
-        $('.openPopup').click(function(){
-            $('#videoOverlay').css('display', 'block');
-            $('#videoOverlay').find('iframe').attr('src', 'https://www.youtube.com/embed/2Wg7kmqH5gs?autoplay=1');
-        })
-        $('.close-btn').click(function(){
-            $('#videoOverlay').css('display', 'none');
-            $('#videoOverlay').find('iframe').attr('src', '');
-        })
-    });
-</script>
-<?php
-get_footer();
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iframe Example</title>
+</head>
+<body>
+  <h1>Iframe Example</h1>
+  <iframe id="myIframe"
+  sandbox="allow-scripts allow-same-origin"
+  allow="accelerometer; camera; microphone"
+  src="https://staging.id.sonio-group.com/start/en/63c94fb77376527d33b1a537/?session=684c146596b6e11f5d160c50&flowid=640764c178046a37f9b47e26" style="width: 100%; height: 600px;"></iframe>
+
+  <script>
+    // Listen for postMessage events
+    window.addEventListener('message', function(event) {
+      // Security check - validate the origin
+      if (event.origin !== 'https://staging.id.sonio-group.com') {
+        console.warn('Untrusted origin:', event.origin);
+        return;
+      }
+      // Log the received message
+      console.log('Message received from iframe:', event.data);
+    }, false);
+  </script>
+</body>
+</html>
