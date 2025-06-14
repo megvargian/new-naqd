@@ -419,7 +419,7 @@ $top_posts = get_top_3_most_visited('post');
             $(this).css({
                 'z-index': 10,
                 'width': parentWidth,
-                'height': parentHeight
+                'height': 'auto'
             });
 
             // Hide inner .title
