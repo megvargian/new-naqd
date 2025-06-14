@@ -401,14 +401,12 @@ $top_posts = get_top_3_most_visited('post');
             });
         }
         // for rassif
-        $('.rassif-section').hover(function() {
-            var parentWidth = $('.parent-row-rassif').width();
-            var parentHeight = $('.parent-row-rassif').height();
-            $(this).css('width', ''+parentWidth+' px !important;');
-            $(this).css('height', ''+parentHeight+' px !important;');
-            console.log(parentHeight);
-            console.log(parentWidth);
-        });
+        var parentWidth = $('.parent-row-rassif').width();
+        var parentHeight = $('.parent-row-rassif').height();
+        document.documentElement.style.setProperty('--parent-width', parentWidth + ' px !important;');
+        document.documentElement.style.setProperty('--parent-height', parentHeight + ' px !important;');
+        console.log(parentHeight);
+        console.log(parentWidth);
     })
 </script>
 <?php

@@ -335,6 +335,11 @@ p {
   text-align: right;
 }
 
+:root {
+  --parent-width: 0px;
+  --parent-height: 0px;
+}
+
 .rassif-section {
   transition: all 0.3s ease;
   width: 100%;
@@ -344,6 +349,8 @@ p {
 
 .rassif-section:hover {
   z-index: 10;
+  width: var(--parent-width) !important;
+  height: var(--parent-height) !important;
 }
 .rassif-section:hover .title {
   opacity: 0;
