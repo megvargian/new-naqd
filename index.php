@@ -426,8 +426,10 @@ $top_posts = get_top_3_most_visited('post');
             });
 
             // Show .title again
-            $(this).find('.title').css('opacity', 1);
-            $(this).find('.title').css('display', 'block');
+            setTimeout(() => {
+                $(this).find('.title').css('opacity', 1);
+                $(this).find('.title').css('display', 'block');
+            }, 2000);
         });
     })
 </script>
