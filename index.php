@@ -377,13 +377,13 @@ $top_posts = get_top_3_most_visited('post');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
 		    $('html, body').removeClass('hide_scroll');
         });
-        $('.rassif-section').click(function(){
-            <?php if(isMob()){ ?>
-                window.location.href= '<?php echo get_home_url(); ?>';
-            <?php } else { ?>
-                $('.rassif-description').toggleClass('active');
-            <?php }?>
-        });
+        //$('.rassif-section').click(function(){
+            <?php //if(isMob()){ ?>
+                //window.location.href= '<?php //echo get_home_url(); ?>';
+            <?php //} else { ?>
+                //$('.rassif-description').toggleClass('active');
+            <?php //}?>
+        //});
 
         function addCounterViewForVideo(videoId) {
 		$.ajax({
