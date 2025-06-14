@@ -337,16 +337,19 @@ p {
 
 .rassif-section {
   transition: all 0.3s ease;
-  width: 200px;
-  height: 300px;
+  width: 100% !important;
+  height: 400px !important;
   overflow: visible;
   cursor: pointer;
 }
 
 .rassif-section:hover {
-  width: 240px;
-  height: 360px;
+  width: 960px !important;
+  height: 500px !important;
   z-index: 10;
+}
+.rassif-section:hover .title {
+  opacity: 0;
 }
 
 .rassif-section img {
