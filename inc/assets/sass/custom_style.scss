@@ -263,27 +263,6 @@ p{
 			text-align: center;
 		}
 	}
-	.rassif-section {
-      overflow: hidden;
-      position: relative;
-      height: 400px; /* set initial cropped height */
-      cursor: pointer;
-    }
-
-    .rassif-section img {
-      transition: all 0.5s ease;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease, filter 0.3s ease;
-    }
-
-    .rassif-section:hover img {
-      height: auto;
-      max-height: none;
-      object-fit: contain;
-      transition: transform 0.5s ease, filter 0.3s ease;
-    }
 	.rassif-description{
 		position: absolute;
 		border-radius: 15px;
@@ -329,6 +308,27 @@ p{
 	// 	transform: translateX(-96%);
 	// 	transition: cubic-bezier(0.32, 0.17, 0, 1) 1s;
 	// }
+}
+.rassif-section {
+	overflow: hidden;
+	position: relative;
+	height: 400px; /* set initial cropped height */
+	cursor: pointer;
+}
+
+.rassif-section img {
+	transition: all 0.5s ease;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.rassif-section:hover img {
+	height: auto;
+	max-height: none;
+	object-fit: contain;
+	transition: transform 0.5s ease, filter 0.3s ease;
 }
 .title-padding{
 	padding: 3.75rem 0;;
