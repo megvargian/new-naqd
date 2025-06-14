@@ -234,7 +234,7 @@ $top_posts = get_top_3_most_visited('post');
         </div>
         <div class="row parent-row-rassif">
             <div class="col-lg-6 col-12 mb-2 px-1">
-                <div class="rassif-section">
+                <div class="rassif-section fade-in">
                     <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif.jpg" alt="rassif">
                     <div class="title title-padding">
                         <h2>أبناء الرصيف: التقرير الكامل</h2>
@@ -401,17 +401,7 @@ $top_posts = get_top_3_most_visited('post');
             });
         }
         // for rassif
-        // var parentWidth = $('.parent-row-rassif').width();
-        // var parentHeight = $('.parent-row-rassif').height();
-        // document.documentElement.style.setProperty('--parent-width', parentWidth + ' px !important;');
-        // document.documentElement.style.setProperty('--parent-height', parentHeight + ' px !important;');
-        // console.log(parentHeight);
-        // console.log(parentWidth);
-
         $('.rassif-section').on('mouseenter', function() {
-            // var parentWidth = $('.parent-row-rassif').width();
-            // var parentHeight = $('.parent-row-rassif').height();
-            // const parentStyles = getComputedStyle(document.documentElement);
             const parentWidth = $('.parent-row-rassif').width();
             const parentHeight = $('.parent-row-rassif').height();
 
@@ -424,6 +414,7 @@ $top_posts = get_top_3_most_visited('post');
 
             // Hide inner .title
             $(this).find('.title').css('opacity', 0);
+            $(this).find('.title').css('display', 'none');
         });
 
         $('.rassif-section').on('mouseleave', function() {
@@ -436,6 +427,7 @@ $top_posts = get_top_3_most_visited('post');
 
             // Show .title again
             $(this).find('.title').css('opacity', 1);
+            $(this).find('.title').css('display', 'block');
         });
     })
 </script>
