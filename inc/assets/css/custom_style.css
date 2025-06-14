@@ -336,27 +336,26 @@ p {
 }
 
 .rassif-section {
-  overflow: hidden;
-  position: relative;
-  height: 400px; /* set initial cropped height */
+  transition: all 0.3s ease;
+  width: 200px;
+  height: 300px;
+  overflow: visible;
   cursor: pointer;
 }
 
-.rassif-section img {
-  transition: all 0.5s ease;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease, filter 0.3s ease;
-  transform: scale(1);
+.rassif-section:hover {
+  width: 240px;
+  height: 360px;
+  z-index: 10;
 }
 
-.rassif-section:hover img {
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  transition: transform 0.5s ease, filter 0.3s ease;
-  transform: scale(2);
+.rassif-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .title-padding {
