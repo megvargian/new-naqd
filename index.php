@@ -407,6 +407,36 @@ $top_posts = get_top_3_most_visited('post');
         // document.documentElement.style.setProperty('--parent-height', parentHeight + ' px !important;');
         // console.log(parentHeight);
         // console.log(parentWidth);
+
+        $('.rassif-section').on('mouseenter', function() {
+            // var parentWidth = $('.parent-row-rassif').width();
+            // var parentHeight = $('.parent-row-rassif').height();
+            // const parentStyles = getComputedStyle(document.documentElement);
+            const parentWidth = $('.parent-row-rassif').width();
+            const parentHeight = $('.parent-row-rassif').height();
+
+            // Apply styles on hover
+            $(this).css({
+                'z-index': 10,
+                'width': parentWidth,
+                'height': parentHeight
+            });
+
+            // Hide inner .title
+            $(this).find('.title').css('opacity', 0);
+        });
+
+        $('.rassif-section').on('mouseleave', function() {
+            // Reset styles (optional – adjust as needed)
+            $(this).css({
+                'z-index': '',
+                'width': '',
+                'height': ''
+            });
+
+            // Show .title again
+            $(this).find('.title').css('opacity', 1);
+        });
     })
 </script>
 <?php

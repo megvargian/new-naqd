@@ -320,14 +320,6 @@ p{
     overflow: visible;
 	cursor: pointer;
 }
-.rassif-section:hover{
-	z-index: 10;
-	width: var(--parent-width) !important;
-	height: var(--parent-height) !important;
-	.title{
-		opacity: 0;
-	}
-}
 
 .rassif-section img {
 	width: 100%;
