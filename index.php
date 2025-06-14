@@ -400,15 +400,14 @@ $top_posts = get_top_3_most_visited('post');
 			},
 		});
         // for rassif
-        var parentWidth = $('.parent-row-rassif').width();
-        var parentHeight = $('.parent-row-rassif').height();
         $('.rassif-section').hover(function() {
+            var parentWidth = $('.parent-row-rassif').width();
+            var parentHeight = $('.parent-row-rassif').height();
             $(this).css('width', ''+parentWidth+' px !important;');
             $(this).css('height', ''+parentHeight+' px !important;');
             console.log(parentHeight);
             console.log(parentWidth);
         });
-        }
     })
 </script>
 <?php

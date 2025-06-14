@@ -338,7 +338,6 @@ p {
 .rassif-section {
   transition: all 0.3s ease;
   width: 100%;
-  height: 400px;
   overflow: visible;
   cursor: pointer;
 }
