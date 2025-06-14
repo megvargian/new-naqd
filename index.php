@@ -232,9 +232,9 @@ $top_posts = get_top_3_most_visited('post');
                 </div>
             <?php } ?>
         </div>
-        <div class="row">
+        <div class="row parent-row-rassif">
             <div class="col-lg-6 col-12 mb-2 px-1">
-                <div class="w-100 h-100 rassif-section fade-in">
+                <div class="rassif-section fade-in">
                     <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif.jpg" alt="rassif">
                     <div class="title title-padding">
                         <h2>أبناء الرصيف: التقرير الكامل</h2>
@@ -384,7 +384,6 @@ $top_posts = get_top_3_most_visited('post');
                 //$('.rassif-description').toggleClass('active');
             <?php //}?>
         //});
-
         function addCounterViewForVideo(videoId) {
 		$.ajax({
 			type: 'POST',
@@ -400,7 +399,14 @@ $top_posts = get_top_3_most_visited('post');
 				console.error(error)
 			},
 		});
-	}
+        // for rassif
+        var parentWidth = $('.parent-row-rassif').width();
+        var parentHeight = $('.parent-row-rassif').height();
+        $('.rassif-section').hover(function() {
+            $(this).width(parentWidth);
+            $(this).height(parentHeight);
+        });
+        }
     })
 </script>
 <?php
