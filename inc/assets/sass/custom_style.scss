@@ -257,6 +257,7 @@ p{
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
 		position: relative;
+		transition: all 0.3s ease;
 		h2{
 			font-size: 3rem;
 			font-family: $bold;

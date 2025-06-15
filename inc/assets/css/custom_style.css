@@ -287,7 +287,8 @@ p {
   background-color: #FF6F00;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  display: block;
+  position: relative;
+  transition: all 0.3s ease;
 }
 .rassif-section .title h2 {
   font-size: 3rem;
