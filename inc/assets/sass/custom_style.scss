@@ -256,7 +256,7 @@ p{
 		background-color: $orange_color;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
-		display: block;
+		position: relative;
 		h2{
 			font-size: 3rem;
 			font-family: $bold;
