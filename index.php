@@ -415,7 +415,9 @@ $top_posts = get_top_3_most_visited('post');
             // Hide inner .title
             $(this).find('.title').css('opacity', 0);
             $(this).find('.title').css('z-index', '-1');
-            $(this).find('.title').css('display', 'none');
+            setTimeout(() => {
+                $(this).find('.title').css('display', 'none');
+            }, 500);
         });
 
         $('.rassif-section').on('mouseleave', function() {
@@ -429,7 +431,9 @@ $top_posts = get_top_3_most_visited('post');
             // Show .title again
             $(this).find('.title').css('opacity', 1);
             $(this).find('.title').css('z-index', '1');
-            $(this).find('.title').css('display', 'block');
+            setTimeout(() => {
+                $(this).find('.title').css('display', 'block');
+            }, 500);
         });
     })
 </script>
