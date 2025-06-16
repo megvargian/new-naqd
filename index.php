@@ -417,7 +417,7 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '-1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'none');
-            }, 350);
+            }, 300);
         });
 
         $('.rassif-section').on('mouseleave', function() {
@@ -433,7 +433,7 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'block');
-            }, 350);
+            }, 300);
         });
     })
 </script>
