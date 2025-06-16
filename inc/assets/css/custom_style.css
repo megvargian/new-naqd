@@ -300,18 +300,18 @@ p {
   position: absolute;
   border-radius: 15px;
   z-index: 1;
-  right: 0;
-  top: 0;
-  width: 103%;
-  height: 100%;
-  background-color: #FF6F00;
+  left: 0;
+  width: 100%;
+  bottom: -100%;
+  height: auto;
+  background-color: transparent;
   text-align: right;
   color: #fff;
   display: flex;
   justify-content: start;
   align-items: center;
   transform: translateX(0%);
-  transition: cubic-bezier(0.32, 0.17, 0, 1) 1s;
+  transition: bottom 0.4s ease-in-out;
   opacity: 0;
 }
 .rassif-section .rassif-description h2 {

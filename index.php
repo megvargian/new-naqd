@@ -239,8 +239,8 @@ $top_posts = get_top_3_most_visited('post');
                     <div class="title title-padding">
                         <h2>أبناء الرصيف: التقرير الكامل</h2>
                     </div>
-                    <?php // if(!isMob()){?>
-                        <!-- <div class="rassif-description h-100">
+                    <?php  if(!isMob()){?>
+                        <div class="rassif-description">
                             <div class="px-4">
                                 <h2 class="mb-3">أبناء الرصيف: التقرير الكامل</h2>
                                 <p class="mb-3">شبكات منظمة، سياسيون متورطون، وأطفال يدفعون الثمن.
@@ -250,8 +250,8 @@ $top_posts = get_top_3_most_visited('post');
                                 </p>
                                 <a href="#">المزيد</a>
                             </div>
-                        </div> -->
-                    <?php //} ?>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <?php foreach($video_parts_chunks_ids[2] as $video_id){
@@ -417,6 +417,7 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '-1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'none');
+                $(this).find('.rassif-description').css('bottom', '0')
             }, 300);
         });
 
@@ -433,6 +434,7 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'block');
+                $(this).find('.rassif-description').css('bottom', '-100%')
             }, 300);
         });
     })
