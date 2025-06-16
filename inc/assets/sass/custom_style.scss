@@ -270,7 +270,6 @@ p{
 		border-radius: 15px;
 		z-index: 1;
 		left: 0;
-		width: 100%;
 		bottom: -100%;
 		height: auto;
 		background-color: transparent;
@@ -279,9 +278,8 @@ p{
 		display: flex;
 		justify-content: start;
 		align-items: center;
-		transform: translateX(0%);
-  		transition: bottom 0.4s ease-in-out;
 		opacity: 0;
+  		transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
 		h2{
 			font-size: 3rem;
 			font-family: $bold;
