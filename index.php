@@ -425,7 +425,7 @@ $top_posts = get_top_3_most_visited('post');
                     'bottom': '5%',
                     'opacity': '1',
                     'z-index': '1',
-                    'display': 'block'
+                    'visibility': 'visible'
                 })
             }, 300);
         });
@@ -451,7 +451,7 @@ $top_posts = get_top_3_most_visited('post');
                     'bottom': '-100%',
                     'opacity': '0',
                     'z-index': '-1',
-                    'display': 'none'
+                    'visibility': 'hidden'
                 })
             }, 300);
         });
