@@ -422,10 +422,10 @@ $top_posts = get_top_3_most_visited('post');
                 // $(this).find('.rassif-description').css('z-index', '1');
                 // $(this).find('.rassif-description').css('display', 'none');
                 $(this).find('.rassif-description').css({
-                    'bottom', '5%',
-                    'opacity', '1',
-                    'z-index', '1',
-                    'display', 'none'
+                    'bottom': '5%',
+                    'opacity': '1',
+                    'z-index': '1',
+                    'display': 'none'
                 })
             }, 300);
         });
@@ -448,10 +448,10 @@ $top_posts = get_top_3_most_visited('post');
                 // $(this).find('.rassif-description').css('z-index', '-1');
                 // $(this).find('.rassif-description').css('display', 'block');
                 $(this).find('.rassif-description').css({
-                    'bottom', '-100%',
-                    'opacity', '0',
-                    'z-index', '-1',
-                    'display', 'block'
+                    'bottom': '-100%',
+                    'opacity': '0',
+                    'z-index': '-1',
+                    'display': 'block'
                 })
             }, 300);
         });
