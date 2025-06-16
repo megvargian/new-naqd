@@ -417,8 +417,9 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '-1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'none');
-                $(this).find('.rassif-description').css('bottom', '5%')
-                $(this).find('.rassif-description').css('opacity', '1')
+                $(this).find('.rassif-description').css('bottom', '5%');
+                $(this).find('.rassif-description').css('opacity', '1');
+                $(this).find('.rassif-description').css('z-index', '1');
             }, 300);
         });
 
@@ -435,8 +436,9 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'block');
-                $(this).find('.rassif-description').css('bottom', '-100%')
-                $(this).find('.rassif-description').css('opacity', '0')
+                $(this).find('.rassif-description').css('bottom', '-100%');
+                $(this).find('.rassif-description').css('opacity', '0');
+                $(this).find('.rassif-description').css('z-index', '-1');
             }, 300);
         });
     })
