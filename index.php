@@ -424,8 +424,6 @@ $top_posts = get_top_3_most_visited('post');
 
         $('.rassif-section').on('mouseleave', function() {
             // Reset styles (optional – adjust as needed)
-            $(this).find('.rassif-description').css('bottom', '-100%')
-            $(this).find('.rassif-description').css('opacity', '0')
             $(this).css({
                 'z-index': '',
                 'width': '',
@@ -437,6 +435,8 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'block');
+                $(this).find('.rassif-description').css('bottom', '-100%')
+                $(this).find('.rassif-description').css('opacity', '0')
             }, 300);
         });
     })
