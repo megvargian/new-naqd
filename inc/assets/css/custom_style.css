@@ -315,13 +315,13 @@ p {
 .rassif-section .rassif-description h2 {
   font-size: 3rem;
   font-family: "ManchetteFine-Bold";
-  text-align: right;
+  text-align: center;
 }
 .rassif-section .rassif-description p {
   font-size: 1.2rem;
   color: #fff;
   font-family: "ManchetteFine-Regular";
-  text-align: right;
+  text-align: center;
 }
 .rassif-section .rassif-description a {
   background-color: #000;
