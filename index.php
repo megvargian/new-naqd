@@ -402,7 +402,7 @@ $top_posts = get_top_3_most_visited('post');
         }
         // for rassif
         $('.rassif-section').on('mouseenter', function() {
-            const parentWidth = $('.parent-row-rassif').width();
+            const parentWidth = $('.parent-row-rassif').width() - 8;
             const parentHeight = $('.parent-row-rassif').height();
 
             // Apply styles on hover
@@ -417,7 +417,7 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '-1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'none');
-                $(this).find('.rassif-description').css('bottom', '0')
+                $(this).find('.rassif-description').css('bottom', '5%')
                 $(this).find('.rassif-description').css('opacity', '1')
             }, 300);
         });
