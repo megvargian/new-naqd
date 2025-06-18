@@ -156,8 +156,10 @@
     display: block;
   }
   .like-container {
-    text-align: right;
     padding-right: 70px;
+  }
+  .like-container p {
+    text-align: right;
   }
 }
 @media (max-width: 420px) {

@@ -213,6 +213,7 @@ $post_image = wp_get_attachment_url(get_post_thumbnail_id($article_id));
         </div>
     </section>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 <script>
     jQuery(document).ready(function($) {
         if(Cookies.get('article-<?php echo $article_id; ?>') === '1'){
