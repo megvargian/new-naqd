@@ -271,9 +271,10 @@ p{
 		z-index: -1;
 		left: 0;
 		bottom: -100%;
+		max-width: 400px;
 		height: auto;
 		background-color: transparent;
-		text-align: center;
+		text-align: right;
 		color: #fff;
 		display: flex;
 		justify-content: start;
@@ -283,13 +284,13 @@ p{
 		h2{
 			font-size: 3rem;
 			font-family: $bold;
-			text-align: center;
+			text-align: right;
 		}
 		p{
 			font-size: 1.2rem;
 			color: #fff;
 			font-family: $regular;
-			text-align: center;
+			text-align: right;
 		}
 		a{
 			background-color: #000;

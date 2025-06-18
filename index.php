@@ -377,13 +377,6 @@ $top_posts = get_top_3_most_visited('post');
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
 		    $('html, body').removeClass('hide_scroll');
         });
-        //$('.rassif-section').click(function(){
-            <?php //if(isMob()){ ?>
-                //window.location.href= '<?php //echo get_home_url(); ?>';
-            <?php //} else { ?>
-                //$('.rassif-description').toggleClass('active');
-            <?php //}?>
-        //});
         function addCounterViewForVideo(videoId) {
             $.ajax({
                 type: 'POST',
@@ -417,12 +410,8 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '-1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'none');
-                // $(this).find('.rassif-description').css('bottom', '5%');
-                // $(this).find('.rassif-description').css('opacity', '1');
-                // $(this).find('.rassif-description').css('z-index', '1');
-                // $(this).find('.rassif-description').css('display', 'none');
                 $(this).find('.rassif-description').css({
-                    'bottom': '5%',
+                    'bottom': '70%',
                     'opacity': '1',
                     'z-index': '1',
                     'visibility': 'visible'
@@ -443,10 +432,6 @@ $top_posts = get_top_3_most_visited('post');
             $(this).find('.title').css('z-index', '1');
             setTimeout(() => {
                 $(this).find('.title').css('display', 'block');
-                // $(this).find('.rassif-description').css('bottom', '-100%');
-                // $(this).find('.rassif-description').css('opacity', '0');
-                // $(this).find('.rassif-description').css('z-index', '-1');
-                // $(this).find('.rassif-description').css('display', 'block');
                 $(this).find('.rassif-description').css({
                     'bottom': '-100%',
                     'opacity': '0',

@@ -302,9 +302,10 @@ p {
   z-index: -1;
   left: 0;
   bottom: -100%;
+  max-width: 400px;
   height: auto;
   background-color: transparent;
-  text-align: center;
+  text-align: right;
   color: #fff;
   display: flex;
   justify-content: start;
@@ -315,13 +316,13 @@ p {
 .rassif-section .rassif-description h2 {
   font-size: 3rem;
   font-family: "ManchetteFine-Bold";
-  text-align: center;
+  text-align: right;
 }
 .rassif-section .rassif-description p {
   font-size: 1.2rem;
   color: #fff;
   font-family: "ManchetteFine-Regular";
-  text-align: center;
+  text-align: right;
 }
 .rassif-section .rassif-description a {
   background-color: #000;
