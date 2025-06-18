@@ -217,7 +217,7 @@ $post_image = wp_get_attachment_url(get_post_thumbnail_id($article_id));
 <script>
     jQuery(document).ready(function($) {
         if(Cookies.get('article-<?php echo $article_id; ?>') === '1'){
-            $(this).addClass('d-none');
+            $('.heart').addClass('d-none');
             $('.heart-filled').removeClass('d-none');
         }
         $('.heart').click(function(){
