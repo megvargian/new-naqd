@@ -393,53 +393,54 @@ $top_posts = get_top_3_most_visited('post');
                 },
             });
         }
-        // for rassif
-        $('.rassif-section').on('mouseenter', function() {
-            const parentWidth = $('.parent-row-rassif').width() - 8;
-            const parentHeight = $('.parent-row-rassif').height();
+        <?php if(!isMob()){ ?>
+            // for rassif
+            $('.rassif-section').on('mouseenter', function() {
+                const parentWidth = $('.parent-row-rassif').width() - 8;
+                const parentHeight = $('.parent-row-rassif').height();
 
-            // Apply styles on hover
-            $(this).css({
-                'z-index': 10,
-                'width': parentWidth,
-                'height': 'auto'
+                // Apply styles on hover
+                $(this).css({
+                    'z-index': 10,
+                    'width': parentWidth,
+                    'height': 'auto'
+                });
+
+                // Hide inner .title
+                $(this).find('.title').css('opacity', 0);
+                $(this).find('.title').css('z-index', '-1');
+                setTimeout(() => {
+                    $(this).find('.title').css('display', 'none');
+                    $(this).find('.rassif-description').css({
+                        'bottom': '60%',
+                        'opacity': '1',
+                        'z-index': '1',
+                        'visibility': 'visible'
+                    })
+                }, 300);
             });
+            $('.rassif-section').on('mouseleave', function() {
+                // Reset styles (optional – adjust as needed)
+                $(this).css({
+                    'z-index': '',
+                    'width': '',
+                    'height': ''
+                });
 
-            // Hide inner .title
-            $(this).find('.title').css('opacity', 0);
-            $(this).find('.title').css('z-index', '-1');
-            setTimeout(() => {
-                $(this).find('.title').css('display', 'none');
-                $(this).find('.rassif-description').css({
-                    'bottom': '70%',
-                    'opacity': '1',
-                    'z-index': '1',
-                    'visibility': 'visible'
-                })
-            }, 300);
-        });
-
-        $('.rassif-section').on('mouseleave', function() {
-            // Reset styles (optional – adjust as needed)
-            $(this).css({
-                'z-index': '',
-                'width': '',
-                'height': ''
+                // Show .title again
+                $(this).find('.title').css('opacity', 1);
+                $(this).find('.title').css('z-index', '1');
+                setTimeout(() => {
+                    $(this).find('.title').css('display', 'block');
+                    $(this).find('.rassif-description').css({
+                        'bottom': '-100%',
+                        'opacity': '0',
+                        'z-index': '-1',
+                        'visibility': 'hidden'
+                    })
+                }, 300);
             });
-
-            // Show .title again
-            $(this).find('.title').css('opacity', 1);
-            $(this).find('.title').css('z-index', '1');
-            setTimeout(() => {
-                $(this).find('.title').css('display', 'block');
-                $(this).find('.rassif-description').css({
-                    'bottom': '-100%',
-                    'opacity': '0',
-                    'z-index': '-1',
-                    'visibility': 'hidden'
-                })
-            }, 300);
-        });
+        <?php } ?>
     })
 </script>
 <?php
