@@ -412,7 +412,7 @@ $top_posts = get_top_3_most_visited('post');
                 setTimeout(() => {
                     $(this).find('.title').css('display', 'none');
                     $(this).find('.rassif-description').css({
-                        'bottom': '60%',
+                        'bottom': '45%',
                         'opacity': '1',
                         'z-index': '1',
                         'visibility': 'visible'
@@ -433,7 +433,7 @@ $top_posts = get_top_3_most_visited('post');
                 setTimeout(() => {
                     $(this).find('.title').css('display', 'block');
                     $(this).find('.rassif-description').css({
-                        'bottom': '-100%',
+                        'bottom': '30%',
                         'opacity': '0',
                         'z-index': '-1',
                         'visibility': 'hidden'
