@@ -70,7 +70,7 @@ $post_image = wp_get_attachment_url(get_post_thumbnail_id($article_id));
                             <?php echo get_the_date('j M Y', $article_id);?>
                         </p>
                     </div>
-                    <div>
+                    <div class="like-container">
                         <p class="helvetica-regular" dir="ltr">
                             <svg class="heart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" version="1.1" id="Capa_1" viewBox="0 0 471.701 471.701" xml:space="preserve" stroke="#fff">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -215,13 +215,19 @@ $post_image = wp_get_attachment_url(get_post_thumbnail_id($article_id));
 </section>
 <script>
     jQuery(document).ready(function($) {
+        if(Cookies.get('article-<?php echo $article_id; ?>') === '1'){
+            $(this).addClass('d-none');
+            $('.heart-filled').removeClass('d-none');
+        }
         $('.heart').click(function(){
             $(this).addClass('d-none');
             $('.heart-filled').removeClass('d-none');
+            Cookies.set('article-<?php echo $article_id; ?>', '1', { expires: 7 });
         });
         $('.heart-filled').click(function(){
             $(this).addClass('d-none');
             $('.heart').removeClass('d-none');
+            Cookies.remove('article-<?php echo $article_id; ?>');
         });
         $(window).on('scroll resize', function () {
             const article = $('#theArticle');
