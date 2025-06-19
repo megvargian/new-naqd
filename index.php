@@ -235,7 +235,7 @@ $top_posts = get_top_3_most_visited('post');
         <div class="row parent-row-rassif">
             <div class="col-lg-6 col-12 mb-2 px-1">
                 <div class="rassif-section fade-in">
-                    <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif.jpg" alt="rassif">
+                    <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif-2.jpg" alt="rassif">
                     <div class="title title-padding">
                         <h2>أبناء الرصيف: التقرير الكامل</h2>
                     </div>
@@ -403,7 +403,7 @@ $top_posts = get_top_3_most_visited('post');
                 $(this).css({
                     'z-index': 10,
                     'width': parentWidth,
-                    'height': 'auto'
+                    'height': parentHeight,
                 });
 
                 // Hide inner .title
