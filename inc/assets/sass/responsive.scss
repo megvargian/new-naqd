@@ -41,6 +41,9 @@
 			}
 		}
 	}
+	.rassif-section img {
+		height: calc(100% - 128px);
+	}
 }
 
 @media (max-width: 1367px){
@@ -58,6 +61,9 @@
 	}
 	.header-container .tag-list li button{
 		width: 150px;
+	}
+	.rassif-section img {
+		height: calc(100% - 183px);
 	}
 }
 
