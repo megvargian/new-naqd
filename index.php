@@ -421,14 +421,14 @@ $top_posts = get_top_3_most_visited('post');
             });
             $('.rassif-section').on('mouseleave', function() {
                 // Reset styles (optional – adjust as needed)
+                $(this).find('.rassif-description').css({
+                    'bottom': '30%',
+                    'opacity': '0',
+                    'z-index': '-1',
+                    'visibility': 'hidden'
+                })
                 setTimeout(() => {
                     $(this).find('.title').css('display', 'block');
-                    $(this).find('.rassif-description').css({
-                        'bottom': '30%',
-                        'opacity': '0',
-                        'z-index': '-1',
-                        'visibility': 'hidden'
-                    })
                 }, 300);
                 $(this).css({
                     'z-index': '',
