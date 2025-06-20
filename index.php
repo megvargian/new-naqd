@@ -404,6 +404,7 @@ $top_posts = get_top_3_most_visited('post');
             // for rassif
             $('.rassif-section').on('mouseenter', function() {
                 $(this).find('img').addClass('h-100');
+                $(this).addClass('active');
                 const parentWidth = $('.parent-row-rassif').width() - 8;
                 const parentHeight = $('.parent-row-rassif').height();
 
@@ -430,6 +431,7 @@ $top_posts = get_top_3_most_visited('post');
             $('.rassif-section').on('mouseleave', function() {
                 // Reset styles (optional – adjust as needed)
                 $(this).find('img').removeClass('h-100');
+                $(this).removeClass('active');
                 $(this).find('.rassif-description').css({
                     'bottom': '30%',
                     'opacity': '0',

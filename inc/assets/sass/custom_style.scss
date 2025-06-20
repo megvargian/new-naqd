@@ -285,6 +285,7 @@ p{
 			font-size: 3rem;
 			font-family: $bold;
 			text-align: right;
+			color: #fff !important;
 		}
 		p{
 			font-size: 1.2rem;
@@ -324,6 +325,17 @@ p{
 	object-fit: cover;
 	transition: all 0.3s ease;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+.rassif-section.active::before{
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 0), transparent);
+    z-index: 10;
+    pointer-events: none;
 }
 
 // .rassif-section:hover img {
