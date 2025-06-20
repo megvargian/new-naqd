@@ -317,7 +317,6 @@ $top_posts = get_top_3_most_visited('post');
         </div>
     </div>
 </section>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 <script>
     jQuery(document).ready(function($) {
         var swiper = new Swiper(".latestNewsSwiper", {
@@ -351,20 +350,6 @@ $top_posts = get_top_3_most_visited('post');
 			}
         });
         swiper.changeLanguageDirection('rtl');
-        if(Cookies.get('article-<?php echo $article_id; ?>') === '1'){
-            $('.heart').addClass('d-none');
-            $('.heart-filled').removeClass('d-none');
-        }
-        $('.heart').click(function(){
-            $(this).addClass('d-none');
-            $('.heart-filled').removeClass('d-none');
-            Cookies.set('article-<?php echo $article_id; ?>', '1', { expires: 7 });
-        });
-        $('.heart-filled').click(function(){
-            $(this).addClass('d-none');
-            $('.heart').removeClass('d-none');
-            Cookies.remove('article-<?php echo $article_id; ?>');
-        });
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
             let embedKey = $(this).attr('data-key-url');
