@@ -350,13 +350,19 @@ $top_posts = get_top_3_most_visited('post');
 			}
         });
         swiper.changeLanguageDirection('rtl');
+        if(Cookies.get('article-<?php echo $article_id; ?>') === '1'){
+            $('.heart').addClass('d-none');
+            $('.heart-filled').removeClass('d-none');
+        }
         $('.heart').click(function(){
             $(this).addClass('d-none');
             $('.heart-filled').removeClass('d-none');
+            Cookies.set('article-<?php echo $article_id; ?>', '1', { expires: 7 });
         });
         $('.heart-filled').click(function(){
             $(this).addClass('d-none');
             $('.heart').removeClass('d-none');
+            Cookies.remove('article-<?php echo $article_id; ?>');
         });
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
