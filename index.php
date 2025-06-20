@@ -317,6 +317,7 @@ $top_posts = get_top_3_most_visited('post');
         </div>
     </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 <script>
     jQuery(document).ready(function($) {
         var swiper = new Swiper(".latestNewsSwiper", {
