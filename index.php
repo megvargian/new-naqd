@@ -408,7 +408,7 @@ $top_posts = get_top_3_most_visited('post');
                     $(this).find('.rassif-description').css({
                         'bottom': '35%',
                         'opacity': '1',
-                        'z-index': '1',
+                        'z-index': '10',
                         'visibility': 'visible'
                     })
                 }, 300);
