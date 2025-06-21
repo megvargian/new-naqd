@@ -163,8 +163,8 @@ $all_tags = get_tags( array(
 						<label class="switch">
 							<input type="checkbox" id="changeTheme">
 							<span class="slider">
-								<span class="label-text EN helvetica-regular">Ar</span>
-								<span class="label-text AR d-none helvetica-regular">En</span>
+								<span class="label-text AR helvetica-regular">Ar</span>
+								<span class="label-text EN d-none helvetica-regular">En</span>
 							</span>
 						</label>
 						<button class="hamburger hamburger--collapse" type="button">
@@ -357,7 +357,7 @@ jQuery(document).ready(function($) {
 		$('.transparent-black-overlay').toggleClass('d-none');
 	});
 	$('#changeTheme').click(function(){
-		$('.slider .EN').txt('En');
+		$('.slider .AR').text('En');
 		window.location.href = 'https://en.naqd.media'
 		// $('.EN').toggleClass('d-none');
 		// $('.AR').toggleClass('d-none');
