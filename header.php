@@ -359,8 +359,6 @@ jQuery(document).ready(function($) {
 	$('#changeTheme').click(function(){
 		$('.slider .AR').text('En');
 		window.location.href = 'https://en.naqd.media'
-		// $('.EN').toggleClass('d-none');
-		// $('.AR').toggleClass('d-none');
 	})
 	$(document).on("click", function(event) {
 		if (!$(event.target).closest(".menu_on_mobile").length && !$(event.target).closest(".menu_mobile_nav").length ) {
