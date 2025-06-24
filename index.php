@@ -3,15 +3,6 @@
  * Template Name: Homepage
  */
 get_header();
-$second_part = new WP_Query(
-    array(
-        'post_type'      => 'post',
-        'posts_per_page' =>  8,
-        'offset'         =>  1,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-    )
-);
 $video_parts_ids = array();
 $video_parts = new WP_Query(
     array(
@@ -33,6 +24,31 @@ $video_parts_chunks_ids = array_chunk($video_parts_ids, 2);
 $get_homepage_fields = get_fields();
 $count=0;
 $top_posts = get_top_3_most_visited('post');
+//slicing the latest posts base on the position
+$main_part_ids = array();
+$exclude_post_id_featured_article = $get_homepage_fields['featured_article'] ? $get_homepage_fields['featured_article'] : '';
+$exclude_post_id_second_featured_article = $get_homepage_fields['second_feature_article'] ? $get_homepage_fields['second_feature_article'] : '';
+$main_part = new WP_Query(
+    array(
+        'post_type'      => 'post',
+        'posts_per_page' => 22,
+        'post__not_in'   => [$exclude_post_id_featured_article, $exclude_post_id_second_featured_article],
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+
+    )
+);
+if ( $main_part->have_posts() ) {
+    while ( $main_part->have_posts() ) {
+        $main_part->the_post();
+        array_push($main_part_ids, get_the_ID());
+    }
+    wp_reset_postdata();
+}
+$first_part = array_slice($main_part_ids, 0, 8);
+$second_part = array_slice($main_part_ids, 8, 2);
+$third_part = array_slice($main_part_ids, 10, 4);
+$fourth_part = array_slice($main_part_ids, 14, 8);
 ?>
 <section class="homepage">
     <div id="filter-container" class="container py-5">
@@ -88,10 +104,7 @@ $top_posts = get_top_3_most_visited('post');
         <?php } ?>
         <div class="row">
             <?php
-                if ( $second_part->have_posts() ) {
-                    while ( $second_part->have_posts() ) {
-                    $second_part->the_post();
-                    $article_id = get_the_ID();
+                foreach ($first_part as $key => $article_id) {
                     $article_title = get_the_title($article_id);
                     $image_url = get_the_post_thumbnail_url($article_id);
             ?>
@@ -100,9 +113,7 @@ $top_posts = get_top_3_most_visited('post');
                         <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                     </a>
                 </div>
-            <?php }
-                wp_reset_postdata();
-            }?>
+            <?php }?>
         </div>
         <div class="row">
             <div class="col-lg-6 col-12 mb-2 px-1">
@@ -199,16 +210,17 @@ $top_posts = get_top_3_most_visited('post');
             <?php } ?>
             <div class="col-lg-6 col-12">
                 <div class="row">
-                    <div class="col-lg-6 col-12 mb-2 px-1">
-                        <a href="#" class="fade-in">
-                            <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
-                        </a>
-                    </div>
-                    <div class="col-lg-6 col-12 mb-2 px-1">
-                        <a href="#" class="fade-in">
-                            <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
-                        </a>
-                    </div>
+                    <?php
+                        foreach ($second_part as $key => $article_id) {
+                            $article_title = get_the_title($article_id);
+                            $image_url = get_the_post_thumbnail_url($article_id);
+                    ?>
+                        <div class="col-lg-6 col-12 mb-2 px-1">
+                            <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                                <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
+                            </a>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="row">
                     <div class="col-12 mb-2 px-1">
@@ -224,10 +236,14 @@ $top_posts = get_top_3_most_visited('post');
             </div>
         </div>
         <div class="row">
-            <?php for($i=0; $i<4; $i++){ ?>
+            <?php
+                foreach ($third_part as $key => $article_id) {
+                    $article_title = get_the_title($article_id);
+                    $image_url = get_the_post_thumbnail_url($article_id);
+            ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <a href="/test-1" class="fade-in">
-                        <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                    <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                        <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                     </a>
                 </div>
             <?php } ?>
@@ -235,20 +251,17 @@ $top_posts = get_top_3_most_visited('post');
         <div class="row parent-row-rassif">
             <div class="col-lg-6 col-12 mb-2 px-1">
                 <div class="rassif-section fade-in">
+                    <?php $second_feature_title = get_the_title($get_homepage_fields['second_feature_article']); ?>
                     <img class="w-100 d-block" src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/rassif-2.jpg" alt="rassif">
                     <div class="title title-padding">
-                        <h2>أبناء الرصيف: التقرير الكامل</h2>
+                        <h2><?php echo $second_feature_title; ?></h2>
                     </div>
                     <?php  if(!isMob()){?>
                         <div class="rassif-description">
                             <div class="px-4">
-                                <h2 class="mb-3">أبناء الرصيف: التقرير الكامل</h2>
-                                <p class="mb-3">شبكات منظمة، سياسيون متورطون، وأطفال يدفعون الثمن.
-                                    لن تصدقوا ما ستسمعونه وتشاهدونه في الفيلم الاستقصائي
-                                    المعمق #أبناء_الرصيف من إنتاج منصة نقد بالتعاون مع
-                                    مؤسسة سمير قصير. شاهدوه الآن
-                                </p>
-                                <a href="#">المزيد</a>
+                                <h2 class="mb-3"><?php echo $second_feature_title; ?></h2>
+                                <p class="mb-3"><?php echo $get_homepage_fields['description'];?></p>
+                                <a href="<?php echo get_permalink($get_homepage_fields['second_feature_article']); ?>">المزيد</a>
                             </div>
                         </div>
                     <?php } ?>
@@ -286,10 +299,14 @@ $top_posts = get_top_3_most_visited('post');
             <?php } ?>
         </div>
         <div class="row">
-            <?php for($i=9; $i<17; $i++){ ?>
+            <?php
+                foreach ($fourth_part as $key => $article_id) {
+                    $article_title = get_the_title($article_id);
+                    $image_url = get_the_post_thumbnail_url($article_id);
+            ?>
                 <div class="col-lg-3 col-12 mb-2 px-1">
-                    <a href="/test-1" class="fade-in">
-                        <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                    <a href="<?php echo get_permalink($article_id);?>" class="fade-in">
+                        <img class="w-100 d-block single-article " src="<?php echo $image_url; ?>" alt="<?php echo $article_title; ?>">
                     </a>
                 </div>
             <?php } ?>
