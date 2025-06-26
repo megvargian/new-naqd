@@ -358,7 +358,8 @@ jQuery(document).ready(function($) {
 	});
 	$('#changeTheme').click(function(){
 		$('.slider .AR').text('En');
-		window.open('https://en.naqd.media', '_blank');
+		// window.open('https://en.naqd.media', '_blank');
+		window.location.href = 'https://en.naqd.media';
 	})
 	$(document).on("click", function(event) {
 		if (!$(event.target).closest(".menu_on_mobile").length && !$(event.target).closest(".menu_mobile_nav").length ) {
