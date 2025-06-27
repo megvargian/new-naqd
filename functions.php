@@ -825,3 +825,28 @@ function add_counter_view_video() {
 }
 add_action('wp_ajax_add_counter_view_video', 'add_counter_view_video');
 add_action('wp_ajax_nopriv_add_counter_view_video', 'add_counter_view_video');
+
+// // add insta feed
+// function get_instagram_feed($limit = 6) {
+//     $access_token = 'YOUR_LONG_LIVED_ACCESS_TOKEN';
+//     $user_id = 'YOUR_INSTAGRAM_BUSINESS_ID';
+//     $cache_key = 'custom_instagram_feed';
+//     $cached = get_transient($cache_key);
+
+//     if ($cached !== false) {
+//         return $cached;
+//     }
+
+//     $endpoint = "https://graph.instagram.com/{$user_id}/media?fields=id,caption,media_type,media_url,permalink&access_token={$access_token}&limit={$limit}";
+
+//     $response = wp_remote_get($endpoint);
+//     if (is_wp_error($response)) return [];
+
+//     $data = json_decode(wp_remote_retrieve_body($response));
+//     if (!isset($data->data)) return [];
+
+//     // Cache for 1 hour
+//     set_transient($cache_key, $data->data, HOUR_IN_SECONDS);
+
+//     return $data->data;
+// }
