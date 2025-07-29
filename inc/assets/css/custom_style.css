@@ -1588,3 +1588,7 @@ body.dark {
   border: none;
   outline: none;
 }
+
+.sbi_photo_wrap img {
+  border-radius: 15px !important;
+}
