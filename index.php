@@ -331,44 +331,44 @@ $fourth_part = array_slice($main_part_ids, 14, 8);
                 <div class="swiper-button-prev swiper-button-prev-latest-article"></div>
             </div> -->
             <div class="col-12">
-                <?php do_shortcode('[instagram-feed feed=1]') ;?>
+                <?php echo do_shortcode('[instagram-feed feed=1]');?>
             </div>
         </div>
     </div>
 </section>
 <script>
     jQuery(document).ready(function($) {
-        var swiper = new Swiper(".latestNewsSwiper", {
-            slidesPerView: 4,
-            spaceBetween: 10,
-            grabCursor: true,
-            loop: true,
-            navigation: {
-                nextEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-				// when window width is >= 320px
-				320: {
-					slidesPerView: 1.5,
-					spaceBetween: 10,
-				},
-				// when window width is >= 480px
-				480: {
-					slidesPerView: 1.5,
-					spaceBetween: 10,
-				},
-				// when window width is >= 640px
-				640: {
-					slidesPerView: 2,
-					spaceBetween: 10,
-				},
-				991: {
-					slidesPerView: 4,
-					spaceBetween: 10,
-				}
-			}
-        });
-        swiper.changeLanguageDirection('rtl');
+        // var swiper = new Swiper(".latestNewsSwiper", {
+        //     slidesPerView: 4,
+        //     spaceBetween: 10,
+        //     grabCursor: true,
+        //     loop: true,
+        //     navigation: {
+        //         nextEl: ".swiper-button-prev",
+        //     },
+        //     breakpoints: {
+		// 		// when window width is >= 320px
+		// 		320: {
+		// 			slidesPerView: 1.5,
+		// 			spaceBetween: 10,
+		// 		},
+		// 		// when window width is >= 480px
+		// 		480: {
+		// 			slidesPerView: 1.5,
+		// 			spaceBetween: 10,
+		// 		},
+		// 		// when window width is >= 640px
+		// 		640: {
+		// 			slidesPerView: 2,
+		// 			spaceBetween: 10,
+		// 		},
+		// 		991: {
+		// 			slidesPerView: 4,
+		// 			spaceBetween: 10,
+		// 		}
+		// 	}
+        // });
+        // swiper.changeLanguageDirection('rtl');
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
             let embedKey = $(this).attr('data-key-url');
