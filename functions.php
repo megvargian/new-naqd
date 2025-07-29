@@ -850,3 +850,59 @@ add_action('wp_ajax_nopriv_add_counter_view_video', 'add_counter_view_video');
 
 //     return $data->data;
 // }
+
+function fetch_instagram_posts($limit = 5) {
+    $access_token = 'EAAKGtyDZAoz4BPJ8ysB8ZCueVfttKXOvhAwGN2eltjVfSVRnee0STkVLDl4p3a8ZB6BcQnNMNHZAJwoiZC3iImuun5NVhPMGCTKCAx4ZCfIUZBPKo3tWG7ZBUOc9ruE1HSFV7vv0PZCuMX6HyKVmhzJ10B4tSfCJc3mpTZARpQ4qJmsDrFH06vvytR0oqfUzbckaRwZA4fsA3O4K3SzSuo8OUiuF805xonPRtyuw1sEyLZBZBPyx3MY4fdO2VWSVoxZBVcqVxw6QFl7KiVNQOGVTTzvQyokHcZD';
+    $instagram_user_id = '24194754186819959';
+
+    $url = "https://graph.facebook.com/v19.0/{$instagram_user_id}/media?fields=id,caption,media_url,permalink,media_type,timestamp,thumbnail_url&limit={$limit}&access_token={$access_token}";
+
+    $response = wp_remote_get($url);
+
+    if (is_wp_error($response)) {
+        return '<p>Unable to fetch Instagram posts.</p>';
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true);
+
+    if (empty($data['data'])) {
+        return '<p>No Instagram posts found.</p>';
+    }
+
+    $output = '<div class="instagram-feed">';
+    foreach ($data['data'] as $post) {
+        if ($post['media_type'] === 'IMAGE' || $post['media_type'] === 'CAROUSEL_ALBUM') {
+            $image = esc_url($post['media_url']);
+        } elseif ($post['media_type'] === 'VIDEO') {
+            $image = esc_url($post['thumbnail_url']);
+        } else {
+            continue;
+        }
+
+        $caption = isset($post['caption']) ? esc_html($post['caption']) : '';
+        $permalink = esc_url($post['permalink']);
+
+        $output .= "
+            <div class='instagram-post'>
+                <a href='{$permalink}' target='_blank'>
+                    <img src='{$image}' alt='Instagram post' />
+                </a>
+                <p>{$caption}</p>
+            </div>
+        ";
+    }
+    $output .= '</div>';
+    echo $response;
+    return $output;
+}
+
+// [instagram_feed limit="5"]
+function instagram_feed_shortcode($atts) {
+    $atts = shortcode_atts([
+        'limit' => 5
+    ], $atts);
+
+    return fetch_instagram_posts($atts['limit']);
+}
+add_shortcode('instagram_feed', 'instagram_feed_shortcode');
