@@ -858,6 +858,7 @@ function fetch_instagram_posts($limit = 5) {
     $url = "https://graph.facebook.com/v19.0/{$instagram_user_id}/media?fields=id,caption,media_url,permalink,media_type,timestamp,thumbnail_url&limit={$limit}&access_token={$access_token}";
 
     $response = wp_remote_get($url);
+    echo $response;
 
     if (is_wp_error($response)) {
         return '<p>Unable to fetch Instagram posts.</p>';
@@ -893,7 +894,6 @@ function fetch_instagram_posts($limit = 5) {
         ";
     }
     $output .= '</div>';
-    echo $response;
     return $output;
 }
 
