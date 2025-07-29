@@ -316,7 +316,7 @@ $fourth_part = array_slice($main_part_ids, 14, 8);
                     آخر الأخبار
                 </h2>
             </div>
-            <div class="col-12 position-relative">
+            <!-- <div class="col-12 position-relative">
                 <div class="swiper latestNewsSwiper">
                     <div class="swiper-wrapper">
                         <?php for($i=0; $i<8; $i++){ ?>
@@ -329,6 +329,9 @@ $fourth_part = array_slice($main_part_ids, 14, 8);
                     </div>
                 </div>
                 <div class="swiper-button-prev swiper-button-prev-latest-article"></div>
+            </div> -->
+            <div class="col-12">
+                <?php do_shortcode('[instagram-feed feed=1]') ;?>
             </div>
         </div>
     </div>
