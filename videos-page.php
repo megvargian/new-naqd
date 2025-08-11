@@ -234,19 +234,22 @@ $top_videos = get_top_3_most_visited('video');
                         آخر الأخبار
                     </h2>
                 </div>
-                <div class="col-12 position-relative">
+                <!-- <div class="col-12 position-relative">
                     <div class="swiper latestNewsSwiper">
                         <div class="swiper-wrapper">
-                            <?php for($i=0; $i<8; $i++){ ?>
+                            <?php //for($i=0; $i<8; $i++){ ?>
                                 <div class="swiper-slide">
                                     <a href="#" class="fade-in">
-                                        <img class="w-100 d-block single-article " src="<?php echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
+                                        <img class="w-100 d-block single-article " src="<?php //echo get_template_directory_uri(); ?>/inc/assets/images/berry.jpg" alt="berry">
                                     </a>
                                 </div>
-                            <?php } ?>
+                            <?php //} ?>
                         </div>
                     </div>
                     <div class="swiper-button-prev swiper-button-prev-latest-article"></div>
+                </div> -->
+                <div class="col-12">
+                    <?php echo do_shortcode('[instagram-feed feed=1]');?>
                 </div>
             </div>
         </div>
