@@ -256,37 +256,37 @@ $top_videos = get_top_3_most_visited('video');
 </section>
 <script>
     jQuery(document).ready(function($) {
-        var swiper = new Swiper(".latestNewsSwiper", {
-            slidesPerView: 4,
-            spaceBetween: 16,
-            grabCursor: true,
-            loop: true,
-            navigation: {
-                nextEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-				// when window width is >= 320px
-				320: {
-					slidesPerView: 1.5,
-					spaceBetween: 10,
-				},
-				// when window width is >= 480px
-				480: {
-					slidesPerView: 1.5,
-					spaceBetween: 10,
-				},
-				// when window width is >= 640px
-				640: {
-					slidesPerView: 2,
-					spaceBetween: 10,
-				},
-				991: {
-					slidesPerView: 4,
-					spaceBetween: 16,
-				}
-			}
-        });
-        swiper.changeLanguageDirection('rtl');
+        // var swiper = new Swiper(".latestNewsSwiper", {
+        //     slidesPerView: 4,
+        //     spaceBetween: 16,
+        //     grabCursor: true,
+        //     loop: true,
+        //     navigation: {
+        //         nextEl: ".swiper-button-prev",
+        //     },
+        //     breakpoints: {
+		// 		// when window width is >= 320px
+		// 		320: {
+		// 			slidesPerView: 1.5,
+		// 			spaceBetween: 10,
+		// 		},
+		// 		// when window width is >= 480px
+		// 		480: {
+		// 			slidesPerView: 1.5,
+		// 			spaceBetween: 10,
+		// 		},
+		// 		// when window width is >= 640px
+		// 		640: {
+		// 			slidesPerView: 2,
+		// 			spaceBetween: 10,
+		// 		},
+		// 		991: {
+		// 			slidesPerView: 4,
+		// 			spaceBetween: 16,
+		// 		}
+		// 	}
+        // });
+        // swiper.changeLanguageDirection('rtl');
         $('.openPopup').click(function(){
             let key = $(this).attr('data-key');
             let embedKey = $(this).attr('data-key-url');
