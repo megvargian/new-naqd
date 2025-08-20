@@ -357,7 +357,7 @@ $top_videos = get_top_3_most_visited('video');
 				}
 			}
         });
-        swiper.changeLanguageDirection('rtl');
+        swiperMainCat.changeLanguageDirection('rtl');
         $('.single-video-tag').click(function() {
             $(this).toggleClass('active');
             var activeTags = [];
