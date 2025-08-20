@@ -1326,8 +1326,18 @@ background: rgba(0,0,0,0.6);
 	footer .footer-tags li a{
 		color: #000;
 	}
-	.categories .tabs li button {
-		color: #000;
+	.categories{
+		.tabs{
+			li button{
+				color: #000;
+			}
+			li button:hover{
+				color: #5D0DE6;
+			}
+			li button.active{
+				color: #5D0DE6;
+			}
+		}
 	}
 	.single-product-page .lower-part a{
 		color: #000;

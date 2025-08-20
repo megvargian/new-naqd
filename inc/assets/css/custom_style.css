@@ -1379,6 +1379,12 @@ footer .border-green {
 .light-theme .categories .tabs li button {
   color: #000;
 }
+.light-theme .categories .tabs li button:hover {
+  color: #5D0DE6;
+}
+.light-theme .categories .tabs li button.active {
+  color: #5D0DE6;
+}
 .light-theme .single-product-page .lower-part a {
   color: #000;
 }
