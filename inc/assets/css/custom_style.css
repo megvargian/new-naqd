@@ -1128,7 +1128,7 @@ footer .border-green {
   font-size: 1.5rem;
   text-align: right;
   font-family: "Bressay-Regular";
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .personal-info input[type=text],
 .personal-info input[type=email],
