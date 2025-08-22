@@ -137,7 +137,7 @@ $post_image = wp_get_attachment_url(get_post_thumbnail_id($article_id));
                             </a>
                         </li>
                         <li class="my-1">
-                            <a href="https://api.whatsapp.com/send?text=<?php echo $post_title . ' ' . $post_url; ?>" target="_blank" rel="nofollow" class="single-social-icon">
+                            <a href="https://api.whatsapp.com/send?text=<?php echo $post_url; ?>" target="_blank" rel="nofollow" class="single-social-icon">
                                 <img class="active whatsapp-active" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-active.svg" alt="whatsapp">
 								<img class="stroke whatsapp-stroke" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/whatsapp-dark-stroke.svg" alt="whatsapp">
                             </a>
