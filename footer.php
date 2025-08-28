@@ -100,9 +100,9 @@ $main_menu = $get_general_fields['main_menu'];
             </div>
             <div class="col-lg-6 col-12">
                 <div class="d-flex justify-content-start text-right">
-                    <p>تابعوا قناة نقد على يوتيوب</p>
-                    <a class="button-green" href="#">
-                        الاشتراك
+                    <p><?php echo $get_general_fields['subscribe_text']; ?></p>
+                    <a class="button-green" href="<?php echo $get_general_fields['subscribe_url']; ?>">
+                        <?php echo $get_general_fields['subscribe_button_text']; ?>
                     </a>
                 </div>
             </div>
