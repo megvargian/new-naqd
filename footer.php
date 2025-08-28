@@ -107,7 +107,7 @@ $main_menu = $get_general_fields['main_menu'];
                 </div>
             </div>
             <div class="col-lg-6 col-12 d-flex justify-content-end py-3">
-                <a href="#">
+                <a href="<?php echo $get_general_fields['subscribe_url']; ?>">
                     <img class="d-block bell" style="width: 30px;" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/bell-dark.svg" alt="subscribe">
                 </a>
             </div>
