@@ -826,83 +826,17 @@ function add_counter_view_video() {
 add_action('wp_ajax_add_counter_view_video', 'add_counter_view_video');
 add_action('wp_ajax_nopriv_add_counter_view_video', 'add_counter_view_video');
 
-// // add insta feed
-// function get_instagram_feed($limit = 6) {
-//     $access_token = 'YOUR_LONG_LIVED_ACCESS_TOKEN';
-//     $user_id = 'YOUR_INSTAGRAM_BUSINESS_ID';
-//     $cache_key = 'custom_instagram_feed';
-//     $cached = get_transient($cache_key);
-
-//     if ($cached !== false) {
-//         return $cached;
-//     }
-
-//     $endpoint = "https://graph.instagram.com/{$user_id}/media?fields=id,caption,media_type,media_url,permalink&access_token={$access_token}&limit={$limit}";
-
-//     $response = wp_remote_get($endpoint);
-//     if (is_wp_error($response)) return [];
-
-//     $data = json_decode(wp_remote_retrieve_body($response));
-//     if (!isset($data->data)) return [];
-
-//     // Cache for 1 hour
-//     set_transient($cache_key, $data->data, HOUR_IN_SECONDS);
-
-//     return $data->data;
-// }
-
-// function fetch_instagram_posts($limit = 5) {
-//     $access_token = 'EAAKGtyDZAoz4BPJ8ysB8ZCueVfttKXOvhAwGN2eltjVfSVRnee0STkVLDl4p3a8ZB6BcQnNMNHZAJwoiZC3iImuun5NVhPMGCTKCAx4ZCfIUZBPKo3tWG7ZBUOc9ruE1HSFV7vv0PZCuMX6HyKVmhzJ10B4tSfCJc3mpTZARpQ4qJmsDrFH06vvytR0oqfUzbckaRwZA4fsA3O4K3SzSuo8OUiuF805xonPRtyuw1sEyLZBZBPyx3MY4fdO2VWSVoxZBVcqVxw6QFl7KiVNQOGVTTzvQyokHcZD';
-//     $instagram_user_id = '24194754186819959';
-
-//     $url = "https://graph.facebook.com/v19.0/{$instagram_user_id}/media?fields=id,caption,media_url,permalink,media_type,timestamp,thumbnail_url&limit={$limit}&access_token={$access_token}";
-
-//     $response = wp_remote_get($url);
-//     echo '<pre>'; print_r($response); echo '</pre>';
-
-//     if (is_wp_error($response)) {
-//         return '<p>Unable to fetch Instagram posts.</p>';
-//     }
-
-//     $body = wp_remote_retrieve_body($response);
-//     $data = json_decode($body, true);
-
-//     if (empty($data['data'])) {
-//         return '<p>No Instagram posts found.</p>';
-//     }
-
-//     $output = '<div class="instagram-feed">';
-//     foreach ($data['data'] as $post) {
-//         if ($post['media_type'] === 'IMAGE' || $post['media_type'] === 'CAROUSEL_ALBUM') {
-//             $image = esc_url($post['media_url']);
-//         } elseif ($post['media_type'] === 'VIDEO') {
-//             $image = esc_url($post['thumbnail_url']);
-//         } else {
-//             continue;
-//         }
-
-//         $caption = isset($post['caption']) ? esc_html($post['caption']) : '';
-//         $permalink = esc_url($post['permalink']);
-
-//         $output .= "
-//             <div class='instagram-post'>
-//                 <a href='{$permalink}' target='_blank'>
-//                     <img src='{$image}' alt='Instagram post' />
-//                 </a>
-//                 <p>{$caption}</p>
-//             </div>
-//         ";
-//     }
-//     $output .= '</div>';
-//     return $output;
-// }
-
-// // [instagram_feed limit="5"]
-// function instagram_feed_shortcode($atts) {
-//     $atts = shortcode_atts([
-//         'limit' => 5
-//     ], $atts);
-
-//     return fetch_instagram_posts($atts['limit']);
-// }
-// add_shortcode('instagram_feed', 'instagram_feed_shortcode');
+/**
+ * Shortens a text to the first 4 words and appends '...'.
+ *
+ * @param string $text The input text.
+ * @return string The shortened text.
+ */
+function shorten_to_four_words($text) {
+    $words = preg_split('/\s+/', trim($text));
+    if (count($words) <= 4) {
+        return $text;
+    }
+    $shortened = implode(' ', array_slice($words, 0, 4));
+    return $shortened . '...';
+}
