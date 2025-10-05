@@ -840,3 +840,88 @@ function shorten_to_four_words($text) {
     $shortened = implode(' ', array_slice($words, 0, 4));
     return $shortened . '...';
 }
+
+/**
+ * Handle contact form submission via AJAX
+ */
+function handle_send_contact_message() {
+    // Verify nonce
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'send_contact_message_nonce')) {
+        wp_send_json_error(array('message' => 'Security check failed.'));
+    }
+
+    // Sanitize input
+    $firstName = sanitize_text_field($_POST['firstName']);
+    $familyName = sanitize_text_field($_POST['familyName']);
+    $email = sanitize_email($_POST['email']);
+    $message = sanitize_textarea_field($_POST['message']);
+
+    // Validate
+    if (empty($firstName) || empty($familyName) || empty($email) || empty($message)) {
+        wp_send_json_error(array('message' => 'All fields are required.'));
+    }
+
+    if (!is_email($email)) {
+        wp_send_json_error(array('message' => 'Invalid email address.'));
+    }
+
+    // Send email via SMTP2GO
+    $result = send_email_via_smtp2go($firstName, $familyName, $email, $message);
+
+    if ($result) {
+        wp_send_json_success(array('message' => 'Your message has been sent successfully!'));
+    } else {
+        wp_send_json_error(array('message' => 'Failed to send message. Please try again.'));
+    }
+}
+add_action('wp_ajax_send_contact_message', 'handle_send_contact_message');
+add_action('wp_ajax_nopriv_send_contact_message', 'handle_send_contact_message');
+
+/**
+ * Send email via SMTP2GO API
+ */
+function send_email_via_smtp2go($firstName, $familyName, $email, $message) {
+    // SMTP2GO API Configuration
+    // Replace these with your actual SMTP2GO credentials
+    $api_key = 'YOUR_SMTP2GO_API_KEY'; // Get this from SMTP2GO dashboard
+    $from_email = 'noreply@yourdomain.com'; // Your verified sender email
+    $from_name = 'Naqd Contact Form';
+    $to_email = 'admin@yourdomain.com'; // Email address to receive messages
+    $to_name = 'Admin';
+
+    // Prepare email data
+    $email_data = array(
+        'api_key' => $api_key,
+        'to' => array($to_name . ' <' . $to_email . '>'),
+        'sender' => $from_name . ' <' . $from_email . '>',
+        'subject' => 'New Contact Form Submission from ' . $firstName . ' ' . $familyName,
+        'text_body' => $message . "\n\n---\nFrom: " . $firstName . ' ' . $familyName . "\nEmail: " . $email,
+        'html_body' => '<p>' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>From:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>',
+    );
+
+    // Make API request
+    $response = wp_remote_post('https://api.smtp2go.com/v3/email/send', array(
+        'headers' => array(
+            'Content-Type' => 'application/json',
+        ),
+        'body' => json_encode($email_data),
+        'timeout' => 30,
+    ));
+
+    // Check for errors
+    if (is_wp_error($response)) {
+        error_log('SMTP2GO Error: ' . $response->get_error_message());
+        return false;
+    }
+
+    $response_body = json_decode(wp_remote_retrieve_body($response), true);
+
+    // Check if email was sent successfully
+    if (isset($response_body['data']['succeeded']) && $response_body['data']['succeeded'] > 0) {
+        return true;
+    }
+
+    // Log error for debugging
+    error_log('SMTP2GO Response: ' . print_r($response_body, true));
+    return false;
+}
