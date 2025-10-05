@@ -865,8 +865,8 @@ function handle_send_contact_message() {
         wp_send_json_error(array('message' => 'Invalid email address.'));
     }
 
-    // Send email via SMTP2GO
-    $result = send_email_via_smtp2go($firstName, $familyName, $email, $message);
+    // Send email via Postmark
+    $result = send_email_via_postmark($firstName, $familyName, $email, $message);
 
     if ($result) {
         wp_send_json_success(array('message' => 'Your message has been sent successfully!'));
@@ -878,31 +878,34 @@ add_action('wp_ajax_send_contact_message', 'handle_send_contact_message');
 add_action('wp_ajax_nopriv_send_contact_message', 'handle_send_contact_message');
 
 /**
- * Send email via SMTP2GO API
+ * Send email via Postmark API
  */
-function send_email_via_smtp2go($firstName, $familyName, $email, $message) {
-    // SMTP2GO API Configuration
-    // Replace these with your actual SMTP2GO credentials
-    $api_key = 'YOUR_SMTP2GO_API_KEY'; // Get this from SMTP2GO dashboard
-    $from_email = 'noreply@yourdomain.com'; // Your verified sender email
-    $from_name = 'Naqd Contact Form';
-    $to_email = 'admin@yourdomain.com'; // Email address to receive messages
+function send_email_via_postmark($firstName, $familyName, $email, $message) {
+    // Postmark API Configuration
+    // Replace these with your actual Postmark credentials
+    $server_token = 'YOUR_POSTMARK_SERVER_TOKEN'; // Get this from Postmark dashboard
+    $from_email = 'antoni@naqd.media'; // Your verified sender email
+    $from_name = 'Naqd Media';
+    $to_email = 'kouyoumdjianmike@gmail.com'; // Email address to receive messages
     $to_name = 'Admin';
 
-    // Prepare email data
+    // Prepare email data for Postmark
     $email_data = array(
-        'api_key' => $api_key,
-        'to' => array($to_name . ' <' . $to_email . '>'),
-        'sender' => $from_name . ' <' . $from_email . '>',
-        'subject' => 'New Contact Form Submission from ' . $firstName . ' ' . $familyName,
-        'text_body' => $message . "\n\n---\nFrom: " . $firstName . ' ' . $familyName . "\nEmail: " . $email,
-        'html_body' => '<p>' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>From:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>',
+        'From' => $from_name . ' <' . $from_email . '>',
+        'To' => $to_name . ' <' . $to_email . '>',
+        'ReplyTo' => $email, // User's email for easy reply
+        'Subject' => 'New Contact Form Submission from ' . $firstName . ' ' . $familyName,
+        'TextBody' => $message . "\n\n---\nFrom: " . $firstName . ' ' . $familyName . "\nEmail: " . $email,
+        'HtmlBody' => '<p>' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>From:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>Email:</strong> <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a></p>',
+        'MessageStream' => 'outbound' // Use 'outbound' for transactional emails
     );
 
-    // Make API request
-    $response = wp_remote_post('https://api.smtp2go.com/v3/email/send', array(
+    // Make API request to Postmark
+    $response = wp_remote_post('https://api.postmarkapp.com/email', array(
         'headers' => array(
+            'Accept' => 'application/json',
             'Content-Type' => 'application/json',
+            'X-Postmark-Server-Token' => $server_token,
         ),
         'body' => json_encode($email_data),
         'timeout' => 30,
@@ -910,18 +913,20 @@ function send_email_via_smtp2go($firstName, $familyName, $email, $message) {
 
     // Check for errors
     if (is_wp_error($response)) {
-        error_log('SMTP2GO Error: ' . $response->get_error_message());
+        error_log('Postmark Error: ' . $response->get_error_message());
         return false;
     }
 
+    $response_code = wp_remote_retrieve_response_code($response);
     $response_body = json_decode(wp_remote_retrieve_body($response), true);
 
-    // Check if email was sent successfully
-    if (isset($response_body['data']['succeeded']) && $response_body['data']['succeeded'] > 0) {
+    // Check if email was sent successfully (Postmark returns 200 on success)
+    if ($response_code === 200 && isset($response_body['MessageID'])) {
         return true;
     }
 
     // Log error for debugging
-    error_log('SMTP2GO Response: ' . print_r($response_body, true));
+    error_log('Postmark Response Code: ' . $response_code);
+    error_log('Postmark Response: ' . print_r($response_body, true));
     return false;
 }

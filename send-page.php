@@ -6,8 +6,8 @@ get_header();
 ?>
 
 <div class="container">
-    <div class="row py-5">
-        <div class="col-md-12">
+    <div class="row py-5 justify-content-center">
+        <div class="col-md-12 text-center">
             <?php
             while ( have_posts() ) : the_post();
                 the_content();
