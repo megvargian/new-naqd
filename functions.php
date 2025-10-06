@@ -883,7 +883,7 @@ add_action('wp_ajax_nopriv_send_contact_message', 'handle_send_contact_message')
 function send_email_via_postmark($firstName, $familyName, $email, $message) {
     // Postmark API Configuration
     // Replace these with your actual Postmark credentials
-    $server_token = 'YOUR_POSTMARK_SERVER_TOKEN'; // Get this from Postmark dashboard
+    $server_token = '9f9d6e82-6c08-4c7b-be75-ecd18e09b888'; // Get this from Postmark dashboard
     $from_email = 'antoni@naqd.media'; // Your verified sender email
     $from_name = 'Naqd Media';
     $to_email = 'kouyoumdjianmike@gmail.com'; // Email address to receive messages
