@@ -902,14 +902,26 @@ function send_email_via_postmark($firstName, $familyName, $email, $subject, $mes
     // Use provided subject or default
     $email_subject = !empty($subject) ? $subject : 'رسالة جديدة من ' . $firstName . ' ' . $familyName;
 
+    // Prepare email body text
+    $text_body = $message . "\n\n---\nالاسم: " . $firstName . ' ' . $familyName . "\nالبريد الإلكتروني: " . $email;
+    $html_body = '<div dir="rtl" style="font-family: Arial, sans-serif;"><p style="white-space: pre-wrap;">' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>الاسم:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>البريد الإلكتروني:</strong> <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a>';
+
+    // Add subject to email body only if provided
+    if (!empty($subject)) {
+        $text_body .= "\nالموضوع: " . $subject;
+        $html_body .= '<br><strong>الموضوع:</strong> ' . htmlspecialchars($subject);
+    }
+
+    $html_body .= '</p></div>';
+
     // Prepare email data for Postmark
     $email_data = array(
         'From' => $from_name . ' <' . $from_email . '>',
         'To' => $to_emails, // Multiple emails separated by comma
         'ReplyTo' => $email, // User's email for easy reply
         'Subject' => $email_subject,
-        'TextBody' => $message . "\n\n---\nالاسم: " . $firstName . ' ' . $familyName . "\nالبريد الإلكتروني: " . $email . "\nالموضوع: " . $subject,
-        'HtmlBody' => '<div dir="rtl" style="font-family: Arial, sans-serif;"><p style="white-space: pre-wrap;">' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>الاسم:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>البريد الإلكتروني:</strong> <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a><br><strong>الموضوع:</strong> ' . htmlspecialchars($subject) . '</p></div>',
+        'TextBody' => $text_body,
+        'HtmlBody' => $html_body,
         'MessageStream' => 'outbound' // Use 'outbound' for transactional emails
     );
 

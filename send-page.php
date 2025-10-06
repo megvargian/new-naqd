@@ -38,7 +38,8 @@ get_header();
 
                 <div class="mb-3">
                     <label for="message" class="form-label" style="display:none;">الرسالة</label>
-                    <textarea class="form-control" id="message" name="message" rows="6" placeholder="*رسالة" required></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="6" readonly style="cursor: not-allowed; opacity: 0.9;"></textarea>
+                    <small class="text-muted" style="display: block; text-align: right; margin-top: 5px;">هذه الرسالة يتم إنشاؤها تلقائياً بناءً على اسمك</small>
                 </div>
 
                 <div class="text-center">
@@ -51,6 +52,22 @@ get_header();
 
 <script>
 jQuery(document).ready(function($) {
+    // Auto-update message when first name or family name changes
+    function updateMessage() {
+        var firstName = $('#firstName').val().trim();
+        var familyName = $('#familyName').val().trim();
+
+        var message = 'أنا ' + firstName + ' ' + familyName + ' وأود التواصل معكم بخصوص خدماتكم. يرجى التواصل معي في أقرب وقت ممكن.';
+
+        $('#message').val(message);
+    }
+
+    // Trigger update on input change
+    $('#firstName, #familyName').on('input', updateMessage);
+
+    // Initialize message on page load
+    updateMessage();
+
     // Handle form submission
     $('#sendMessageForm').on('submit', function(e) {
         e.preventDefault();
@@ -86,6 +103,7 @@ jQuery(document).ready(function($) {
 
                     // Reset form
                     $('#sendMessageForm')[0].reset();
+                    updateMessage();
                 } else {
                     $('#form-message')
                         .removeClass('alert-success')
