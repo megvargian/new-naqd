@@ -886,13 +886,22 @@ function send_email_via_postmark($firstName, $familyName, $email, $message) {
     $server_token = '9f9d6e82-6c08-4c7b-be75-ecd18e09b888'; // Get this from Postmark dashboard
     $from_email = 'antoni@naqd.media'; // Your verified sender email
     $from_name = 'Naqd Media';
-    $to_email = 'kouyoumdjianmike@gmail.com, Antonibarakat@gmail.com'; // Email address to receive messages
-    $to_name = 'Admin';
+
+    // Multiple recipient emails - Add as many as you need
+    $recipients = array(
+        'kouyoumdjianmike@gmail.com',
+        'Antonibarakat@gmail.com',
+        // Add more emails here if needed
+        // 'another@example.com',
+    );
+
+    // Convert recipients array to comma-separated string format for Postmark
+    $to_emails = implode(', ', $recipients);
 
     // Prepare email data for Postmark
     $email_data = array(
         'From' => $from_name . ' <' . $from_email . '>',
-        'To' => $to_name . ' <' . $to_email . '>',
+        'To' => $to_emails, // Multiple emails separated by comma
         'ReplyTo' => $email, // User's email for easy reply
         'Subject' => 'New Contact Form Submission from ' . $firstName . ' ' . $familyName,
         'TextBody' => $message . "\n\n---\nFrom: " . $firstName . ' ' . $familyName . "\nEmail: " . $email,
