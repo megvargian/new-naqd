@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<div class="container">
+<div class="container about-and-contact-us">
     <div class="row py-5 justify-content-center">
         <div class="col-md-12 text-center">
             <?php
@@ -20,29 +20,30 @@ get_header();
         <div class="col-md-8">
             <div id="form-message" class="alert" style="display:none;"></div>
 
-            <form id="sendMessageForm" class="send-form">
+            <form id="sendMessageForm" class="send-form contact-us">
                 <div class="mb-3">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    <label for="firstName" class="form-label" style="display:none;">الاسم الكامل</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="*الاسم الكامل" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="familyName" class="form-label">Family Name</label>
-                    <input type="text" class="form-control" id="familyName" name="familyName" required>
+                    <label for="familyName" class="form-label" style="display:none;">اسم العائلة</label>
+                    <input type="text" class="form-control" id="familyName" name="familyName" placeholder="*الكنية" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <label for="email" class="form-label" style="display:none;">البريد الإلكتروني</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="*بريدك الإلكتروني" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="6" readonly style="background-color: #f8f9fa;"></textarea>
-                    <small class="text-muted">This message is auto-generated based on your name</small>
+                    <label for="message" class="form-label" style="display:none;">الرسالة</label>
+                    <textarea class="form-control" id="message" name="message" rows="6" placeholder="*رسالة" required></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary" id="submitBtn" value="أرسل">
+                </div>
             </form>
         </div>
     </div>
@@ -50,31 +51,15 @@ get_header();
 
 <script>
 jQuery(document).ready(function($) {
-    // Auto-update message when first name or family name changes
-    function updateMessage() {
-        var firstName = $('#firstName').val().trim();
-        var familyName = $('#familyName').val().trim();
-
-        var message = 'I ' + firstName + ' ' + familyName + ' would like to get in touch with you regarding your services. Please contact me at your earliest convenience.';
-
-        $('#message').val(message);
-    }
-
-    // Trigger update on input change
-    $('#firstName, #familyName').on('input', updateMessage);
-
-    // Initialize message on page load
-    updateMessage();
-
     // Handle form submission
     $('#sendMessageForm').on('submit', function(e) {
         e.preventDefault();
 
         var submitBtn = $('#submitBtn');
-        var originalText = submitBtn.text();
+        var originalText = submitBtn.val();
 
         // Disable submit button and show loading state
-        submitBtn.prop('disabled', true).text('Sending...');
+        submitBtn.prop('disabled', true).val('جارٍ الإرسال...');
 
         // Get form data
         var formData = {
@@ -101,7 +86,6 @@ jQuery(document).ready(function($) {
 
                     // Reset form
                     $('#sendMessageForm')[0].reset();
-                    updateMessage();
                 } else {
                     $('#form-message')
                         .removeClass('alert-success')
@@ -114,12 +98,12 @@ jQuery(document).ready(function($) {
                 $('#form-message')
                     .removeClass('alert-success')
                     .addClass('alert-danger')
-                    .html('An error occurred. Please try again.')
+                    .html('حدث خطأ. يرجى المحاولة مرة أخرى.')
                     .fadeIn();
             },
             complete: function() {
                 // Re-enable submit button
-                submitBtn.prop('disabled', false).text(originalText);
+                submitBtn.prop('disabled', false).val(originalText);
 
                 // Hide message after 5 seconds
                 setTimeout(function() {

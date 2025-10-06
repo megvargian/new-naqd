@@ -847,31 +847,32 @@ function shorten_to_four_words($text) {
 function handle_send_contact_message() {
     // Verify nonce
     if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'send_contact_message_nonce')) {
-        wp_send_json_error(array('message' => 'Security check failed.'));
+        wp_send_json_error(array('message' => 'فشل التحقق الأمني.'));
     }
 
     // Sanitize input
     $firstName = sanitize_text_field($_POST['firstName']);
     $familyName = sanitize_text_field($_POST['familyName']);
     $email = sanitize_email($_POST['email']);
+    $subject = isset($_POST['subject']) ? sanitize_text_field($_POST['subject']) : '';
     $message = sanitize_textarea_field($_POST['message']);
 
     // Validate
     if (empty($firstName) || empty($familyName) || empty($email) || empty($message)) {
-        wp_send_json_error(array('message' => 'All fields are required.'));
+        wp_send_json_error(array('message' => 'جميع الحقول مطلوبة.'));
     }
 
     if (!is_email($email)) {
-        wp_send_json_error(array('message' => 'Invalid email address.'));
+        wp_send_json_error(array('message' => 'عنوان البريد الإلكتروني غير صالح.'));
     }
 
     // Send email via Postmark
-    $result = send_email_via_postmark($firstName, $familyName, $email, $message);
+    $result = send_email_via_postmark($firstName, $familyName, $email, $subject, $message);
 
     if ($result) {
-        wp_send_json_success(array('message' => 'Your message has been sent successfully!'));
+        wp_send_json_success(array('message' => 'تم إرسال رسالتك بنجاح!'));
     } else {
-        wp_send_json_error(array('message' => 'Failed to send message. Please try again.'));
+        wp_send_json_error(array('message' => 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.'));
     }
 }
 add_action('wp_ajax_send_contact_message', 'handle_send_contact_message');
@@ -880,7 +881,7 @@ add_action('wp_ajax_nopriv_send_contact_message', 'handle_send_contact_message')
 /**
  * Send email via Postmark API
  */
-function send_email_via_postmark($firstName, $familyName, $email, $message) {
+function send_email_via_postmark($firstName, $familyName, $email, $subject, $message) {
     // Postmark API Configuration
     // Replace these with your actual Postmark credentials
     $server_token = '9f9d6e82-6c08-4c7b-be75-ecd18e09b888'; // Get this from Postmark dashboard
@@ -898,14 +899,17 @@ function send_email_via_postmark($firstName, $familyName, $email, $message) {
     // Convert recipients array to comma-separated string format for Postmark
     $to_emails = implode(', ', $recipients);
 
+    // Use provided subject or default
+    $email_subject = !empty($subject) ? $subject : 'رسالة جديدة من ' . $firstName . ' ' . $familyName;
+
     // Prepare email data for Postmark
     $email_data = array(
         'From' => $from_name . ' <' . $from_email . '>',
         'To' => $to_emails, // Multiple emails separated by comma
         'ReplyTo' => $email, // User's email for easy reply
-        'Subject' => 'New Contact Form Submission from ' . $firstName . ' ' . $familyName,
-        'TextBody' => $message . "\n\n---\nFrom: " . $firstName . ' ' . $familyName . "\nEmail: " . $email,
-        'HtmlBody' => '<p>' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>From:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>Email:</strong> <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a></p>',
+        'Subject' => $email_subject,
+        'TextBody' => $message . "\n\n---\nالاسم: " . $firstName . ' ' . $familyName . "\nالبريد الإلكتروني: " . $email . "\nالموضوع: " . $subject,
+        'HtmlBody' => '<div dir="rtl" style="font-family: Arial, sans-serif;"><p style="white-space: pre-wrap;">' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>الاسم:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>البريد الإلكتروني:</strong> <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a><br><strong>الموضوع:</strong> ' . htmlspecialchars($subject) . '</p></div>',
         'MessageStream' => 'outbound' // Use 'outbound' for transactional emails
     );
 
@@ -939,3 +943,183 @@ function send_email_via_postmark($firstName, $familyName, $email, $message) {
     error_log('Postmark Response: ' . print_r($response_body, true));
     return false;
 }
+
+/**
+ * ========================================
+ * SPAM PROTECTION FOR COMMENTS
+ * ========================================
+ */
+
+/**
+ * Add honeypot field to comment form (invisible to humans, visible to bots)
+ */
+function add_honeypot_to_comment_form($fields) {
+    $fields['honeypot'] = '<p style="display:none !important;">
+        <label for="comment-website">Leave this field empty</label>
+        <input type="text" name="comment-website" id="comment-website" value="" tabindex="-1" autocomplete="off">
+    </p>';
+    return $fields;
+}
+add_filter('comment_form_default_fields', 'add_honeypot_to_comment_form');
+
+/**
+ * Check honeypot and block spam
+ */
+function check_honeypot_spam($commentdata) {
+    // If honeypot field is filled, it's a bot
+    if (!empty($_POST['comment-website'])) {
+        wp_die('Spam detected. Your comment was not posted.', 'Spam Protection', array('response' => 403));
+    }
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'check_honeypot_spam');
+
+/**
+ * Block comments with excessive links (common spam indicator)
+ */
+function block_comment_links_spam($commentdata) {
+    $max_links = 2; // Maximum allowed links in comment
+    $num_links = preg_match_all('/http|https/i', $commentdata['comment_content']);
+
+    if ($num_links > $max_links) {
+        wp_die('Your comment contains too many links. Please reduce the number of links and try again.', 'Too Many Links', array('response' => 403));
+    }
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'block_comment_links_spam');
+
+/**
+ * Block comments with specific spam keywords
+ */
+function block_spam_keywords($commentdata) {
+    $spam_keywords = array(
+        'viagra', 'cialis', 'casino', 'poker', 'porn', 'xxx',
+        'buy now', 'click here', 'earn money', 'weight loss',
+        'crypto', 'bitcoin wallet', 'investment opportunity',
+        // Add more spam keywords as needed
+    );
+
+    $comment_content = strtolower($commentdata['comment_content']);
+
+    foreach ($spam_keywords as $keyword) {
+        if (stripos($comment_content, $keyword) !== false) {
+            wp_die('Your comment contains prohibited content.', 'Spam Protection', array('response' => 403));
+        }
+    }
+
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'block_spam_keywords');
+
+/**
+ * Require comment author to have previously approved comment
+ * (Prevents first-time spammers)
+ */
+function require_approved_commenter() {
+    // Enable comment moderation for all new commenters
+    update_option('comment_moderation', 1);
+    // Hold comment in queue if commenter hasn't had comment approved before
+    update_option('comment_whitelist', 1);
+}
+add_action('init', 'require_approved_commenter');
+
+/**
+ * Add minimum time delay between page load and comment submission
+ * (Bots usually submit instantly)
+ */
+function add_comment_time_check($fields) {
+    $fields['comment_time'] = '<input type="hidden" name="comment_timestamp" value="' . time() . '">';
+    return $fields;
+}
+add_filter('comment_form_default_fields', 'add_comment_time_check');
+
+function check_comment_time_spam($commentdata) {
+    $minimum_seconds = 5; // Minimum 5 seconds before allowing submit
+
+    if (isset($_POST['comment_timestamp'])) {
+        $time_elapsed = time() - intval($_POST['comment_timestamp']);
+
+        if ($time_elapsed < $minimum_seconds) {
+            wp_die('You submitted the comment too quickly. Please wait a few seconds and try again.', 'Too Fast', array('response' => 403));
+        }
+    }
+
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'check_comment_time_spam');
+
+/**
+ * Block comments from disposable/temporary email services
+ */
+function block_disposable_emails($commentdata) {
+    $disposable_domains = array(
+        'tempmail.com', 'guerrillamail.com', '10minutemail.com',
+        'mailinator.com', 'throwaway.email', 'temp-mail.org',
+        'fakeinbox.com', 'trashmail.com', 'yopmail.com',
+        // Add more disposable email domains
+    );
+
+    $email = strtolower($commentdata['comment_author_email']);
+
+    foreach ($disposable_domains as $domain) {
+        if (stripos($email, $domain) !== false) {
+            wp_die('Please use a valid email address, not a temporary/disposable one.', 'Invalid Email', array('response' => 403));
+        }
+    }
+
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'block_disposable_emails');
+
+/**
+ * Block comments with suspicious patterns (all caps, excessive punctuation)
+ */
+function block_suspicious_patterns($commentdata) {
+    $content = $commentdata['comment_content'];
+
+    // Check if comment is mostly CAPS (spam indicator)
+    $caps_percentage = (strlen(preg_replace('/[^A-Z]/', '', $content)) / strlen($content)) * 100;
+    if ($caps_percentage > 70 && strlen($content) > 20) {
+        wp_die('Please don\'t use excessive capital letters.', 'Spam Protection', array('response' => 403));
+    }
+
+    // Check for excessive exclamation marks
+    if (substr_count($content, '!') > 5) {
+        wp_die('Please reduce the number of exclamation marks.', 'Spam Protection', array('response' => 403));
+    }
+
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'block_suspicious_patterns');
+
+/**
+ * Disable comments on old posts (spam usually targets old posts)
+ */
+function disable_comments_on_old_posts() {
+    $days_old = 90; // Close comments after 90 days
+
+    if (is_single() && !is_page()) {
+        global $post;
+        $post_date = strtotime($post->post_date);
+        $current_date = time();
+        $days_difference = ($current_date - $post_date) / (60 * 60 * 24);
+
+        if ($days_difference > $days_old) {
+            return false; // Close comments
+        }
+    }
+    return true;
+}
+// Uncomment the line below to enable auto-closing of comments on old posts
+// add_filter('comments_open', 'disable_comments_on_old_posts', 10, 2);
+
+/**
+ * Log spam attempts for monitoring
+ */
+function log_spam_attempts($comment_id, $comment_status) {
+    if ($comment_status === 'spam') {
+        $comment = get_comment($comment_id);
+        error_log('SPAM COMMENT BLOCKED - Email: ' . $comment->comment_author_email . ' - IP: ' . $comment->comment_author_IP);
+    }
+}
+add_action('comment_post', 'log_spam_attempts', 10, 2);
