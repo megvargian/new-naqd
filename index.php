@@ -392,19 +392,19 @@ $fourth_part = array_slice($main_part_ids, 14, 8);
 		    $('html, body').removeClass('hide_scroll');
         });
         // add cookie on every heart click article
-        if(Cookies.get('article-<?php echo $article_id; ?>') === '1'){
+        if(Cookies.get('article-<?php echo $get_homepage_fields['featured_article']; ?>') === '1'){
             $('.heart').addClass('d-none');
             $('.heart-filled').removeClass('d-none');
         }
         $('.heart').click(function(){
             $(this).addClass('d-none');
             $('.heart-filled').removeClass('d-none');
-            Cookies.set('article-<?php echo $article_id; ?>', '1', { expires: 7 });
+            Cookies.set('article-<?php echo $get_homepage_fields['featured_article']; ?>', '1', { expires: 7 });
         });
         $('.heart-filled').click(function(){
             $(this).addClass('d-none');
             $('.heart').removeClass('d-none');
-            Cookies.remove('article-<?php echo $article_id; ?>');
+            Cookies.remove('article-<?php echo $get_homepage_fields['featured_article']; ?>');
         });
         function addCounterViewForVideo(videoId) {
             $.ajax({
