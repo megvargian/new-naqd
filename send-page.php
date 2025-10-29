@@ -38,7 +38,7 @@ get_header();
 
                 <div class="mb-3">
                     <label for="message" class="form-label" style="display:none;">الرسالة</label>
-                    <textarea class="form-control" id="message" name="message" rows="12" readonly style="cursor: not-allowed; opacity: 0.9;"></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="20" readonly style="cursor: not-allowed; opacity: 0.9;"></textarea>
                     <small class="text-muted" style="display: block; text-align: right; margin-top: 5px;">هذه الرسالة يتم إنشاؤها تلقائياً بناءً على اسمك</small>
                 </div>
 
