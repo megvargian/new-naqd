@@ -803,6 +803,11 @@ footer{
 	.main-img{
 		border-radius: 15px;
 	}
+	h1{
+		font-family: $bold;
+		color: #B6E60D;
+		font-size: 2.5rem;
+	}
 	.author-section{
 		display: flex;
 		justify-content: start;
@@ -1289,6 +1294,9 @@ background: rgba(0,0,0,0.6);
 		background-color: #5D0EE6;
 	}
 	.single-product-page{
+		h1{
+			color: #5D0DE6;
+		}
 		.tags{
 			h3 {
 				color: #5D0DE6;
