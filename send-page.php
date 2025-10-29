@@ -22,13 +22,13 @@ get_header();
 
             <form id="sendMessageForm" class="send-form contact-us">
                 <div class="mb-3">
-                    <label for="firstName" class="form-label" style="display:none;">الاسم الكامل</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="*الاسم الكامل" required>
+                    <label for="firstName" class="form-label" style="display:none;">الاسم</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="*الاسم" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="familyName" class="form-label" style="display:none;">اسم العائلة</label>
-                    <input type="text" class="form-control" id="familyName" name="familyName" placeholder="*الكنية" required>
+                    <label for="familyName" class="form-label" style="display:none;">الشهرة</label>
+                    <input type="text" class="form-control" id="familyName" name="familyName" placeholder="*الشهرة" required>
                 </div>
 
                 <div class="mb-3">
@@ -57,7 +57,27 @@ jQuery(document).ready(function($) {
         var firstName = $('#firstName').val().trim();
         var familyName = $('#familyName').val().trim();
 
-        var message = 'أنا ' + firstName + ' ' + familyName + ' وأود التواصل معكم بخصوص خدماتكم. يرجى التواصل معي في أقرب وقت ممكن.';
+        var message = `
+رسالة مفتوحة إلى المسؤولين والمعنيين في الدولة اللبنانية،
+وإلى كل من له يد أو ضمير في ملف سجن رومية،
+
+أنا ${firstName} ${familyName}
+
+أنا من أولئك الذين لا يزالون يؤمنون — على الرغم من كل شيء — أن العدالة يجب أن تُطبَّق داخل السجون، لا أن تُدفَن فيها.
+
+المشاهد التي كشفها تحقيق منصة نقد الأخير من داخل سجن رومية؛ هي مرآة لوطنٍ انقسم حتى في سجنه، بين من يعيش في جناحٍ نظيفٍ مكيفٍ وكأنه في فندقٍ صغير، ومن يُدفن حيّاً في زنازين لا يدخلها الضوء ولا الهواء.
+هذا الظلم حصيلة سنواتٍ من الإهمال، من الصمت، من التسويات على حساب أبسط حقوق الإنسان.
+
+لا يعقل أن تبقى هذه الحقائق خارج دائرة مسؤوليتكم. وليس مقبولاً أن يمرّ هذا التحقيق كما تمرّ الفضائح اليومية، بلا تحقيق، بلا محاسبة، وبلا خجل.
+أنتم تحوّلون الأماكن التي يفترض أن تكون مراكز تأهيل إلى مصانع لإنتاج المجرمين.
+
+لذلك أطالبكم، باسم كل سجينٍ تُرك وحيداً في الزنزانة، أن تتحرّكوا فوراً. أن تفتحوا تحقيقاً رسمياً، علنياً، شفافاً، يُسائل كل من قصّر أو تستّر أو شارك.
+
+أن تسألوا بصراحة: كيف تحوّل سجن رومية إلى دولتين داخل دولة واحدة؟ من سمح بأن تُشترى الحقوق وتُباع الكرامات؟
+أكتب لأذكّركم بأن العدالة لا تُقاس بعدد السجون بل بنوعيتها، وبأنه من دون عدالةٍ خلف القضبان، لا معنى لأي عدالةٍ في الخارج.
+الصمت، أمام ما رأيناه، جريمة أخرى لا تقلّ قسوة عن الزنازين نفسها.
+تصرّفوا الآن لأن الناس ستسأل وتعلم وتحاسب.
+`;
 
         $('#message').val(message);
     }
