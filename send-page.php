@@ -43,7 +43,7 @@ get_header();
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" class="btn btn-primary" id="submitBtn" value="أرسل">
+                    <input type="submit" class="btn btn-primary" id="submitBtn" value="إرسال">
                 </div>
             </form>
         </div>
