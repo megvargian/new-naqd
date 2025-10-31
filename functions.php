@@ -956,8 +956,14 @@ function send_email_via_postmark($firstName, $familyName, $email, $subject, $mes
 
     // Multiple recipient emails - Add as many as you need
     $recipients = array(
-        'kouyoumdjianmike@gmail.com',
         'Antonibarakat@gmail.com',
+        'admin@moim.gov.lb',
+        'info@justice.gov.lb',
+        'info@socialaffairs.gov.lb',
+        'info@moph.gov.lb',
+        'President_office@presidency.gov.lb',
+        'isf@isf.gov.lb',
+        'Jessykhoury127@gmail.com',
         // Add more emails here if needed
         // 'another@example.com',
     );
