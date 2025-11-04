@@ -951,7 +951,7 @@ function send_email_via_postmark($firstName, $familyName, $email, $subject, $mes
     // Postmark API Configuration
     // Replace these with your actual Postmark credentials
     $server_token = '9f9d6e82-6c08-4c7b-be75-ecd18e09b888'; // Get this from Postmark dashboard
-    $from_email = 'antoni@naqd.media'; // Your verified sender email
+    $from_email = 'web@naqd.media'; // Your verified sender email
     $from_name = 'Naqd Media';
 
     // Multiple recipient emails - Add as many as you need
