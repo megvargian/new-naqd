@@ -948,7 +948,8 @@ function handle_manual_cron_actions() {
     }
 
     if (isset($_POST['reschedule_monthly_reset'])) {
-        wp_clear_scheduled_hook('monthly_views_reset');\n        schedule_monthly_reset();
+        wp_clear_scheduled_hook('monthly_views_reset');
+        schedule_monthly_reset();
         echo '<div class="notice notice-success"><p>Monthly reset rescheduled!</p></div>';
     }
 }
