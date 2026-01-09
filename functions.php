@@ -863,25 +863,97 @@ add_action('wp', function () {
 //reset every month
 function schedule_monthly_reset() {
     if (!wp_next_scheduled('monthly_views_reset')) {
-        wp_schedule_event(strtotime('first day of next month midnight'), 'monthly', 'monthly_views_reset');
+        // Schedule for the first day of next month at midnight
+        $next_reset = strtotime('first day of next month 00:00:00');
+        wp_schedule_event($next_reset, 'monthly', 'monthly_views_reset');
+
+        // Log the scheduling for debugging
+        error_log('NAQD Views Counter: Monthly reset scheduled for ' . date('Y-m-d H:i:s', $next_reset));
     }
 }
-register_activation_hook(__FILE__, 'schedule_monthly_reset');
+// Use init hook instead of activation hook for themes
+add_action('init', 'schedule_monthly_reset');
 
 // Add custom interval if not already available
 add_filter('cron_schedules', function ($schedules) {
-    $schedules['monthly'] = [
-        'interval' => 30 * DAY_IN_SECONDS,
-        'display'  => __('Once Monthly')
-    ];
+    if (!isset($schedules['monthly'])) {
+        $schedules['monthly'] = [
+            'interval' => MONTH_IN_SECONDS, // WordPress constant for month
+            'display'  => __('Once Monthly')
+        ];
+    }
     return $schedules;
 });
 function reset_monthly_views() {
     global $wpdb;
     $table_name = 'dnaq_view_counter';
-    $wpdb->query("UPDATE $table_name SET count = 0");
+
+    // Check if table exists before trying to reset
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        error_log('NAQD Views Counter: Table ' . $table_name . ' does not exist!');
+        return false;
+    }
+
+    $result = $wpdb->query("UPDATE $table_name SET count = 0");
+
+    if ($result !== false) {
+        error_log('NAQD Views Counter: Monthly reset completed successfully. Affected rows: ' . $result);
+
+        // Schedule the next reset
+        wp_clear_scheduled_hook('monthly_views_reset');
+        $next_reset = strtotime('first day of next month 00:00:00');
+        wp_schedule_event($next_reset, 'monthly', 'monthly_views_reset');
+        error_log('NAQD Views Counter: Next reset scheduled for ' . date('Y-m-d H:i:s', $next_reset));
+    } else {
+        error_log('NAQD Views Counter: Failed to reset monthly views. Database error: ' . $wpdb->last_error);
+    }
+
+    return $result;
 }
 add_action('monthly_views_reset', 'reset_monthly_views');
+
+// Debug function to check cron job status (remove after testing)
+function check_monthly_reset_status() {
+    $scheduled = wp_next_scheduled('monthly_views_reset');
+    $cron_schedules = wp_get_schedules();
+
+    echo '<div class="notice notice-info">';
+    echo '<h3>NAQD View Counter Cron Status</h3>';
+
+    if ($scheduled) {
+        echo '<p><strong>Next Reset Scheduled:</strong> ' . date('Y-m-d H:i:s', $scheduled) . '</p>';
+        echo '<p><strong>Time Until Reset:</strong> ' . human_time_diff($scheduled) . '</p>';
+    } else {
+        echo '<p><strong>Status:</strong> No reset scheduled!</p>';
+    }
+
+    echo '<p><strong>Monthly Interval Available:</strong> ' . (isset($cron_schedules['monthly']) ? 'Yes' : 'No') . '</p>';
+    echo '<form method="post" style="display: inline;">';
+    echo '<input type="hidden" name="manual_reset_views" value="1">';
+    echo '<button type="submit" class="button">Manual Reset Now</button>';
+    echo '</form>';
+    echo ' ';
+    echo '<form method="post" style="display: inline;">';
+    echo '<input type="hidden" name="reschedule_monthly_reset" value="1">';
+    echo '<button type="submit" class="button">Reschedule Reset</button>';
+    echo '</form>';
+    echo '</div>';
+}
+
+// Handle manual actions
+function handle_manual_cron_actions() {
+    if (isset($_POST['manual_reset_views'])) {
+        reset_monthly_views();
+        echo '<div class="notice notice-success"><p>Manual reset completed!</p></div>';
+    }
+
+    if (isset($_POST['reschedule_monthly_reset'])) {
+        wp_clear_scheduled_hook('monthly_views_reset');\n        schedule_monthly_reset();
+        echo '<div class="notice notice-success"><p>Monthly reset rescheduled!</p></div>';
+    }
+}
+add_action('admin_notices', 'check_monthly_reset_status');
+add_action('admin_init', 'handle_manual_cron_actions');
 
 // get top 3 views
 function get_top_3_most_visited($type = 'post') {
