@@ -1040,7 +1040,7 @@ function handle_send_contact_message() {
     }
 
     // Send email via Postmark
-    $result = send_email_via_postmark($firstName, $familyName, $email, $subject, $message);
+    // $result = send_email_via_postmark($firstName, $familyName, $email, $subject, $message);
 
     if ($result) {
         wp_send_json_success(array('message' => 'تم إرسال رسالتك بنجاح!'));
@@ -1054,85 +1054,85 @@ add_action('wp_ajax_nopriv_send_contact_message', 'handle_send_contact_message')
 /**
  * Send email via Postmark API
  */
-function send_email_via_postmark($firstName, $familyName, $email, $subject, $message) {
-    // Postmark API Configuration
-    // Replace these with your actual Postmark credentials
-    $server_token = '9f9d6e82-6c08-4c7b-be75-ecd18e09b888'; // Get this from Postmark dashboard
-    $from_email = 'web@naqd.media'; // Your verified sender email
-    $from_name = 'Naqd Media';
+// function send_email_via_postmark($firstName, $familyName, $email, $subject, $message) {
+//     // Postmark API Configuration
+//     // Replace these with your actual Postmark credentials
+//     $server_token = '9f9d6e82-6c08-4c7b-be75-ecd18e09b888'; // Get this from Postmark dashboard
+//     $from_email = 'web@naqd.media'; // Your verified sender email
+//     $from_name = 'Naqd Media';
 
-    // Multiple recipient emails - Add as many as you need
-    $recipients = array(
-        'jessykhoury127@gmail.com',
-        'admin@moim.gov.lb',
-        'info@justice.gov.lb',
-        'info@socialaffairs.gov.lb',
-        'info@moph.gov.lb',
-        'President_office@presidency.gov.lb',
-        'isf@isf.gov.lb',
-        // Add more emails here if needed
-        // 'another@example.com',
-    );
+//     // Multiple recipient emails - Add as many as you need
+//     $recipients = array(
+//         'jessykhoury127@gmail.com',
+//         'admin@moim.gov.lb',
+//         'info@justice.gov.lb',
+//         'info@socialaffairs.gov.lb',
+//         'info@moph.gov.lb',
+//         'President_office@presidency.gov.lb',
+//         'isf@isf.gov.lb',
+//         // Add more emails here if needed
+//         // 'another@example.com',
+//     );
 
-    // Convert recipients array to comma-separated string format for Postmark
-    $to_emails = implode(', ', $recipients);
+//     // Convert recipients array to comma-separated string format for Postmark
+//     $to_emails = implode(', ', $recipients);
 
-    // Use provided subject or default
-    $email_subject = !empty($subject) ? $subject : 'رسالة جديدة من ' . $firstName . ' ' . $familyName;
+//     // Use provided subject or default
+//     $email_subject = !empty($subject) ? $subject : 'رسالة جديدة من ' . $firstName . ' ' . $familyName;
 
-    // Prepare email body text
-    $text_body = $message . "\n\n---\nالاسم: " . $firstName . ' ' . $familyName . "\nالبريد الإلكتروني: " . $email;
-    $html_body = '<div dir="rtl" style="font-family: Arial, sans-serif;"><p style="white-space: pre-wrap;">' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>الاسم:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>البريد الإلكتروني:</strong> <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a>';
+//     // Prepare email body text
+//     $text_body = $message . "\n\n---\nالاسم: " . $firstName . ' ' . $familyName . "\nالبريد الإلكتروني: " . $email;
+//     $html_body = '<div dir="rtl" style="font-family: Arial, sans-serif;"><p style="white-space: pre-wrap;">' . nl2br(htmlspecialchars($message)) . '</p><hr><p><strong>الاسم:</strong> ' . htmlspecialchars($firstName . ' ' . $familyName) . '<br><strong>البريد الإلكتروني:</strong> <a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a>';
 
-    // Add subject to email body only if provided
-    if (!empty($subject)) {
-        $text_body .= "\nالموضوع: " . $subject;
-        $html_body .= '<br><strong>الموضوع:</strong> ' . htmlspecialchars($subject);
-    }
+//     // Add subject to email body only if provided
+//     if (!empty($subject)) {
+//         $text_body .= "\nالموضوع: " . $subject;
+//         $html_body .= '<br><strong>الموضوع:</strong> ' . htmlspecialchars($subject);
+//     }
 
-    $html_body .= '</p></div>';
+//     $html_body .= '</p></div>';
 
-    // Prepare email data for Postmark
-    $email_data = array(
-        'From' => $from_name . ' <' . $from_email . '>',
-        'To' => $to_emails, // Multiple emails separated by comma
-        'ReplyTo' => $email, // User's email for easy reply
-        'Subject' => $email_subject,
-        'TextBody' => $text_body,
-        'HtmlBody' => $html_body,
-        'MessageStream' => 'outbound' // Use 'outbound' for transactional emails
-    );
+//     // Prepare email data for Postmark
+//     $email_data = array(
+//         'From' => $from_name . ' <' . $from_email . '>',
+//         'To' => $to_emails, // Multiple emails separated by comma
+//         'ReplyTo' => $email, // User's email for easy reply
+//         'Subject' => $email_subject,
+//         'TextBody' => $text_body,
+//         'HtmlBody' => $html_body,
+//         'MessageStream' => 'outbound' // Use 'outbound' for transactional emails
+//     );
 
-    // Make API request to Postmark
-    $response = wp_remote_post('https://api.postmarkapp.com/email', array(
-        'headers' => array(
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-            'X-Postmark-Server-Token' => $server_token,
-        ),
-        'body' => json_encode($email_data),
-        'timeout' => 30,
-    ));
+//     // Make API request to Postmark
+//     $response = wp_remote_post('https://api.postmarkapp.com/email', array(
+//         'headers' => array(
+//             'Accept' => 'application/json',
+//             'Content-Type' => 'application/json',
+//             'X-Postmark-Server-Token' => $server_token,
+//         ),
+//         'body' => json_encode($email_data),
+//         'timeout' => 30,
+//     ));
 
-    // Check for errors
-    if (is_wp_error($response)) {
-        error_log('Postmark Error: ' . $response->get_error_message());
-        return false;
-    }
+//     // Check for errors
+//     if (is_wp_error($response)) {
+//         error_log('Postmark Error: ' . $response->get_error_message());
+//         return false;
+//     }
 
-    $response_code = wp_remote_retrieve_response_code($response);
-    $response_body = json_decode(wp_remote_retrieve_body($response), true);
+//     $response_code = wp_remote_retrieve_response_code($response);
+//     $response_body = json_decode(wp_remote_retrieve_body($response), true);
 
-    // Check if email was sent successfully (Postmark returns 200 on success)
-    if ($response_code === 200 && isset($response_body['MessageID'])) {
-        return true;
-    }
+//     // Check if email was sent successfully (Postmark returns 200 on success)
+//     if ($response_code === 200 && isset($response_body['MessageID'])) {
+//         return true;
+//     }
 
-    // Log error for debugging
-    error_log('Postmark Response Code: ' . $response_code);
-    error_log('Postmark Response: ' . print_r($response_body, true));
-    return false;
-}
+//     // Log error for debugging
+//     error_log('Postmark Response Code: ' . $response_code);
+//     error_log('Postmark Response: ' . print_r($response_body, true));
+//     return false;
+// }
 
 /**
  * ========================================
