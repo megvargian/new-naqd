@@ -12,17 +12,18 @@ $hero_poster     = !empty($get_new_video_fields['hero_video_poster']) ? $get_new
 $hero_title      = !empty($get_new_video_fields['hero_title']) ? $get_new_video_fields['hero_title'] : get_the_title();
 $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_fields['hero_text'] : '';
 
-// Flip card faces: each click flips to the next image
+// Flip card faces: each click flips to the next image, which plays its own video
 $flip_faces = array();
 if (!empty($get_new_video_fields['flip_card_images']) && is_array($get_new_video_fields['flip_card_images'])) {
     foreach ($get_new_video_fields['flip_card_images'] as $flip_image) {
         if (is_array($flip_image) && !empty($flip_image['url'])) {
-            $flip_faces[] = $flip_image['url'];
+            $flip_faces[] = array('image' => $flip_image['url'], 'embed' => '');
         } elseif (is_string($flip_image) && $flip_image !== '') {
-            $flip_faces[] = $flip_image;
+            $flip_faces[] = array('image' => $flip_image, 'embed' => '');
         }
     }
 }
+
 
 // Latest 6 videos, rendered 3 per row
 $video_ids = array();
@@ -41,6 +42,30 @@ if ($video_query->have_posts()) {
         array_push($video_ids, get_the_ID());
     }
     wp_reset_postdata();
+}
+
+// Demo fallback: build the flip faces from the videos themselves
+if (empty($flip_faces)) {
+    foreach ($video_ids as $video_id) {
+        $thumbnail_url = get_the_post_thumbnail_url($video_id, 'medium');
+        if (!$thumbnail_url) {
+            continue;
+        }
+        $flip_url   = get_field('youtube_url', $video_id);
+        $flip_parts = explode('/', (string) parse_url($flip_url, PHP_URL_PATH));
+        $flip_faces[] = array(
+            'image' => $thumbnail_url,
+            'embed' => end($flip_parts),
+            'id'    => $video_id,
+        );
+    }
+}
+if (empty($flip_faces)) {
+    $flip_faces = array(
+        array('image' => 'https://picsum.photos/id/1015/200/200', 'embed' => 'UqI3exV3YPM'),
+        array('image' => 'https://picsum.photos/id/1025/200/200', 'embed' => 'dQw4w9WgXcQ'),
+        array('image' => 'https://picsum.photos/id/1035/200/200', 'embed' => 'aqz-KE-bpKQ'),
+    );
 }
 ?>
 <section class="video-hero py-5">
@@ -71,7 +96,7 @@ if ($video_query->have_posts()) {
             </div>
             <div class="col-lg-6 col-12">
                 <div class="video-hero__content">
-                    <h1 class="video-hero__title"><?php echo esc_html($hero_title); ?></h1>
+                    <h1 class="video-hero__title d-none"><?php echo esc_html($hero_title); ?></h1>
                     <div class="video-hero__text"><?php echo wp_kses_post($hero_text); ?></div>
                 </div>
             </div>
@@ -81,14 +106,37 @@ if ($video_query->have_posts()) {
 
 <section class="videos-grid-section py-5" style="border-top: 1px solid #5b5b5b">
     <div class="container position-relative">
-        <?php if (!empty($flip_faces)) { ?>
-            <div class="flip-card" id="flipCard" role="button" tabindex="0" aria-label="flip">
+        <?php if (!empty($flip_faces)) {
+            $flip_front = $flip_faces[0];
+            $flip_back  = isset($flip_faces[1]) ? $flip_faces[1] : $flip_faces[0];
+        ?>
+            <div class="flip-card" id="flipCard">
                 <div class="flip-card__inner">
-                    <div class="flip-card__face flip-card__face--front">
-                        <img src="<?php echo esc_url($flip_faces[0]); ?>" alt="">
+                    <div class="flip-card__face flip-card__face--front" role="button" tabindex="0" aria-label="flip">
+                        <img src="<?php echo esc_url($flip_front['image']); ?>" alt="">
                     </div>
-                    <div class="flip-card__face flip-card__face--back">
-                        <img src="<?php echo esc_url(isset($flip_faces[1]) ? $flip_faces[1] : $flip_faces[0]); ?>" alt="">
+                    <div class="flip-card__face flip-card__face--back" role="button" tabindex="0" aria-label="flip">
+                        <img src="<?php echo esc_url($flip_back['image']); ?>" alt="">
+                    </div>
+                </div>
+                <button type="button" class="flip-card__play" id="flipCardPlay" aria-label="play">
+                    <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
+                </button>
+            </div>
+            <div class="overlay videoOverlay-flip">
+                <div class="position-relative w-100 h-100">
+                    <div class="popup">
+                        <button class="close-btn" data-key="flip">
+                            <span aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
+                            </span>
+                        </button>
+                        <iframe
+                                frameborder="0"
+                                width="360" height="640"
+                                allowfullscreen
+                                allow="autoplay; encrypted-media">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -198,6 +246,25 @@ if ($video_query->have_posts()) {
         height: 100%;
         object-fit: cover;
     }
+    .flip-card__play {
+        position: absolute;
+        bottom: -6px;
+        left: -6px;
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+        z-index: 6;
+    }
+    .flip-card__play img {
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+    }
 
     @media (max-width: 991px) {
         .flip-card {
@@ -229,7 +296,6 @@ if ($video_query->have_posts()) {
             $('.videoOverlay-' + key).find('iframe').attr('src', '');
             $('html, body').removeClass('hide_scroll');
         });
-
         function addCounterViewForVideo(videoId) {
             $.ajax({
                 type: 'POST',
@@ -244,28 +310,49 @@ if ($video_query->have_posts()) {
             });
         }
 
-        var flipImages = <?php echo wp_json_encode(array_values($flip_faces)); ?>;
+        var flipFaces = <?php echo wp_json_encode(array_values($flip_faces)); ?>;
         var flipIndex = 0;
         var $flipCard = $('#flipCard');
 
         function flipToNext() {
-            if (flipImages.length < 2) {
+            if (flipFaces.length < 2) {
                 return;
             }
-            flipIndex = (flipIndex + 1) % flipImages.length;
+            flipIndex = (flipIndex + 1) % flipFaces.length;
             var isFlipped = $flipCard.hasClass('is-flipped');
             // the face that is about to become visible receives the next image
             var $incoming = isFlipped ? $flipCard.find('.flip-card__face--front img') : $flipCard.find('.flip-card__face--back img');
-            $incoming.attr('src', flipImages[flipIndex]);
+            $incoming.attr('src', flipFaces[flipIndex].image);
             $flipCard.toggleClass('is-flipped');
         }
 
-        $flipCard.on('click', flipToNext);
-        $flipCard.on('keydown', function(e) {
+        function playCurrentFlipVideo() {
+            var current = flipFaces[flipIndex];
+            if (!current || !current.embed) {
+                return;
+            }
+            <?php if (isMob()) { ?>
+                window.location.href = 'https://www.youtube.com/embed/' + current.embed + '?autoplay=1';
+            <?php } else { ?>
+                $('.videoOverlay-flip').css('display', 'block');
+                $('.videoOverlay-flip').find('iframe').attr('src', 'https://www.youtube.com/embed/' + current.embed + '?autoplay=1');
+                $('html, body').addClass('hide_scroll');
+            <?php } ?>
+            if (current.id) {
+                addCounterViewForVideo(current.id);
+            }
+        }
+
+        $flipCard.on('click', '.flip-card__face', flipToNext);
+        $flipCard.on('keydown', '.flip-card__face', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 flipToNext();
             }
+        });
+        $('#flipCardPlay').on('click', function(e) {
+            e.stopPropagation();
+            playCurrentFlipVideo();
         });
     });
 </script>
