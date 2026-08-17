@@ -12,20 +12,7 @@ $hero_poster     = !empty($get_new_video_fields['hero_video_poster']) ? $get_new
 $hero_title      = !empty($get_new_video_fields['hero_title']) ? $get_new_video_fields['hero_title'] : get_the_title();
 $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_fields['hero_text'] : '';
 
-// Flip card faces: each click flips to the next image, which plays its own video
-$flip_faces = array();
-if (!empty($get_new_video_fields['flip_card_images']) && is_array($get_new_video_fields['flip_card_images'])) {
-    foreach ($get_new_video_fields['flip_card_images'] as $flip_image) {
-        if (is_array($flip_image) && !empty($flip_image['url'])) {
-            $flip_faces[] = array('image' => $flip_image['url'], 'embed' => '');
-        } elseif (is_string($flip_image) && $flip_image !== '') {
-            $flip_faces[] = array('image' => $flip_image, 'embed' => '');
-        }
-    }
-}
-
-
-// Latest 6 videos, rendered 3 per row
+// Latest 6 videos, rendered 3 per row, each one a two-sided flip card
 $video_ids = array();
 $video_query = new WP_Query(
     array(
@@ -44,27 +31,28 @@ if ($video_query->have_posts()) {
     wp_reset_postdata();
 }
 
-// Demo fallback: build the flip faces from the videos themselves
-if (empty($flip_faces)) {
-    foreach ($video_ids as $video_id) {
-        $thumbnail_url = get_the_post_thumbnail_url($video_id, 'medium');
-        if (!$thumbnail_url) {
-            continue;
-        }
-        $flip_url   = get_field('youtube_url', $video_id);
-        $flip_parts = explode('/', (string) parse_url($flip_url, PHP_URL_PATH));
-        $flip_faces[] = array(
-            'image' => $thumbnail_url,
-            'embed' => end($flip_parts),
-            'id'    => $video_id,
-        );
+$video_cards = array();
+foreach ($video_ids as $video_id) {
+    $url   = get_field('youtube_url', $video_id);
+    $parts = explode('/', (string) parse_url($url, PHP_URL_PATH));
+
+    $front_image = get_the_post_thumbnail_url($video_id, 'large');
+    $back_field  = get_field('flip_image', $video_id);
+    if (is_array($back_field) && !empty($back_field['url'])) {
+        $back_image = $back_field['url'];
+    } elseif (is_string($back_field) && $back_field !== '') {
+        $back_image = $back_field;
+    } else {
+        // deterministic demo back face, always the same image for the same video
+        $back_image = 'https://picsum.photos/seed/video-' . $video_id . '/640/360';
     }
-}
-if (empty($flip_faces)) {
-    $flip_faces = array(
-        array('image' => 'https://picsum.photos/id/1015/200/200', 'embed' => 'UqI3exV3YPM'),
-        array('image' => 'https://picsum.photos/id/1025/200/200', 'embed' => 'dQw4w9WgXcQ'),
-        array('image' => 'https://picsum.photos/id/1035/200/200', 'embed' => 'aqz-KE-bpKQ'),
+
+    $video_cards[] = array(
+        'id'    => $video_id,
+        'title' => get_the_title($video_id),
+        'embed' => end($parts),
+        'front' => $front_image ? $front_image : $back_image,
+        'back'  => $back_image,
     );
 }
 ?>
@@ -106,58 +94,36 @@ if (empty($flip_faces)) {
 
 <section class="videos-grid-section py-5" style="border-top: 1px solid #5b5b5b">
     <div class="container position-relative">
-        <?php if (!empty($flip_faces)) {
-            $flip_front = $flip_faces[0];
-            $flip_back  = isset($flip_faces[1]) ? $flip_faces[1] : $flip_faces[0];
-        ?>
-            <div class="flip-card" id="flipCard">
-                <div class="flip-card__inner">
-                    <div class="flip-card__face flip-card__face--front" role="button" tabindex="0" aria-label="flip">
-                        <img src="<?php echo esc_url($flip_front['image']); ?>" alt="">
-                    </div>
-                    <div class="flip-card__face flip-card__face--back" role="button" tabindex="0" aria-label="flip">
-                        <img src="<?php echo esc_url($flip_back['image']); ?>" alt="">
-                    </div>
-                </div>
-                <button type="button" class="flip-card__play" id="flipCardPlay" aria-label="play">
-                    <img src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
-                </button>
-            </div>
-            <div class="overlay videoOverlay-flip">
-                <div class="position-relative w-100 h-100">
-                    <div class="popup">
-                        <button class="close-btn" data-key="flip">
-                            <span aria-hidden="true">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
-                            </span>
-                        </button>
-                        <iframe
-                                frameborder="0"
-                                width="360" height="640"
-                                allowfullscreen
-                                allow="autoplay; encrypted-media">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
-
         <div class="row">
-            <?php foreach ($video_ids as $video_id) {
-                $url   = get_field('youtube_url', $video_id);
-                $path  = parse_url($url, PHP_URL_PATH);
-                $parts = explode('/', $path);
-                $video_embed_id = end($parts);
-            ?>
+            <?php foreach ($video_cards as $card) { ?>
                 <div class="col-lg-4 col-md-6 col-12 mb-3 px-1">
-                    <div class="openPopup fade-in" data-key="<?php echo esc_attr($video_id); ?>" data-key-url="<?php echo esc_attr($video_embed_id); ?>">
-                        <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo esc_url(get_the_post_thumbnail_url($video_id)); ?>" alt="<?php echo esc_attr(get_the_title($video_id)); ?>">
-                        <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
+                    <div class="video-flip" data-key="<?php echo esc_attr($card['id']); ?>">
+                        <div class="video-flip__inner">
+                            <div class="video-flip__face video-flip__face--front">
+                                <div class="openPopup fade-in" data-key="<?php echo esc_attr($card['id']); ?>" data-key-url="<?php echo esc_attr($card['embed']); ?>">
+                                    <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo esc_url($card['front']); ?>" alt="<?php echo esc_attr($card['title']); ?>">
+                                    <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
+                                </div>
+                            </div>
+                            <div class="video-flip__face video-flip__face--back">
+                                <div class="openPopup fade-in" data-key="<?php echo esc_attr($card['id']); ?>" data-key-url="<?php echo esc_attr($card['embed']); ?>">
+                                    <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo esc_url($card['back']); ?>" alt="<?php echo esc_attr($card['title']); ?>">
+                                    <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="video-flip__toggle" aria-label="flip">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <polyline points="1 20 1 14 7 14"></polyline>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                            </svg>
+                        </button>
                     </div>
-                    <div class="overlay videoOverlay-<?php echo esc_attr($video_id); ?>">
+                    <div class="overlay videoOverlay-<?php echo esc_attr($card['id']); ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo esc_attr($video_id); ?>">
+                                <button class="close-btn" data-key="<?php echo esc_attr($card['id']); ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
@@ -206,71 +172,66 @@ if (empty($flip_faces)) {
         line-height: 1.9;
     }
 
-    .flip-card {
-        position: absolute;
-        top: -18px;
-        right: 12px;
-        width: 64px;
-        height: 64px;
-        perspective: 800px;
-        cursor: pointer;
-        z-index: 5;
-    }
-    .flip-card__inner {
+    .video-flip {
         position: relative;
         width: 100%;
-        height: 100%;
-        transition: transform 0.6s;
+        perspective: 1200px;
+    }
+    .video-flip__inner {
+        position: relative;
+        width: 100%;
+        transition: transform 0.7s;
         transform-style: preserve-3d;
     }
-    .flip-card.is-flipped .flip-card__inner {
+    .video-flip.is-flipped .video-flip__inner {
         transform: rotateY(180deg);
     }
-    .flip-card__face {
+    .video-flip__face {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    .video-flip__face--back {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        border-radius: 50%;
-        overflow: hidden;
-        background: #fff;
-    }
-    .flip-card__face--back {
         transform: rotateY(180deg);
     }
-    .flip-card__face img {
-        width: 100%;
+    .video-flip__face--back .openPopup,
+    .video-flip__face--back .single-article-video {
         height: 100%;
         object-fit: cover;
     }
-    .flip-card__play {
+    .video-flip__toggle {
         position: absolute;
-        bottom: -6px;
-        left: -6px;
-        width: 26px;
-        height: 26px;
-        padding: 0;
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        padding: 6px;
         border: 0;
         border-radius: 50%;
-        background: #fff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        color: #111;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
         cursor: pointer;
-        z-index: 6;
+        z-index: 3;
+        transition: transform 0.4s;
     }
-    .flip-card__play img {
-        width: 60%;
-        height: 60%;
-        object-fit: contain;
+    .video-flip__toggle:hover {
+        transform: rotate(180deg);
+    }
+    .video-flip__toggle svg {
+        width: 100%;
+        height: 100%;
+        display: block;
     }
 
     @media (max-width: 991px) {
-        .flip-card {
-            width: 48px;
-            height: 48px;
-            top: -10px;
+        .video-flip__toggle {
+            width: 30px;
+            height: 30px;
         }
     }
 </style>
@@ -310,49 +271,9 @@ if (empty($flip_faces)) {
             });
         }
 
-        var flipFaces = <?php echo wp_json_encode(array_values($flip_faces)); ?>;
-        var flipIndex = 0;
-        var $flipCard = $('#flipCard');
-
-        function flipToNext() {
-            if (flipFaces.length < 2) {
-                return;
-            }
-            flipIndex = (flipIndex + 1) % flipFaces.length;
-            var isFlipped = $flipCard.hasClass('is-flipped');
-            // the face that is about to become visible receives the next image
-            var $incoming = isFlipped ? $flipCard.find('.flip-card__face--front img') : $flipCard.find('.flip-card__face--back img');
-            $incoming.attr('src', flipFaces[flipIndex].image);
-            $flipCard.toggleClass('is-flipped');
-        }
-
-        function playCurrentFlipVideo() {
-            var current = flipFaces[flipIndex];
-            if (!current || !current.embed) {
-                return;
-            }
-            <?php if (isMob()) { ?>
-                window.location.href = 'https://www.youtube.com/embed/' + current.embed + '?autoplay=1';
-            <?php } else { ?>
-                $('.videoOverlay-flip').css('display', 'block');
-                $('.videoOverlay-flip').find('iframe').attr('src', 'https://www.youtube.com/embed/' + current.embed + '?autoplay=1');
-                $('html, body').addClass('hide_scroll');
-            <?php } ?>
-            if (current.id) {
-                addCounterViewForVideo(current.id);
-            }
-        }
-
-        $flipCard.on('click', '.flip-card__face', flipToNext);
-        $flipCard.on('keydown', '.flip-card__face', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                flipToNext();
-            }
-        });
-        $('#flipCardPlay').on('click', function(e) {
+        $('.video-flip__toggle').on('click', function(e) {
             e.stopPropagation();
-            playCurrentFlipVideo();
+            $(this).closest('.video-flip').toggleClass('is-flipped');
         });
     });
 </script>
