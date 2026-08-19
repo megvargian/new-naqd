@@ -37,7 +37,7 @@ $blue_url = add_query_arg('set', 'blue', $videos_page_url);
 <style>
     .video-choice {
         position: relative;
-        min-height: calc( 100dvh - 445px );
+        min-height: calc(100dvh - 446px);
         display: flex;
         align-items: center;
         justify-content: center;
