@@ -14,6 +14,11 @@ $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_f
 
 // 6 videos paired into 3 flip cards, rendered 3 per row: flipping swaps in a different video
 // which half of the 12 videos to show, chosen on the intro (red/blue) page
+if(!isset($_GET['set']) || !in_array(sanitize_text_field($_GET['set']), ['red', 'blue'])) {
+    $choice_page_url =  home_url('/video-choice-page/');
+    wp_redirect($choice_page_url);
+    exit;
+}
 $video_set = isset($_GET['set']) && sanitize_text_field($_GET['set']) === 'blue' ? 'blue' : 'red';
 $video_offset = $video_set === 'blue' ? 6 : 0;
 
