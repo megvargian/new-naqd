@@ -12,12 +12,17 @@ $hero_poster     = !empty($get_new_video_fields['hero_video_poster']) ? $get_new
 $hero_title      = !empty($get_new_video_fields['hero_title']) ? $get_new_video_fields['hero_title'] : get_the_title();
 $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_fields['hero_text'] : '';
 
-// 12 videos paired into 6 flip cards, rendered 3 per row: flipping swaps in a different video
+// 6 videos paired into 3 flip cards, rendered 3 per row: flipping swaps in a different video
+// which half of the 12 videos to show, chosen on the intro (red/blue) page
+$video_set = isset($_GET['set']) && sanitize_text_field($_GET['set']) === 'blue' ? 'blue' : 'red';
+$video_offset = $video_set === 'blue' ? 6 : 0;
+
 $video_ids = array();
 $video_query = new WP_Query(
     array(
         'post_type'      => 'video',
-        'posts_per_page' => 12,
+        'posts_per_page' => 6,
+        'offset'         => $video_offset,
         'orderby'        => 'date',
         'order'          => 'DESC',
         'fields'         => 'ids',
