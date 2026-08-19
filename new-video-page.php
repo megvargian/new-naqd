@@ -68,6 +68,18 @@ foreach ($video_id_pairs as $pair) {
 <section class="video-hero py-5">
     <div class="container">
         <div class="row align-items-center">
+            <div class="col-lg-6 col-12">
+                <div class="video-hero__content">
+                    <h1 class="video-hero__title d-none"><?php echo esc_html($hero_title); ?></h1>
+                    <div class="video-hero__text">
+                        لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
+
+وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.
+
+وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر”
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-6 col-12 mb-4 mb-lg-0">
                 <div class="video-hero__player">
                     <?php if ($hero_video_url) {
@@ -89,18 +101,6 @@ foreach ($video_id_pairs as $pair) {
                     <?php } elseif ($hero_poster) { ?>
                         <img src="<?php echo esc_url($hero_poster); ?>" alt="<?php echo esc_attr($hero_title); ?>">
                     <?php } ?>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="video-hero__content">
-                    <h1 class="video-hero__title d-none"><?php echo esc_html($hero_title); ?></h1>
-                    <div class="video-hero__text">
-                        لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
-
-وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.
-
-وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر”
-                    </div>
                 </div>
             </div>
         </div>
@@ -201,7 +201,8 @@ foreach ($video_id_pairs as $pair) {
     }
     .video-hero__text {
         font-size: clamp(15px, 1.3vw, 18px);
-        line-height: 1.9;
+        font-family: 'ManchetteFine-Regular', sans-serif;
+        color: #fff;
     }
 
     .video-flip {
