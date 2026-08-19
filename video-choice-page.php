@@ -2,7 +2,6 @@
 /**
  * Template Name: Video Choice Page
  */
-get_header();
 $get_choice_fields = get_fields();
 $background_image = !empty($get_choice_fields['choice_background_image']) ? $get_choice_fields['choice_background_image'] : get_template_directory_uri() . '/inc/assets/images/rassif.jpg';
 $choice_title      = !empty($get_choice_fields['choice_title']) ? $get_choice_fields['choice_title'] : __('Choose your path', 'wp-bootstrap-starter');
@@ -19,6 +18,15 @@ $videos_page_url = !empty($videos_page) ? get_permalink($videos_page[0]) : home_
 $red_url  = add_query_arg('set', 'red', $videos_page_url);
 $blue_url = add_query_arg('set', 'blue', $videos_page_url);
 ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo esc_html($choice_title); ?></title>
+    <?php wp_head(); ?>
+</head>
+<body <?php body_class('video-choice-page'); ?>>
 <section class="video-choice" style="background-image: url('<?php echo esc_url($background_image); ?>');">
     <div class="video-choice__overlay"></div>
     <div class="video-choice__content">
@@ -37,7 +45,8 @@ $blue_url = add_query_arg('set', 'blue', $videos_page_url);
 <style>
     .video-choice {
         position: relative;
-        min-height: calc(100dvh - 446px);
+        min-height: 100vh;
+        margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -99,6 +108,7 @@ $blue_url = add_query_arg('set', 'blue', $videos_page_url);
         }
     }
 </style>
-<?php
-get_footer();
+<?php wp_footer(); ?>
+</body>
+</html>
 
