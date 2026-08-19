@@ -12,21 +12,21 @@ $hero_poster     = !empty($get_new_video_fields['hero_video_poster']) ? $get_new
 $hero_title      = !empty($get_new_video_fields['hero_title']) ? $get_new_video_fields['hero_title'] : get_the_title();
 $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_fields['hero_text'] : '';
 
-// 6 videos paired into 3 flip cards, rendered 3 per row: flipping swaps in a different video
-// which half of the 12 videos to show, chosen on the intro (red/blue) page
+// 12 videos paired into 6 flip cards, rendered 6 per row: flipping swaps in a different video
+// which half of the 24 videos to show, chosen on the intro (red/blue) page
 if(!isset($_GET['set']) || !in_array(sanitize_text_field($_GET['set']), ['red', 'blue'])) {
-    $choice_page_url =  home_url('/video-choice-page/');
+    $choice_page_url =  home_url('/video-choice/');
     wp_redirect($choice_page_url);
     exit;
 }
 $video_set = isset($_GET['set']) && sanitize_text_field($_GET['set']) === 'blue' ? 'blue' : 'red';
-$video_offset = $video_set === 'blue' ? 6 : 0;
+$video_offset = $video_set === 'blue' ? 12 : 0;
 
 $video_ids = array();
 $video_query = new WP_Query(
     array(
         'post_type'      => 'video',
-        'posts_per_page' => 6,
+        'posts_per_page' => 12,
         'offset'         => $video_offset,
         'orderby'        => 'date',
         'order'          => 'DESC',
@@ -94,7 +94,13 @@ foreach ($video_id_pairs as $pair) {
             <div class="col-lg-6 col-12">
                 <div class="video-hero__content">
                     <h1 class="video-hero__title d-none"><?php echo esc_html($hero_title); ?></h1>
-                    <div class="video-hero__text"><?php echo wp_kses_post($hero_text); ?></div>
+                    <div class="video-hero__text">
+                        لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
+
+وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.
+
+وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر”
+                    </div>
                 </div>
             </div>
         </div>
