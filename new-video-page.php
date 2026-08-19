@@ -12,12 +12,12 @@ $hero_poster     = !empty($get_new_video_fields['hero_video_poster']) ? $get_new
 $hero_title      = !empty($get_new_video_fields['hero_title']) ? $get_new_video_fields['hero_title'] : get_the_title();
 $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_fields['hero_text'] : '';
 
-// Latest 6 videos, rendered 3 per row, each one a two-sided flip card
+// 12 videos paired into 6 flip cards, rendered 3 per row: flipping swaps in a different video
 $video_ids = array();
 $video_query = new WP_Query(
     array(
         'post_type'      => 'video',
-        'posts_per_page' => 6,
+        'posts_per_page' => 12,
         'orderby'        => 'date',
         'order'          => 'DESC',
         'fields'         => 'ids',
@@ -31,28 +31,27 @@ if ($video_query->have_posts()) {
     wp_reset_postdata();
 }
 
-$video_cards = array();
-foreach ($video_ids as $video_id) {
+function build_video_flip_face($video_id) {
     $url   = get_field('youtube_url', $video_id);
     $parts = explode('/', (string) parse_url($url, PHP_URL_PATH));
 
-    $front_image = get_the_post_thumbnail_url($video_id, 'large');
-    $back_field  = get_field('flip_image', $video_id);
-    if (is_array($back_field) && !empty($back_field['url'])) {
-        $back_image = $back_field['url'];
-    } elseif (is_string($back_field) && $back_field !== '') {
-        $back_image = $back_field;
-    } else {
-        // deterministic demo back face, always the same image for the same video
-        $back_image = 'https://picsum.photos/seed/video-' . $video_id . '/640/360';
-    }
-
-    $video_cards[] = array(
+    return array(
         'id'    => $video_id,
         'title' => get_the_title($video_id),
         'embed' => end($parts),
-        'front' => $front_image ? $front_image : $back_image,
-        'back'  => $back_image,
+        'image' => get_the_post_thumbnail_url($video_id, 'large'),
+    );
+}
+
+$video_cards = array();
+$video_id_pairs = array_chunk($video_ids, 2);
+foreach ($video_id_pairs as $pair) {
+    if (count($pair) < 2) {
+        continue;
+    }
+    $video_cards[] = array(
+        'front' => build_video_flip_face($pair[0]),
+        'back'  => build_video_flip_face($pair[1]),
     );
 }
 ?>
@@ -97,17 +96,17 @@ foreach ($video_ids as $video_id) {
         <div class="row">
             <?php foreach ($video_cards as $card) { ?>
                 <div class="col-lg-4 col-md-6 col-12 mb-3 px-1">
-                    <div class="video-flip" data-key="<?php echo esc_attr($card['id']); ?>">
+                    <div class="video-flip">
                         <div class="video-flip__inner">
                             <div class="video-flip__face video-flip__face--front">
-                                <div class="openPopup fade-in" data-key="<?php echo esc_attr($card['id']); ?>" data-key-url="<?php echo esc_attr($card['embed']); ?>">
-                                    <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo esc_url($card['front']); ?>" alt="<?php echo esc_attr($card['title']); ?>">
+                                <div class="openPopup fade-in" data-key="<?php echo esc_attr($card['front']['id']); ?>" data-key-url="<?php echo esc_attr($card['front']['embed']); ?>">
+                                    <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo esc_url($card['front']['image']); ?>" alt="<?php echo esc_attr($card['front']['title']); ?>">
                                     <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                                 </div>
                             </div>
                             <div class="video-flip__face video-flip__face--back">
-                                <div class="openPopup fade-in" data-key="<?php echo esc_attr($card['id']); ?>" data-key-url="<?php echo esc_attr($card['embed']); ?>">
-                                    <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo esc_url($card['back']); ?>" alt="<?php echo esc_attr($card['title']); ?>">
+                                <div class="openPopup fade-in" data-key="<?php echo esc_attr($card['back']['id']); ?>" data-key-url="<?php echo esc_attr($card['back']['embed']); ?>">
+                                    <img class="w-100 d-block single-article-video" style="cursor: pointer;" src="<?php echo esc_url($card['back']['image']); ?>" alt="<?php echo esc_attr($card['back']['title']); ?>">
                                     <img class="arrow-play" src="<?php echo get_template_directory_uri(); ?>/inc/assets/icons/play.ico" alt="play">
                                 </div>
                             </div>
@@ -120,10 +119,27 @@ foreach ($video_ids as $video_id) {
                             </svg>
                         </button>
                     </div>
-                    <div class="overlay videoOverlay-<?php echo esc_attr($card['id']); ?>">
+                    <div class="overlay videoOverlay-<?php echo esc_attr($card['front']['id']); ?>">
                         <div class="position-relative w-100 h-100">
                             <div class="popup">
-                                <button class="close-btn" data-key="<?php echo esc_attr($card['id']); ?>">
+                                <button class="close-btn" data-key="<?php echo esc_attr($card['front']['id']); ?>">
+                                    <span aria-hidden="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
+                                    </span>
+                                </button>
+                                <iframe
+                                        frameborder="0"
+                                        width="360" height="640"
+                                        allowfullscreen
+                                        allow="autoplay; encrypted-media">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay videoOverlay-<?php echo esc_attr($card['back']['id']); ?>">
+                        <div class="position-relative w-100 h-100">
+                            <div class="popup">
+                                <button class="close-btn" data-key="<?php echo esc_attr($card['back']['id']); ?>">
                                     <span aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>
                                     </span>
