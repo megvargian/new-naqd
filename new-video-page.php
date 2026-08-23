@@ -27,7 +27,7 @@ function returnEmbed($url) {
 <section class="video-hero py-5">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 order-0 order-lg-1 mb-4 mb-lg-0">
                 <div class="video-hero__content">
                     <h1 class="video-hero__title d-none"><?php echo esc_html($hero_title); ?></h1>
                     <div class="video-hero__text">
@@ -35,7 +35,7 @@ function returnEmbed($url) {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+            <div class="col-lg-6 col-12 order-1 order-lg-0 mb-4 mb-lg-0">
                 <div class="video-hero__player">
                     <?php if ($hero_video_url) {
                         $hero_path  = parse_url($hero_video_url, PHP_URL_PATH);
