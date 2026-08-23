@@ -21,6 +21,8 @@ if(!isset($_GET['set']) || !in_array(sanitize_text_field($_GET['set']), ['98cb79
 }
 $video_set = isset($_GET['set']) && sanitize_text_field($_GET['set']) === '4e3de2f0-3f17-447a-a81b-1435ada1df00' ? '4e3de2f0-3f17-447a-a81b-1435ada1df00' : '98cb790a-504f-49c2-a267-2b346c3cc97b';
 $video_offset = $video_set === '4e3de2f0-3f17-447a-a81b-1435ada1df00' ? 12 : 0;
+$front='98cb790a-504f-49c2-a267-2b346c3cc97b';
+$back='4e3de2f0-3f17-447a-a81b-1435ada1df00';
 
 $video_ids = array();
 $video_query = new WP_Query(
@@ -72,11 +74,7 @@ foreach ($video_id_pairs as $pair) {
                 <div class="video-hero__content">
                     <h1 class="video-hero__title d-none"><?php echo esc_html($hero_title); ?></h1>
                     <div class="video-hero__text">
-                        لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …
-
-وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي.
-
-وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر”
+                        <?php echo esc_html($hero_text); ?>
                     </div>
                 </div>
             </div>
@@ -109,9 +107,9 @@ foreach ($video_id_pairs as $pair) {
 
 <section class="videos-grid-section py-5" style="border-top: 1px solid #5b5b5b">
     <div class="container position-relative">
-        <div class="row">
+        <div class="row justify-content-center">
             <?php foreach ($video_cards as $card) { ?>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3 px-1">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3 px-1">
                     <div class="video-flip">
                         <div class="video-flip__inner">
                             <div class="video-flip__face video-flip__face--front">
