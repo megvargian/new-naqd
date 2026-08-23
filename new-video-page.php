@@ -27,7 +27,7 @@ function returnEmbed($url) {
 <section class="video-hero py-5">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 col-12 order-0 order-lg-1 mb-4 mb-lg-0">
+            <div class="col-lg-6 col-12 order-1 order-lg-0 mb-4 mb-lg-0">
                 <div class="video-hero__content">
                     <h1 class="video-hero__title d-none"><?php echo esc_html($hero_title); ?></h1>
                     <div class="video-hero__text">
@@ -35,26 +35,31 @@ function returnEmbed($url) {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-12 order-1 order-lg-0 mb-4 mb-lg-0">
+            <div class="col-lg-6 col-12 order-0 order-lg-1 mb-4 mb-lg-0">
                 <div class="video-hero__player">
                     <?php if ($hero_video_url) {
                         $hero_path  = parse_url($hero_video_url, PHP_URL_PATH);
-                        $hero_parts = explode('/', $hero_path);
+                        $hero_parts = explode('/', trim($hero_path, '/'));
                         $hero_embed = end($hero_parts);
                     ?>
                         <iframe
-                            src="https://www.youtube.com/embed/<?php echo esc_attr($hero_embed); ?>"
+                            src="https://www.youtube.com/embed/<?php echo esc_attr($hero_embed); ?>?autoplay=1&mute=1&playsinline=1"
                             title="<?php echo esc_attr($hero_title); ?>"
                             frameborder="0"
-                            allowfullscreen
-                            muted
-                            autoplay
-                            allow="accelerometer; encrypted-media; picture-in-picture">
+                            allow="autoplay; encrypted-media; picture-in-picture"
+                            allowfullscreen>
                         </iframe>
+
                     <?php } elseif ($hero_video_file) { ?>
-                        <video controls playsinline<?php echo $hero_poster ? ' poster="' . esc_url($hero_poster) . '"' : ''; ?>>
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            <?php echo $hero_poster ? 'poster="' . esc_url($hero_poster) . '"' : ''; ?>>
                             <source src="<?php echo esc_url($hero_video_file); ?>" type="video/mp4">
                         </video>
+
                     <?php } ?>
                 </div>
             </div>
@@ -156,17 +161,17 @@ function returnEmbed($url) {
     }
     @media (max-width: 1200px) {
         .custom-container {
-            max-width: 950px;
+            max-width: 850px;
         }
     }
     @media (max-width: 992px) {
         .custom-container {
-            max-width: 800px;
+            max-width: 700px;
         }
     }
     @media (max-width: 768px) {
         .custom-container {
-            max-width: 600px;
+            max-width: 500px;
         }
     }
     .video-hero__player {
