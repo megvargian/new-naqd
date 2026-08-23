@@ -111,7 +111,7 @@ foreach ($video_id_pairs as $pair) {
     <div class="container position-relative">
         <div class="row">
             <?php foreach ($video_cards as $card) { ?>
-                <div class="col-lg-4 col-md-6 col-12 mb-3 px-1">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3 px-1">
                     <div class="video-flip">
                         <div class="video-flip__inner">
                             <div class="video-flip__face video-flip__face--front">
