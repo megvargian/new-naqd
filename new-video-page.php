@@ -151,22 +151,22 @@ function returnEmbed($url) {
     }
     @media (max-width: 1390px) {
         .custom-container {
-            max-width: 1260px;
+            max-width: 1160px;
         }
     }
     @media (max-width: 1200px) {
         .custom-container {
-            max-width: 1050px;
+            max-width: 950px;
         }
     }
     @media (max-width: 992px) {
         .custom-container {
-            max-width: 900px;
+            max-width: 800px;
         }
     }
     @media (max-width: 768px) {
         .custom-container {
-            max-width: 690px;
+            max-width: 600px;
         }
     }
     .video-hero__player {
