@@ -146,22 +146,22 @@ function returnEmbed($url) {
 </section>
 
 <style>
-    @media (min-width: 1390px) {
+    @media (max-width: 1390px) {
         .custom-container {
             max-width: 1260px;
         }
     }
-    @media (min-width: 1200px) {
+    @media (max-width: 1200px) {
         .custom-container {
             max-width: 1050px;
         }
     }
-    @media (min-width: 992px) {
+    @media (max-width: 992px) {
         .custom-container {
             max-width: 900px;
         }
     }
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
         .custom-container {
             max-width: 690px;
         }
