@@ -3,8 +3,8 @@
  * Template Name: Video Choice Page
  */
 $get_choice_fields = get_fields();
-$background_image = !empty($get_choice_fields['choice_background_image']) ? $get_choice_fields['choice_background_image'] : get_template_directory_uri() . '/inc/assets/images/rassif.jpg';
-$choice_title      = !empty($get_choice_fields['choice_title']) ? $get_choice_fields['choice_title'] : __('Choose your path', 'wp-bootstrap-starter');
+$background_image = isMob() ? (!empty($get_choice_fields['bg_mobile_image']) ? $get_choice_fields['bg_mobile_image'] : get_template_directory_uri() . '/inc/assets/images/rassif.jpg') : (!empty($get_choice_fields['bg_desktop_image']) ? $get_choice_fields['bg_desktop_image'] : get_template_directory_uri() . '/inc/assets/images/rassif.jpg');
+$choice_title      = !empty($get_choice_fields['title']) ? $get_choice_fields['title'] : __('Choose your path', 'wp-bootstrap-starter');
 
 // find the page using the videos page template so the choice links stay correct without hardcoding a slug
 $videos_page = get_posts(array(
