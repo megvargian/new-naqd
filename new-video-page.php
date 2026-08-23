@@ -17,50 +17,12 @@ $hero_title      = !empty($get_new_video_fields['hero_title']) ? $get_new_video_
 $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_fields['hero_text'] : '';
 $videos          = !empty($get_new_video_fields['videos']) ? $get_new_video_fields['videos'] : array();
 
-// 12 videos paired into 6 flip cards, rendered 6 per row: flipping swaps in a different video
-// which half of the 24 videos to show, chosen on the intro (98cb790a-504f-49c2-a267-2b346c3cc97b/4e3de2f0-3f17-447a-a81b-1435ada1df00) page
-
 $video_set = isset($_GET['set']) && sanitize_text_field($_GET['set']) === '98cb790a-504f-49c2-a267-2b346c3cc97b' ? ($is_front = true) : ($is_front = false);
-// $video_set = $is_front ? '4e3de2f0-3f17-447a-a81b-1435ada1df00' : '98cb790a-504f-49c2-a267-2b346c3cc97b';
-// $video_offset = $video_set === '4e3de2f0-3f17-447a-a81b-1435ada1df00' ? 12 : 0;
-// $front='98cb790a-504f-49c2-a267-2b346c3cc97b';
-// $back='4e3de2f0-3f17-447a-a81b-1435ada1df00';
-
-// $video_ids = array();
-// $video_query = new WP_Query(
-//     array(
-//         'post_type'      => 'video',
-//         'posts_per_page' => 12,
-//         'offset'         => $video_offset,
-//         'orderby'        => 'date',
-//         'order'          => 'DESC',
-//         'fields'         => 'ids',
-//     )
-// );
-// if ($video_query->have_posts()) {
-//     while ($video_query->have_posts()) {
-//         $video_query->the_post();
-//         array_push($video_ids, get_the_ID());
-//     }
-//     wp_reset_postdata();
-// }
 
 function returnEmbed($url) {
     $parts = explode('/', (string) parse_url($url, PHP_URL_PATH));
     return end($parts);
 }
-
-// $video_cards = array();
-// $video_id_pairs = array_chunk($video_ids, 2);
-// foreach ($video_id_pairs as $pair) {
-//     if (count($pair) < 2) {
-//         continue;
-//     }
-//     $video_cards[] = array(
-//         'front' => build_video_flip_face($pair[0]),
-//         'back'  => build_video_flip_face($pair[1]),
-//     );
-// }
 ?>
 <section class="video-hero py-5">
     <div class="container">
@@ -101,7 +63,7 @@ function returnEmbed($url) {
 </section>
 
 <section class="videos-grid-section py-5" style="border-top: 1px solid #5b5b5b">
-    <div class="container position-relative">
+    <div class="container position-relative custom-container">
         <div class="row justify-content-center">
             <?php foreach ($videos as $key => $card) { ?>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3 px-1">
@@ -184,6 +146,26 @@ function returnEmbed($url) {
 </section>
 
 <style>
+    @media (min-width: 1390px) {
+        .custom-container {
+            max-width: 1260px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .custom-container {
+            max-width: 1050px;
+        }
+    }
+    @media (min-width: 992px) {
+        .custom-container {
+            max-width: 900px;
+        }
+    }
+    @media (min-width: 768px) {
+        .custom-container {
+            max-width: 690px;
+        }
+    }
     .video-hero__player {
         position: relative;
         width: 100%;
