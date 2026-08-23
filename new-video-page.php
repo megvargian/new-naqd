@@ -147,11 +147,11 @@ function returnEmbed($url) {
 
 <style>
     .custom-container {
-        max-width: 1360px;
+        max-width: 1100px;
     }
     @media (max-width: 1390px) {
         .custom-container {
-            max-width: 1160px;
+            max-width: 1100px;
         }
     }
     @media (max-width: 1200px) {
