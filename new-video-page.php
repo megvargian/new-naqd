@@ -13,14 +13,14 @@ $hero_title      = !empty($get_new_video_fields['hero_title']) ? $get_new_video_
 $hero_text       = !empty($get_new_video_fields['hero_text']) ? $get_new_video_fields['hero_text'] : '';
 
 // 12 videos paired into 6 flip cards, rendered 6 per row: flipping swaps in a different video
-// which half of the 24 videos to show, chosen on the intro (red/blue) page
-if(!isset($_GET['set']) || !in_array(sanitize_text_field($_GET['set']), ['red', 'blue'])) {
+// which half of the 24 videos to show, chosen on the intro (98cb790a-504f-49c2-a267-2b346c3cc97b/4e3de2f0-3f17-447a-a81b-1435ada1df00) page
+if(!isset($_GET['set']) || !in_array(sanitize_text_field($_GET['set']), ['98cb790a-504f-49c2-a267-2b346c3cc97b', '4e3de2f0-3f17-447a-a81b-1435ada1df00'])) {
     $choice_page_url =  home_url('/video-choice/');
     wp_redirect($choice_page_url);
     exit;
 }
-$video_set = isset($_GET['set']) && sanitize_text_field($_GET['set']) === 'blue' ? 'blue' : 'red';
-$video_offset = $video_set === 'blue' ? 12 : 0;
+$video_set = isset($_GET['set']) && sanitize_text_field($_GET['set']) === '4e3de2f0-3f17-447a-a81b-1435ada1df00' ? '4e3de2f0-3f17-447a-a81b-1435ada1df00' : '98cb790a-504f-49c2-a267-2b346c3cc97b';
+$video_offset = $video_set === '4e3de2f0-3f17-447a-a81b-1435ada1df00' ? 12 : 0;
 
 $video_ids = array();
 $video_query = new WP_Query(

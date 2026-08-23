@@ -15,8 +15,8 @@ $videos_page = get_posts(array(
     'fields'         => 'ids',
 ));
 $videos_page_url = !empty($videos_page) ? get_permalink($videos_page[0]) : home_url('/new-video-page/');
-$red_url  = add_query_arg('set', 'red', $videos_page_url);
-$blue_url = add_query_arg('set', 'blue', $videos_page_url);
+$red_url  = add_query_arg('set', '98cb790a-504f-49c2-a267-2b346c3cc97b', $videos_page_url);
+$blue_url = add_query_arg('set', '4e3de2f0-3f17-447a-a81b-1435ada1df00', $videos_page_url);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
