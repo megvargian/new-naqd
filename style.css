@@ -207,7 +207,7 @@ th {
   padding: 0;
 }
 
-@font-face {
+{{/* @font-face {
 	font-family: 'ManchetteFine-Regular';
 	src:  url('inc/assets/fonts/ManchetteFine-Regular.otf') format('opentype');
 	font-weight: normal;
@@ -252,6 +252,24 @@ th {
 @font-face {
 	font-family: 'Bressay-Bold';
 	src:  url('inc/assets/fonts/Bressay-Trial-Bd.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+} */}}
+@font-face {
+	font-family: 'ThmanyahSerifDisplay-Black';
+	src:  url('inc/assets/fonts/thmanyahserifdisplay-Black.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ThmanyahSerifDisplay-Bold';
+	src:  url('inc/assets/fonts/thmanyahserifdisplay-Bold.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'thmanyahsans-Regular';
+	src:  url('inc/assets/fonts/thmanyahsans-Regular.otf') format('opentype');
 	font-weight: normal;
 	font-style: normal;
 }
