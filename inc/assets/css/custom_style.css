@@ -292,7 +292,7 @@ p {
   transition: all 0.3s ease;
 }
 .rassif-section .title h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: "ThmanyahSerifDisplay-Bold";
   color: #fff;
   text-align: center;
@@ -302,7 +302,7 @@ p {
   border-radius: 15px;
   z-index: 5;
   left: 0;
-  bottom: 30%;
+  bottom: 25%;
   max-width: 400px;
   height: auto;
   background-color: transparent;
@@ -315,7 +315,7 @@ p {
   transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 .rassif-section .rassif-description h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: "ThmanyahSerifDisplay-Bold";
   text-align: right;
   color: #fff !important;
