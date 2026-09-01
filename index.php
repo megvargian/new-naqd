@@ -118,7 +118,7 @@ $fourth_part = array_slice($main_part_ids, 14, 8);
             <div class="col-lg-6 col-12 mb-2 px-1">
                 <div class="most-read-articles fade-in">
                     <h2 class="mb-3 mt-3 mb-lg-5 mt-lg-4">
-                        الأكثر قراءة
+                        الأكثــر قـــراءة
                     </h2>
                     <ul>
                         <?php foreach($top_posts as $post){
