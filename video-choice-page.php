@@ -94,11 +94,9 @@ $blue_url = add_query_arg('set', '4e3de2f0-3f17-447a-a81b-1435ada1df00', $videos
     }
     .video-choice__option--red {
         background: #5d0de6;
-        box-shadow: 0 6px 18px 5px #5d0de6;
     }
     .video-choice__option--blue {
         background: #b6e60d;
-        box-shadow: 0 6px 18px 5px #b6e60d;
     }
 
     @media (max-width: 576px) {
