@@ -93,12 +93,12 @@ $blue_url = add_query_arg('set', '4e3de2f0-3f17-447a-a81b-1435ada1df00', $videos
         color: #fff;
     }
     .video-choice__option--red {
-        background: #d21f1f;
-        box-shadow: 0 6px 18px rgba(210, 31, 31, 0.5);
+        background: #5d0de6;
+        box-shadow: 0 6px 18px 5px #5d0de6;
     }
     .video-choice__option--blue {
-        background: #1f5bd2;
-        box-shadow: 0 6px 18px rgba(31, 91, 210, 0.5);
+        background: #b6e60d;
+        box-shadow: 0 6px 18px 5px #b6e60d;
     }
 
     @media (max-width: 576px) {
