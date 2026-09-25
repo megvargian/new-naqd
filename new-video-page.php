@@ -197,10 +197,13 @@ function returnEmbed($url) {
         font-size: clamp(24px, 3vw, 40px);
         margin-bottom: 16px;
     }
+
     .video-hero__text {
         font-size: clamp(15px, 1.3vw, 18px);
-        font-family: 'ManchetteFine-Regular', sans-serif;
         color: #fff;
+    }
+    .light-theme .video-hero__text{
+        color: #000;
     }
 
     .video-flip {
