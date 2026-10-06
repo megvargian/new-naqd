@@ -33,10 +33,10 @@ $blue_url = add_query_arg('set', '4e3de2f0-3f17-447a-a81b-1435ada1df00', $videos
         <h1 class="video-choice__title"><?php echo esc_html($choice_title); ?></h1>
         <div class="video-choice__options">
             <a href="<?php echo esc_url($red_url); ?>" class="video-choice__option video-choice__option--red">
-                <?php _e('Red', 'wp-bootstrap-starter'); ?>
+                <?php echo esc_html($get_choice_fields['right_btn_text']); ?>
             </a>
-            <a href="<?php echo esc_url($blue_url); ?>" class="video-choice__option video-choice__option--blue">
-                <?php _e('Blue', 'wp-bootstrap-starter'); ?>
+            <a href="<?php echo esc_url($blue_url); ?>" class="video-choice__option video-choice__option--blue" style="color: #000 !important;">
+                <?php echo esc_html($get_choice_fields['left_btn_text']); ?>
             </a>
         </div>
     </div>
